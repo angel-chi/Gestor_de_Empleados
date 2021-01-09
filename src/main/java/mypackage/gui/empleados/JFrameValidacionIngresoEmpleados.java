@@ -11,10 +11,10 @@ import javax.swing.JOptionPane;
  *
  * @author andre
  */
-public class JFrameValidacion extends javax.swing.JFrame {
+public class JFrameValidacionIngresoEmpleados extends javax.swing.JFrame {
 
     /** Creates new form JFrameValidacion */
-    public JFrameValidacion() {
+    public JFrameValidacionIngresoEmpleados() {
         initComponents();
     }
 
@@ -35,8 +35,10 @@ public class JFrameValidacion extends javax.swing.JFrame {
         jPasswordContraseña = new javax.swing.JPasswordField();
         jButtonValidar = new javax.swing.JButton();
         jButtonLimpiar = new javax.swing.JButton();
+        jLabelTitulo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -44,18 +46,22 @@ public class JFrameValidacion extends javax.swing.JFrame {
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("VALIDACIÓN DE INGRESO");
-        jDesktopPane1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 24, -1, -1));
+        jDesktopPane1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
         jLabelUsuario.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabelUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jLabelUsuario.setText("Usuario:");
         jDesktopPane1.add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
+
+        jTextFieldUsuario.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jDesktopPane1.add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 191, 36));
 
         jLabelContraseña.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabelContraseña.setForeground(new java.awt.Color(255, 255, 255));
         jLabelContraseña.setText("Contraseña:");
         jDesktopPane1.add(jLabelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+
+        jPasswordContraseña.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jDesktopPane1.add(jPasswordContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 191, 36));
 
         jButtonValidar.setBackground(new java.awt.Color(0, 32, 108));
@@ -80,9 +86,15 @@ public class JFrameValidacion extends javax.swing.JFrame {
         });
         jDesktopPane1.add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 397, 162, 50));
 
+        jLabelTitulo1.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
+        jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTitulo1.setText("(SECTOR EMPLEADOS)");
+        jDesktopPane1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
+
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 510));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValidarActionPerformed
@@ -98,7 +110,7 @@ public class JFrameValidacion extends javax.swing.JFrame {
 
         if (flagValidacionEntradaEmpleados) {
             
-            new  JFrameEmpleados().setVisible(true);
+            new  JFrameMenuEmpleados().setVisible(true);
 
             dispose();
         }
@@ -128,20 +140,21 @@ public class JFrameValidacion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameValidacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameValidacionIngresoEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameValidacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameValidacionIngresoEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameValidacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameValidacionIngresoEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameValidacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameValidacionIngresoEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameValidacion().setVisible(true);
+                new JFrameValidacionIngresoEmpleados().setVisible(true);
             }
         });
     }
@@ -152,6 +165,7 @@ public class JFrameValidacion extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabelContraseña;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JLabel jLabelTitulo1;
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPasswordField jPasswordContraseña;
     private javax.swing.JTextField jTextFieldUsuario;

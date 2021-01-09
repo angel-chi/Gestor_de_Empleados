@@ -26,6 +26,17 @@ public interface I_EmpleadoRepository {
                 .findAny()
                 .orElse(new Empleado());
     }
+    
+        default List<Empleado> getLikeId(String id) {
+        if (id == null) {
+            return new ArrayList<Empleado>();
+        }
+        return getStream()
+                .filter(objeto -> String.valueOf(objeto.getId())
+                .contains(id))
+                .collect(Collectors.toList());
+    }
+    
 
     default List<Empleado> getLikeNombre(String nombre) {
         if (nombre == null) {
@@ -47,10 +58,20 @@ public interface I_EmpleadoRepository {
                 .collect(Collectors.toList());
     }
 
-    default List<Empleado> getLikeEdad(int edad) {
+    default List<Empleado> getByEdad(int edad) {
 
         return getStream()
                 .filter(objeto -> objeto.getEdad() == edad)
+                .collect(Collectors.toList());
+    }
+    
+         default List<Empleado> getLikeEdad(String edad) {
+        if (edad == null) {
+            return new ArrayList<Empleado>();
+        }
+        return getStream()
+                .filter(objeto -> String.valueOf(objeto.getEdad())
+                .contains(edad))
                 .collect(Collectors.toList());
     }
 
@@ -134,20 +155,40 @@ public interface I_EmpleadoRepository {
     
      
     
-    default List<Empleado> getLikeCantidadHsSemanales(int cantidad_hs_semanales) {
+    default List<Empleado> getByCantidadHsSemanales(int cantidad_hs_semanales) {
 
         return getStream()
                 .filter(objeto -> objeto.getCantidad_hs_semanales() == cantidad_hs_semanales)
                 .collect(Collectors.toList());
     }
     
-
+     default List<Empleado> getLikeCantidadHsSemanales(String cantidad_hs_semanales) {
+        if (cantidad_hs_semanales == null) {
+            return new ArrayList<Empleado>();
+        }
+        return getStream()
+                .filter(objeto -> String.valueOf(objeto.getCantidad_hs_semanales())
+                .contains(cantidad_hs_semanales))
+                .collect(Collectors.toList());
+    }
  
-    default List<Empleado> getLikeSueldo(float sueldo) {
+    default List<Empleado> getBySueldo(float sueldo) {
 
         return getStream()
                 .filter(objeto -> objeto.getSueldo() == sueldo)
                 .collect(Collectors.toList());
     }
+    
+            default List<Empleado> getLikeSueldo(String sueldo) {
+        if (sueldo == null) {
+            return new ArrayList<Empleado>();
+        }
+        return getStream()
+                .filter(objeto -> String.valueOf(objeto.getSueldo())
+                .contains(sueldo))
+                .collect(Collectors.toList());
+    }
+    
+    
     
 }

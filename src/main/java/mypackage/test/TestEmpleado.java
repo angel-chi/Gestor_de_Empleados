@@ -79,11 +79,11 @@ public class TestEmpleado {
 
         
         System.out.println("\n=================Empleado/s  cuya cantidad de horas semanales sean 48h ===============\n");
-        empleadoRepository.getLikeCantidadHsSemanales(48).forEach(System.out::println);
+        empleadoRepository.getByCantidadHsSemanales(48).forEach(System.out::println);
 
         
         System.out.println("\n=================Empleado/s  cuyo sueldo sea de $33000 ===============\n");
-        empleadoRepository.getLikeSueldo(33000f).forEach(System.out::println);
+        empleadoRepository.getBySueldo(33000f).forEach(System.out::println);
 
         //FIN FILTER
     }

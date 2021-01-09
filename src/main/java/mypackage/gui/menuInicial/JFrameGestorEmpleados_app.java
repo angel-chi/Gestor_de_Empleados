@@ -6,8 +6,10 @@
 package mypackage.gui.menuInicial;
 
 import mypackage.connector.LocalConnector;
-import mypackage.gui.empleados.JFrameEmpleados;
-import mypackage.gui.empleados.JFrameValidacion;
+import mypackage.gui.empleados.JFrameMenuEmpleados;
+import mypackage.gui.empleados.JFrameValidacionIngresoEmpleados;
+import mypackage.gui.otros.JFrameAcercaDe;
+import mypackage.gui.otros.JFrameAyuda;
 import mypackage.repositories.interfaces.I_EmpleadoRepository;
 import mypackage.repositories.jdbc.EmpleadoRepository;
 
@@ -111,6 +113,11 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         jToggleButtonAcerca.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jToggleButtonAcerca.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButtonAcerca.setText("Acerca de");
+        jToggleButtonAcerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonAcercaActionPerformed(evt);
+            }
+        });
         jDesktopPaneFondo.add(jToggleButtonAcerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 90, -1));
 
         getContentPane().add(jDesktopPaneFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 680));
@@ -124,12 +131,16 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAdministracionActionPerformed
 
     private void jButtonEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmpleadosActionPerformed
-       new JFrameValidacion().setVisible(true);
+       new JFrameValidacionIngresoEmpleados().setVisible(true);
     }//GEN-LAST:event_jButtonEmpleadosActionPerformed
 
     private void jToggleButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonAyudaActionPerformed
-        // TODO add your handling code here:
+        new JFrameAyuda().setVisible(true);
     }//GEN-LAST:event_jToggleButtonAyudaActionPerformed
+
+    private void jToggleButtonAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonAcercaActionPerformed
+       new JFrameAcercaDe().setVisible(true);
+    }//GEN-LAST:event_jToggleButtonAcercaActionPerformed
 
     /**
      * @param args the command line arguments

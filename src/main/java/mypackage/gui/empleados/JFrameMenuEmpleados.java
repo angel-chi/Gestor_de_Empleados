@@ -276,7 +276,7 @@ public class JFrameMenuEmpleados extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
-        // TODO add your handling code here:
+       new JFrameVerEmpleados().setVisible(true);
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
 
     /**

@@ -44,7 +44,7 @@ public interface I_EmpleadoRepository {
         }
         return getStream()
                 .filter(objeto -> objeto.getNombre().toLowerCase()
-                .contains(nombre.toLowerCase()))
+                .startsWith(nombre.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
@@ -54,7 +54,7 @@ public interface I_EmpleadoRepository {
         }
         return getStream()
                 .filter(objeto -> objeto.getApellido().toLowerCase()
-                .contains(apellido.toLowerCase()))
+                .startsWith(apellido.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
@@ -95,7 +95,7 @@ public interface I_EmpleadoRepository {
         }
         return getStream()
                 .filter(objeto -> objeto.getGenero().toLowerCase()
-                .contains(genero.toLowerCase()))
+                .startsWith(genero.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
@@ -127,7 +127,7 @@ public interface I_EmpleadoRepository {
         }
          return getStream()
                 .filter(objeto -> objeto.getCorreo_electronico().toLowerCase()
-                .contains(correo_electronico.toLowerCase()))
+                .startsWith(correo_electronico.toLowerCase()))
                 .collect(Collectors.toList());
     }
     

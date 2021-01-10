@@ -56,7 +56,7 @@ public class JFrameActualizarEmpleados extends javax.swing.JFrame {
         jLabelCantidadHs3 = new javax.swing.JLabel();
         jTextFieldCantidadHsSemanales = new javax.swing.JTextField();
         jButtonLimpiar = new javax.swing.JButton();
-        jButtonAgregar = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
         jButtonAgregar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -225,17 +225,17 @@ public class JFrameActualizarEmpleados extends javax.swing.JFrame {
         jDesktopPane1.add(jButtonLimpiar);
         jButtonLimpiar.setBounds(160, 680, 142, 50);
 
-        jButtonAgregar.setBackground(new java.awt.Color(0, 32, 108));
-        jButtonAgregar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jButtonAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregar.setText("Agregar");
-        jButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonActualizar.setBackground(new java.awt.Color(0, 32, 108));
+        jButtonActualizar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jButtonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAgregarActionPerformed(evt);
+                jButtonActualizarActionPerformed(evt);
             }
         });
-        jDesktopPane1.add(jButtonAgregar);
-        jButtonAgregar.setBounds(340, 680, 140, 50);
+        jDesktopPane1.add(jButtonActualizar);
+        jButtonActualizar.setBounds(340, 680, 140, 50);
 
         jButtonAgregar1.setBackground(new java.awt.Color(1, 26, 86));
         jButtonAgregar1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -282,9 +282,9 @@ public class JFrameActualizarEmpleados extends javax.swing.JFrame {
         jTextFieldTipoDoc.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
-    private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAgregarActionPerformed
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
         // TODO add your handling code here:
@@ -326,7 +326,7 @@ public class JFrameActualizarEmpleados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAgregar;
+    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonAgregar1;
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JDesktopPane jDesktopPane1;

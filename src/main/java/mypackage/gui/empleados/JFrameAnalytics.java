@@ -66,8 +66,13 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         jLabelPrecioMinTransporte = new javax.swing.JLabel();
         jLabelEdadPromedio = new javax.swing.JLabel();
         jTextFieldEdadPromedio = new javax.swing.JTextField();
+        jLabelEdadMasRepetido = new javax.swing.JLabel();
+        jTextFieldEdadQueMasSeRepite = new javax.swing.JTextField();
+        jLabelEdadPromedio2 = new javax.swing.JLabel();
+        jLabelEdadMasRepetido2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -97,7 +102,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         jLabelEdadMinima.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelEdadMinima.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEdadMinima.setText("Edad Mínima:");
-        jDesktopPane1.add(jLabelEdadMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 120, 40));
+        jDesktopPane1.add(jLabelEdadMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 120, 40));
 
         jTextFieldEdadMinima.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldEdadMinima.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +116,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(jTextFieldEdadMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, 30));
-        jDesktopPane1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 296, 570, 50));
+        jDesktopPane1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 570, 20));
 
         jLabelEdad.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabelEdad.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,7 +126,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         jLabelTotalServicios.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabelTotalServicios.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTotalServicios.setText("NÚMERO DE DOCUMENTO");
-        jDesktopPane1.add(jLabelTotalServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 310, 50));
+        jDesktopPane1.add(jLabelTotalServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 310, 40));
         jDesktopPane1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 52, 270, 0));
         jDesktopPane1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 240, 30));
         jDesktopPane1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 260, -1));
@@ -240,7 +245,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         jLabelEdadPromedio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelEdadPromedio.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEdadPromedio.setText("Edad Promedio:");
-        jDesktopPane1.add(jLabelEdadPromedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 140, 30));
+        jDesktopPane1.add(jLabelEdadPromedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 140, 30));
 
         jTextFieldEdadPromedio.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldEdadPromedio.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +258,35 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldEdadPromedioKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldEdadPromedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 150, 30));
+        jDesktopPane1.add(jTextFieldEdadPromedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 150, 30));
+
+        jLabelEdadMasRepetido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelEdadMasRepetido.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEdadMasRepetido.setText("Edad que más se repite:");
+        jDesktopPane1.add(jLabelEdadMasRepetido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 210, 30));
+
+        jTextFieldEdadQueMasSeRepite.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jTextFieldEdadQueMasSeRepite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEdadQueMasSeRepiteActionPerformed(evt);
+            }
+        });
+        jTextFieldEdadQueMasSeRepite.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldEdadQueMasSeRepiteKeyTyped(evt);
+            }
+        });
+        jDesktopPane1.add(jTextFieldEdadQueMasSeRepite, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 150, 30));
+
+        jLabelEdadPromedio2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelEdadPromedio2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEdadPromedio2.setText("(Media)");
+        jDesktopPane1.add(jLabelEdadPromedio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 70, 30));
+
+        jLabelEdadMasRepetido2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelEdadMasRepetido2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEdadMasRepetido2.setText("(Moda)");
+        jDesktopPane1.add(jLabelEdadMasRepetido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 70, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -343,6 +376,14 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEdadPromedioKeyTyped
 
+    private void jTextFieldEdadQueMasSeRepiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEdadQueMasSeRepiteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEdadQueMasSeRepiteActionPerformed
+
+    private void jTextFieldEdadQueMasSeRepiteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEdadQueMasSeRepiteKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEdadQueMasSeRepiteKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -381,9 +422,12 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabelEdad;
+    private javax.swing.JLabel jLabelEdadMasRepetido;
+    private javax.swing.JLabel jLabelEdadMasRepetido2;
     private javax.swing.JLabel jLabelEdadMaxima;
     private javax.swing.JLabel jLabelEdadMinima;
     private javax.swing.JLabel jLabelEdadPromedio;
+    private javax.swing.JLabel jLabelEdadPromedio2;
     private javax.swing.JLabel jLabelPrecioMaximoServicios;
     private javax.swing.JLabel jLabelPrecioMaximoServicios1;
     private javax.swing.JLabel jLabelPrecioMaximoTransporte;
@@ -415,6 +459,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextFieldEdadMaxima;
     public static javax.swing.JTextField jTextFieldEdadMinima;
     public static javax.swing.JTextField jTextFieldEdadPromedio;
+    public static javax.swing.JTextField jTextFieldEdadQueMasSeRepite;
     public static javax.swing.JTextField jTextFieldPrecioMaxServicios;
     public static javax.swing.JTextField jTextFieldPrecioMaxTransporte;
     public static javax.swing.JTextField jTextFieldPrecioMinServicios;

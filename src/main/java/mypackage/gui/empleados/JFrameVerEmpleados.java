@@ -5,6 +5,9 @@
  */
 package mypackage.gui.empleados;
 
+import static java.lang.Float.max;
+import static java.lang.Float.min;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
 import mypackage.repositories.interfaces.I_EmpleadoRepository;
@@ -30,6 +33,92 @@ public class JFrameVerEmpleados extends javax.swing.JFrame {
         new Table().cargar(jTableListaEmpleados, empleadoRepository.getAll());
     }
 
+    //------------ANALYTICS------------------
+    public double valorTotal(int columnaTabla) {
+
+        float sum = 0;
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                sum += Math.round(Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString()));
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return sum;
+    }
+
+    public double valorMaximo(int columnaTabla) {
+        float max = 0;
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                max = Math.round(max(max, Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return max;
+    }
+
+    public double valorMinimo(int columnaTabla) {
+        float min = 0;
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                min = Math.round(min(min, Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return min;
+    }
+
+    public double valorPromedio(int columnaTabla) {
+        float sum = 0;
+        float promedio = 0;
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                sum += Math.round(Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString()));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        promedio = sum / jTableListaEmpleados.getRowCount();
+        return promedio;
+
+    }
+
+//    public double valorQueMasSeRepite(int columnaTabla) {
+//        int[] numeros = { 1, 2, 3, 1, 1, 2, 3, 4, 2, 4, 412, 3, 12, 321, 12, 3, 213, 13, 213121, 1, 345, 12, 312, 3, 5424,
+//				314 };
+//        int valorQueMasSeRepite = 0;
+//        try {
+//            HashMap<Integer, Integer> mapa = new HashMap<>();
+//            for (int x = 0; x < jTableListaEmpleados.getRowCount(); x++) {
+//                int numero = jTableListaEmpleados[x];
+//                if (mapa.containsKey(numero)) {
+//                    mapa.put(numero, mapa.get(numero) + 1);
+//                } else {
+//                    mapa.put(numero, 1);
+//                }
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    //------------FIN ANALYTICS------------------
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -141,7 +230,7 @@ public class JFrameVerEmpleados extends javax.swing.JFrame {
         jDesktopPane2Layout.setHorizontalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(66, 258, Short.MAX_VALUE)
                 .addComponent(jLabelBusqueda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,11 +250,11 @@ public class JFrameVerEmpleados extends javax.swing.JFrame {
             .addGroup(jDesktopPane2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94)
-                .addComponent(jButtonActualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonActualizar)
+                .addGap(58, 58, 58)
                 .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145)
+                .addGap(175, 175, 175)
                 .addComponent(jButtonRefrescarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -309,12 +398,12 @@ public class JFrameVerEmpleados extends javax.swing.JFrame {
         } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals(" CANTIDAD DE HS SEMANALES")) {
 
             new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeCantidadHsSemanales(jTextFieldBusquedaEmpleados.getText()));
-            
-        }else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals(" SUELDO")) {
 
-                        new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeSueldo(jTextFieldBusquedaEmpleados.getText()));
+        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals(" SUELDO")) {
 
-                    }
+            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeSueldo(jTextFieldBusquedaEmpleados.getText()));
+
+        }
 
     }//GEN-LAST:event_jTextFieldBusquedaEmpleadosKeyReleased
 
@@ -326,30 +415,27 @@ public class JFrameVerEmpleados extends javax.swing.JFrame {
     private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
         new JFrameAnalytics().setVisible(true);
 
-//        //Enviamos lso datos al jframe de analytics
-//        //IMPORTANTE-->EL JTEXTFIELD DEL OTRO JFRAME DEBERA ESTAR EN PUBLIC Y STATIC
-//        //------COMPRAS(columna 1)-----
-//        //TOTAL
-//        JFrameAnalytics.jTextFieldTotalCompras.setText(String.valueOf(totalPrecio(1)));
-//
-//        //MAXIMO
-//        JFrameAnalytics.jTextFieldPrecioMaxCompras.setText(String.valueOf(maximoPrecio(1)));
-//
-//        //MINIMO
-//        JFrameAnalytics.jTextFieldEdadMinima.setText(String.valueOf(minimoPrecio(1)));
-//
-//        //----------FIN COMPRAS------------
-//        //-----------SERVICIOS(columna 3)-----------------
-//        //TOTAL
-//        JFrameAnalytics.jTextFieldTotalServicios.setText(String.valueOf(totalPrecio(3)));
-//
+        //Enviamos lso datos al jframe de analytics
+        //IMPORTANTE-->EL JTEXTFIELD DEL OTRO JFRAME DEBERA ESTAR EN PUBLIC Y STATIC
+        //------EDAD(columna 3)-----
+        //MAXIMO
+        JFrameAnalytics.jTextFieldEdadMaxima.setText(String.valueOf(valorMaximo(3)));
+
+        //MINIMO
+        JFrameAnalytics.jTextFieldEdadMinima.setText(String.valueOf(valorMinimo(3)));
+
+        //PROMEDIO
+        JFrameAnalytics.jTextFieldEdadPromedio.setText(String.valueOf(valorPromedio(3)));
+
+        //----------FIN EDAD------------
+//        //-----------NUMERO DE DOCUMENTO(columna 6)-----------------
 //        //MAXIMO
 //        JFrameAnalytics.jTextFieldPrecioMaxServicios.setText(String.valueOf(maximoPrecio(3)));
 //
 //        //MINIMO
 //        JFrameAnalytics.jTextFieldPrecioMinServicios.setText(String.valueOf(minimoPrecio(3)));
 //
-//        //-----------FIN SERVICIOS------------
+//        //-----------FIN NUMERO DE DOCUMENTO------------
 //        //---------TRANSPORTE(columna 5)--------------
 //        //TOTAL
 //        JFrameAnalytics.jTextFieldTotalTransporte.setText(String.valueOf(totalPrecio(5)));

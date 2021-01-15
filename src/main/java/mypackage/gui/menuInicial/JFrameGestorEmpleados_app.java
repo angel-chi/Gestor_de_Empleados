@@ -6,8 +6,8 @@
 package mypackage.gui.menuInicial;
 
 import mypackage.connector.LocalConnector;
-import mypackage.gui.empleados.JFrameMenuEmpleados;
-import mypackage.gui.empleados.JFrameValidacionIngresoEmpleados;
+import mypackage.gui.empleados.JFrameIngresoEmpleado;
+import mypackage.gui.utils.JFrameValidacionIngreso;
 import mypackage.gui.otros.JFrameAcercaDe;
 import mypackage.gui.otros.JFrameAyuda;
 import mypackage.repositories.interfaces.I_EmpleadoRepository;
@@ -74,6 +74,11 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         jButtonSoporteTecnico.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonSoporteTecnico.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSoporteTecnico.setText("SOPORTE TECNICO");
+        jButtonSoporteTecnico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSoporteTecnicoActionPerformed(evt);
+            }
+        });
         jDesktopPaneFondo.add(jButtonSoporteTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 210, 57));
 
         jButtonAdministracion.setBackground(new java.awt.Color(0, 30, 101));
@@ -131,7 +136,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAdministracionActionPerformed
 
     private void jButtonEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmpleadosActionPerformed
-       new JFrameValidacionIngresoEmpleados().setVisible(true);
+       new JFrameValidacionIngreso().setVisible(true);
     }//GEN-LAST:event_jButtonEmpleadosActionPerformed
 
     private void jToggleButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonAyudaActionPerformed
@@ -141,6 +146,10 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     private void jToggleButtonAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonAcercaActionPerformed
        new JFrameAcercaDe().setVisible(true);
     }//GEN-LAST:event_jToggleButtonAcercaActionPerformed
+
+    private void jButtonSoporteTecnicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSoporteTecnicoActionPerformed
+         new JFrameValidacionIngreso().setVisible(true);
+    }//GEN-LAST:event_jButtonSoporteTecnicoActionPerformed
 
     /**
      * @param args the command line arguments

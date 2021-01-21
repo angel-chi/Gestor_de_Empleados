@@ -35,76 +35,8 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         new Table().cargar(jTableListaEmpleados, empleadoRepository.getAll());
     }
 
-    //------------ANALYTICS------------------
-    //-----------Valores-------------------------
-    public double valorTotal(int columnaTabla) {
-
-        float sum = 0;
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                sum += Math.round(Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString()));
-
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return sum;
-    }
-
-    public double valorPromedio(int columnaTabla) {
-        float sum = 0;
-        float promedio = 0;
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                sum += Math.round(Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString()));
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        promedio = sum / jTableListaEmpleados.getRowCount();
-        return promedio;
-
-    }
-
-    public double valorMaximo(int columnaTabla) {
-        float max = 0;
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                max = Math.round(max(max, Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return max;
-    }
-
-    public double valorMinimo(int columnaTabla) {
-        float min = 0;
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                min = Math.round(min(min, Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
-
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return min;
-    }
-
-    //----------------Fin Valores----------------
-    //-----------------Edad----------------------
-    public int edadCantidad(int columnaTabla) {
+    //==============ANALYTICS=====================
+    public int cantidadValores(int columnaTabla) {
         int cantidad = 0;
 
         try {
@@ -120,14 +52,13 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
     }
 
-    public int edadPromedio(int columnaTabla) {
+    public int promedioValores(int columnaTabla) {
         int sum = 0;
         int promedio = 0;
         try {
             for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
 
                 sum += Math.round(Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString()));
-
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -136,93 +67,82 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         return promedio;
 
     }
-    
-    
-    
-    
-    
-    
-        public  List<Integer> edadModa(int columnaTabla) {
 
-            int edad=0;
-            
-            List<Integer> arrayEdades=new ArrayList<Integer>();
-            
-            
+    public List<String> modaValores(int columnaTabla) {
+
+        int valores = 0;
+
+        List<Integer> arrayValores = new ArrayList<Integer>();
+
         try {
             for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-                
-               edad=Integer.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
-               
-               arrayEdades.add(edad);
-                
+
+                valores = Integer.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+
+                arrayValores.add(valores);
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         //Hasta aca guardamos todos los elementos de la jTable en List
-        int auxiliar=0;
-        int contador=0;
-            try {
-                for(int j=0; j < arrayEdades.size(); j++){
-                    
-                    auxiliar=arrayEdades.get(j);
-                    
-                    if(auxiliar == (arrayEdades.get(j)) ){
-                        contador ++;
-                        
-                    }
-                }
-            } catch (Exception e) {
-            }
-            
-        return arrayEdades;
-           
-    }
-        
-//        //EJEMPLO
-//        public int masUsado ( ) {
-//int num_mas_usado = 0;
-//int veces [ ] = new int [arreglo.length];
-//int posicion = 0;
-//for(int i = 0; i < arreglo.length; i++){
-//num_mas_usado = arreglo[i];
-//for(int j = i; j < arreglo.length; j++){
-//if(arreglo[j] == num_mas_usado){
-//veces[i]++;
-//}
-//}
-//}
-//num_mas_usado = 0;
-//for(int k = 0; k < veces.length; k++){
-//if(num_mas_usado < veces [k]){
-//num_mas_usado = veces [k];
-//posicion = k;
-//}
-//}
-//System.out.println("El numero " + arreglo[posicion] + " aparecio " + veces[posicion] + " veces.");
-//return arreglo[posicion];
-//}
-    
-        
-        
 
-    public int edadMaxima(int columnaTabla) {
+        //Ahora realizamos el calculo de la moda
+        int moda = 0;
+
+        int frecuenciaDeVecesQueSeRepite = 0;
+        float frecuenciaRelativaDeVecesQueSeRepite = 0;
+
+        for (int i = 0; i < arrayValores.size(); i++) {
+
+            int vecesQueSeRepite = 0;
+
+            for (int j = 0; j < arrayValores.size(); j++) {
+
+                if (arrayValores.get(i) == arrayValores.get(j)) {
+
+                    vecesQueSeRepite++;
+                }
+            }
+            if (vecesQueSeRepite > frecuenciaDeVecesQueSeRepite) {
+
+                moda = arrayValores.get(i);
+
+                frecuenciaDeVecesQueSeRepite = vecesQueSeRepite;
+            }
+        }
+
+           frecuenciaRelativaDeVecesQueSeRepite = frecuenciaDeVecesQueSeRepite / (arrayValores.size());
+
+           
+        //  Como no podemos tener un return dos veces devolvemos una List de enteros con ambos valores
+        List<String> valoresObtenidos = new ArrayList<String>();
+
+        valoresObtenidos.add(String.valueOf(moda));
+        valoresObtenidos.add(String.valueOf(frecuenciaDeVecesQueSeRepite));
+        valoresObtenidos.add(String.valueOf(frecuenciaRelativaDeVecesQueSeRepite));
+
+        return valoresObtenidos;
+
+    }
+    
+    
+    
+
+    public int maximaValores(int columnaTabla) {
         int max = 0;
         try {
             for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
 
                 max = Math.round(max(max, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
         return max;
-
     }
 
-    public int edadMinima(int columnaTabla) {
+    public int minimaValores(int columnaTabla) {
 
         int min = Integer.parseInt(jTableListaEmpleados.getValueAt(0, columnaTabla).toString());
 
@@ -231,36 +151,14 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
                 // min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
                 min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
-
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return min;
     }
 
-    //--------------FinEdad-----------------------
-//    public double valorQueMasSeRepite(int columnaTabla) {
-//        int[] numeros = { 1, 2, 3, 1, 1, 2, 3, 4, 2, 4, 412, 3, 12, 321, 12, 3, 213, 13, 213121, 1, 345, 12, 312, 3, 5424,
-//				314 };
-//        int valorQueMasSeRepite = 0;
-//        try {
-//            HashMap<Integer, Integer> mapa = new HashMap<>();
-//            for (int x = 0; x < jTableListaEmpleados.getRowCount(); x++) {
-//                int numero = jTableListaEmpleados[x];
-//                if (mapa.containsKey(numero)) {
-//                    mapa.put(numero, mapa.get(numero) + 1);
-//                } else {
-//                    mapa.put(numero, 1);
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-    //------------FIN ANALYTICS------------------
+    //==============FIN ANALYTICS=====================
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -561,18 +459,24 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         //IMPORTANTE-->EL JTEXTFIELD DEL OTRO JFRAME DEBERA ESTAR EN PUBLIC Y STATIC
         //------EDAD(columna 3)-----
         //CANTIDAD
-        JFrameAnalytics.jTextFieldEdadesCantidad.setText(String.valueOf(edadCantidad(3)));
+        JFrameAnalytics.jTextFieldEdadesCantidad.setText(String.valueOf(cantidadValores(3)));
         //MAXIMO
-        JFrameAnalytics.jTextFieldEdadMaxima.setText(String.valueOf(edadMaxima(3)));
+        JFrameAnalytics.jTextFieldEdadMaxima.setText(String.valueOf(maximaValores(3)));
 
         //MINIMO
-        JFrameAnalytics.jTextFieldEdadMinima.setText(String.valueOf(edadMinima(3)));
+        JFrameAnalytics.jTextFieldEdadMinima.setText(String.valueOf(minimaValores(3)));
 
         //PROMEDIO-MEDIA
-        JFrameAnalytics.jTextFieldEdadPromedio.setText(String.valueOf(edadPromedio(3)));
-        
-        //MEDIANA
-        JFrameAnalytics.jTextFieldEdadQueMasSeRepite.setText(String.valueOf(edadModa(3)));
+        JFrameAnalytics.jTextFieldEdadPromedio.setText(String.valueOf(promedioValores(3)));
+
+        //MODA-MEDIANA
+        JFrameAnalytics.jTextFieldEdadQueMasSeRepite.setText(String.valueOf(modaValores(3).get(0)));
+
+        //FRECUENCIA DE VECES MODA-MEDIANA
+        JFrameAnalytics.jTextFieldFrecuenciaEdadQueMasSeRepite.setText(String.valueOf(modaValores(3).get(1)));
+
+        //FRECUENCIA RELATIVA DE VECES MODA-MEDIANA
+        JFrameAnalytics.jTextFieldFrecuenciaRelativaEdadQueMasSeRepite1.setText(String.valueOf(modaValores(3).get(2)));
 
         //----------FIN EDAD------------
 //        //-----------NUMERO DE DOCUMENTO(columna 6)-----------------
@@ -611,16 +515,21 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

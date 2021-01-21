@@ -49,9 +49,9 @@
 
 </br>
 
-<hr>
-
 ## Más Información
+
+<hr>
 
 ## Uso de Cygwin
 

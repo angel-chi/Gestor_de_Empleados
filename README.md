@@ -24,11 +24,11 @@
 
 </br>
 
- ## Patrones de Diseño Implementados
+ ## Patrones de Diseño
  * **Singleton** 
  * **Dao** 
  
- ## Uso de Java8
+ ## Java8
 * **Streams**
 * **Lambdas**
 * **Filters**

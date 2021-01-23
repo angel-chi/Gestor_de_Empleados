@@ -14,6 +14,7 @@ mypackage\repositories\interfaces\I_SoporteTecnicoRepository.class
 mypackage\gui\empleados\JFrameAnalytics$4.class
 mypackage\gui\empleados\JFrameActualizarEmpleado$1.class
 mypackage\utils\swing\Table.class
+mypackage\gui\empleados\JFrameAnalytics$23.class
 mypackage\test\TestAdministracion.class
 mypackage\connector\RemoteConnector.class
 mypackage\gui\empleados\JFrameAnalytics$13.class
@@ -26,6 +27,7 @@ mypackage\entities\Administracion.class
 mypackage\entities\SoporteTecnico.class
 mypackage\gui\empleados\JFrameActualizarEmpleado$3.class
 mypackage\gui\empleados\JFrameAnalytics$3.class
+mypackage\gui\empleados\JFrameAnalytics$22.class
 mypackage\repositories\jdbc\GerenteRepository.class
 mypackage\gui\menuInicial\JFrameGestorEmpleados_app$1.class
 mypackage\gui\empleados\JFrameVerEmpleado.class
@@ -76,6 +78,7 @@ mypackage\gui\otros\JFrameAcercaDe.class
 mypackage\gui\empleados\JFrameActualizarEmpleado$2.class
 mypackage\gui\empleados\JFrameAnalytics$19.class
 mypackage\entities\Gerente.class
+mypackage\gui\empleados\JFrameAnalytics$24.class
 mypackage\gui\utils\JFrameValidacionIngreso.class
 mypackage\gui\menuInicial\JFrameGestorEmpleados_app.class
 mypackage\gui\menuInicial\JFrameGestorEmpleados_app$6.class

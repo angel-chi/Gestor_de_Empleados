@@ -5,11 +5,6 @@
  */
 package mypackage.gui.empleados;
 
-import static java.lang.Float.max;
-import static java.lang.Float.min;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
 import mypackage.repositories.interfaces.I_EmpleadoRepository;
@@ -28,137 +23,17 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
     public JFrameVerEmpleado() {
         initComponents();
         listarEmpleados();
+        
     }
 
     public void listarEmpleados() {
 
         new Table().cargar(jTableListaEmpleados, empleadoRepository.getAll());
     }
-
-    //==============ANALYTICS=====================
-    public int cantidadValores(int columnaTabla) {
-        int cantidad = 0;
-
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                cantidad = jTableListaEmpleados.getRowCount();
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return cantidad;
-
-    }
-
-    public int promedioValores(int columnaTabla) {
-        int sum = 0;
-        int promedio = 0;
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                sum += Math.round(Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString()));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        promedio = sum / jTableListaEmpleados.getRowCount();
-        return promedio;
-
-    }
-
-    public List<String> modaValores(int columnaTabla) {
-
-        int valores = 0;
-
-        List<Integer> arrayValores = new ArrayList<Integer>();
-
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                valores = Integer.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
-
-                arrayValores.add(valores);
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        //Hasta aca guardamos todos los elementos de la jTable en List
-
-        //Ahora realizamos el calculo de la moda
-        int moda = 0;
-
-        int frecuenciaDeVecesQueSeRepite = 0;
-        float frecuenciaRelativaDeVecesQueSeRepite = 0;
-
-        for (int i = 0; i < arrayValores.size(); i++) {
-
-            int vecesQueSeRepite = 0;
-
-            for (int j = 0; j < arrayValores.size(); j++) {
-
-                if (arrayValores.get(i) == arrayValores.get(j)) {
-
-                    vecesQueSeRepite++;
-                }
-            }
-            if (vecesQueSeRepite > frecuenciaDeVecesQueSeRepite) {
-
-                moda = arrayValores.get(i);
-
-                frecuenciaDeVecesQueSeRepite = vecesQueSeRepite;
-            }
-        }
-
-           frecuenciaRelativaDeVecesQueSeRepite = frecuenciaDeVecesQueSeRepite / (arrayValores.size());
-
-           
-        //  Como no podemos tener un return dos veces devolvemos una List de enteros con ambos valores
-        List<String> valoresObtenidos = new ArrayList<String>();
-
-        valoresObtenidos.add(String.valueOf(moda));
-        valoresObtenidos.add(String.valueOf(frecuenciaDeVecesQueSeRepite));
-        valoresObtenidos.add(String.valueOf(frecuenciaRelativaDeVecesQueSeRepite));
-
-        return valoresObtenidos;
-
-    }
     
     
     
-
-    public int maximaValores(int columnaTabla) {
-        int max = 0;
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                max = Math.round(max(max, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return max;
-    }
-
-    public int minimaValores(int columnaTabla) {
-
-        int min = Integer.parseInt(jTableListaEmpleados.getValueAt(0, columnaTabla).toString());
-
-        try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-
-                // min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
-                min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return min;
-    }
-
-    //==============FIN ANALYTICS=====================
+   
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -270,14 +145,6 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         jDesktopPane2Layout.setHorizontalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
-                .addGap(66, 258, Short.MAX_VALUE)
-                .addComponent(jLabelBusqueda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jTextFieldBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(282, 282, 282))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
@@ -286,46 +153,51 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabelTitulo)
-                        .addGap(361, 361, 361))))
-            .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonActualizar)
-                .addGap(58, 58, 58)
-                .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(175, 175, 175)
-                .addComponent(jButtonRefrescarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                        .addGap(347, 347, 347))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
+                        .addComponent(jLabelBusqueda)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(jTextFieldBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(282, 282, 282))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
+                        .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(204, 204, 204)
+                        .addComponent(jButtonActualizar)
+                        .addGap(93, 93, 93)
+                        .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(180, 180, 180)
+                        .addComponent(jButtonRefrescarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))))
         );
         jDesktopPane2Layout.setVerticalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                        .addComponent(jLabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelBusqueda, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabelBusqueda, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButtonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(14, 14, 14))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonRefrescarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jButtonRefrescarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(30, 30, 30)
+                        .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13))))
         );
 
         jDesktopPane1.setLayer(jDesktopPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -455,49 +327,6 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
     private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
         new JFrameAnalytics().setVisible(true);
 
-        //Enviamos lso datos al jframe de analytics
-        //IMPORTANTE-->EL JTEXTFIELD DEL OTRO JFRAME DEBERA ESTAR EN PUBLIC Y STATIC
-        //------EDAD(columna 3)-----
-        //CANTIDAD
-        JFrameAnalytics.jTextFieldEdadesCantidad.setText(String.valueOf(cantidadValores(3)));
-        //MAXIMO
-        JFrameAnalytics.jTextFieldEdadMaxima.setText(String.valueOf(maximaValores(3)));
-
-        //MINIMO
-        JFrameAnalytics.jTextFieldEdadMinima.setText(String.valueOf(minimaValores(3)));
-
-        //PROMEDIO-MEDIA
-        JFrameAnalytics.jTextFieldEdadPromedio.setText(String.valueOf(promedioValores(3)));
-
-        //MODA-MEDIANA
-        JFrameAnalytics.jTextFieldEdadQueMasSeRepite.setText(String.valueOf(modaValores(3).get(0)));
-
-        //FRECUENCIA DE VECES MODA-MEDIANA
-        JFrameAnalytics.jTextFieldFrecuenciaEdadQueMasSeRepite.setText(String.valueOf(modaValores(3).get(1)));
-
-        //FRECUENCIA RELATIVA DE VECES MODA-MEDIANA
-        JFrameAnalytics.jTextFieldFrecuenciaRelativaEdadQueMasSeRepite1.setText(String.valueOf(modaValores(3).get(2)));
-
-        //----------FIN EDAD------------
-//        //-----------NUMERO DE DOCUMENTO(columna 6)-----------------
-//        //MAXIMO
-//        JFrameAnalytics.jTextFieldPrecioMaxServicios.setText(String.valueOf(maximoPrecio(3)));
-//
-//        //MINIMO
-//        JFrameAnalytics.jTextFieldPrecioMinServicios.setText(String.valueOf(minimoPrecio(3)));
-//
-//        //-----------FIN NUMERO DE DOCUMENTO------------
-//        //---------TRANSPORTE(columna 5)--------------
-//        //TOTAL
-//        JFrameAnalytics.jTextFieldTotalTransporte.setText(String.valueOf(totalPrecio(5)));
-//
-//        //MAXIMO
-//        JFrameAnalytics.jTextFieldPrecioMaxTransporte.setText(String.valueOf(maximoPrecio(5)));
-//
-//        //MINIMO
-//        JFrameAnalytics.jTextFieldPrecioMinTransporte.setText(String.valueOf(minimoPrecio(5)));
-//
-//        //---------FIN TRANSPORTE--------
 
     }//GEN-LAST:event_jButtonAnalyticsActionPerformed
 

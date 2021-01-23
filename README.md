@@ -1,6 +1,6 @@
 # Gestor de Empleados
 
-**Se desarrolla una GUI en Java Swing con Maven para la gestión de Empleados implementando JDBC en MYSQL.**
+**Para la Gestión de Empleados de Diversos Sectores se desarrolló una aplicación tipo GUI-CRUD empleando Analytics y Gráficos en JAVA SE Swing con Maven aplicando JDBC con Mysql.**
 
 </br>
 
@@ -19,16 +19,20 @@
 | **Dependencia Maven** | **Finalidad** |               
 | ------------- | ------------- |
 | mysql-connector-8.0.21|  Conexion e implementación de queries a la db con mysql |
+| JFreeChart 1.0.131|  Generación de Gráficos |
+| JCommon  1.0.16|  Biblioteca de Clases para JFreeChart |
 
-* Repositorio dependencia: https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.21
+* Repositorio dependencia mysql-connector: https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.21
+* Repositorio dependencia JFreeChart: https://mvnrepository.com/artifact/jfree/jfreechart/1.0.13
+* Repositorio dependencia JCommon: https://mvnrepository.com/artifact/jfree/jcommon/1.0.16
 
 </br>
 
- ## Patrones de Diseño Implementados
+ ## Patrones de Diseño
  * **Singleton** 
  * **Dao** 
  
- ## Uso de Java8
+ ## Java8
 * **Streams**
 * **Lambdas**
 * **Filters**
@@ -40,6 +44,7 @@
 ## Descarga y documentacion de las Tecnologías empleadas:
 #### Java-JDK 12:                     https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
 #### Maven Repositories:              https://mvnrepository.com/
+#### Creación de Gráficos:            http://panamahitek.com/graficando-en-java-con-jfreechart/
 #### Apache Netbeans IDE:             https://netbeans.apache.org/download/index.html
 #### Cygwin:                           https://cygwin.com/install.html
 #### Git:                              https://git-scm.com/docs
@@ -49,19 +54,24 @@
 
 </br>
 
-<hr>
-
 ## Más Información
+
+<hr>
 
 ## Uso de Cygwin
 
-#### 1)Descargar la herramienta en https://cygwin.com/install.html dependiendo la arquitectura que se tenga (32-64 bits), como toda aplicacion siguiente.... siguiente....```(IMPORTANTE:NO TENER ABIERTO EL IDE DURANTE LA INSTALACION, SINO NO RECONOCE EL PATH)```
-#### 2)Abrir el IDE Netbeans, seguidamente seleccionar el proyecto para implementar git, ir a la barra del ide y clickear ```Tools->Open in terminal```
+#### 1)Descargar la herramienta en https://cygwin.com/install.html dependiendo la arquitectura que se tenga (32-64 bits), como toda aplicacion siguiente.... siguiente....
+````(IMPORTANTE:NO TENER ABIERTO EL IDE DURANTE LA INSTALACION, SINO NO RECONOCE EL PATH)````
+
+#### 2)Abrir el IDE Netbeans, seguidamente seleccionar el proyecto para implementar git, ir a la barra del ide y clickear```Tools->Open in terminal```
+
 #### 3)Te debería aparecer algo parecido a esto(Ruta Absoluta de tu proyecto)...
-```andre@DESKTOP-7BN69K1/cygdrive/c/Users/andre/OneDrive/Escritorio/LenguajesProgramacion/JAVASE/Proyectos/GestorGastos_app```
+````andre@DESKTOP-7BN69K1/cygdrive/c/Users/andre/OneDrive/Escritorio/LenguajesProgramacion/JAVASE/Proyectos/GestorGastos_app````
+
 #### 4)Crear un nuevo repositorio y comenzar con git
-```Debajo de esta sección, explico como usar git de forma detallada.```
-#### 5) Más Información https://ourcodeworld.com/articles/read/680/how-to-configure-an-integrated-terminal-command-prompt-in-netbeans-for-windows
+````Debajo de esta sección, explico como usar git de forma detallada.````
+
+#### 5) Más Información en https://ourcodeworld.com/articles/read/680/how-to-configure-an-integrated-terminal-command-prompt-in-netbeans-for-windows
 
 </br>
 

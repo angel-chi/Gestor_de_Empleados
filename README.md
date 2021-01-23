@@ -71,7 +71,7 @@
 #### 4)Crear un nuevo repositorio y comenzar con git
 ````Debajo de esta sección, explico como usar git de forma detallada.````
 
-#### 5) Más Información en ````https://ourcodeworld.com/articles/read/680/how-to-configure-an-integrated-terminal-command-prompt-in-netbeans-for-windows````
+#### 5) Más Información en https://ourcodeworld.com/articles/read/680/how-to-configure-an-integrated-terminal-command-prompt-in-netbeans-for-windows
 
 </br>
 

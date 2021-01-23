@@ -1,6 +1,6 @@
 # Gestor de Empleados
 
-** Para la Gestión de Empleados de Diversos Sectores se desarrolló una aplicación tipo GUI-CRUD empleando Analytics y Gráficos en JAVA SE Swing con Maven aplicando JDBC con Mysql.**
+**Para la Gestión de Empleados de Diversos Sectores se desarrolló una aplicación tipo GUI-CRUD empleando Analytics y Gráficos en JAVA SE Swing con Maven aplicando JDBC con Mysql.**
 
 </br>
 

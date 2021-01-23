@@ -1,6 +1,6 @@
 # Gestor de Empleados
 
-**Se desarrolla una GUI en Java Swing con Maven para la gestión de Empleados implementando JDBC en MYSQL.**
+** Para la Gestión de Empleados de Diversos Sectores se desarrolló una aplicación tipo GUI-CRUD empleando Analytics y Gráficos en JAVA SE Swing con Maven aplicando JDBC con Mysql.**
 
 </br>
 
@@ -19,8 +19,12 @@
 | **Dependencia Maven** | **Finalidad** |               
 | ------------- | ------------- |
 | mysql-connector-8.0.21|  Conexion e implementación de queries a la db con mysql |
+| JFreeChart 1.0.131|  Generación de Gráficos |
+| JCommon  1.0.16|  Biblioteca de Clases para JFreeChart |
 
-* Repositorio dependencia: https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.21
+* Repositorio dependencia mysql-connector: https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.21
+* Repositorio dependencia JFreeChart: https://mvnrepository.com/artifact/jfree/jfreechart/1.0.13
+* Repositorio dependencia JCommon: https://mvnrepository.com/artifact/jfree/jcommon/1.0.16
 
 </br>
 
@@ -40,6 +44,7 @@
 ## Descarga y documentacion de las Tecnologías empleadas:
 #### Java-JDK 12:                     https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
 #### Maven Repositories:              https://mvnrepository.com/
+#### Creación de Gráficos:            http://panamahitek.com/graficando-en-java-con-jfreechart/
 #### Apache Netbeans IDE:             https://netbeans.apache.org/download/index.html
 #### Cygwin:                           https://cygwin.com/install.html
 #### Git:                              https://git-scm.com/docs

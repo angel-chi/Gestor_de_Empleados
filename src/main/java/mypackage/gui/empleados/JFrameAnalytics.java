@@ -61,9 +61,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         //-----------------------------------
         //------EDAD(columna 3)-----
         //-----------------------------------
-        //CANTIDAD
+    //CANTIDAD
         //jTextFieldEdadesCantidad.setText(String.valueOf(cantidadValores(3)));
-        jTextFieldEdadesCantidad.setText(cantidadValores(11));
+        jTextFieldEdadesCantidad.setText(String.valueOf(cantidadValores(3)));
         //MAXIMO
         jTextFieldEdadMaxima.setText(String.valueOf(maximaValores(3)));
 
@@ -93,9 +93,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         //--------------------------------------------------------------------------------------------
         //-----------CANTIDAD DE HORAS SEMANALES(columna 10)---------------
         //---------------------------------------------------------------------------------------------
-        //CANTIDAD
+                //CANTIDAD
         //jTextFieldHsSemanalesCantidad.setText(String.valueOf(cantidadValores(10)));
-        jTextFieldHsSemanalesCantidad.setText(cantidadValores(11));
+        jTextFieldHsSemanalesCantidad.setText(String.valueOf(cantidadValores(10)));
         //MAXIMO
         jTextFieldHsSemanalesMaxima.setText(String.valueOf(maximaValores(10)));
 
@@ -126,35 +126,34 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         //---------------------------------------------------------
         //-----------SUELDO(columna 11)---------------
         //----------------------------------------------------------
-        //CANTIDAD
+   //CANTIDAD
         //jTextFieldSueldoCantidad.setText(String.valueOf(cantidadValores(11)));
-        jTextFieldSueldoCantidad.setText(cantidadValores(11));
+        jTextFieldSueldoCantidad.setText(String.valueOf(cantidadValores(11)));
         //MAXIMO
-        jTextFieldSueldoMaximo.setText(String.valueOf(maximaValores(11)));
+        jTextFieldSueldoMaximo.setText(String.valueOf(maximaValoresSueldoDecimal(11)));
 
         //MINIMO
-        jTextFieldSueldoMinimo.setText(String.valueOf(minimaValores(11)));
+        jTextFieldSueldoMinimo.setText(String.valueOf(minimaValoresSueldoDecimal(11)));
 
         //PROMEDIO-MEDIA
-        jTextFieldSueldoPromedio.setText(String.valueOf(promedioValores(11)));
+        jTextFieldSueldoPromedio.setText(String.valueOf(promedioValoresSueldoDecimal(11)));
 
         //MODA-MEDIANA
-        jTextFieldSueldoQueMasSeRepite.setText(String.valueOf(modaFrecuenciaValores(11).get(0)));
+        jTextFieldSueldoQueMasSeRepite.setText(modaFrecuenciaValoresSueldoDecimal(11).get(0));
 
         //FRECUENCIA DE VECES MODA-MEDIANA
-        jTextFieldFrecuenciaSueldoQueMasSeRepite.setText(String.valueOf(modaFrecuenciaValores(11).get(1)));
+        jTextFieldFrecuenciaSueldoQueMasSeRepite.setText(modaFrecuenciaValoresSueldoDecimal(11).get(1));
 
         //DISPERSION RESPECTO AL PROMEDIO-MEDIA (VARIANZA)
         //HAY QUE EFIENTIZAR ESTOS METODOS, COLOCANDO ESTOS PARAMETROS NOS OLVIDAMOS DE CREAR MILES DE METODOS
-        jTextFieldVarianzaSueldo.setText(String.valueOf(varianzaValores(11, 11)));
+        jTextFieldVarianzaSueldo.setText(String.valueOf(varianzaValoresSueldoDecimal(11, 11)));
 
         //GRADO DE DISPERSION (DESVIO ESTANDAR)
         //HAY QUE EFIENTIZAR ESTOS METODOS, COLOCANDO ESTOS PARAMETROS NOS OLVIDAMOS DE CREAR MILES DE METODOS
-        jTextFieldDesvioEstandarSueldo.setText(String.valueOf(desvioEstandarValores(11, 11, 11)));
-
-    //--------------------------------------------------------------
-        //-----------FIN SUELDO(columna 11)---------------
-        //--------------------------------------------------------------
+        jTextFieldDesvioEstandarSueldo.setText(String.valueOf(desvioEstandarValoresSueldoDecimal(11, 11, 11)));
+//        //--------------------------------------------------------------
+//        //-----------FIN SUELDO(columna 11)---------------
+//        //--------------------------------------------------------------
     }
 
     //=============================================
@@ -172,8 +171,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     DefaultCategoryDataset DatosSueldo = new DefaultCategoryDataset();
 
     public void graficarGraficoEdad() {
-        //DatosEdad.addValue(cantidadValores(3), "EDAD", "CANTIDAD");
-          DatosEdad.addValue(Float.valueOf(cantidadValores(3)), "EDAD", "CANTIDAD");
+          DatosEdad.addValue(cantidadValores(3), "EDAD", "CANTIDAD");
         DatosEdad.addValue(promedioValores(3), "EDAD", "PROMEDIO");
         DatosEdad.addValue(maximaValores(3), "EDAD", "MÁXIMA");
         DatosEdad.addValue(minimaValores(3), "EDAD", "MÍNIMA");
@@ -199,10 +197,10 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 
     public void graficarGraficoHsSemanales() {
         //DatosHsSemanales.addValue(cantidadValores(10), "HORAS SEMANALES", "CANTIDAD");
-        DatosHsSemanales.addValue(Float.valueOf(cantidadValores(10)), "HORAS SEMANALES", "CANTIDAD");
+        DatosHsSemanales.addValue(cantidadValores(10), "HORAS SEMANALES", "CANTIDAD");
         DatosHsSemanales.addValue(promedioValores(10), "HORAS SEMANALES", "PROMEDIO");
         DatosHsSemanales.addValue(maximaValores(10), "HORAS SEMANALES", "MÁXIMA");
-        DatosHsSemanales.addValue(minimaValores(10), "HORAS SEMANALES", "MÍNIMA");
+         DatosHsSemanales.addValue(minimaValores(10), "HORAS SEMANALES", "MÍNIMA");
         DatosHsSemanales.addValue(Integer.valueOf(modaFrecuenciaValores(10).get(0)), "HORAS SEMANALES", "MODA");
         DatosHsSemanales.addValue(Integer.valueOf(modaFrecuenciaValores(10).get(1)), "HORAS SEMANALES", "FRECUENCIA MODA");
         DatosHsSemanales.addValue(varianzaValores(10, 10), "HORAS SEMANALES", "VARIANZA");
@@ -222,17 +220,17 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         Ventana.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     }
-    
-     public void graficarGraficoSueldo() {
+
+    public void graficarGraficoSueldo() {
         //DatosSueldo.addValue(cantidadValores(11), "SUELDO", "CANTIDAD");
-        DatosSueldo.addValue(Integer.valueOf(cantidadValores(11)), "SUELDO", "CANTIDAD");
-        DatosSueldo.addValue(promedioValores(11), "SUELDO", "PROMEDIO");
-        DatosSueldo.addValue(maximaValores(11), "SUELDO", "MÁXIMA");
-        DatosSueldo.addValue(minimaValores(11), "SUELDO", "MÍNIMA");
-        DatosSueldo.addValue(Integer.valueOf(modaFrecuenciaValores(11).get(0)), "SUELDO", "MODA");
-        DatosSueldo.addValue(Integer.valueOf(modaFrecuenciaValores(11).get(1)), "SUELDO", "FRECUENCIA MODA");
-        DatosSueldo.addValue(varianzaValores(11, 11), "SUELDO", "VARIANZA");
-        DatosSueldo.addValue(desvioEstandarValores(11, 11, 11), "SUELDO", "DESVIO ESTANDAR");
+        DatosSueldo.addValue(cantidadValores(11), "SUELDO", "CANTIDAD");
+        DatosSueldo.addValue(promedioValoresSueldoDecimal(11), "SUELDO", "PROMEDIO");
+        DatosSueldo.addValue(maximaValoresSueldoDecimal(11), "SUELDO", "MÁXIMA");
+        DatosSueldo.addValue(minimaValoresSueldoDecimal(11), "SUELDO", "MÍNIMA");
+        DatosSueldo.addValue(Float.valueOf(modaFrecuenciaValoresSueldoDecimal(11).get(0)), "SUELDO", "MODA");
+        DatosSueldo.addValue(Float.valueOf(modaFrecuenciaValoresSueldoDecimal(11).get(1)), "SUELDO", "FRECUENCIA MODA");
+        DatosSueldo.addValue(varianzaValoresSueldoDecimal(11, 11), "SUELDO", "VARIANZA");
+        DatosSueldo.addValue(desvioEstandarValoresSueldoDecimal(11, 11, 11), "SUELDO", "DESVIO ESTANDAR");
 
 //Creamos un grafico de tipo barras
         GraficaSueldo = ChartFactory.createBarChart("GRÁFICA DE ANALYTICS SUELDO",
@@ -248,38 +246,23 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         Ventana.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     }
-     
+
     //=============================================
     //==============FIN GRÁFICOS=====================
     //=============================================
-
     //=============================================
     //==============ANALYTICS=====================
     //=============================================
-     
-//    public int cantidadValores(int columnaTabla) {
-//        int cantidad = 0;
-//
-//        try {
-//            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
-//
-//                cantidad = jTableListaEmpleados.getRowCount();
-//
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return cantidad;
-//    }
-     
-      public String cantidadValores(int columnaTabla) {
-          
-        String cantidad = null;
+
+    
+    
+      public int cantidadValores(int columnaTabla) {
+        int cantidad = 0;
 
         try {
             for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
 
-                cantidad = String.valueOf(jTableListaEmpleados.getRowCount());
+                cantidad = jTableListaEmpleados.getRowCount();
 
             }
         } catch (Exception e) {
@@ -287,6 +270,8 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         }
         return cantidad;
     }
+      
+      
 //---------------------------------------------------------------------------------
     public int maximaValores(int columnaTabla) {
         int max = 0;
@@ -294,6 +279,19 @@ public class JFrameAnalytics extends javax.swing.JFrame {
             for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
 
                 max = Math.round(max(max, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return max;
+    }
+//---------------------------------------------------------------------------------
+    public float maximaValoresSueldoDecimal(int columnaTabla) {
+        float max = 0;
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                max = Math.round(max(max, Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -317,6 +315,23 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         return min;
     }
 //---------------------------------------------------------------------------------
+    
+     public float minimaValoresSueldoDecimal(int columnaTabla) {
+
+        float min = Float.parseFloat(jTableListaEmpleados.getValueAt(0, columnaTabla).toString());
+
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                // min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+                min = Math.round(min(min, Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return min;
+    }
+//---------------------------------------------------------------------------------
     public int promedioValores(int columnaTabla) {
         int sum = 0;
         int promedio = 0;
@@ -324,6 +339,22 @@ public class JFrameAnalytics extends javax.swing.JFrame {
             for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
 
                 sum += Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        promedio = sum / jTableListaEmpleados.getRowCount();
+        return promedio;
+
+    }
+//---------------------------------------------------------------------------------
+    public float promedioValoresSueldoDecimal(int columnaTabla) {
+        float sum = 0;
+        float promedio = 0;
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                sum += Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -384,6 +415,57 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         return valoresObtenidos;
     }
 //---------------------------------------------------------------------------------
+     public List<String> modaFrecuenciaValoresSueldoDecimal(int columnaTabla) {
+
+        float valores = 0;
+
+        List<Float> arrayValores = new ArrayList<Float>();
+
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                valores = Float.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+
+                arrayValores.add(valores);
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //Hasta aca guardamos todos los elementos de la jTable en List
+
+        //Ahora realizamos el calculo de la moda
+        float moda = 0;
+
+        int frecuenciaDeVecesQueSeRepite = 0;
+
+        for (int i = 0; i < arrayValores.size(); i++) {
+
+            int  vecesQueSeRepite = 0;
+
+            for (int j = 0; j < arrayValores.size(); j++) {
+
+                if (arrayValores.get(i) == arrayValores.get(j)) {
+
+                    vecesQueSeRepite++;
+                }
+            }
+            if (vecesQueSeRepite > frecuenciaDeVecesQueSeRepite) {
+
+                moda = arrayValores.get(i);
+
+                frecuenciaDeVecesQueSeRepite = vecesQueSeRepite;
+            }
+        }
+        //  Como no podemos tener un return dos veces devolvemos una List de enteros con ambos valores
+        List<String> valoresObtenidos = new ArrayList<String>();
+
+        valoresObtenidos.add(String.valueOf(moda));
+        valoresObtenidos.add(String.valueOf(frecuenciaDeVecesQueSeRepite));
+
+        return valoresObtenidos;
+    }
+//---------------------------------------------------------------------------------
     //El segundo parametro nos aseguramos de no crear metodos repetidos
     public double varianzaValores(int columnaTabla, int columnaTablaPromedioValores) {
 
@@ -415,6 +497,43 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         return varianza;
     }
 //---------------------------------------------------------------------------------
+
+       //El segundo parametro nos aseguramos de no crear metodos repetidos
+    public float varianzaValoresSueldoDecimal(int columnaTabla, int columnaTablaPromedioValores) {
+
+        float valores;
+        float varianza = 0.0f;
+        DecimalFormat decimalFormat = new DecimalFormat("###.##");
+
+        List<Float> arrayValores = new ArrayList<Float>();
+
+        try {
+            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+
+                valores = Float.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+
+                arrayValores.add(valores);
+            }
+            for (int j = 0; j < jTableListaEmpleados.getRowCount(); j++) {
+                float rango;
+   
+                rango =(float)Math.pow(arrayValores.get(j) - promedioValoresSueldoDecimal(columnaTablaPromedioValores), 2f);
+               
+                varianza = varianza + rango;
+            }
+            //suma de diferencias sobre "n"
+            varianza = varianza /Float.valueOf(arrayValores.size());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return varianza;
+    }
+//---------------------------------------------------------------------------------
+
+    
+//---------------------------------------------------------------------------------
     public double desvioEstandarValores(int columnaTabla, int columnaTablaVarianza, int columnaTablaPromedioValores) {
 
         double desviacion = 0.0;
@@ -431,6 +550,27 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         return desviacion;
 
     }
+    //---------------------------------------------------------------------------------
+
+    //---------------------------------------------------------------------------------
+    public float desvioEstandarValoresSueldoDecimal(int columnaTabla, int columnaTablaVarianza, int columnaTablaPromedioValores) {
+
+        float   desviacion = 0.0f;
+
+        try {
+
+            //teniendo ya la varinza sólo debemos sacarle raiz cuadrada 
+            //tendremos la desviación estandar
+            desviacion = (float)Math.sqrt(varianzaValoresSueldoDecimal(columnaTablaVarianza, columnaTablaPromedioValores));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return desviacion;
+
+    }
+    //---------------------------------------------------------------------------------
+
 
     //=============================================
     //==============FIN ANALYTICS==================
@@ -1170,7 +1310,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldDesvioEstandarSueldoKeyTyped
 
     private void jButtonGraficaSueldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGraficaSueldoActionPerformed
-        graficarGraficoEdad();
+        graficarGraficoSueldo();
     }//GEN-LAST:event_jButtonGraficaSueldoActionPerformed
 
     private void jTextFieldSueldoCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSueldoCantidadActionPerformed
@@ -1242,7 +1382,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldFrecuenciaEdadQueMasSeRepiteKeyTyped
 
     private void jButtonGraficaHsSemanalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGraficaHsSemanalesActionPerformed
-       graficarGraficoHsSemanales();
+        graficarGraficoHsSemanales();
     }//GEN-LAST:event_jButtonGraficaHsSemanalesActionPerformed
 
     private void jTextFieldHsSemanalesCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHsSemanalesCantidadActionPerformed

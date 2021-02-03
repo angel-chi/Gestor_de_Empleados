@@ -41,7 +41,7 @@ Para este sección le di enfoque  estadístico a:*
 * Frecuencia de la MonoModa (Osea la cantidad de veces que se repite dicho valor(Moda) encontrado)
 * Varianza (Variabilidad respecto de la Media)
 * Desvío Estandar (Qué tan dispersos están los datos respecto de la Media)
-**Cabe destacar que los campos del registro sueldo son de tipo decimales, todo funcione bien hasta la parte del calculo de la Moda. Realmente no pude seleccionar esto. **
+**Cabe destacar que los campos del registro sueldo son de tipo decimales, todo funcione bien hasta la parte del calculo de la Moda. Realmente no pude seleccionar esto.**
 
 ![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(340).png)
 

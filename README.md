@@ -4,6 +4,57 @@
 
 </br>
 
+## Vista de Inicio de la Desktop App 1/6
+*Este es el Menú Inicial de la Aplicación, consta de 5 áreas(Empleados, Soporte Técnico, etc), 1 sección de Ayuda y una sección de Acerca de..
+Cabe destacar que, de las 5 áreas, solamente desarrollé la de Empleados, ya que al no implementar algún Framework para agilizar el desarrollo, me parece una pérdida de tiempo y redundancia de código.*
+
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(335).png)
+
+</br>
+
+## Vista de Inicio de la Desktop App 2/6
+*Una vez seleccionada el área, aparecera un formulario de validación de Ingreso para poder gestionar la misma. Los Usuarios y Contraseñas se Listan mas abajo*
+
+</br>
+
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(337).png)
+
+
+## Vista de Inicio de la Desktop App 3/6
+*Este es el Menú de Empleados, se puede Ingresar un Empleado a la Base de Datos, o Listarlos .*
+
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(338).png)
+
+## Vista de Inicio de la Desktop App 4/6
+*Esta es la vista del Listado de Empleados. Desarrollé un filtro de búsqueda especifico en relación al campo deseado. Dentro de los filters de Java8 se especificó funciones en las cuáles busquen el comienzo o que contengan al menos lo deseado en los registros.
+Para ACTUALIZAR o ELIMINAR algún registro se deberá seleccionar el deseado o mismo la aplicación te avisará con un mensaje de alerta (también posee un control de seleccion). `En el Borde Inferior Izquierdo se puede acceder a la sección de Analytics.`*
+
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(339).png)
+
+## Vista de Inicio de la Desktop App 5/6
+*Esta es la vista de Analytics. Seleccioné solo 3 columnas de la db ya que estos registros son de tipo numerico.
+Para este sección le di enfoque  estadístico a:
+* Cantidad de Valores
+* Valores Máximos y Mínimos
+* Promedio/Media de Valores 
+* Valores que más se Repiten(MonoModa). Se aplica MonoModa ya que podrían exister varios campos con varios valores iguales diferentes
+* Frecuencia de la MonoModa (Osea la cantidad de veces que se repite dicho valor(Moda) encontrado)
+* Varianza (Variabilidad respecto de la Media)
+* Desvío Estandar (Qué tan dispersos están los datos respecto de la Media)*
+**Cabe destacar que los campos del registro sueldo son de tipo decimales, todo funcione bien hasta la parte del calculo de la Moda. Realmente no pude seleccionar esto. **
+
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(340).png)
+
+
+## Vista de Inicio de la Desktop App 6/6
+*Dentro de la Vista de Analytics implemente las librerías Gráficas para una visualización diferente de los datos obtenidos. Se puede utilizar gráficos de torta, curvas, etc.*
+
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(341).png)
+
+ </br>
+
+</br>
+
 | **Tecnologías** | **Versión** |               
 | ------------- | ------------- |
 | Java |   12.0.2 |

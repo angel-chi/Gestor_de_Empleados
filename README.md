@@ -42,7 +42,7 @@ Para este sección le di enfoque  estadístico a:*
 * Varianza (Variabilidad respecto de la Media)
 * Desvío Estandar (Qué tan dispersos están los datos respecto de la Media)
 
-*`(Cabe destacar que los campos del registro sueldo son de tipo decimales, todo funcione bien hasta la parte del calculo de la Moda. Realmente no pude seleccionar esto).`*
+*`(Cabe destacar que los campos del registro sueldo en la base de datos son de tipo decimales, todo funciona bien hasta la parte del cálculo de la Moda. Anexe funciones especificas para trabajar con la parte de sueldo pero  no pude soluccionar esto).`*
 
 ![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(340).png)
 

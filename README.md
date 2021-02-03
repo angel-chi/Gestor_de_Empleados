@@ -33,14 +33,14 @@ Para ACTUALIZAR o ELIMINAR algún registro se deberá seleccionar el deseado o m
 
 ## Vista de Inicio de la Desktop App 5/6
 *Esta es la vista de Analytics. Seleccioné solo 3 columnas de la db ya que estos registros son de tipo numerico.
-Para este sección le di enfoque  estadístico a:
+Para este sección le di enfoque  estadístico a:*
 * Cantidad de Valores
 * Valores Máximos y Mínimos
 * Promedio/Media de Valores 
 * Valores que más se Repiten(MonoModa). Se aplica MonoModa ya que podrían exister varios campos con varios valores iguales diferentes
 * Frecuencia de la MonoModa (Osea la cantidad de veces que se repite dicho valor(Moda) encontrado)
 * Varianza (Variabilidad respecto de la Media)
-* Desvío Estandar (Qué tan dispersos están los datos respecto de la Media)*
+* Desvío Estandar (Qué tan dispersos están los datos respecto de la Media)
 **Cabe destacar que los campos del registro sueldo son de tipo decimales, todo funcione bien hasta la parte del calculo de la Moda. Realmente no pude seleccionar esto. **
 
 ![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorEmpleados_app/Captura%20de%20pantalla%20(340).png)

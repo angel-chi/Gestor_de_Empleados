@@ -7,7 +7,7 @@ package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
 //import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
+import mypackage.gui.estudiantes.JFrameIngresoEstudiante;
 
 /**
  *
@@ -105,7 +105,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         
         if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
 
-             new  JFrameIngresoEmpleado().setVisible(true);
+             new JFrameIngresoEstudiante().setVisible(true);
 
             dispose();
 

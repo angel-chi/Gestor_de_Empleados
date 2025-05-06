@@ -31,7 +31,7 @@ public interface I_DesarrolladorRepository {
     
     default Desarrollador getByIdEmpleados(int id_empleados) {
         return getStream()
-                .filter(objeto -> objeto.getId_empleados() == id_empleados)
+                .filter(objeto -> objeto.getId_estudiantes() == id_empleados)
                 .findAny()
                 .orElse(new Desarrollador());
     }

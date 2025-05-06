@@ -38,7 +38,7 @@ create table desarrolladores(
 
 id							int 									auto_increment 	primary key,
 id_estudiantes				int										not null unique,
-constraint					fk_id_empleados_desarrolladores			foreign key(id_estudiantes) references estudiantes(id),
+constraint					fk_id_estudiantes_desarrolladores			foreign key(id_estudiantes) references estudiantes(id),
 puesto						varchar(30)								not null,
 certificaciones				varchar(80),
 habilidades					varchar(60)								not null,
@@ -50,7 +50,7 @@ create table soporte_tecnico(
 
 id					int 									auto_increment 	primary key,
 id_estudiantes		int										not null unique,
-constraint			fk_id_empleados_soporte_tecnico			foreign key(id_estudiantes) references estudiantes(id),
+constraint			fk_id_estudiantes_soporte_tecnico			foreign key(id_estudiantes) references estudiantes(id),
 puesto				varchar(30)								not null,
 formacion			varchar(50),-- titulo universitario, etc
 certificaciones		varchar(80)
@@ -62,7 +62,7 @@ create table administracion(
 
 id					int 									auto_increment 	primary key,
 id_estudiantes		int										not null unique,
-constraint			fk_id_empleados_administracion			foreign key(id_estudiantes) references estudiantes(id),
+constraint			fk_id_estudiantes_administracion			foreign key(id_estudiantes) references estudiantes(id),
 puesto				varchar(30)								not null,
 habilidades			varchar(50)								not null
 
@@ -72,7 +72,7 @@ create table gerentes(
 
 id					int 									auto_increment 			primary key,
 id_estudiantes		int										not null unique,
-constraint			fk_id_empleados_gerentes				foreign key(id_estudiantes) references estudiantes(id),
+constraint			fk_id_estudiantes_gerentes				foreign key(id_estudiantes) references estudiantes(id),
 sector				varchar(30)								not null,
 formacion			varchar(60), -- titulo, etc
 antiguedad			int										not  null

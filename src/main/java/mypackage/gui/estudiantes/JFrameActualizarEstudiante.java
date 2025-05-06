@@ -65,7 +65,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("ACTUALIZACIÓN DE ESTUDIANTES");
         jDesktopPane1.add(jLabelTitulo);
-        jLabelTitulo.setBounds(30, 20, 610, 50);
+        jLabelTitulo.setBounds(40, 20, 610, 50);
 
         jLabelNombre.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));

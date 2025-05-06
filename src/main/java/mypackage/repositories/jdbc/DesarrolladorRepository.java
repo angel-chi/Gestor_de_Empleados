@@ -30,7 +30,7 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
                 )) {
 
                     consultaPreparada.setInt(1, desarrollador.getId());
-                    consultaPreparada.setInt(2, desarrollador.getId_empleados());
+                    consultaPreparada.setInt(2, desarrollador.getId_estudiantes());
                     consultaPreparada.setString(3, desarrollador.getPuesto());
                     consultaPreparada.setString(4, desarrollador.getCertificaciones());
                     consultaPreparada.setString(5, desarrollador.getHabilidades());
@@ -75,7 +75,7 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
                         "UPDATE desarrolladores SET id_empleados=?,puesto=?,certificaciones=?,habilidades=?,proyectos_en_produccion=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setInt(1, desarrollador.getId_empleados());
+            consultaPreparada.setInt(1, desarrollador.getId_estudiantes());
             consultaPreparada.setString(2, desarrollador.getPuesto());
             consultaPreparada.setString(3, desarrollador.getCertificaciones());
             consultaPreparada.setString(4, desarrollador.getHabilidades());

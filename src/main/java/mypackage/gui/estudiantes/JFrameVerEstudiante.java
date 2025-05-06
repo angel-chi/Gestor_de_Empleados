@@ -29,6 +29,7 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
     public void listarEstudiantes() {
 
         new Table().cargar(jTableListaEstudiantes, estudianteRepository.getAll());
+
     }
     
     
@@ -47,12 +48,12 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         jDesktopPane2 = new javax.swing.JDesktopPane();
         jLabelTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableListaEstudiantes = new javax.swing.JTable();
+        jTableListaEmpleados = new javax.swing.JTable();
         jButtonEliminar = new javax.swing.JButton();
         jButtonActualizar = new javax.swing.JButton();
         jLabelBusqueda = new javax.swing.JLabel();
-        jTextFieldBusquedaEstudiantes = new javax.swing.JTextField();
-        jComboBoxBusquedaEstudiantes = new javax.swing.JComboBox<>();
+        jTextFieldBusquedaEmpleados = new javax.swing.JTextField();
+        jComboBoxBusquedaEmpleados = new javax.swing.JComboBox<>();
         jButtonRefrescarLista = new javax.swing.JButton();
         jButtonAnalytics = new javax.swing.JButton();
 
@@ -62,9 +63,9 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("LISTA DE ESTUDIANTES");
 
-        jTableListaEstudiantes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, null, 0, 0, new java.awt.Font("Arial", 1, 18))); // NOI18N
-        jTableListaEstudiantes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jTableListaEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
+        jTableListaEmpleados.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
+        jTableListaEmpleados.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jTableListaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -72,8 +73,8 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
 
             }
         ));
-        jTableListaEstudiantes.setToolTipText("");
-        jScrollPane1.setViewportView(jTableListaEstudiantes);
+        jTableListaEmpleados.setToolTipText("");
+        jScrollPane1.setViewportView(jTableListaEmpleados);
 
         jButtonEliminar.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButtonEliminar.setText("ELIMINAR");
@@ -95,20 +96,25 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         jLabelBusqueda.setForeground(new java.awt.Color(255, 255, 255));
         jLabelBusqueda.setText("Buscar por :");
 
-        jTextFieldBusquedaEstudiantes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jTextFieldBusquedaEstudiantes.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldBusquedaEmpleados.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jTextFieldBusquedaEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldBusquedaEmpleadosActionPerformed(evt);
             }
         });
-        jTextFieldBusquedaEstudiantes.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldBusquedaEmpleados.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextFieldBusquedaEmpleadosKeyReleased(evt);
             }
         });
 
-        jComboBoxBusquedaEstudiantes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jComboBoxBusquedaEstudiantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "TIPO DE DOCUMENTO", "NÚMERO DE DOCUMENTO", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO", "CANTIDAD DE HS SEMANALES", "SUELDO" }));
+        jComboBoxBusquedaEmpleados.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jComboBoxBusquedaEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "TIPO DE DOCUMENTO", "NÚMERO DE DOCUMENTO", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO", "CANTIDAD DE HS SEMANALES", "SUELDO" }));
+        jComboBoxBusquedaEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxBusquedaEmpleadosActionPerformed(evt);
+            }
+        });
 
         jButtonRefrescarLista.setBackground(new java.awt.Color(0, 34, 103));
         jButtonRefrescarLista.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -135,8 +141,8 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         jDesktopPane2.setLayer(jButtonEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jButtonActualizar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabelBusqueda, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jTextFieldBusquedaEstudiantes, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jComboBoxBusquedaEstudiantes, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(jTextFieldBusquedaEmpleados, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(jComboBoxBusquedaEmpleados, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jButtonRefrescarLista, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jButtonAnalytics, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -160,9 +166,9 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
                         .addComponent(jLabelBusqueda)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxBusquedaEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
-                        .addComponent(jTextFieldBusquedaEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(282, 282, 282))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
                         .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,8 +189,8 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelBusqueda, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBoxBusquedaEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldBusquedaEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,6 +336,10 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonAnalyticsActionPerformed
 
+    private void jComboBoxBusquedaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxBusquedaEmpleadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxBusquedaEmpleadosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -376,13 +386,13 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAnalytics;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonRefrescarLista;
-    private javax.swing.JComboBox<String> jComboBoxBusquedaEstudiantes;
+    private javax.swing.JComboBox<String> jComboBoxBusquedaEmpleados;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabelBusqueda;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableListaEstudiantes;
-    private javax.swing.JTextField jTextFieldBusquedaEstudiantes;
+    private javax.swing.JTable jTableListaEmpleados;
+    private javax.swing.JTextField jTextFieldBusquedaEmpleados;
     // End of variables declaration//GEN-END:variables
 }

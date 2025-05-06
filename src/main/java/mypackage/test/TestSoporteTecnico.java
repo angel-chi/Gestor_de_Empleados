@@ -68,7 +68,7 @@ public class TestSoporteTecnico {
 
         
   System.out.println("\n=================Empleado de  Soporte Tecnico con el id de empleados 5 ===============\n");
-        System.out.println(soporteTecnicoRepository.getByIdEmpleados(5));
+        System.out.println(soporteTecnicoRepository.getByIdEstudiantes(5));
 
           System.out.println("\n=================Empleado/s de  Soporte Tecnico con el puesto de NetworkingAdmin ===============\n");
         soporteTecnicoRepository.getLikePuesto("NetworkingAdmin").forEach(System.out::println);

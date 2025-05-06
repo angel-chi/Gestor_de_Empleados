@@ -25,7 +25,7 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement(
-                        "INSERT INTO desarrolladores(id,id_empleados,puesto,certificaciones,habilidades,proyectos_en_produccion)"
+                        "INSERT INTO desarrolladores(id,id_estudiantes,puesto,certificaciones,habilidades,proyectos_en_produccion)"
                         + "values(?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
@@ -72,7 +72,7 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
         }
         try ( PreparedStatement consultaPreparada = conexionDB
                 .prepareStatement(
-                        "UPDATE desarrolladores SET id_empleados=?,puesto=?,certificaciones=?,habilidades=?,proyectos_en_produccion=? "
+                        "UPDATE desarrolladores SET id_estudiantes=?,puesto=?,certificaciones=?,habilidades=?,proyectos_en_produccion=? "
                        + "WHERE id=?")) {
 
             consultaPreparada.setInt(1, desarrollador.getId_estudiantes());
@@ -102,7 +102,7 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
 
                         listaDesarrolladores.add(new Desarrollador(
                                 resultSetDesarrolladores.getInt("id"),
-                                resultSetDesarrolladores.getInt("id_empleados"),
+                                resultSetDesarrolladores.getInt("id_estudiantes"),
                                 resultSetDesarrolladores.getString("puesto"),
                                 resultSetDesarrolladores.getString("certificaciones"),
                                 resultSetDesarrolladores.getString("habilidades"),

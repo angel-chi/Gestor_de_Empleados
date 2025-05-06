@@ -242,7 +242,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jButtonAgregar1.setBackground(new java.awt.Color(1, 26, 86));
         jButtonAgregar1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonAgregar1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregar1.setText("LISTA DE EMPLEADOS");
+        jButtonAgregar1.setText("LISTA DE ESTUDIANTES");
         jButtonAgregar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregar1ActionPerformed(evt);

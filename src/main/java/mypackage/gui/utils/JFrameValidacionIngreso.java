@@ -103,7 +103,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
            
 
         
-        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
+        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("estudiantes"))){
 
              new JFrameIngresoEstudiante().setVisible(true);
 

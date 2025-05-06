@@ -65,7 +65,7 @@ public class TestGerente {
         System.out.println(gerenteRepository.getById(1));
 
         System.out.println("\n=================Gerente   con el id de empleados 1 ===============\n");
-        System.out.println(gerenteRepository.getByIdEmpleados(1));
+        System.out.println(gerenteRepository.getByIdEstudiantes(1));
 
         System.out.println("\n=================Gerente/s  del sector de Soporte Tecnico ===============\n");
         gerenteRepository.getLikeSector("Soporte Tecnico").forEach(System.out::println);

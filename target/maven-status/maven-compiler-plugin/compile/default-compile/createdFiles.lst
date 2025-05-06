@@ -20,6 +20,7 @@ mypackage/gui/estudiantes/JFrameVerEstudiante$5.class
 mypackage/gui/utils/JFrameValidacionIngreso$3.class
 mypackage/test/TestEmpleado.class
 mypackage/gui/estudiantes/JFrameAnalytics$14.class
+mypackage/gui/estudiantes/JFrameVerEstudiante$8.class
 mypackage/test/TestGerente.class
 mypackage/repositories/jdbc/GerenteRepository.class
 mypackage/gui/estudiantes/JFrameAnalytics$44.class

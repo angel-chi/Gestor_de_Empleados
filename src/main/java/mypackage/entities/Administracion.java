@@ -42,7 +42,7 @@ public class Administracion {
     public void setId(int id) {
         this.id = id;
     }
-    public int getId_empleados() {
+    public int getId_estudiantes() {
         return id_empleados;
     }
     public void setId_empleados(int id_empleados) {

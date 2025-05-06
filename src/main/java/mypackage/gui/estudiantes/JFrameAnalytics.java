@@ -33,7 +33,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     /** Creates new form JFrameAnalytics */
     public JFrameAnalytics() {
         initComponents();
-        listarEmpleados();
+        listarEstudiantes();
         setearTextFields();
     }
     /*
@@ -45,9 +45,10 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     //=============================================
     //===LISTAMOS LOS EMPLEADOS EN LA TABLA ESCONDIDA==
     //=============================================
-    public void listarEmpleados() {
+    public void listarEstudiantes() {
 
-        new Table().cargar(jTableListaEmpleados, estudianteRepository.getAll());
+        new Table().cargar(jTableListaEstudiantes, estudianteRepository.getAll());
+
 
     }
     //=============================================
@@ -260,9 +261,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         int cantidad = 0;
 
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                cantidad = jTableListaEmpleados.getRowCount();
+                cantidad = jTableListaEstudiantes.getRowCount();
 
             }
         } catch (Exception e) {
@@ -276,9 +277,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     public int maximaValores(int columnaTabla) {
         int max = 0;
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                max = Math.round(max(max, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+                max = Math.round(max(max, Integer.parseInt(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString())));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -289,9 +290,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     public float maximaValoresSueldoDecimal(int columnaTabla) {
         float max = 0;
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                max = Math.round(max(max, Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+                max = Math.round(max(max, Float.parseFloat(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString())));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -301,13 +302,13 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 //---------------------------------------------------------------------------------
     public int minimaValores(int columnaTabla) {
 
-        int min = Integer.parseInt(jTableListaEmpleados.getValueAt(0, columnaTabla).toString());
+        int min = Integer.parseInt(jTableListaEstudiantes.getValueAt(0, columnaTabla).toString());
 
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
                 // min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
-                min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+                min = Math.round(min(min, Integer.parseInt(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString())));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -318,13 +319,13 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     
      public float minimaValoresSueldoDecimal(int columnaTabla) {
 
-        float min = Float.parseFloat(jTableListaEmpleados.getValueAt(0, columnaTabla).toString());
+        float min = Float.parseFloat(jTableListaEstudiantes.getValueAt(0, columnaTabla).toString());
 
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
                 // min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
-                min = Math.round(min(min, Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+                min = Math.round(min(min, Float.parseFloat(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString())));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -336,14 +337,14 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         int sum = 0;
         int promedio = 0;
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                sum += Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+                sum += Integer.parseInt(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString());
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        promedio = sum / jTableListaEmpleados.getRowCount();
+        promedio = sum / jTableListaEstudiantes.getRowCount();
         return promedio;
 
     }
@@ -352,14 +353,14 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         float sum = 0;
         float promedio = 0;
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                sum += Float.parseFloat(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+                sum += Float.parseFloat(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString());
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        promedio = sum / jTableListaEmpleados.getRowCount();
+        promedio = sum / jTableListaEstudiantes.getRowCount();
         return promedio;
 
     }
@@ -371,9 +372,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         List<Integer> arrayValores = new ArrayList<Integer>();
 
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                valores = Integer.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+                valores = Integer.valueOf(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString());
 
                 arrayValores.add(valores);
 
@@ -422,9 +423,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         List<Float> arrayValores = new ArrayList<Float>();
 
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                valores = Float.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+                valores = Float.valueOf(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString());
 
                 arrayValores.add(valores);
 
@@ -476,13 +477,13 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         List<Integer> arrayValores = new ArrayList<Integer>();
 
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                valores = Integer.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+                valores = Integer.valueOf(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString());
 
                 arrayValores.add(valores);
             }
-            for (int j = 0; j < jTableListaEmpleados.getRowCount(); j++) {
+            for (int j = 0; j < jTableListaEstudiantes.getRowCount(); j++) {
                 double rango;
                 rango = Math.pow(arrayValores.get(j) - promedioValores(columnaTablaPromedioValores), 2f);
                 varianza = varianza + rango;
@@ -508,13 +509,13 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         List<Float> arrayValores = new ArrayList<Float>();
 
         try {
-            for (int i = 0; i < jTableListaEmpleados.getRowCount(); i++) {
+            for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
 
-                valores = Float.valueOf(jTableListaEmpleados.getValueAt(i, columnaTabla).toString());
+                valores = Float.valueOf(jTableListaEstudiantes.getValueAt(i, columnaTabla).toString());
 
                 arrayValores.add(valores);
             }
-            for (int j = 0; j < jTableListaEmpleados.getRowCount(); j++) {
+            for (int j = 0; j < jTableListaEstudiantes.getRowCount(); j++) {
                 float rango;
    
                 rango =(float)Math.pow(arrayValores.get(j) - promedioValoresSueldoDecimal(columnaTablaPromedioValores), 2f);
@@ -628,7 +629,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         jLabelEdadMasRepetido1 = new javax.swing.JLabel();
         jLabelEdadMasRepetido2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableListaEmpleados = new javax.swing.JTable();
+        jTableListaEstudiantes = new javax.swing.JTable();
         jButtonGraficaSueldo = new javax.swing.JButton();
         jLabelCantidadEdad = new javax.swing.JLabel();
         jTextFieldSueldoCantidad = new javax.swing.JTextField();
@@ -677,7 +678,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Arial Black", 1, 28)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("ANALYTICS-EMPLEADOS");
+        jLabelTitulo.setText("ANALYTICS-ESTUDIANTES");
         jDesktopPane1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, -1));
 
         jLabelHsSemanalesMinima.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -869,9 +870,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         jLabelEdadMasRepetido2.setText("se repite (MonoModa):");
         jDesktopPane1.add(jLabelEdadMasRepetido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 740, 200, 20));
 
-        jTableListaEmpleados.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
-        jTableListaEmpleados.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jTableListaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
+        jTableListaEstudiantes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
+        jTableListaEstudiantes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jTableListaEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -879,8 +880,8 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 
             }
         ));
-        jTableListaEmpleados.setToolTipText("");
-        jScrollPane1.setViewportView(jTableListaEmpleados);
+        jTableListaEstudiantes.setToolTipText("");
+        jScrollPane1.setViewportView(jTableListaEstudiantes);
 
         jDesktopPane1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 0, 410));
 
@@ -1545,7 +1546,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JTable jTableListaEmpleados;
+    private javax.swing.JTable jTableListaEstudiantes;
     public static javax.swing.JTextField jTextFieldDesvioEstandarEdad;
     public static javax.swing.JTextField jTextFieldDesvioEstandarHsSemanales;
     public static javax.swing.JTextField jTextFieldDesvioEstandarSueldo;
@@ -1571,4 +1572,6 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextFieldVarianzaHsSemanales;
     public static javax.swing.JTextField jTextFieldVarianzaSueldo;
     // End of variables declaration//GEN-END:variables
+
+
 }

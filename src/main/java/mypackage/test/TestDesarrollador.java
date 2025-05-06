@@ -1,7 +1,6 @@
 
 package mypackage.test;
 
-import java.time.LocalDate;
 import mypackage.connector.LocalConnector;
 import mypackage.entities.Desarrollador;
 import mypackage.repositories.interfaces.I_DesarrolladorRepository;
@@ -52,7 +51,7 @@ public class TestDesarrollador {
         
         //SELECT
                 System.out.println("\n=================Desarrollador con el id 3 de Empleados===============\n");
-        System.out.println(desarrolladorRepository.getByIdEmpleados(3));
+        System.out.println(desarrolladorRepository.getByIdEstudiantes(3));
         
         System.out.println("\n=================Desarrollador/es con el puesto de Front End Dev===============\n");
         desarrolladorRepository.getLikePuesto("Front End Dev").forEach(System.out::println);

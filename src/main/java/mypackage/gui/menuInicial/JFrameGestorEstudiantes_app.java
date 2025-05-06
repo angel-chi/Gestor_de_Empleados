@@ -12,6 +12,8 @@ import mypackage.gui.otros.JFrameAyuda;
 import mypackage.repositories.interfaces.I_EstudianteRepository;
 import mypackage.repositories.jdbc.EstudianteRepository;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author andre
@@ -55,9 +57,9 @@ public class JFrameGestorEstudiantes_app extends javax.swing.JFrame {
         jButtonEstudiantes.setBackground(new java.awt.Color(1, 45, 151));
         jButtonEstudiantes.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonEstudiantes.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEstudiantes.setText("EMPLEADOS");
+        jButtonEstudiantes.setText("Estudiantes");
         jButtonEstudiantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(ActionEvent evt) {
                 jButtonEstudiantesActionPerformed(evt);
             }
         });

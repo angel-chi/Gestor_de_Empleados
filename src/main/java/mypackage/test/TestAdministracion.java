@@ -64,7 +64,7 @@ public class TestAdministracion {
         System.out.println(administracionRepository.getById(1));
 
         System.out.println("\n=================Empleado de  Administracion  con el id de empleados 1 ===============\n");
-        System.out.println(administracionRepository.getByIdEmpleados(1));
+        System.out.println(administracionRepository.getByIdEstudiantes(1));
 
         System.out.println("\n=================Empleado/s de  Administracion  con el puesto de Administradora General ===============\n");
         administracionRepository.getLikePuesto("Administradora General").forEach(System.out::println);

@@ -4,13 +4,18 @@
  * and open the template in the editor.
  */
 package mypackage.gui.estudiantes;
-
+import mypackage.entities.Estudiante;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
+import mypackage.repositories.jdbc.EstudianteRepository;
+import mypackage.connector.LocalConnector;
+import javax.swing.JOptionPane;
 /**
  *
  * @author andre
  */
 public class JFrameIngresoEstudiante extends javax.swing.JFrame {
-
+    private final I_EstudianteRepository estudianteRepository =
+            new EstudianteRepository(LocalConnector.getLocalConnection());
     /** Creates new form JFrameEmpleados */
     public JFrameIngresoEstudiante() {
         initComponents();
@@ -273,10 +278,45 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
+        try {
+            String nombre  = jTextFieldNombre.getText().trim();
+            String apellido= jTextFieldApellido.getText().trim();
+            int edad       = Integer.parseInt(jTextFieldEdad.getText().trim());
+            String genero  = jTextFieldGenero.getText().trim();
+            String tipoDoc = jTextFieldTipoDoc.getText().trim();
+            String numDoc  = jTextFieldNumDoc.getText().trim();
+            String correo  = jTextFieldCorreoElectronico.getText().trim();
+            String tel     = jTextFieldNumeroTelefono.getText().trim();
+            String fecha   = jTextFieldFechaDeInicio.getText().trim(); // asume formato YYYY-MM-DD
+            int hrs        = Integer.parseInt(jTextFieldCantidadHsSemanales.getText().trim());
+            float sueldo   = Float.parseFloat(jTextFieldSueldo.getText().trim());
+
+            // Crea y guarda el estudiante
+            Estudiante est = new Estudiante(0, nombre, apellido, edad, genero,
+                    tipoDoc, numDoc, correo, tel, fecha, hrs, sueldo);
+            estudianteRepository.save(est);
+
+            JOptionPane.showMessageDialog(this, "Estudiante guardado con ID: " + est.getId());
+            jButtonLimpiar.doClick();  // limpia los campos
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Edad, horas o sueldo no son correctos",
+                    "Error de formato", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al guardar el estudiante",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
        new JFrameVerEstudiante().setVisible(true);
+
+
+
+
+
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
 
     /**
@@ -286,7 +326,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

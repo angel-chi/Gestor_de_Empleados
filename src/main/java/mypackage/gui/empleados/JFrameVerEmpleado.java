@@ -325,7 +325,7 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRefrescarListaActionPerformed
 
     private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
-        new JFrameAnalytics().setVisible(true);
+        new JFrameAnalyticsEmpleado().setVisible(true);
 
 
     }//GEN-LAST:event_jButtonAnalyticsActionPerformed

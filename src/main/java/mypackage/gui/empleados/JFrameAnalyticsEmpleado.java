@@ -26,12 +26,12 @@ import org.jfree.data.category.DefaultCategoryDataset;
  *
  * @author andre
  */
-public class JFrameAnalytics extends javax.swing.JFrame {
+public class JFrameAnalyticsEmpleado extends javax.swing.JFrame {
 
     private I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
 
     /** Creates new form JFrameAnalytics */
-    public JFrameAnalytics() {
+    public JFrameAnalyticsEmpleado() {
         initComponents();
         listarEmpleados();
         setearTextFields();
@@ -1466,20 +1466,20 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameAnalytics.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAnalyticsEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameAnalytics.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAnalyticsEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameAnalytics.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAnalyticsEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameAnalytics.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAnalyticsEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameAnalytics().setVisible(true);
+                new JFrameAnalyticsEmpleado().setVisible(true);
             }
         });
     }

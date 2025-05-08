@@ -4,7 +4,7 @@
 
 drop database if exists db_estudiantes;
 
-create database db_estudiantess;
+create database db_estudiantes;
 
 use db_estudiantes;
 

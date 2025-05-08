@@ -78,7 +78,7 @@ public class Desarrollador {
     
     @Override
     public String toString() {
-        return "Desarrollador{" + "id=" + id + ", id_empleados=" + id_estudiantes + ", puesto=" + puesto + ", certificaciones=" + certificaciones + ", habilidades=" + habilidades + ", proyectos_en_produccion=" + proyectos_en_produccion + '}';
+        return "Desarrollador{" + "id=" + id + ", id_estudiantes=" + id_estudiantes + ", puesto=" + puesto + ", certificaciones=" + certificaciones + ", habilidades=" + habilidades + ", proyectos_en_produccion=" + proyectos_en_produccion + '}';
     }
     
     

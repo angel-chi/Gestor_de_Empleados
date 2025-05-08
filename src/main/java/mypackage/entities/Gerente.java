@@ -5,7 +5,7 @@ package mypackage.entities;
 public class Gerente {
     
     private int id;
-    private int id_empleados;
+    private int id_estudiantes;
     private String sector;
     private String formacion;
     private int antiguedad;
@@ -13,16 +13,16 @@ public class Gerente {
     public Gerente() {
     }
     
-    public Gerente(int id_empleados, String sector, String formacion, int antiguedad) {
-        this.id_empleados = id_empleados;
+    public Gerente(int id_estudiantes, String sector, String formacion, int antiguedad) {
+        this.id_estudiantes = id_estudiantes;
         this.sector = sector;
         this.formacion = formacion;
         this.antiguedad = antiguedad;
     }
     
-    public Gerente(int id, int id_empleados, String sector, String formacion, int antiguedad) {
+    public Gerente(int id, int id_estudiantes, String sector, String formacion, int antiguedad) {
         this.id = id;
-        this.id_empleados = id_empleados;
+        this.id_estudiantes = id_estudiantes;
         this.sector = sector;
         this.formacion = formacion;
         this.antiguedad = antiguedad;
@@ -37,10 +37,10 @@ public class Gerente {
         this.id = id;
     }
     public int getId_estudiantes() {
-        return id_empleados;
+        return id_estudiantes;
     }
-    public void setId_empleados(int id_empleados) {
-        this.id_empleados = id_empleados;
+    public void setId_estudiantes(int id_estudiantes) {
+        this.id_estudiantes = id_estudiantes;
     }
     public String getSector() {
         return sector;
@@ -63,7 +63,7 @@ public class Gerente {
     
         @Override
     public String toString() {
-        return "Gerente{" + "id=" + id + ", id_empleados=" + id_empleados + ", sector=" + sector + ", formacion=" + formacion + ", antiguedad=" + antiguedad + '}';
+        return "Gerente{" + "id=" + id + ", id_empleados=" + id_estudiantes + ", sector=" + sector + ", formacion=" + formacion + ", antiguedad=" + antiguedad + '}';
     }
     
     

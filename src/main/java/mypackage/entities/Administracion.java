@@ -5,7 +5,7 @@ package mypackage.entities;
 public class Administracion {
     
     private int id;
-    private int id_empleados;
+    private int id_estudiantes;
     private String puesto;
     private String habilidades;
    
@@ -14,15 +14,15 @@ public class Administracion {
     }
     
     
-    public Administracion(int id_empleados, String puesto, String habilidades) {
-        this.id_empleados = id_empleados;
+    public Administracion(int id_estudiantes, String puesto, String habilidades) {
+        this.id_estudiantes = id_estudiantes;
         this.puesto = puesto;
         this.habilidades = habilidades;
     }
     
-    public Administracion(int id, int id_empleados, String puesto, String habilidades) {
+    public Administracion(int id, int id_estudiantes, String puesto, String habilidades) {
         this.id = id;
-        this.id_empleados = id_empleados;
+        this.id_estudiantes = id_estudiantes;
         this.puesto = puesto;
         this.habilidades = habilidades;
     }
@@ -43,10 +43,10 @@ public class Administracion {
         this.id = id;
     }
     public int getId_estudiantes() {
-        return id_empleados;
+        return id_estudiantes;
     }
-    public void setId_empleados(int id_empleados) {
-        this.id_empleados = id_empleados;
+    public void setId_estudiantes(int id_estudiantes) {
+        this.id_estudiantes = id_estudiantes;
     }
     public String getPuesto() {
         return puesto;
@@ -58,7 +58,7 @@ public class Administracion {
     
     @Override
     public String toString() {
-        return "Administracion{" + "id=" + id + ", id_empleados=" + id_empleados + ", puesto=" + puesto + ", habilidades=" + habilidades + '}';
+        return "Administracion{" + "id=" + id + ", id_estudiantes=" + id_estudiantes + ", puesto=" + puesto + ", habilidades=" + habilidades + '}';
     }
     
     

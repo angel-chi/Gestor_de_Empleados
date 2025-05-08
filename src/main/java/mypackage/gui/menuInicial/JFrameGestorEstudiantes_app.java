@@ -19,8 +19,7 @@ import java.awt.event.ActionEvent;
  * @author andre
  */
 public class JFrameGestorEstudiantes_app extends javax.swing.JFrame {
-    
-    
+
       I_EstudianteRepository estudianteRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
 
 

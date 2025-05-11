@@ -1,7 +1,7 @@
 package mypackage.entities;
 
 
-public class Empleado{
+public class Estudiante {
     private int id;
     private String nombre;
     private String apellido;
@@ -15,10 +15,10 @@ public class Empleado{
     private int cantidad_hs_semanales;
     private float sueldo;
 
-    public Empleado() {
+    public Estudiante() {
     }
 
-    public Empleado(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Estudiante(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -32,7 +32,7 @@ public class Empleado{
         this.sueldo = sueldo;
     }
 
-    public Empleado(int id, String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Estudiante(int id, String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -127,7 +127,7 @@ public class Empleado{
     
     @Override
     public String toString() {
-        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", genero=" + genero + ", tipo_documento=" + tipo_documento + ", numero_documento=" + numero_documento + ", correo_electronico=" + correo_electronico + ", numero_telefono=" + numero_telefono + ", fecha_inicio=" + fecha_inicio + ", cantidad_hs_semanales=" + cantidad_hs_semanales + ", sueldo=" + sueldo + '}';
+        return "Estudiante{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", genero=" + genero + ", tipo_documento=" + tipo_documento + ", numero_documento=" + numero_documento + ", correo_electronico=" + correo_electronico + ", numero_telefono=" + numero_telefono + ", fecha_inicio=" + fecha_inicio + ", cantidad_hs_semanales=" + cantidad_hs_semanales + ", sueldo=" + sueldo + '}';
     }
 
     

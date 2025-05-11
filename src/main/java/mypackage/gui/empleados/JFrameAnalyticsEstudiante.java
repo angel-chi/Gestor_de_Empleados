@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import mypackage.connector.LocalConnector;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
+import mypackage.repositories.jdbc.EstudianteRepository;
 import mypackage.utils.swing.Table;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -26,12 +26,12 @@ import org.jfree.data.category.DefaultCategoryDataset;
  *
  * @author andre
  */
-public class JFrameAnalyticsEmpleado extends javax.swing.JFrame {
+public class JFrameAnalyticsEstudiante extends javax.swing.JFrame {
 
-    private I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+    private I_EstudianteRepository empleadoRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
 
     /** Creates new form JFrameAnalytics */
-    public JFrameAnalyticsEmpleado() {
+    public JFrameAnalyticsEstudiante() {
         initComponents();
         listarEmpleados();
         setearTextFields();
@@ -1466,20 +1466,20 @@ public class JFrameAnalyticsEmpleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameAnalyticsEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAnalyticsEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameAnalyticsEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAnalyticsEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameAnalyticsEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAnalyticsEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameAnalyticsEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameAnalyticsEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameAnalyticsEmpleado().setVisible(true);
+                new JFrameAnalyticsEstudiante().setVisible(true);
             }
         });
     }

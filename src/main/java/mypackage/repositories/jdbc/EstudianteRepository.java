@@ -5,20 +5,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import mypackage.entities.Empleado;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
+import mypackage.entities.Estudiante;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
 
-public class EmpleadoRepository implements I_EmpleadoRepository {
+public class EstudianteRepository implements I_EstudianteRepository {
 
     private Connection conexionDB;
 
-    public EmpleadoRepository(Connection conexionDB) {
+    public EstudianteRepository(Connection conexionDB) {
         this.conexionDB = conexionDB;
     }
 
     @Override
-    public void save(Empleado empleado) {
-        if (empleado == null) {
+    public void save(Estudiante estudiante) {
+        if (estudiante == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada
@@ -28,25 +28,25 @@ public class EmpleadoRepository implements I_EmpleadoRepository {
                         + "values(?,?,?,?,?,?,?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
-                    consultaPreparada.setInt(1, empleado.getId());
-                    consultaPreparada.setString(2, empleado.getNombre());
-                    consultaPreparada.setString(3, empleado.getApellido());
-                    consultaPreparada.setInt(4, empleado.getEdad());
-                    consultaPreparada.setString(5, empleado.getGenero());
-                    consultaPreparada.setString(6, empleado.getTipo_documento());
-                    consultaPreparada.setString(7, empleado.getNumero_documento());
-                    consultaPreparada.setString(8, empleado.getCorreo_electronico());
-                    consultaPreparada.setString(9, empleado.getNumero_telefono());
-                    consultaPreparada.setString(10, empleado.getFecha_inicio());
-                    consultaPreparada.setInt(11, empleado.getCantidad_hs_semanales());
-                    consultaPreparada.setFloat(12, empleado.getSueldo());
+                    consultaPreparada.setInt(1, estudiante.getId());
+                    consultaPreparada.setString(2, estudiante.getNombre());
+                    consultaPreparada.setString(3, estudiante.getApellido());
+                    consultaPreparada.setInt(4, estudiante.getEdad());
+                    consultaPreparada.setString(5, estudiante.getGenero());
+                    consultaPreparada.setString(6, estudiante.getTipo_documento());
+                    consultaPreparada.setString(7, estudiante.getNumero_documento());
+                    consultaPreparada.setString(8, estudiante.getCorreo_electronico());
+                    consultaPreparada.setString(9, estudiante.getNumero_telefono());
+                    consultaPreparada.setString(10, estudiante.getFecha_inicio());
+                    consultaPreparada.setInt(11, estudiante.getCantidad_hs_semanales());
+                    consultaPreparada.setFloat(12, estudiante.getSueldo());
 
                     consultaPreparada.execute();
 
                     ResultSet resultadoQuery = consultaPreparada.getGeneratedKeys();
 
                     if (resultadoQuery.next()) {
-                        empleado.setId(resultadoQuery.getInt(1));
+                        estudiante.setId(resultadoQuery.getInt(1));
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -54,14 +54,14 @@ public class EmpleadoRepository implements I_EmpleadoRepository {
     }
 
     @Override
-    public void remove(Empleado empleado) {
-        if (empleado == null) {
+    public void remove(Estudiante estudiante) {
+        if (estudiante == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada
-                = conexionDB.prepareStatement("DELETE FROM empleados WHERE id=?")) {
+                = conexionDB.prepareStatement("DELETE FROM estudiantes WHERE id=?")) {
 
-            consultaPreparada.setInt(1, empleado.getId());
+            consultaPreparada.setInt(1, estudiante.getId());
 
             consultaPreparada.execute();
 
@@ -71,8 +71,8 @@ public class EmpleadoRepository implements I_EmpleadoRepository {
     }
 
     @Override
-    public void update(Empleado empleado) {
-        if (empleado == null) {
+    public void update(Estudiante estudiante) {
+        if (estudiante == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada = conexionDB
@@ -81,18 +81,18 @@ public class EmpleadoRepository implements I_EmpleadoRepository {
                         + " numero_documento=?,correo_electronico=?,numero_telefono=?,fecha_inicio=?,cantidad_hs_semanales=?,sueldo=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setString(1, empleado.getNombre());
-            consultaPreparada.setString(2, empleado.getApellido());
-            consultaPreparada.setInt(3, empleado.getEdad());
-            consultaPreparada.setString(4, empleado.getGenero());
-            consultaPreparada.setString(5, empleado.getTipo_documento());
-            consultaPreparada.setString(6, empleado.getNumero_documento());
-            consultaPreparada.setString(7, empleado.getCorreo_electronico());
-            consultaPreparada.setString(8, empleado.getNumero_telefono());
-            consultaPreparada.setString(9, empleado.getFecha_inicio());
-            consultaPreparada.setInt(10, empleado.getCantidad_hs_semanales());
-            consultaPreparada.setFloat(11, empleado.getSueldo());
-            consultaPreparada.setInt(12, empleado.getId());
+            consultaPreparada.setString(1, estudiante.getNombre());
+            consultaPreparada.setString(2, estudiante.getApellido());
+            consultaPreparada.setInt(3, estudiante.getEdad());
+            consultaPreparada.setString(4, estudiante.getGenero());
+            consultaPreparada.setString(5, estudiante.getTipo_documento());
+            consultaPreparada.setString(6, estudiante.getNumero_documento());
+            consultaPreparada.setString(7, estudiante.getCorreo_electronico());
+            consultaPreparada.setString(8, estudiante.getNumero_telefono());
+            consultaPreparada.setString(9, estudiante.getFecha_inicio());
+            consultaPreparada.setInt(10, estudiante.getCantidad_hs_semanales());
+            consultaPreparada.setFloat(11, estudiante.getSueldo());
+            consultaPreparada.setInt(12, estudiante.getId());
 
             consultaPreparada.execute();
 
@@ -102,17 +102,17 @@ public class EmpleadoRepository implements I_EmpleadoRepository {
     }
 
     @Override
-    public List<Empleado> getAll() {
+    public List<Estudiante> getAll() {
 
-        List<Empleado> listaEmpleados = new ArrayList();
+        List<Estudiante> listaEstudiantes = new ArrayList();
 
         try ( ResultSet resultSetEmpleados
                 = conexionDB
                         .createStatement()
-                        .executeQuery("SELECT * FROM empleados")) {
+                        .executeQuery("SELECT * FROM estudiantes")) {
                     while (resultSetEmpleados.next()) {
 
-                        listaEmpleados.add(new Empleado(
+                        listaEstudiantes.add(new Estudiante(
                                 resultSetEmpleados.getInt("id"),
                                 resultSetEmpleados.getString("nombre"),
                                 resultSetEmpleados.getString("apellido"),
@@ -132,7 +132,7 @@ public class EmpleadoRepository implements I_EmpleadoRepository {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                return listaEmpleados;
+                return listaEstudiantes;
     }
 
 }

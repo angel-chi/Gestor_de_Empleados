@@ -2,9 +2,9 @@
 -- //////Base de datos de Empleados, dividido por sectores(administración, soporte técnico, desarrolladores y gerentes)///////////
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-use db_empleados;
+use db_estudiantes;
 
-insert into empleados (id, nombre, apellido, edad, genero,
+insert into estudiantes (id, nombre, apellido, edad, genero,
  tipo_documento, numero_documento, correo_electronico, numero_telefono,
  fecha_inicio, cantidad_hs_semanales, sueldo ) values
 

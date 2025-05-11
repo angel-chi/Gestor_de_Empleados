@@ -2,25 +2,25 @@ package mypackage.test;
 
 import java.time.LocalDate;
 import mypackage.connector.LocalConnector;
-import mypackage.entities.Empleado;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.entities.Estudiante;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
+import mypackage.repositories.jdbc.EstudianteRepository;
 
 public class TestEmpleado {
 
     public static void main(String[] args) {
 
         
-        I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+        I_EstudianteRepository empleadoRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
 
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Empleado ===============\n");
-        Empleado nuevoEmpleado
-                = new Empleado("Antonio", "Ibramovich", 34, "Masculino", "DNI", "21762989",
+        Estudiante nuevoEstudiante
+                = new Estudiante("Antonio", "Ibramovich", 34, "Masculino", "DNI", "21762989",
                         "liuoyuko@gmail.com", "1567896578", String.valueOf(LocalDate.now()), 48, 45000f);
 
-        empleadoRepository.save(nuevoEmpleado);
-        System.out.println(nuevoEmpleado);
+        empleadoRepository.save(nuevoEstudiante);
+        System.out.println(nuevoEstudiante);
 
         System.out.println("\n=================Lista de Empleados===============\n");
         empleadoRepository.getAll().forEach(System.out::println);
@@ -28,19 +28,19 @@ public class TestEmpleado {
 
         //REMOVE
         System.out.println("\n=================Eliminamos el ultimo empleado ingresado===============\n");
-        empleadoRepository.remove(nuevoEmpleado);
-        System.out.println(nuevoEmpleado);
+        empleadoRepository.remove(nuevoEstudiante);
+        System.out.println(nuevoEstudiante);
         System.out.println("\n=================Lista de Empleados actualizada===============\n");
         empleadoRepository.getAll().forEach(System.out::println);
 
         //FIN REMOVE
         //UPDATE
         System.out.println("\n=================Actualizamos el apellido del Empleado con el id 2 ===============\n");
-        nuevoEmpleado = empleadoRepository.getById(2);
+        nuevoEstudiante = empleadoRepository.getById(2);
 
-        if (nuevoEmpleado != null && nuevoEmpleado.getId() != 0) {
-            nuevoEmpleado.setApellido("Fernandez");
-            empleadoRepository.update(nuevoEmpleado);
+        if (nuevoEstudiante != null && nuevoEstudiante.getId() != 0) {
+            nuevoEstudiante.setApellido("Fernandez");
+            empleadoRepository.update(nuevoEstudiante);
         }
 
         System.out.println("\n=================Lista de Empleados actualizada===============\n");

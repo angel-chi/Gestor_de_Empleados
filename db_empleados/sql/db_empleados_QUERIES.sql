@@ -1,34 +1,34 @@
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
--- //////Base de datos de Empleados, dividido por sectores(administración, soporte técnico, desarrolladores y gerentes)///////////
+-- //////Base de datos de Estudiantes, dividido por carrera_estudiadaes(administración, soporte técnico, actuarios y egresados)///////////
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-use db_empleados;
+use db_Estudiantes;
 
 -- -----------SELECT----------------
 -- todos los campos
-select * from empleados;
-select * from administracion;
-select * from desarrolladores;
-select * from soporte_tecnico;
-select * from gerentes;
+select * from Estudiantes;
+select * from licIngDesSoftware;
+select * from actuarios;
+select * from lic_ciencias_computacion;
+select * from egresados;
 
--- empleados por area
-select * from empleados empl , administracion adm where empl.id = adm.id_empleados;
-select * from empleados empl, desarrolladores dev where empl.id= dev.id_empleados;
-select * from empleados empl, soporte_tecnico sop where empl.id= sop.id_empleados;
-select * from empleados empl, gerentes ger where empl.id= ger.id_empleados;
+-- Estudiantes por area
+select * from Estudiantes empl , licIngDesSoftware adm where empl.id = adm.id_Estudiantes;
+select * from Estudiantes empl, actuarios dev where empl.id= dev.id_Estudiantes;
+select * from Estudiantes empl, lic_ciencias_computacion sop where empl.id= sop.id_Estudiantes;
+select * from Estudiantes empl, egresados ger where empl.id= ger.id_Estudiantes;
 
--- empleados ordenados por nombre
-select * from empleados order by nombre;
+-- Estudiantes ordenados por nombre
+select * from Estudiantes order by nombre;
 
--- empleados ordenados por edad
-select * from empleados order by edad;
+-- Estudiantes ordenados por edad
+select * from Estudiantes order by edad;
 
--- empleados ordenados por fecha de inicio
-select * from empleados order by fecha_inicio;
+-- Estudiantes ordenados por fecha de inicio
+select * from Estudiantes order by fecha_inicio;
 
--- empleados ordenados por sueldo
-select * from empleados order by sueldo;
+-- Estudiantes ordenados por calificacion
+select * from Estudiantes order by calificacion;
 
 -- -----------FIN SELECT----------------
 
@@ -39,7 +39,7 @@ select * from empleados order by sueldo;
 
 
 -- -----------UPDATE----------------
-update empleados set edad=33 where id=2;
-update soporte_tecnico set certificaciones='Protocolos Locales, Fibra Optica' where id=4;
-update desarrolladores set habilidades='Autodidacta, metodologias agiles' where id=3; 
+update Estudiantes set edad=33 where id=2;
+update lic_ciencias_computacion set materias_libres_cursadas='Protocolos Locales, Fibra Optica' where id=4;
+update actuarios set materias_debidas='Autodidacta, metodologias agiles' where id=3;
 -- -----------FIN UPDATE----------------

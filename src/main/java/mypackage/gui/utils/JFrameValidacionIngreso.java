@@ -6,8 +6,8 @@
 package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
-import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
+//import mypackage.gui.LicCienciasComputacion.JFrameIngresoLicCienciasComputacion;
+import mypackage.gui.estudiantes.JFrameIngresoEstudiante;
 
 /**
  *
@@ -90,7 +90,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 
         jLabelTitulo1.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo1.setText("(Usuario-Contraseña por sector)");
+        jLabelTitulo1.setText("(Usuario-Contraseña)");
         jDesktopPane1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 510));
@@ -103,15 +103,15 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
            
 
         
-        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
+        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("Estudiantes"))){
 
-             new  JFrameIngresoEmpleado().setVisible(true);
+             new  JFrameIngresoEstudiante().setVisible(true);
 
             dispose();
 
         }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("soporte"))){
             
-             new  JFrameIngresoSoporteTecnico().setVisible(true);
+             //new  JFrameIngresoLicCienciasComputacion().setVisible(true);
 
             dispose();
             
@@ -130,15 +130,15 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         
         
         
-//        boolean flagValidacionEntradaEmpleado = true;
-//        boolean flagValidacionEntradaSoporteTecnico = true;
-//        String flagSector="Ninguno";
+//        boolean flagValidacionEntradaEstudiante = true;
+//        boolean flagValidacionEntradaLicCienciasComputacion = true;
+//        String flagcarrera_estudiada="Ninguno";
 //        
 //        
 //        while( (!(jTextFieldUsuario.getText().equals("admin"))
 //                && !(jPasswordContraseña.getPassword().equals("1")) ) ){
 //           
-//            flagValidacionEntradaEmpleado = false;
+//            flagValidacionEntradaEstudiante = false;
 //          
 //           
 //            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
@@ -148,7 +148,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 //             while( (!(jTextFieldUsuario.getText().equals("admin"))
 //                && !(jPasswordContraseña.getPassword().equals("2")) ) ){
 //           
-//            flagValidacionEntradaSoporteTecnico= false;
+//            flagValidacionEntradaLicCienciasComputacion= false;
 //          
 //           
 //            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
@@ -158,13 +158,13 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 //
 //        if ( jTextFieldUsuario.getText().equals("admin") ) {
 //            
-//            new  JFrameIngresoEmpleado().setVisible(true);
+//            new  JFrameIngresoEstudiante().setVisible(true);
 //
 //            dispose();
 //        }
-//        else if(flagValidacionEntradaSoporteTecnico){
+//        else if(flagValidacionEntradaLicCienciasComputacion){
 //           
-//            new JFrameIngresoSoporteTecnico().setVisible(true);
+//            new JFrameIngresoLicCienciasComputacion().setVisible(true);
 //            
 //            dispose();
 //        }

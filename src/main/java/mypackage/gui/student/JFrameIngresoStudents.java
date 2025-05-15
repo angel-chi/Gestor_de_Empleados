@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mypackage.gui.empleados;
+package mypackage.gui.student;
 
 /**
  *
  * @author andre
  */
-public class JFrameIngresoEmpleado extends javax.swing.JFrame {
+public class JFrameIngresoStudents extends javax.swing.JFrame {//Refacto class name from Employee to Student
 
     /** Creates new form JFrameEmpleados */
-    public JFrameIngresoEmpleado() {
+    public JFrameIngresoStudents() {
         initComponents();
     }
 
@@ -35,14 +35,15 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
         jTextFieldEdad = new javax.swing.JTextField();
         jLabelGenero = new javax.swing.JLabel();
         jTextFieldGenero = new javax.swing.JTextField();
-        jTextFieldSueldo = new javax.swing.JTextField();
+        jLabelPromedio = new javax.swing.JLabel();//de sueldo a promedio
+        jTextFieldPromedio = new javax.swing.JTextField();//de sueldo a promedio
         jLabelNumDoc2 = new javax.swing.JLabel();
         jLabelCorreo1 = new javax.swing.JLabel();
         jTextFieldTipoDoc = new javax.swing.JTextField();
         jLabelTipoDoc3 = new javax.swing.JLabel();
         jLabelTipoDoc4 = new javax.swing.JLabel();
         jLabelNumDoc3 = new javax.swing.JLabel();
-        jLabelSueldo = new javax.swing.JLabel();
+
         jTextFieldNumDoc = new javax.swing.JTextField();
         jLabelCorreo3 = new javax.swing.JLabel();
         jLabelNumero2 = new javax.swing.JLabel();
@@ -65,7 +66,7 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("INGRESAR EMPLEADO");
+        jLabelTitulo.setText("INGRESAR ALUMNO");
         jDesktopPane1.add(jLabelTitulo);
         jLabelTitulo.setBounds(120, 20, 430, 42);
 
@@ -109,9 +110,15 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
         jDesktopPane1.add(jTextFieldGenero);
         jTextFieldGenero.setBounds(270, 240, 191, 34);
 
-        jTextFieldSueldo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldSueldo);
-        jTextFieldSueldo.setBounds(270, 660, 191, 34);
+        jLabelPromedio.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabelPromedio.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPromedio.setText("Promedio:");
+        jDesktopPane1.add(jLabelPromedio);
+        jLabelPromedio.setBounds(200, 660, 80, 40);
+
+        jTextFieldPromedio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldPromedio);
+        jTextFieldPromedio.setBounds(270, 660, 191, 34);
 
         jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,11 +154,7 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelNumDoc3);
         jLabelNumDoc3.setBounds(160, 340, 110, 30);
 
-        jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSueldo.setText("Sueldo:");
-        jDesktopPane1.add(jLabelSueldo);
-        jLabelSueldo.setBounds(200, 660, 80, 40);
+
 
         jTextFieldNumDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumDoc);
@@ -267,7 +270,7 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
         jTextFieldGenero.setText("");
         jTextFieldNumDoc.setText("");
         jTextFieldNumeroTelefono.setText("");
-        jTextFieldSueldo.setText("");
+        jTextFieldPromedio.setText("");
         jTextFieldTipoDoc.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
@@ -276,7 +279,7 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
-       new JFrameVerEmpleado().setVisible(true);
+       new JFrameVerStudent(true).setVisible(true);
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
 
     /**
@@ -296,13 +299,13 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameIngresoEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameIngresoStudents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameIngresoEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameIngresoStudents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameIngresoEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameIngresoStudents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameIngresoEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameIngresoStudents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -324,7 +327,7 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameIngresoEmpleado().setVisible(true);
+                new JFrameIngresoStudents().setVisible(true);
             }
         });
     }
@@ -348,7 +351,7 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNumDoc3;
     private javax.swing.JLabel jLabelNumero2;
     private javax.swing.JLabel jLabelNumero3;
-    private javax.swing.JLabel jLabelSueldo;
+    private javax.swing.JLabel jLabelPromedio;
     private javax.swing.JLabel jLabelTipoDoc3;
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
@@ -361,7 +364,7 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldNumDoc;
     private javax.swing.JTextField jTextFieldNumeroTelefono;
-    private javax.swing.JTextField jTextFieldSueldo;
+    private javax.swing.JTextField jTextFieldPromedio;
     private javax.swing.JTextField jTextFieldTipoDoc;
     // End of variables declaration//GEN-END:variables
 }

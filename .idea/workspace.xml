@@ -5,52 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="512ec87b-be3b-4844-b884-3487e9cf8527" name="Changes" comment="Prueba de copilación">
-      <change afterPath="$PROJECT_DIR$/db_alumnos/sql/db_alumnos_DML.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_empleados/documentacion/db_empleados_DER.png" beforeDir="false" afterPath="$PROJECT_DIR$/db_alumnos/documentacion/db_empleados_DER.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_alumnos_DDL.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_DML.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_alumnos_DML.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_QUERIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_alumnos_QUERIES.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/connector/LocalConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/connector/LocalConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/connector/RemoteConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/connector/RemoteConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Administracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Administracion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Desarrollador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Desarrollador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Gerente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/SoporteTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/SoporteTecnico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameActualizarEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameActualizarAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameIngresoEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameIngresoAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameVerEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameVerAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/menuInicial/JFrameGestorEmpleados_app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/menuInicial/JFrameGestorAlumnos_app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/utils/JFrameValidacionIngreso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/utils/JFrameValidacionIngreso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_AdministracionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_AdministracionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_DesarrolladorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_DesarrolladorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_EmpleadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_AlumnoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_GerenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_GerenteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_SoporteTecnicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_SoporteTecnicoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/AdministracionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/AdministracionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/DesarrolladorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/DesarrolladorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/EmpleadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/AlumnoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/GerenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/GerenteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/SoporteTecnicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/SoporteTecnicoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_alumnos/sql/db_alumnos_DDL.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_DML.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_QUERIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_alumnos/sql/db_alumnos_QUERIES.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAdministracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAdministracion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestDesarrollador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestDesarrollador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestGerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestGerente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestSoporteTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestSoporteTecnico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="module" />
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="feature/collí/Gestor_de_alumnos" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -154,7 +126,8 @@
       <workItem from="1747351365550" duration="9349000" />
       <workItem from="1747362629692" duration="2961000" />
       <workItem from="1747403066718" duration="2745000" />
-      <workItem from="1747406464623" duration="645000" />
+      <workItem from="1747406464623" duration="2094000" />
+      <workItem from="1747409119387" duration="1044000" />
     </task>
     <task id="LOCAL-00001" summary="Prueba de copilación">
       <option name="closed" value="true" />
@@ -164,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746481121181</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Prueba de copilación">
+      <option name="closed" value="true" />
+      <created>1747407517310</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747407517310</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

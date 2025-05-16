@@ -26,6 +26,7 @@ mypackage/repositories/jdbc/GerenteRepository.class
 mypackage/gui/estudiantes/JFrameAnalytics$44.class
 mypackage/gui/estudiantes/JFrameAnalytics$9.class
 mypackage/gui/estudiantes/JFrameAnalytics$50.class
+mypackage/gui/estudiantes/JFrameIngresoEstudiante$5.class
 mypackage/gui/otros/JFrameAyuda$1.class
 mypackage/gui/estudiantes/JFrameAnalytics$21.class
 mypackage/gui/estudiantes/JFrameAnalytics$31.class

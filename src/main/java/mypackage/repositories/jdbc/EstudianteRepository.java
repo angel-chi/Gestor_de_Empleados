@@ -26,7 +26,7 @@ public class EstudianteRepository implements I_EstudianteRepository {
                 "INSERT INTO estudiantes(id, nombre, apellido, edad, genero, matricula, "
                         + "semestre, correo_electronico, numero_telefono, fecha_inicio, "
                         + "facultad,hrsclases, gastada) "
-                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS)) {
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             consultaPreparada.setInt(1, estudiante.getId());
             consultaPreparada.setString(2, estudiante.getNombre());
@@ -39,7 +39,9 @@ public class EstudianteRepository implements I_EstudianteRepository {
             consultaPreparada.setString(9, estudiante.getNumero_telefono());
             consultaPreparada.setString(10, estudiante.getFecha_inicio());
             consultaPreparada.setString(11, estudiante.getFacultad());
-            consultaPreparada.setFloat(12, estudiante.getGastada());
+            consultaPreparada.setInt(12, estudiante.getHrsclases());
+
+            consultaPreparada.setFloat(13, estudiante.getGastada());
 
             consultaPreparada.execute();
 
@@ -85,8 +87,10 @@ public class EstudianteRepository implements I_EstudianteRepository {
             consultaPreparada.setString(8, estudiante.getNumero_telefono());
             consultaPreparada.setString(9, estudiante.getFecha_inicio());
             consultaPreparada.setString(10, estudiante.getFacultad());
-            consultaPreparada.setFloat(11, estudiante.getGastada());
-            consultaPreparada.setInt(12, estudiante.getId());
+            consultaPreparada.setInt(11, estudiante.getHrsclases());
+            consultaPreparada.setFloat(12, estudiante.getGastada());
+
+            consultaPreparada.setInt(13, estudiante.getId());
 
             consultaPreparada.execute();
         } catch (Exception ex) {

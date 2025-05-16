@@ -131,7 +131,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         //jTextFieldSueldoCantidad.setText(String.valueOf(cantidadValores(11)));
         jTextFieldSueldoCantidad.setText(String.valueOf(cantidadValores(12)));
         //MAXIMO
-        jTextFieldSueldoMaximo.setText(String.valueOf(maximaValoresSueldoDecimal(12)));
+        jTextFieldSueldoMaximo.setText(String.valueOf(maximaValoresGastadaDecimal(12)));
 
         //MINIMO
         jTextFieldSueldoMinimo.setText(String.valueOf(minimaValoresSueldoDecimal(12)));
@@ -169,7 +169,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 
     DefaultCategoryDataset DatosEdad = new DefaultCategoryDataset();
     DefaultCategoryDataset DatosHsSemanales = new DefaultCategoryDataset();
-    DefaultCategoryDataset DatosSueldo = new DefaultCategoryDataset();
+    DefaultCategoryDataset DatosGastada = new DefaultCategoryDataset();
 
     public void graficarGraficoEdad() {
           DatosEdad.addValue(cantidadValores(3), "EDAD", "CANTIDAD");
@@ -222,20 +222,20 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 
     }
 
-    public void graficarGraficoSueldo() {
+    public void graficarGraficoGastada() {
         //DatosSueldo.addValue(cantidadValores(11), "SUELDO", "CANTIDAD");
-        DatosSueldo.addValue(cantidadValores(11), "Promedio", "CANTIDAD");
-        DatosSueldo.addValue(promedioValoresSueldoDecimal(11), "Promedio", "PROMEDIO");
-        DatosSueldo.addValue(maximaValoresSueldoDecimal(11), "Promedio", "MÁXIMA");
-        DatosSueldo.addValue(minimaValoresSueldoDecimal(11), "SUELDO", "MÍNIMA");
-        DatosSueldo.addValue(Float.valueOf(modaFrecuenciaValoresSueldoDecimal(11).get(0)), "SUELDO", "MODA");
-        DatosSueldo.addValue(Float.valueOf(modaFrecuenciaValoresSueldoDecimal(11).get(1)), "SUELDO", "FRECUENCIA MODA");
-        DatosSueldo.addValue(varianzaValoresSueldoDecimal(11, 11), "SUELDO", "VARIANZA");
-        DatosSueldo.addValue(desvioEstandarValoresSueldoDecimal(11, 11, 11), "SUELDO", "DESVIO ESTANDAR");
+        DatosGastada.addValue(cantidadValores(11), "Promedio", "CANTIDAD");
+        DatosGastada.addValue(promedioValoresSueldoDecimal(11), "Promedio", "PROMEDIO");
+        DatosGastada.addValue(maximaValoresGastadaDecimal(11), "Promedio", "MÁXIMA");
+        DatosGastada.addValue(minimaValoresSueldoDecimal(11), "GASTADA", "MÍNIMA");
+        DatosGastada.addValue(Float.valueOf(modaFrecuenciaValoresSueldoDecimal(11).get(0)), "GASTADA", "MODA");
+        DatosGastada.addValue(Float.valueOf(modaFrecuenciaValoresSueldoDecimal(11).get(1)), "GASTADA", "FRECUENCIA MODA");
+        DatosGastada.addValue(varianzaValoresSueldoDecimal(11, 11), "GASTADA", "VARIANZA");
+        DatosGastada.addValue(desvioEstandarValoresSueldoDecimal(11, 11, 11), "GASTADA", "DESVIO ESTANDAR");
 
 //Creamos un grafico de tipo barras
-        GraficaSueldo = ChartFactory.createBarChart("GRÁFICA DE ANALYTICS SUELDO",
-                "ESTADISTICA", "VALORES OBTENIDOS", DatosSueldo,
+        GraficaSueldo = ChartFactory.createBarChart("GRÁFICA DE ANALYTICS GASTADA",
+                "ESTADISTICA", "VALORES OBTENIDOS", DatosGastada,
                 PlotOrientation.HORIZONTAL, true, true, false);
 
 //Agregamos nuestro grafico a una nueva ventana
@@ -287,7 +287,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         return max;
     }
 //---------------------------------------------------------------------------------
-    public float maximaValoresSueldoDecimal(int columnaTabla) {
+    public float maximaValoresGastadaDecimal(int columnaTabla) {
         float max = 0;
         try {
             for (int i = 0; i < jTableListaEstudiantes.getRowCount(); i++) {
@@ -1311,7 +1311,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldDesvioEstandarSueldoKeyTyped
 
     private void jButtonGraficaSueldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGraficaSueldoActionPerformed
-        graficarGraficoSueldo();
+        graficarGraficoGastada();
     }//GEN-LAST:event_jButtonGraficaSueldoActionPerformed
 
     private void jTextFieldSueldoCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSueldoCantidadActionPerformed

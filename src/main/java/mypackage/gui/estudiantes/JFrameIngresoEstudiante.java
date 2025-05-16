@@ -16,6 +16,7 @@ import javax.swing.*;
  * @author andre
  */
 public class JFrameIngresoEstudiante extends javax.swing.JFrame {
+    //Conectar al repositorio
     private final I_EstudianteRepository estudianteRepository =
             new EstudianteRepository(LocalConnector.getLocalConnection());
     /** Creates new form JFrameEmpleados */
@@ -59,10 +60,11 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jTextFieldFechaDeInicio = new javax.swing.JTextField();
         jLabelCantidadHs3 = new javax.swing.JLabel();
         jTextFieldFacultad = new javax.swing.JTextField();
-        jTextFieldhrsclases = new javax.swing.JTextField();
         jButtonLimpiar = new javax.swing.JButton();
         jButtonAgregar = new javax.swing.JButton();
         jButtonAgregar1 = new javax.swing.JButton();
+        jTextFieldhrsclases = new javax.swing.JTextField();
+        jLabelhrsclases = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -238,6 +240,20 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jDesktopPane1.add(jButtonAgregar1);
         jButtonAgregar1.setBounds(70, 800, 520, 60);
 
+        jTextFieldhrsclases.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldhrsclasesActionPerformed(evt);
+            }
+        });
+        jDesktopPane1.add(jTextFieldhrsclases);
+        jTextFieldhrsclases.setBounds(510, 450, 140, 40);
+
+        jLabelhrsclases.setFont(new java.awt.Font("Abel", 1, 24)); // NOI18N
+        jLabelhrsclases.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelhrsclases.setText("horas clases:");
+        jDesktopPane1.add(jLabelhrsclases);
+        jLabelhrsclases.setBounds(510, 410, 170, 30);
+
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 870));
 
         pack();
@@ -259,6 +275,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jTextFieldTipoDoc.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
+    //Implementacion boton guardar
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
         try {
@@ -270,7 +287,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
             String semestre  = jTextFieldNumDoc.getText().trim();
             String correo  = jTextFieldCorreoElectronico.getText().trim();
             String tel     = jTextFieldNumeroTelefono.getText().trim();
-            String fecha   = jTextFieldFechaDeInicio.getText().trim(); // asume formato YYYY-MM-DD
+            String fecha   = jTextFieldFechaDeInicio.getText().trim();
             String facultad        = jTextFieldFacultad.getText().trim();
             int hrsclases = Integer.parseInt(jTextFieldhrsclases.getText().trim());
             float gastada   = Float.parseFloat(jTextFieldSueldo.getText().trim());
@@ -302,6 +319,10 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
+
+    private void jTextFieldhrsclasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldhrsclasesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldhrsclasesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -373,11 +394,11 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSueldo;
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JLabel jLabelhrsclases;
     private javax.swing.JTextField jTextFieldApellido;
-    private javax.swing.JTextField jTextFieldFacultad;
-    private javax.swing.JTextField jTextFieldhrsclases;
     private javax.swing.JTextField jTextFieldCorreoElectronico;
     private javax.swing.JTextField jTextFieldEdad;
+    private javax.swing.JTextField jTextFieldFacultad;
     private javax.swing.JTextField jTextFieldFechaDeInicio;
     private javax.swing.JTextField jTextFieldGenero;
     private javax.swing.JTextField jTextFieldNombre;
@@ -385,5 +406,6 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNumeroTelefono;
     private javax.swing.JTextField jTextFieldSueldo;
     private javax.swing.JTextField jTextFieldTipoDoc;
+    private javax.swing.JTextField jTextFieldhrsclases;
     // End of variables declaration//GEN-END:variables
 }

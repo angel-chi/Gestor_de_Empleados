@@ -6,21 +6,20 @@
 package mypackage.gui.menuInicial;
 
 import mypackage.connector.LocalConnector;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
 import mypackage.gui.utils.JFrameValidacionIngreso;
 import mypackage.gui.otros.JFrameAcercaDe;
 import mypackage.gui.otros.JFrameAyuda;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
+import mypackage.repositories.jdbc.EstudianteRepository;
 
 /**
  *
  * @author andre
  */
 public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
-    
-    
-      I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+
+
+      I_EstudianteRepository estudianteRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
 
 
     /** Creates new form JFrameGestorEmpleados_app */
@@ -38,7 +37,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPaneFondo = new javax.swing.JDesktopPane();
-        jButtonEmpleados = new javax.swing.JButton();
+        jButtonEstudiante = new javax.swing.JButton();
         jButtonDesarrolladores = new javax.swing.JButton();
         jButtonSoporteTecnico = new javax.swing.JButton();
         jButtonAdministracion = new javax.swing.JButton();
@@ -53,43 +52,31 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
 
         jDesktopPaneFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonEmpleados.setBackground(new java.awt.Color(1, 45, 151));
-        jButtonEmpleados.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jButtonEmpleados.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEmpleados.setText("EMPLEADOS");
-        jButtonEmpleados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEmpleadosActionPerformed(evt);
-            }
-        });
-        jDesktopPaneFondo.add(jButtonEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 162, 57));
+        jButtonEstudiante.setBackground(new java.awt.Color(1, 151, 134));
+        jButtonEstudiante.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jButtonEstudiante.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonEstudiante.setText("ESTUDIANTES");
+        jButtonEstudiante.addActionListener(this::jButtonEstudiantesActionPerformed);
+        jDesktopPaneFondo.add(jButtonEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 162, 57));
 
-        jButtonDesarrolladores.setBackground(new java.awt.Color(0, 24, 82));
+        jButtonDesarrolladores.setBackground(new java.awt.Color(26, 0, 82));
         jButtonDesarrolladores.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonDesarrolladores.setForeground(new java.awt.Color(255, 255, 255));
         jButtonDesarrolladores.setText("DESARROLLADORES");
         jDesktopPaneFondo.add(jButtonDesarrolladores, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 260, 57));
 
-        jButtonSoporteTecnico.setBackground(new java.awt.Color(0, 37, 126));
+        jButtonSoporteTecnico.setBackground(new java.awt.Color(6, 126, 0));
         jButtonSoporteTecnico.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonSoporteTecnico.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSoporteTecnico.setText("SOPORTE TECNICO");
-        jButtonSoporteTecnico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSoporteTecnicoActionPerformed(evt);
-            }
-        });
+        jButtonSoporteTecnico.addActionListener(this::jButtonSoporteTecnicoActionPerformed);
         jDesktopPaneFondo.add(jButtonSoporteTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 210, 57));
 
-        jButtonAdministracion.setBackground(new java.awt.Color(0, 30, 101));
+        jButtonAdministracion.setBackground(new java.awt.Color(76, 0, 101));
         jButtonAdministracion.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonAdministracion.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAdministracion.setText("ADMINISTRACION");
-        jButtonAdministracion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdministracionActionPerformed(evt);
-            }
-        });
+        jButtonAdministracion.addActionListener(this::jButtonAdministracionActionPerformed);
         jDesktopPaneFondo.add(jButtonAdministracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 240, 57));
 
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
@@ -97,7 +84,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         jLabelTitulo.setText("MENÚ PRINCIPAL");
         jDesktopPaneFondo.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 330, -1));
 
-        jButtonAnalytics.setBackground(new java.awt.Color(0, 16, 56));
+        jButtonAnalytics.setBackground(new java.awt.Color(38, 0, 56));
         jButtonAnalytics.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButtonAnalytics.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAnalytics.setText("ANALYTICS");
@@ -107,22 +94,14 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         jToggleButtonAyuda.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jToggleButtonAyuda.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButtonAyuda.setText("Ayuda");
-        jToggleButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonAyudaActionPerformed(evt);
-            }
-        });
+        jToggleButtonAyuda.addActionListener(this::jToggleButtonAyudaActionPerformed);
         jDesktopPaneFondo.add(jToggleButtonAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 70, -1));
 
         jToggleButtonAcerca.setBackground(new java.awt.Color(0, 79, 237));
         jToggleButtonAcerca.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jToggleButtonAcerca.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButtonAcerca.setText("Acerca de");
-        jToggleButtonAcerca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonAcercaActionPerformed(evt);
-            }
-        });
+        jToggleButtonAcerca.addActionListener(this::jToggleButtonAcercaActionPerformed);
         jDesktopPaneFondo.add(jToggleButtonAcerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 90, -1));
 
         getContentPane().add(jDesktopPaneFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 680));
@@ -135,7 +114,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAdministracionActionPerformed
 
-    private void jButtonEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmpleadosActionPerformed
+    private void jButtonEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmpleadosActionPerformed
        new JFrameValidacionIngreso().setVisible(true);
     }//GEN-LAST:event_jButtonEmpleadosActionPerformed
 
@@ -154,11 +133,12 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -190,7 +170,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAdministracion;
     private javax.swing.JButton jButtonAnalytics;
     private javax.swing.JButton jButtonDesarrolladores;
-    private javax.swing.JButton jButtonEmpleados;
+    private javax.swing.JButton jButtonEstudiante;
     private javax.swing.JButton jButtonSoporteTecnico;
     private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabelTitulo;

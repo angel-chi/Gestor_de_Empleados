@@ -46,12 +46,11 @@ public class Table <T> {
                         +field.getName().substring(1);
                 
                // System.out.println(metodoRegistro);
-                    try {            
-                       registro[i]= listaCampos.getClass()
-                               .getMethod(metodoRegistro, null)
-                               .invoke(listaRegistros, null);
-                        
-                } catch (Exception exc) {
+                    try {
+                        registro[i] = listaCampos.getClass()
+                                .getMethod(metodoRegistro, new Class<?>[0])
+                                .invoke(listaRegistros, (Object[]) null);
+                    } catch (Exception exc) {
                     exc.printStackTrace();
                 }
             }

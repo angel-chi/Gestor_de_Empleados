@@ -1,7 +1,8 @@
 package mypackage.entities;
 
 
-public class Empleado{
+public class Estudiante
+{
     private int id;
     private String nombre;
     private String apellido;
@@ -11,14 +12,15 @@ public class Empleado{
     private String numero_documento;
     private String correo_electronico;
     private String numero_telefono;
-    private String fecha_inicio;
-    private int cantidad_hs_semanales;
-    private float sueldo;
+    private String fecha_inscripcion;
+    private int cantidad_clases_semanales;
+    private float promedio;
 
-    public Empleado() {
+    public Estudiante() {
     }
 
-    public Empleado(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Estudiante(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inscripcion, int cantidad_clases_semanales, float promedio)
+    {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -27,12 +29,12 @@ public class Empleado{
         this.numero_documento = numero_documento;
         this.correo_electronico = correo_electronico;
         this.numero_telefono = numero_telefono;
-        this.fecha_inicio = fecha_inicio;
-        this.cantidad_hs_semanales = cantidad_hs_semanales;
-        this.sueldo = sueldo;
+        this.fecha_inscripcion = fecha_inscripcion;
+        this.cantidad_clases_semanales = cantidad_clases_semanales;
+        this.promedio = promedio;
     }
 
-    public Empleado(int id, String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Estudiante(int id, String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inscripcion, int cantidad_clases_semanales, float promedio) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -42,19 +44,19 @@ public class Empleado{
         this.numero_documento = numero_documento;
         this.correo_electronico = correo_electronico;
         this.numero_telefono = numero_telefono;
-        this.fecha_inicio = fecha_inicio;
-        this.cantidad_hs_semanales = cantidad_hs_semanales;
-        this.sueldo = sueldo;
+        this.fecha_inscripcion = fecha_inscripcion;
+        this.cantidad_clases_semanales = cantidad_clases_semanales;
+        this.promedio = promedio;
     }
 
 
 
 
-    public float getSueldo() {
-        return sueldo;
+    public float getPromedio() {
+        return promedio;
     }
-    public void setSueldo(float sueldo) {
-        this.sueldo = sueldo;
+    public void setPromedio(float promedio) {
+        this.promedio = promedio;
     }
     public String getNombre() {
         return nombre;
@@ -104,17 +106,17 @@ public class Empleado{
     public void setNumero_telefono(String numero_telefono) {
         this.numero_telefono = numero_telefono;
     }
-    public String getFecha_inicio() {
-        return fecha_inicio;
+    public String getFecha_inscripcion() {
+        return fecha_inscripcion;
     }
-    public void setFecha_inicio(String fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
+    public void setFecha_inscripcion(String fecha_inscripcion) {
+        this.fecha_inscripcion = fecha_inscripcion;
     }
-    public int getCantidad_hs_semanales() {
-        return cantidad_hs_semanales;
+    public int getCantidad_clases_semanales() {
+        return cantidad_clases_semanales;
     }
-    public void setCantidad_hs_semanales(int cantidad_hs_semanales) {
-        this.cantidad_hs_semanales = cantidad_hs_semanales;
+    public void setCantidad_clases_semanales(int cantidad_clases_semanales) {
+        this.cantidad_clases_semanales = cantidad_clases_semanales;
     }
     public int getId() {
         return id;
@@ -127,7 +129,7 @@ public class Empleado{
     
     @Override
     public String toString() {
-        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", genero=" + genero + ", tipo_documento=" + tipo_documento + ", numero_documento=" + numero_documento + ", correo_electronico=" + correo_electronico + ", numero_telefono=" + numero_telefono + ", fecha_inicio=" + fecha_inicio + ", cantidad_hs_semanales=" + cantidad_hs_semanales + ", sueldo=" + sueldo + '}';
+        return "Estudiante{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", genero=" + genero + ", tipo_documento=" + tipo_documento + ", numero_documento=" + numero_documento + ", correo_electronico=" + correo_electronico + ", numero_telefono=" + numero_telefono + ", fecha_inscripcion=" + fecha_inscripcion + ", cantidad_clases_semanales=" + cantidad_clases_semanales + ", promedio=" + promedio + '}';
     }
 
     

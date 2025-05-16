@@ -39,7 +39,7 @@ public interface I_AdministracionRepository {
     
     default List<Administracion> getLikePuesto(String puesto) {
         if (puesto == null) {
-            return new ArrayList<Administracion>();
+            return new ArrayList<>();
         }
         return getStream()
                 .filter(objeto -> objeto.getPuesto().toLowerCase()
@@ -49,7 +49,7 @@ public interface I_AdministracionRepository {
     
        default List<Administracion> getLikeHabilidades(String habilidades) {
         if (habilidades == null) {
-            return new ArrayList<Administracion>();
+            return new ArrayList<>();
         }
         return getStream()
                 .filter(objeto -> objeto.getHabilidades().toLowerCase()

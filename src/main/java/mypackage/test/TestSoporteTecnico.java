@@ -2,28 +2,28 @@ package mypackage.test;
 
 import java.time.LocalDate;
 import mypackage.connector.LocalConnector;
-import mypackage.entities.Empleado;
+import mypackage.entities.Estudiante;
 import mypackage.entities.SoporteTecnico;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
 import mypackage.repositories.interfaces.I_SoporteTecnicoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.jdbc.EstudianteRepository;
 import mypackage.repositories.jdbc.SoporteTecnicoRepository;
 
 public class TestSoporteTecnico {
 
     public static void main(String[] args) {
 
-        I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+        I_EstudianteRepository empleadoRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
         I_SoporteTecnicoRepository soporteTecnicoRepository = new SoporteTecnicoRepository(LocalConnector.getLocalConnection());
 
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Empleado ===============\n");
-        Empleado nuevoEmpleado
-                = new Empleado("Rafaela", "Cisneros", 36, "Femenina", "DNI", "20123989",
+        Estudiante nuevoEstudiante
+                = new Estudiante("Rafaela", "Cisneros", 36, "Femenina", "DNI", "20123989",
                         "RafaelaSoppurt@gmail.com", "1537994575", String.valueOf(LocalDate.now()), 49, 43000f);
 
-        empleadoRepository.save(nuevoEmpleado);
-        System.out.println(nuevoEmpleado);
+        empleadoRepository.save(nuevoEstudiante);
+        System.out.println(nuevoEstudiante);
         
 
         System.out.println("\n=================Agregamos datos del  Empleado de soporteTecnico con el id_empleados 8 ===============\n");
@@ -38,8 +38,8 @@ public class TestSoporteTecnico {
 //FIN INSERT
 //DELETE
    System.out.println("\n=================Eliminamos el ultimo empleado ingresado===============\n");
-        empleadoRepository.remove(nuevoEmpleado);
-        System.out.println(nuevoEmpleado);
+        empleadoRepository.remove(nuevoEstudiante);
+        System.out.println(nuevoEstudiante);
     System.out.println("\n=================Eliminamos los  datos del ultimo soporte tecnico ingresado===============\n");
         soporteTecnicoRepository.remove(nuevoSoporteTecnico);
         System.out.println(nuevoSoporteTecnico);
@@ -67,7 +67,7 @@ public class TestSoporteTecnico {
         System.out.println(soporteTecnicoRepository.getById(2));
 
         
-  System.out.println("\n=================Empleado de  Soporte Tecnico con el id de empleados 5 ===============\n");
+  System.out.println("\n=================Empleado de  Soporte Tecnico con el id de estudiantes 5 ===============\n");
         System.out.println(soporteTecnicoRepository.getByIdEmpleados(5));
 
           System.out.println("\n=================Empleado/s de  Soporte Tecnico con el puesto de NetworkingAdmin ===============\n");

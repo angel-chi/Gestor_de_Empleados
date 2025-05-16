@@ -6,12 +6,14 @@
 package mypackage.gui.menuInicial;
 
 import mypackage.connector.LocalConnector;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
 import mypackage.gui.utils.JFrameValidacionIngreso;
 import mypackage.gui.otros.JFrameAcercaDe;
 import mypackage.gui.otros.JFrameAyuda;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.interfaces.I_AlumnoRepository;
+import mypackage.repositories.jdbc.AlumnoRepository;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -20,7 +22,7 @@ import mypackage.repositories.jdbc.EmpleadoRepository;
 public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     
     
-      I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+      I_AlumnoRepository empleadoRepository = new AlumnoRepository(LocalConnector.getLocalConnection());
 
 
     /** Creates new form JFrameGestorEmpleados_app */
@@ -52,11 +54,12 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDesktopPaneFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        UIManager.put("nimbusBase", new Color(30, 16, 106, 190));
 
         jButtonEmpleados.setBackground(new java.awt.Color(1, 45, 151));
         jButtonEmpleados.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonEmpleados.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEmpleados.setText("EMPLEADOS");
+        jButtonEmpleados.setText("ALUMNOS");
         jButtonEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEmpleadosActionPerformed(evt);
@@ -103,7 +106,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         jButtonAnalytics.setText("ANALYTICS");
         jDesktopPaneFondo.add(jButtonAnalytics, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, 320, 80));
 
-        jToggleButtonAyuda.setBackground(new java.awt.Color(0, 79, 237));
+        jToggleButtonAyuda.setBackground(new java.awt.Color(144, 47, 166, 178));
         jToggleButtonAyuda.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jToggleButtonAyuda.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButtonAyuda.setText("Ayuda");
@@ -114,7 +117,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         });
         jDesktopPaneFondo.add(jToggleButtonAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 70, -1));
 
-        jToggleButtonAcerca.setBackground(new java.awt.Color(0, 79, 237));
+        jToggleButtonAcerca.setBackground(new java.awt.Color(144, 47, 166, 178));
         jToggleButtonAcerca.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jToggleButtonAcerca.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButtonAcerca.setText("Acerca de");

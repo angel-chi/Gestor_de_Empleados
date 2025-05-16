@@ -9,10 +9,10 @@ package mypackage.gui.empleados;
  *
  * @author andre
  */
-public class JFrameActualizarEmpleado extends javax.swing.JFrame {
+public class JFrameActualizarAlumno extends javax.swing.JFrame {
 
     /** Creates new form JFrameActualizarEmpleados */
-    public JFrameActualizarEmpleado() {
+    public JFrameActualizarAlumno() {
         initComponents();
     }
 
@@ -223,7 +223,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(jButtonLimpiar);
-        jButtonLimpiar.setBounds(160, 680, 142, 50);
+        jButtonLimpiar.setBounds(160, 500, 142, 50);
 
         jButtonActualizar.setBackground(new java.awt.Color(0, 32, 108));
         jButtonActualizar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -235,7 +235,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(jButtonActualizar);
-        jButtonActualizar.setBounds(340, 680, 140, 50);
+        jButtonActualizar.setBounds(340, 500, 140, 50);
 
         jButtonAgregar1.setBackground(new java.awt.Color(1, 26, 86));
         jButtonAgregar1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -247,7 +247,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(jButtonAgregar1);
-        jButtonAgregar1.setBounds(240, 760, 180, 50);
+        jButtonAgregar1.setBounds(240, 76, 180, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -307,13 +307,13 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -321,7 +321,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameActualizarEmpleado().setVisible(true);
+                new JFrameActualizarAlumno().setVisible(true);
             }
         });
     }

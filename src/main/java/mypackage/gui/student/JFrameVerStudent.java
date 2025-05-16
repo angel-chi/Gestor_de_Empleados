@@ -129,7 +129,7 @@ public class JFrameVerStudent extends javax.swing.JFrame {
         jButtonAnalytics.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButtonAnalytics.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAnalytics.setText("ANALYTICS");
-        jButtonAnalytics.setVisible(userRoot);
+        jButtonAnalytics.setVisible(false);//esto es para que no aparezca en la interfaz ya que no tine uso
         jButtonAnalytics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAnalyticsActionPerformed(evt);
@@ -250,7 +250,9 @@ public class JFrameVerStudent extends javax.swing.JFrame {
             return;
         }
 
-        int idStudent = (int) jTableListaStudents.getValueAt(filaTablaStudent, 0);
+        String idStudent = (String) jTableListaStudents.getValueAt(filaTablaStudent, 0);
+
+
 
         if (JOptionPane.showConfirmDialog(this, "ESTA POR ELIMINAR EL ESTUDIANTE CON EL ID " + idStudent + "!!") != 0) {
 

@@ -7,6 +7,7 @@ package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
 //import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
+import mypackage.gui.student.JFrameActualizarStudents;
 import mypackage.gui.student.JFrameIngresoStudents;
 import mypackage.gui.student.JFrameVerStudent;
 
@@ -110,7 +111,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 
              new JFrameIngresoStudents().setVisible(true);
 
-            dispose();
+            this.dispose();
 
         } else if ((jTextFieldUsuario.getText().equals("root")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("root"))) {
             new JFrameVerStudent(true).setVisible(true);
@@ -118,8 +119,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         } else if((jTextFieldUsuario.getText().equals("estudiante")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("estudiante"))){
             if (botonNuevoEstudiante==true){JOptionPane.showMessageDialog(null, "NO CUENTA CON LOS PERMISOS PARA MODIFICAR LOS DATOS!");}
             new JFrameVerStudent(false).setVisible(true);
-
-            dispose();
+            this.dispose();
             
         }else{
                  JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");

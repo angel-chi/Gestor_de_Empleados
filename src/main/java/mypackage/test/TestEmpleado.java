@@ -15,7 +15,7 @@ public class TestEmpleado {
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Student ===============\n");
         Student nuevoStudent
-                = new Student(1,"Antonio", "Ibramovich", 34, "Masculino", "DNI", "21762989",
+                = new Student("1","Antonio", "Ibramovich", 34, "Masculino", "DNI", "21762989",
                         "liuoyuko@gmail.com", "1567896578",2,48);
 
         empleadoRepository.save(nuevoStudent);
@@ -35,9 +35,9 @@ public class TestEmpleado {
         //FIN REMOVE
         //UPDATE
         System.out.println("\n=================Actualizamos el apellido del Student con el id 2 ===============\n");
-        nuevoStudent = empleadoRepository.getById(2);
+        nuevoStudent = empleadoRepository.getById("2");
 
-        if (nuevoStudent != null && nuevoStudent.getId() != 0) {
+        if (nuevoStudent != null && nuevoStudent.getId() != "0") {
             nuevoStudent.setApellido("Fernandez");
             empleadoRepository.update(nuevoStudent);
         }

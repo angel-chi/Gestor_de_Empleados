@@ -2,7 +2,7 @@ package mypackage.entities;
 
 
 public class Student {
-    private int id;
+    private String id;
     private String nombre;
     private String apellido;
     private int edad;
@@ -17,7 +17,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String nombre, String apellido, int edad, String genero, String facultad, String carrera, String correo_institucional, String numero_telefono, int semestre, int promedio){     //(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Student(String id, String nombre, String apellido, int edad, String genero, String facultad, String carrera, String correo_institucional, String numero_telefono, int semestre, int promedio){     //(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
         this.id=id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -64,10 +64,10 @@ public class Student {
         this.numero_telefono = numero_telefono;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

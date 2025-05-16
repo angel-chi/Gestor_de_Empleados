@@ -20,9 +20,9 @@ public interface I_StudentRepository {
         return getAll().stream();
     }
 
-    default Student getById(int id) {
+    default Student getById(String id) {
         return getStream()
-                .filter(objeto -> objeto.getId() == id)
+                .filter(objeto ->objeto.getId().equals(id))
                 .findAny()
                 .orElse(new Student());
     }

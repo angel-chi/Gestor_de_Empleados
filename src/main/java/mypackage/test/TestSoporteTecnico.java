@@ -18,7 +18,7 @@ public class TestSoporteTecnico {
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Student ===============\n");
         Student nuevoStudent
-                = new Student(3,"Rafaela", "Cisneros", 36, "Femenina", "DNI", "20123989",
+                = new Student("3","Rafaela", "Cisneros", 36, "Femenina", "DNI", "20123989",
                         "RafaelaSoppurt@gmail.com", "1537994575", 49, 43000);
 
         empleadoRepository.save(nuevoStudent);

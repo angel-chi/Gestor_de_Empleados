@@ -272,17 +272,42 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {//refactor cla
         try {
             StudentRepository repo = new StudentRepository(LocalConnector.getLocalConnection());
 
-            int id = Integer.parseInt(jTextFieldMatricula.getText());
-            String nombre = jTextFieldNombre.getText();
-            String apellido = jTextFieldApellido.getText();
-            int edad = Integer.parseInt(jTextFieldEdad.getText());
-            String genero = jTextFieldGenero.getText();
-            String facultad = jTextFieldFacultad.getText();
-            String correo = jTextFieldCorreoInstitucional.getText();
-            String cel = jTextFieldNumeroTelefono.getText();
-            String carrera = jTextFieldCarrera.getText();
-            int semestre = Integer.parseInt(jTextFieldSemestre.getText());
-            int promedio = Integer.parseInt(jTextFieldPromeido.getText());
+            String id =jTextFieldMatricula.getText().trim();
+            String nombre = jTextFieldNombre.getText().trim();
+            String apellido = jTextFieldApellido.getText().trim();
+            int edad = Integer.parseInt(jTextFieldEdad.getText().trim());
+            String genero = jTextFieldGenero.getText().trim();
+            String facultad = jTextFieldFacultad.getText().trim();
+            String correo = jTextFieldCorreoInstitucional.getText().trim();
+            String cel = jTextFieldNumeroTelefono.getText().trim();
+            String carrera = jTextFieldCarrera.getText().trim();
+            int semestre = Integer.parseInt(jTextFieldSemestre.getText().trim());
+            int promedio = Integer.parseInt(jTextFieldPromeido.getText().trim());
+
+            if(!id.matches("^\\d{8}$")){
+                JOptionPane.showMessageDialog(this, "INGRESE UNA MATRÍCULA VÁLIDA DE 8 DÍGITOS.");
+                return;
+            }
+            /// intentar validar el correo con la matrícula
+            if (!correo.matches("^[\\w\\.-]+@[\\w\\.-]+\\.[a-zA-Z]{2,6}$")) {
+                JOptionPane.showMessageDialog(this, "INGRESE UN CORREO INSTITUCIONAL VÁLIDO (aMatrícula@alumnos.uady.mx)");
+                return;
+            }
+            if (!cel.matches("^\\d{10}$")) {
+                JOptionPane.showMessageDialog(this, "INGRESE UN NÚMERO TELEFÓNICO VÁLIDO DE 10 DÍGITOS.");
+                return;
+            }
+            try {
+                if (semestre<1||semestre>14){JOptionPane.showMessageDialog(this,"EL SEMESTRE DEBE ESTAR ENTRE 1 Y 14");return;}
+            }catch (NumberFormatException exception){JOptionPane.showMessageDialog(this,"NÚMERO DE SEMESTRE NO VÁLIDO");return;}
+            try {
+                if(edad<17||edad>100){JOptionPane.showMessageDialog(this,"LA EDAD DEBE ESTAR ENTRE 17 Y 100");return;}
+            }catch (NumberFormatException exception){JOptionPane.showMessageDialog(this,"NÚMERO DE EDAD NO VÁLIDA");return;}
+            try {
+                if(promedio<0||promedio>100){JOptionPane.showMessageDialog(this,"EL PROMEDIO DEBE ESTAR ENTRE 0 Y 100");return;}
+            }catch (NumberFormatException exception){JOptionPane.showMessageDialog(this,"FORMATO DE PROMEDIO NO VÁLIDO");return;}
+
+
 
             Student student = new Student(id,nombre,apellido,edad,genero,facultad,carrera,correo,cel,semestre,promedio);
 

@@ -18,7 +18,7 @@ public class TestGerente {
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Student ===============\n");
         Student nuevoStudent
-                = new Student(2,"Yamila", "Raskovik", 42, "Femenina", "DNI", "25678614",
+                = new Student("2","Yamila", "Raskovik", 42, "Femenina", "DNI", "25678614",
                         "hjhasava@hotmail.com", "1556348791", 2, 54000);
 
         empleadoRepository.save(nuevoStudent);

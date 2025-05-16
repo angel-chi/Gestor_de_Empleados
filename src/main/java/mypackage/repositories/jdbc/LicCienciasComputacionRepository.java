@@ -25,7 +25,7 @@ public class LicCienciasComputacionRepository implements I_LicCienciasComputacio
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement(
-                        "INSERT INTO lic_ciencias_computacion(id,id_Estudiantes,semestre,optativas,materias_libres_cursadas)"
+                        "INSERT INTO licCienciasComputacion(id,id_Estudiantes,semestre,optativas,materias_libres_cursadas)"
                         + "values(?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
@@ -52,7 +52,7 @@ public class LicCienciasComputacionRepository implements I_LicCienciasComputacio
             return;
         }
         try ( PreparedStatement consultaPreparada
-                = conexionDB.prepareStatement("DELETE FROM lic_ciencias_computacion WHERE id=?")) {
+                = conexionDB.prepareStatement("DELETE FROM licCienciasComputacion WHERE id=?")) {
 
             consultaPreparada.setInt(1, LicCienciasComputacion.getId());
 
@@ -69,7 +69,7 @@ public class LicCienciasComputacionRepository implements I_LicCienciasComputacio
         }
         try ( PreparedStatement consultaPreparada = conexionDB
                 .prepareStatement(
-                        "UPDATE lic_ciencias_computacion SET id_Estudiantes=?,semestre=?,optativas=?,materias_libres_cursadas=? "
+                        "UPDATE licCienciasComputacion SET id_Estudiantes=?,semestre=?,optativas=?,materias_libres_cursadas=? "
                        + "WHERE id=?")) {
 
             consultaPreparada.setInt(1, LicCienciasComputacion.getId_Estudiantes());
@@ -92,7 +92,7 @@ public class LicCienciasComputacionRepository implements I_LicCienciasComputacio
         try ( ResultSet resultSetLicCienciasComputacion
                 = conexionDB
                         .createStatement()
-                        .executeQuery("SELECT * FROM lic_ciencias_computacion")) {
+                        .executeQuery("SELECT * FROM licCienciasComputacion")) {
                     while (resultSetLicCienciasComputacion.next()) {
 
                         listaLicCienciasComputacion.add(new LicCienciasComputacion(

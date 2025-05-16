@@ -155,14 +155,14 @@ public interface I_EstudianteRepository {
     
      
     
-    default List<Estudiante> getByCantidadHsSemanales(int hs_de_clase) {
+    default List<Estudiante> getByHsDeClase(int hs_de_clase) {
 
         return getStream()
                 .filter(objeto -> objeto.getHs_de_clase() == hs_de_clase)
                 .collect(Collectors.toList());
     }
     
-     default List<Estudiante> getLikeCantidadHsSemanales(String hs_de_clase) {
+     default List<Estudiante> getLikeHsDeClase(String hs_de_clase) {
         if (hs_de_clase == null) {
             return new ArrayList<Estudiante>();
         }

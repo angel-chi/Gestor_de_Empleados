@@ -68,7 +68,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jLabelCantidadHs1 = new javax.swing.JLabel();
         jTextFieldFechaDeInicio = new javax.swing.JTextField();
         jLabelCantidadHs3 = new javax.swing.JLabel();
-        jTextFieldCantidadHsSemanales = new javax.swing.JTextField();
+        jTextFieldHsDeClase = new javax.swing.JTextField();
         jButtonLimpiar = new javax.swing.JButton();
         jButtonAgregar = new javax.swing.JButton();
         jButtonAgregar1 = new javax.swing.JButton();
@@ -225,9 +225,9 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelCantidadHs3);
         jLabelCantidadHs3.setBounds(160, 600, 110, 40);
 
-        jTextFieldCantidadHsSemanales.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldCantidadHsSemanales);
-        jTextFieldCantidadHsSemanales.setBounds(270, 600, 191, 34);
+        jTextFieldHsDeClase.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldHsDeClase);
+        jTextFieldHsDeClase.setBounds(270, 600, 191, 34);
 
         jButtonLimpiar.setBackground(new java.awt.Color(0, 32, 108));
         jButtonLimpiar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -274,7 +274,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
 
         jTextFieldNombre.setText("");
         jTextFieldApellido.setText("");
-        jTextFieldCantidadHsSemanales.setText("");
+        jTextFieldHsDeClase.setText("");
         jTextFieldCorreoElectronico.setText("");
         jTextFieldEdad.setText("");
         jTextFieldFechaDeInicio.setText("");
@@ -295,7 +295,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         String tipo_documento = jTextFieldTipoDoc.getText();
         String numero_telefono= jTextFieldNumeroTelefono.getText();
         String numero_documento=jTextFieldNumDoc.getText();
-        int hs_de_clase= Integer.parseInt(jTextFieldCantidadHsSemanales.getText());
+        int hs_de_clase= Integer.parseInt(jTextFieldHsDeClase.getText());
         String fecha_inicio=jTextFieldFechaDeInicio.getText();
         String correo_electronico=jTextFieldCorreoElectronico.getText();
         Estudiante nuevoEstudiante= new Estudiante(nombre,apellido,edad,genero,tipo_documento,numero_documento,correo_electronico,numero_telefono,fecha_inicio,hs_de_clase,calificacion);
@@ -349,7 +349,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JTextField jTextFieldApellido;
-    private javax.swing.JTextField jTextFieldCantidadHsSemanales;
+    private javax.swing.JTextField jTextFieldHsDeClase;
     private javax.swing.JTextField jTextFieldCorreoElectronico;
     private javax.swing.JTextField jTextFieldEdad;
     private javax.swing.JTextField jTextFieldFechaDeInicio;

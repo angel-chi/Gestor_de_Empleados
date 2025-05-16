@@ -316,7 +316,7 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
 
         } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("CANTIDAD DE HS SEMANALES")) {
 
-            new Table().cargar(jTableListaEstudiantes, EstudianteRepository.getLikeCantidadHsSemanales(jTextFieldBusquedaEstudiantes.getText()));
+            new Table().cargar(jTableListaEstudiantes, EstudianteRepository.getLikeHsDeClase(jTextFieldBusquedaEstudiantes.getText()));
 
         } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("calificacion")) {
 

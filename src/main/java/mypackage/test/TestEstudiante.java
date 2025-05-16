@@ -79,7 +79,7 @@ public class TestEstudiante {
 
         
         System.out.println("\n=================Estudiante/s  cuya cantidad de horas semanales sean 48h ===============\n");
-        EstudianteRepository.getByCantidadHsSemanales(48).forEach(System.out::println);
+        EstudianteRepository.getByHsDeClase(48).forEach(System.out::println);
 
         
         System.out.println("\n=================Estudiante/s  cuyo calificacion sea de $33000 ===============\n");

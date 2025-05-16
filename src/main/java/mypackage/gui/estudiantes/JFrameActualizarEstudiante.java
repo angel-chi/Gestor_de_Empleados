@@ -54,7 +54,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         jLabelCantidadHs1 = new javax.swing.JLabel();
         jTextFieldFechaDeInicio = new javax.swing.JTextField();
         jLabelCantidadHs3 = new javax.swing.JLabel();
-        jTextFieldCantidadHsSemanales = new javax.swing.JTextField();
+        jTextFieldHsDeClase = new javax.swing.JTextField();
         jButtonLimpiar = new javax.swing.JButton();
         jButtonActualizar = new javax.swing.JButton();
         jButtonAgregar1 = new javax.swing.JButton();
@@ -209,9 +209,9 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelCantidadHs3);
         jLabelCantidadHs3.setBounds(150, 550, 110, 40);
 
-        jTextFieldCantidadHsSemanales.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldCantidadHsSemanales);
-        jTextFieldCantidadHsSemanales.setBounds(260, 550, 191, 34);
+        jTextFieldHsDeClase.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldHsDeClase);
+        jTextFieldHsDeClase.setBounds(260, 550, 191, 34);
 
         jButtonLimpiar.setBackground(new java.awt.Color(0, 32, 108));
         jButtonLimpiar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -271,7 +271,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
 
         jTextFieldNombre.setText("");
         jTextFieldApellido.setText("");
-        jTextFieldCantidadHsSemanales.setText("");
+        jTextFieldHsDeClase.setText("");
         jTextFieldCorreoElectronico.setText("");
         jTextFieldEdad.setText("");
         jTextFieldFechaDeInicio.setText("");
@@ -352,7 +352,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JTextField jTextFieldApellido;
-    private javax.swing.JTextField jTextFieldCantidadHsSemanales;
+    private javax.swing.JTextField jTextFieldHsDeClase;
     private javax.swing.JTextField jTextFieldCorreoElectronico;
     private javax.swing.JTextField jTextFieldEdad;
     private javax.swing.JTextField jTextFieldFechaDeInicio;

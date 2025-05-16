@@ -24,7 +24,7 @@ insert into actuarios (id, id_Estudiantes, semestre, materias_libres_cursadas, m
 
 
 
-insert into lic_ciencias_computacion (id, id_Estudiantes, semestre, optativas, materias_libres_cursadas) values
+insert into licCienciasComputacion (id, id_Estudiantes, semestre, optativas, materias_libres_cursadas) values
 
 (1, 4, 'Tercero', 'Tecnico en Redes', 'Futbol'),
 (2, 5, 'Tercero', 'Modelado 3D', 'Fotografía, Taller de redacción');

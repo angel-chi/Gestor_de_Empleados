@@ -15,7 +15,7 @@ select * from egresados;
 -- Estudiantes por area
 select * from Estudiantes empl , licIngDesSoftware adm where empl.id = adm.id_Estudiantes;
 select * from Estudiantes empl, actuarios dev where empl.id= dev.id_Estudiantes;
-select * from Estudiantes empl, lic_ciencias_computacion sop where empl.id= sop.id_Estudiantes;
+select * from Estudiantes empl, licCienciasComputacion sop where empl.id= sop.id_Estudiantes;
 select * from Estudiantes empl, egresados ger where empl.id= ger.id_Estudiantes;
 
 -- Estudiantes ordenados por nombre
@@ -40,6 +40,6 @@ select * from Estudiantes order by calificacion;
 
 -- -----------UPDATE----------------
 update Estudiantes set edad=33 where id=2;
-update lic_ciencias_computacion set materias_libres_cursadas='Protocolos Locales, Fibra Optica' where id=4;
+update licCienciasComputacion set materias_libres_cursadas='Protocolos Locales, Fibra Optica' where id=4;
 update actuarios set materias_debidas='Autodidacta, metodologias agiles' where id=3;
 -- -----------FIN UPDATE----------------

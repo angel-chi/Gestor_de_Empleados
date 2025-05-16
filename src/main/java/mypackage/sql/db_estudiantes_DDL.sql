@@ -10,7 +10,7 @@ use db_Estudiantes;
 
 drop table if exists Estudiantes;
 drop table if exists actuarios;
-drop table if exists lic_ciencias_computacion;
+drop table if exists licCienciasComputacion;
 drop table if exists licIngDesSoftware;
 drop table if exists egresados;
 
@@ -46,11 +46,11 @@ creditos_cursados		int
 
 );
 
-create table lic_ciencias_computacion(
+create table licCienciasComputacion(
 
 id					int 									auto_increment 	primary key,
 id_Estudiantes		int										not null unique,
-constraint			fk_id_Estudiantes_lic_ciencias_computacion			foreign key(id_Estudiantes) references Estudiantes(id),
+constraint			fk_id_Estudiantes_licCienciasComputacion			foreign key(id_Estudiantes) references Estudiantes(id),
 semestre				varchar(30)								not null,
 optativas			varchar(50),-- titulo universitario, etc
 materias_libres_cursadas		varchar(80)

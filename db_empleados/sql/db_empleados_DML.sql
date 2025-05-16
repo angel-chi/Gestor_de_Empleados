@@ -24,7 +24,7 @@ insert into actuarios (id, id_Estudiantes, semestre, materias_libres_cursadas, m
 
 
 
-insert into lic_ciencias_computacion (id, id_Estudiantes, semestre, optativas, materias_libres_cursadas) values
+insert into licCienciasComputacion (id, id_Estudiantes, semestre, optativas, materias_libres_cursadas) values
 
 (1, 4, 'NetworkingAdmin', 'Tecnico en Redes', 'NetworkingAdvanced, Protocolos Locales'),
 (2, 5, 'NetworkingEngineer', 'Licenciatura en Telecomunicaciones', 'Linux Arquitect, adminNAS, Industry 4.0');
@@ -37,7 +37,7 @@ insert into licIngDesSoftware (id, id_Estudiantes, semestre, materias_debidas) v
 
 insert into egresados (id, id_Estudiantes, carrera_estudiada, optativas, año_egreso) values
 
-(1, 6, 'lic_ciencias_computacion', 'Licenciado en Administración', 2);
+(1, 6, 'licCienciasComputacion', 'Licenciado en Administración', 2);
 
 
 

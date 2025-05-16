@@ -245,6 +245,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed

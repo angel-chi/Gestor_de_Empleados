@@ -26,17 +26,16 @@ public interface I_EstudianteRepository {
                 .findAny()
                 .orElse(new Estudiante());
     }
-    
-        default List<Estudiante> getLikeId(String id) {
+
+    default List<Estudiante> getLikeId(String id) {
         if (id == null) {
             return new ArrayList<Estudiante>();
         }
         return getStream()
                 .filter(objeto -> String.valueOf(objeto.getId())
-                .contains(id))
+                        .contains(id))
                 .collect(Collectors.toList());
     }
-    
 
     default List<Estudiante> getLikeNombre(String nombre) {
         if (nombre == null) {
@@ -44,7 +43,7 @@ public interface I_EstudianteRepository {
         }
         return getStream()
                 .filter(objeto -> objeto.getNombre().toLowerCase()
-                .startsWith(nombre.toLowerCase()))
+                        .startsWith(nombre.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
@@ -53,8 +52,8 @@ public interface I_EstudianteRepository {
             return new ArrayList<Estudiante>();
         }
         return getStream()
-                .filter(objeto -> objeto.getApellido().toLowerCase()
-                .startsWith(apellido.toLowerCase()))
+                .filter(objeto -> objeto.getApellido_primero().toLowerCase()
+                        .startsWith(apellido.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
@@ -64,14 +63,14 @@ public interface I_EstudianteRepository {
                 .filter(objeto -> objeto.getEdad() == edad)
                 .collect(Collectors.toList());
     }
-    
-         default List<Estudiante> getLikeEdad(String edad) {
+
+    default List<Estudiante> getLikeEdad(String edad) {
         if (edad == null) {
             return new ArrayList<Estudiante>();
         }
         return getStream()
                 .filter(objeto -> String.valueOf(objeto.getEdad())
-                .contains(edad))
+                        .contains(edad))
                 .collect(Collectors.toList());
     }
 
@@ -95,53 +94,29 @@ public interface I_EstudianteRepository {
         }
         return getStream()
                 .filter(objeto -> objeto.getGenero().toLowerCase()
-                .startsWith(genero.toLowerCase()))
+                        .startsWith(genero.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
-        default List<Estudiante> getLikeTipoDocumento(String tipo_documento) {
-        if (tipo_documento == null) {
-            return new ArrayList<Estudiante>();
-        }
-        return getStream()
-                .filter(objeto -> objeto.getTipo_documento().toLowerCase()
-                .contains(tipo_documento.toLowerCase()))
-                .collect(Collectors.toList());
-    }
-        
-        
-    default List<Estudiante> getLikeNumeroDocumento(String numero_documento) {
-        if (numero_documento == null) {
-            return new ArrayList<Estudiante>();
-        }
-         return getStream()
-                .filter(objeto -> objeto.getNumero_documento().toLowerCase()
-                .contains(numero_documento.toLowerCase()))
-                .collect(Collectors.toList());
-    }
-    
-        
     default List<Estudiante> getLikeCorreoElectronico(String correo_electronico) {
         if (correo_electronico == null) {
             return new ArrayList<Estudiante>();
         }
-         return getStream()
+        return getStream()
                 .filter(objeto -> objeto.getCorreo_electronico().toLowerCase()
-                .startsWith(correo_electronico.toLowerCase()))
+                        .startsWith(correo_electronico.toLowerCase()))
                 .collect(Collectors.toList());
     }
-    
-       
+
     default List<Estudiante> getLikeNumeroTelefono(String numero_telefono) {
         if (numero_telefono == null) {
             return new ArrayList<Estudiante>();
         }
-           return getStream()
+        return getStream()
                 .filter(objeto -> objeto.getNumero_telefono().toLowerCase()
-                .contains(numero_telefono.toLowerCase()))
+                        .contains(numero_telefono.toLowerCase()))
                 .collect(Collectors.toList());
     }
-    
 
     default List<Estudiante> getLikeFechaInicio(String fecha_inicio) {
         if (fecha_inicio == null) {
@@ -149,46 +124,25 @@ public interface I_EstudianteRepository {
         }
         return getStream()
                 .filter(objeto -> objeto.getFecha_inicio().toLowerCase()
-                .contains(fecha_inicio.toLowerCase()))
+                        .contains(fecha_inicio.toLowerCase()))
                 .collect(Collectors.toList());
     }
-    
-     
-    
+
     default List<Estudiante> getByCantidadHsSemanales(int cantidad_hs_semanales) {
 
         return getStream()
-                .filter(objeto -> objeto.getCantidad_hs_semanales() == cantidad_hs_semanales)
+                .filter(objeto -> objeto.getHoras_semanales() == cantidad_hs_semanales)
                 .collect(Collectors.toList());
     }
-    
-     default List<Estudiante> getLikeCantidadHsSemanales(String cantidad_hs_semanales) {
+
+    default List<Estudiante> getLikeCantidadHsSemanales(String cantidad_hs_semanales) {
         if (cantidad_hs_semanales == null) {
             return new ArrayList<Estudiante>();
         }
         return getStream()
-                .filter(objeto -> String.valueOf(objeto.getCantidad_hs_semanales())
-                .contains(cantidad_hs_semanales))
+                .filter(objeto -> String.valueOf(objeto.getHoras_semanales())
+                        .contains(cantidad_hs_semanales))
                 .collect(Collectors.toList());
     }
- 
-    default List<Estudiante> getBySueldo(float sueldo) {
 
-        return getStream()
-                .filter(objeto -> objeto.getSueldo() == sueldo)
-                .collect(Collectors.toList());
-    }
-    
-            default List<Estudiante> getLikeSueldo(String sueldo) {
-        if (sueldo == null) {
-            return new ArrayList<Estudiante>();
-        }
-        return getStream()
-                .filter(objeto -> String.valueOf(objeto.getSueldo())
-                .contains(sueldo))
-                .collect(Collectors.toList());
-    }
-    
-    
-    
 }

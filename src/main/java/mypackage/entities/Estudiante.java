@@ -1,139 +1,198 @@
 package mypackage.entities;
 
-
 public class Estudiante {
     private int id;
+    private String matricula;
     private String nombre;
-    private String apellido;
+    private String apellido_primero;
+    private String apellido_segundo;
     private int edad;
     private String genero;
-    private String tipo_documento;
-    private String numero_documento;
     private String correo_electronico;
     private String numero_telefono;
+    private int horas_semanales;
     private String fecha_inicio;
-    private int cantidad_hs_semanales;
-    private float sueldo;
+    private int num_clsases;
 
     public Estudiante() {
     }
 
-    public Estudiante(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Estudiante(
+            String matricula,
+            String nombre,
+            String apellido_primero,
+            int edad,
+            String genero,
+            String correo_electronico,
+            String numero_telefono,
+            int horas_semanales,
+            String fecha_inicio) {
+        this.matricula = matricula;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.apellido_primero = apellido_primero;
+        this.apellido_segundo = "";
         this.edad = edad;
         this.genero = genero;
-        this.tipo_documento = tipo_documento;
-        this.numero_documento = numero_documento;
         this.correo_electronico = correo_electronico;
         this.numero_telefono = numero_telefono;
+        this.horas_semanales = horas_semanales;
         this.fecha_inicio = fecha_inicio;
-        this.cantidad_hs_semanales = cantidad_hs_semanales;
-        this.sueldo = sueldo;
     }
 
-    public Estudiante(int id, String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Estudiante(int id,
+            String nombre,
+            String apellido_primero,
+            int edad,
+            String genero,
+            String correo_electronico,
+            String numero_telefono,
+            String fecha_inicio,
+            int horas_semanales,
+            int num_clases) {
         this.id = id;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.apellido_primero = apellido_primero;
         this.edad = edad;
         this.genero = genero;
-        this.tipo_documento = tipo_documento;
-        this.numero_documento = numero_documento;
         this.correo_electronico = correo_electronico;
         this.numero_telefono = numero_telefono;
         this.fecha_inicio = fecha_inicio;
-        this.cantidad_hs_semanales = cantidad_hs_semanales;
-        this.sueldo = sueldo;
+        this.horas_semanales = horas_semanales;
+        this.num_clsases = num_clases;
     }
 
+    // Getters
 
-
-
-    public float getSueldo() {
-        return sueldo;
+    public Estudiante(
+            int id,
+            String matricula,
+            String nombre,
+            String apellido_primero,
+            String apellido_segundo,
+            int edad,
+            String genero,
+            String correo_electronico,
+            String numero_telefono,
+            String fecha_inicio,
+            int horas_semanales,
+            int num_clases) {
+        this.id = id;
+        this.matricula = matricula;
+        this.nombre = nombre;
+        this.apellido_primero = apellido_primero;
+        this.apellido_segundo = apellido_segundo;
+        this.edad = edad;
+        this.genero = genero;
+        this.correo_electronico = correo_electronico;
+        this.numero_telefono = numero_telefono;
+        this.horas_semanales = horas_semanales;
+        this.fecha_inicio = fecha_inicio;
+        this.num_clsases = num_clases;
     }
-    public void setSueldo(float sueldo) {
-        this.sueldo = sueldo;
-    }
+
     public String getNombre() {
         return nombre;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+    public int getNum_clsases() {
+        return num_clsases;
     }
-    public String getApellido() {
-        return apellido;
+
+    public String getApellido_segundo() {
+        return apellido_segundo;
     }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+
+    public String getMatricula() {
+        return matricula;
     }
+
+    public String getApellido_primero() {
+        return apellido_primero;
+    }
+
+    public int getHoras_semanales() {
+        return horas_semanales;
+    }
+
     public int getEdad() {
         return edad;
     }
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
+
     public String getGenero() {
         return genero;
     }
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-    public String getTipo_documento() {
-        return tipo_documento;
-    }
-    public void setTipo_documento(String tipo_documento) {
-        this.tipo_documento = tipo_documento;
-    }
-    public String getNumero_documento() {
-        return numero_documento;
-    }
-    public void setNumero_documento(String numero_documento) {
-        this.numero_documento = numero_documento;
-    }
+
     public String getCorreo_electronico() {
         return correo_electronico;
     }
-    public void setCorreo_electronico(String correo_electronico) {
-        this.correo_electronico = correo_electronico;
-    }
+
     public String getNumero_telefono() {
         return numero_telefono;
     }
-    public void setNumero_telefono(String numero_telefono) {
-        this.numero_telefono = numero_telefono;
-    }
+
     public String getFecha_inicio() {
         return fecha_inicio;
     }
-    public void setFecha_inicio(String fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
-    }
-    public int getCantidad_hs_semanales() {
-        return cantidad_hs_semanales;
-    }
-    public void setCantidad_hs_semanales(int cantidad_hs_semanales) {
-        this.cantidad_hs_semanales = cantidad_hs_semanales;
-    }
+
     public int getId() {
         return id;
     }
+
+    // Setters
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setCorreo_electronico(String correo_electronico) {
+        this.correo_electronico = correo_electronico;
+    }
+
+    public void setNumero_telefono(String numero_telefono) {
+        this.numero_telefono = numero_telefono;
+    }
+
+    public void setFecha_inicio(String fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
-   
-    
-    
-    @Override
-    public String toString() {
-        return "Estudiante{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", genero=" + genero + ", tipo_documento=" + tipo_documento + ", numero_documento=" + numero_documento + ", correo_electronico=" + correo_electronico + ", numero_telefono=" + numero_telefono + ", fecha_inicio=" + fecha_inicio + ", cantidad_hs_semanales=" + cantidad_hs_semanales + ", sueldo=" + sueldo + '}';
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
-    
-    
-    
-    
-    
-}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public void setApellido_primero(String apellido_primero) {
+        this.apellido_primero = apellido_primero;
+    }
+
+    public void setApellido_segundo(String apellido_segundo) {
+        this.apellido_segundo = apellido_segundo;
+    }
+
+    public void setHoras_semanales(int horas_semanales) {
+        this.horas_semanales = horas_semanales;
+    }
+
+    public void setNum_clsases(int num_clsases) {
+        this.num_clsases = num_clsases;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido_primero + apellido_segundo
+                + ", edad=" + edad + ", genero=" + genero + ", correo_electronico=" + correo_electronico
+                + ", numero_telefono=" + numero_telefono + ", fecha_inicio=" + fecha_inicio + '}';
+    }
+
+}

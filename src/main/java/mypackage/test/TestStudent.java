@@ -82,8 +82,8 @@ public class TestStudent {
         studentRepository.getByCantidadHsSemanales(48).forEach(System.out::println);
 
         
-        System.out.println("\n=================Estudiante/s  cuyo sueldo sea de $33000 ===============\n");
-        studentRepository.getBySueldo(33000f).forEach(System.out::println);
+        System.out.println("\n=================Estudiante/s  cuya mesada sea de $33000 ===============\n");
+        studentRepository.getByMesada(33000f).forEach(System.out::println);
 
         //FIN FILTER
     }

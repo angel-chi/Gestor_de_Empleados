@@ -99,24 +99,24 @@ public interface I_StudentRepository {
                 .collect(Collectors.toList());
     }
 
-        default List<Student> getLikeTipoDocumento(String tipo_documento) {
-        if (tipo_documento == null) {
+        default List<Student> getLikeTipoDocumento(String grado) {
+        if (grado == null) {
             return new ArrayList<Student>();
         }
         return getStream()
                 .filter(objeto -> objeto.getGrado().toLowerCase()
-                .contains(tipo_documento.toLowerCase()))
+                .contains(grado.toLowerCase()))
                 .collect(Collectors.toList());
     }
         
         
-    default List<Student> getLikeNumeroDocumento(String numero_documento) {
-        if (numero_documento == null) {
+    default List<Student> getLikeNumeroDocumento(String matricula) {
+        if (matricula == null) {
             return new ArrayList<Student>();
         }
          return getStream()
-                .filter(objeto -> objeto.getNumero_documento().toLowerCase()
-                .contains(numero_documento.toLowerCase()))
+                .filter(objeto -> objeto.getMatricula().toLowerCase()
+                .contains(matricula.toLowerCase()))
                 .collect(Collectors.toList());
     }
     
@@ -143,49 +143,49 @@ public interface I_StudentRepository {
     }
     
 
-    default List<Student> getLikeFechaInicio(String fecha_inicio) {
-        if (fecha_inicio == null) {
+    default List<Student> getLikeFechaInicio(String semestre) {
+        if (semestre == null) {
             return new ArrayList<Student>();
         }
         return getStream()
-                .filter(objeto -> objeto.getFecha_inicio().toLowerCase()
-                .contains(fecha_inicio.toLowerCase()))
+                .filter(objeto -> objeto.getSemestre().toLowerCase()
+                .contains(semestre.toLowerCase()))
                 .collect(Collectors.toList());
     }
     
      
     
-    default List<Student> getByCantidadHsSemanales(int cantidad_hs_semanales) {
+    default List<Student> getByCantidadHsSemanales(int cantidad_hs_escolares) {
 
         return getStream()
-                .filter(objeto -> objeto.getCantidad_hs_semanales() == cantidad_hs_semanales)
+                .filter(objeto -> objeto.getCantidad_hs_escolares() == cantidad_hs_escolares)
                 .collect(Collectors.toList());
     }
     
-     default List<Student> getLikeCantidadHsSemanales(String cantidad_hs_semanales) {
-        if (cantidad_hs_semanales == null) {
+     default List<Student> getLikeCantidadHsSemanales(String cantidad_hs_escolares) {
+        if (cantidad_hs_escolares == null) {
             return new ArrayList<Student>();
         }
         return getStream()
-                .filter(objeto -> String.valueOf(objeto.getCantidad_hs_semanales())
-                .contains(cantidad_hs_semanales))
+                .filter(objeto -> String.valueOf(objeto.getCantidad_hs_escolares())
+                .contains(cantidad_hs_escolares))
                 .collect(Collectors.toList());
     }
  
-    default List<Student> getBySueldo(float sueldo) {
+    default List<Student> getByMesada(float mesada) {
 
         return getStream()
-                .filter(objeto -> objeto.getSueldo() == sueldo)
+                .filter(objeto -> objeto.getMesada() == mesada)
                 .collect(Collectors.toList());
     }
     
-            default List<Student> getLikeSueldo(String sueldo) {
-        if (sueldo == null) {
+            default List<Student> getLikeMesada(String mesada) {
+        if (mesada == null) {
             return new ArrayList<Student>();
         }
         return getStream()
-                .filter(objeto -> String.valueOf(objeto.getSueldo())
-                .contains(sueldo))
+                .filter(objeto -> String.valueOf(objeto.getMesada())
+                .contains(mesada))
                 .collect(Collectors.toList());
     }
     

@@ -5,8 +5,8 @@
 use db_students;
 
 insert into students (id, nombre, apellido, edad, genero,
- tipo_documento, numero_documento, correo_electronico, numero_telefono,
- fecha_inicio, cantidad_hs_semanales, sueldo ) values
+ grado, matricula, correo_electronico, numero_telefono,
+ semestre, cantidad_hs_escolares, mesada ) values
 
 (1, 'Romina', 'Pereira', 25 , 'Femenino', 'DNI', '37087123' , 'romi2@gmail.com', '1123467895', '2020-09-12',  48 , 32000 ),-- Adm
 (2, 'Javier', 'Gonzalez', 32 , 'Masculino', 'DNI', '26768765' , 'javiBoquita@gmail.com', '1163464891', '2019-10-02',  48 , 33000 ),-- Dev

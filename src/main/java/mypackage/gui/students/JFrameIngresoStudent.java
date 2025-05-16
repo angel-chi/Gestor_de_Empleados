@@ -35,14 +35,14 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
         jTextFieldEdad = new javax.swing.JTextField();
         jLabelGenero = new javax.swing.JLabel();
         jTextFieldGenero = new javax.swing.JTextField();
-        jTextFieldSueldo = new javax.swing.JTextField();
+        jTextFieldMesada = new javax.swing.JTextField();
         jLabelNumDoc2 = new javax.swing.JLabel();
         jLabelCorreo1 = new javax.swing.JLabel();
         jTextFieldTipoDoc = new javax.swing.JTextField();
         jLabelTipoDoc3 = new javax.swing.JLabel();
         jLabelTipoDoc4 = new javax.swing.JLabel();
         jLabelNumDoc3 = new javax.swing.JLabel();
-        jLabelSueldo = new javax.swing.JLabel();
+        jLabelMesada = new javax.swing.JLabel();
         jTextFieldNumDoc = new javax.swing.JTextField();
         jLabelCorreo3 = new javax.swing.JLabel();
         jLabelNumero2 = new javax.swing.JLabel();
@@ -67,13 +67,13 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("INGRESAR ESTUDIANTE");
         jDesktopPane1.add(jLabelTitulo);
-        jLabelTitulo.setBounds(120, 20, 430, 42);
+        jLabelTitulo.setBounds(120, 20, 500, 42);
 
         jLabelNombre.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNombre.setText("Nombre:");
         jDesktopPane1.add(jLabelNombre);
-        jLabelNombre.setBounds(180, 80, 98, 28);
+        jLabelNombre.setBounds(175, 80, 98, 28);
 
         jTextFieldNombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNombre);
@@ -83,7 +83,7 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
         jLabelApellido.setForeground(new java.awt.Color(255, 255, 255));
         jLabelApellido.setText("Apellido:");
         jDesktopPane1.add(jLabelApellido);
-        jLabelApellido.setBounds(180, 130, 104, 28);
+        jLabelApellido.setBounds(170, 130, 104, 28);
 
         jTextFieldApellido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldApellido);
@@ -93,7 +93,7 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
         jLabelEdad.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEdad.setText("Edad:");
         jDesktopPane1.add(jLabelEdad);
-        jLabelEdad.setBounds(210, 190, 55, 24);
+        jLabelEdad.setBounds(200, 190, 100, 24);
 
         jTextFieldEdad.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldEdad);
@@ -103,27 +103,22 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
         jLabelGenero.setForeground(new java.awt.Color(255, 255, 255));
         jLabelGenero.setText("Genero:");
         jDesktopPane1.add(jLabelGenero);
-        jLabelGenero.setBounds(190, 240, 77, 24);
+        jLabelGenero.setBounds(180, 240, 150, 24);
 
         jTextFieldGenero.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldGenero);
         jTextFieldGenero.setBounds(270, 240, 191, 34);
 
-        jTextFieldSueldo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldSueldo);
-        jTextFieldSueldo.setBounds(270, 660, 191, 34);
+        jTextFieldMesada.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldMesada);
+        jTextFieldMesada.setBounds(270, 660, 191, 34);
 
-        jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc2.setText("documento:");
-        jDesktopPane1.add(jLabelNumDoc2);
-        jLabelNumDoc2.setBounds(160, 360, 120, 40);
 
         jLabelCorreo1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCorreo1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelCorreo1.setText("electrónico:");
         jDesktopPane1.add(jLabelCorreo1);
-        jLabelCorreo1.setBounds(150, 420, 120, 40);
+        jLabelCorreo1.setBounds(130, 420, 170, 40);
 
         jTextFieldTipoDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldTipoDoc);
@@ -131,27 +126,22 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
 
         jLabelTipoDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc3.setText("Tipo de");
+        jLabelTipoDoc3.setText("Grado:");
         jDesktopPane1.add(jLabelTipoDoc3);
-        jLabelTipoDoc3.setBounds(180, 270, 80, 30);
+        jLabelTipoDoc3.setBounds(185, 300, 80, 30);
 
-        jLabelTipoDoc4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelTipoDoc4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc4.setText("documento:");
-        jDesktopPane1.add(jLabelTipoDoc4);
-        jLabelTipoDoc4.setBounds(150, 290, 120, 40);
 
         jLabelNumDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc3.setText("Numero de");
+        jLabelNumDoc3.setText("Matricula:");
         jDesktopPane1.add(jLabelNumDoc3);
-        jLabelNumDoc3.setBounds(160, 340, 110, 30);
+        jLabelNumDoc3.setBounds(155, 367, 155, 30);
 
-        jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSueldo.setText("Sueldo:");
-        jDesktopPane1.add(jLabelSueldo);
-        jLabelSueldo.setBounds(200, 660, 80, 40);
+        jLabelMesada.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabelMesada.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelMesada.setText("Mesada:");
+        jDesktopPane1.add(jLabelMesada);
+        jLabelMesada.setBounds(170, 660, 140, 40);
 
         jTextFieldNumDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumDoc);
@@ -161,13 +151,13 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
         jLabelCorreo3.setForeground(new java.awt.Color(255, 255, 255));
         jLabelCorreo3.setText("Correo");
         jDesktopPane1.add(jLabelCorreo3);
-        jLabelCorreo3.setBounds(170, 400, 70, 40);
+        jLabelCorreo3.setBounds(170, 400, 85, 40);
 
         jLabelNumero2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumero2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNumero2.setText("de telefono:");
         jDesktopPane1.add(jLabelNumero2);
-        jLabelNumero2.setBounds(150, 480, 130, 40);
+        jLabelNumero2.setBounds(130, 480, 150, 40);
 
         jTextFieldCorreoElectronico.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldCorreoElectronico);
@@ -179,27 +169,21 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelNumero3);
         jLabelNumero3.setBounds(170, 460, 110, 40);
 
-        jLabelFecha2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelFecha2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelFecha2.setText("de inicio:");
-        jDesktopPane1.add(jLabelFecha2);
-        jLabelFecha2.setBounds(170, 540, 100, 40);
-
         jTextFieldNumeroTelefono.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumeroTelefono);
         jTextFieldNumeroTelefono.setBounds(270, 480, 191, 34);
 
         jLabelFecha3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelFecha3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelFecha3.setText("Fecha ");
+        jLabelFecha3.setText("Semestre:");
         jDesktopPane1.add(jLabelFecha3);
-        jLabelFecha3.setBounds(180, 520, 90, 40);
+        jLabelFecha3.setBounds(150, 536, 130, 40);
 
         jLabelCantidadHs1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCantidadHs1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelCantidadHs1.setText("Cantidad hs");
         jDesktopPane1.add(jLabelCantidadHs1);
-        jLabelCantidadHs1.setBounds(150, 580, 120, 40);
+        jLabelCantidadHs1.setBounds(130, 580, 150, 40);
 
         jTextFieldFechaDeInicio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldFechaDeInicio);
@@ -207,9 +191,9 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
 
         jLabelCantidadHs3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCantidadHs3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCantidadHs3.setText("semanales:");
+        jLabelCantidadHs3.setText("escolares:");
         jDesktopPane1.add(jLabelCantidadHs3);
-        jLabelCantidadHs3.setBounds(160, 600, 110, 40);
+        jLabelCantidadHs3.setBounds(145, 600, 150, 40);
 
         jTextFieldCantidadHsSemanales.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldCantidadHsSemanales);
@@ -249,7 +233,7 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(jButtonAgregar1);
-        jButtonAgregar1.setBounds(70, 800, 520, 60);
+        jButtonAgregar1.setBounds(50, 800, 520, 60);
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 870));
 
@@ -267,7 +251,7 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
         jTextFieldGenero.setText("");
         jTextFieldNumDoc.setText("");
         jTextFieldNumeroTelefono.setText("");
-        jTextFieldSueldo.setText("");
+        jTextFieldMesada.setText("");
         jTextFieldTipoDoc.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
@@ -348,7 +332,7 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNumDoc3;
     private javax.swing.JLabel jLabelNumero2;
     private javax.swing.JLabel jLabelNumero3;
-    private javax.swing.JLabel jLabelSueldo;
+    private javax.swing.JLabel jLabelMesada;
     private javax.swing.JLabel jLabelTipoDoc3;
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
@@ -361,7 +345,7 @@ public class JFrameIngresoStudent extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldNumDoc;
     private javax.swing.JTextField jTextFieldNumeroTelefono;
-    private javax.swing.JTextField jTextFieldSueldo;
+    private javax.swing.JTextField jTextFieldMesada;
     private javax.swing.JTextField jTextFieldTipoDoc;
     // End of variables declaration//GEN-END:variables
 }

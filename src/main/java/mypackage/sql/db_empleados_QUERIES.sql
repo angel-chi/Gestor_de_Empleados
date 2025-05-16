@@ -25,10 +25,10 @@ select * from students order by nombre;
 select * from students order by edad;
 
 -- empleados ordenados por fecha de inicio
-select * from students order by fecha_inicio;
+select * from students order by semestre;
 
--- empleados ordenados por sueldo
-select * from students order by sueldo;
+-- empleados ordenados por mesada
+select * from students order by mesada;
 
 -- -----------FIN SELECT----------------
 

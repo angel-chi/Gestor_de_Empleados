@@ -35,14 +35,14 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
         jTextFieldEdad = new javax.swing.JTextField();
         jLabelGenero = new javax.swing.JLabel();
         jTextFieldGenero = new javax.swing.JTextField();
-        jTextFieldSueldo = new javax.swing.JTextField();
+        jTextFieldMesada = new javax.swing.JTextField();
         jLabelNumDoc2 = new javax.swing.JLabel();
         jLabelCorreo1 = new javax.swing.JLabel();
         jTextFieldTipoDoc = new javax.swing.JTextField();
         jLabelTipoDoc3 = new javax.swing.JLabel();
         jLabelTipoDoc4 = new javax.swing.JLabel();
         jLabelNumDoc3 = new javax.swing.JLabel();
-        jLabelSueldo = new javax.swing.JLabel();
+        jLabelMesada = new javax.swing.JLabel();
         jTextFieldNumDoc = new javax.swing.JTextField();
         jLabelCorreo3 = new javax.swing.JLabel();
         jLabelNumero2 = new javax.swing.JLabel();
@@ -107,15 +107,9 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
         jDesktopPane1.add(jTextFieldGenero);
         jTextFieldGenero.setBounds(260, 200, 191, 34);
 
-        jTextFieldSueldo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldSueldo);
-        jTextFieldSueldo.setBounds(260, 600, 191, 34);
-
-        jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc2.setText("documento:");
-        jDesktopPane1.add(jLabelNumDoc2);
-        jLabelNumDoc2.setBounds(140, 310, 120, 40);
+        jTextFieldMesada.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldMesada);
+        jTextFieldMesada.setBounds(260, 600, 191, 34);
 
         jLabelCorreo1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCorreo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,27 +123,23 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
 
         jLabelTipoDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc3.setText("Tipo de");
+        jLabelTipoDoc3.setText("Grado");
         jDesktopPane1.add(jLabelTipoDoc3);
         jLabelTipoDoc3.setBounds(160, 230, 80, 30);
 
-        jLabelTipoDoc4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelTipoDoc4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc4.setText("documento:");
-        jDesktopPane1.add(jLabelTipoDoc4);
-        jLabelTipoDoc4.setBounds(140, 250, 120, 40);
+
 
         jLabelNumDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc3.setText("Numero de");
+        jLabelNumDoc3.setText("Matricula");
         jDesktopPane1.add(jLabelNumDoc3);
         jLabelNumDoc3.setBounds(140, 290, 110, 30);
 
-        jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSueldo.setText("Sueldo:");
-        jDesktopPane1.add(jLabelSueldo);
-        jLabelSueldo.setBounds(180, 590, 80, 40);
+        jLabelMesada.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabelMesada.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelMesada.setText("Mesada:");
+        jDesktopPane1.add(jLabelMesada);
+        jLabelMesada.setBounds(180, 590, 80, 40);
 
         jTextFieldNumDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumDoc);
@@ -177,19 +167,13 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelNumero3);
         jLabelNumero3.setBounds(160, 410, 110, 40);
 
-        jLabelFecha2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelFecha2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelFecha2.setText("inicio:");
-        jDesktopPane1.add(jLabelFecha2);
-        jLabelFecha2.setBounds(200, 490, 60, 40);
-
         jTextFieldNumeroTelefono.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumeroTelefono);
         jTextFieldNumeroTelefono.setBounds(260, 430, 191, 34);
 
         jLabelFecha3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelFecha3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelFecha3.setText("Fecha de");
+        jLabelFecha3.setText("Semestre");
         jDesktopPane1.add(jLabelFecha3);
         jLabelFecha3.setBounds(150, 470, 90, 40);
 
@@ -205,7 +189,7 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
 
         jLabelCantidadHs3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCantidadHs3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCantidadHs3.setText("semanales:");
+        jLabelCantidadHs3.setText("escolares:");
         jDesktopPane1.add(jLabelCantidadHs3);
         jLabelCantidadHs3.setBounds(150, 550, 110, 40);
 
@@ -278,7 +262,7 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
         jTextFieldGenero.setText("");
         jTextFieldNumDoc.setText("");
         jTextFieldNumeroTelefono.setText("");
-        jTextFieldSueldo.setText("");
+        jTextFieldMesada.setText("");
         jTextFieldTipoDoc.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
@@ -297,7 +281,7 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -345,7 +329,7 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNumDoc3;
     private javax.swing.JLabel jLabelNumero2;
     private javax.swing.JLabel jLabelNumero3;
-    private javax.swing.JLabel jLabelSueldo;
+    private javax.swing.JLabel jLabelMesada;
     private javax.swing.JLabel jLabelTipoDoc3;
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
@@ -358,7 +342,7 @@ public class JFrameActualizarStudents extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldNumDoc;
     private javax.swing.JTextField jTextFieldNumeroTelefono;
-    private javax.swing.JTextField jTextFieldSueldo;
+    private javax.swing.JTextField jTextFieldMesada;
     private javax.swing.JTextField jTextFieldTipoDoc;
     // End of variables declaration//GEN-END:variables
 }

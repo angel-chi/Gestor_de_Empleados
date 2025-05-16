@@ -108,7 +108,7 @@ public class JFrameVerStudent extends javax.swing.JFrame {
         });
 
         jComboBoxBusquedaStudents.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jComboBoxBusquedaStudents.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "TIPO DE DOCUMENTO", "NÚMERO DE DOCUMENTO", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO", "CANTIDAD DE HS SEMANALES", "SUELDO" }));
+        jComboBoxBusquedaStudents.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "GRADO", "MATRICULA", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "SEMESTRE", "CANTIDAD DE HS ESCOLARES", "MESADA" }));
 
         jButtonRefrescarLista.setBackground(new java.awt.Color(0, 34, 103));
         jButtonRefrescarLista.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -287,11 +287,11 @@ public class JFrameVerStudent extends javax.swing.JFrame {
 
             new Table().cargar(jTableListaStudents, studentRepository.getLikeGenero(jTextFieldBusquedaStudents.getText()));
 
-        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("TIPO DE DOCUMENTO")) {
+        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals(" GRADO ")) {
 
             new Table().cargar(jTableListaStudents, studentRepository.getLikeTipoDocumento(jTextFieldBusquedaStudents.getText()));
 
-        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("NÚMERO DE DOCUMENTO")) {
+        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("MATRICULA")) {
 
             new Table().cargar(jTableListaStudents, studentRepository.getLikeNumeroDocumento(jTextFieldBusquedaStudents.getText()));
 
@@ -303,17 +303,17 @@ public class JFrameVerStudent extends javax.swing.JFrame {
 
             new Table().cargar(jTableListaStudents, studentRepository.getLikeNumeroTelefono(jTextFieldBusquedaStudents.getText()));
 
-        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("FECHA DE INICIO")) {
+        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("SEMESTRE")) {
 
             new Table().cargar(jTableListaStudents, studentRepository.getLikeFechaInicio(jTextFieldBusquedaStudents.getText()));
 
-        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("CANTIDAD DE HS SEMANALES")) {
+        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("CANTIDAD DE HS ESCOLARES")) {
 
             new Table().cargar(jTableListaStudents, studentRepository.getLikeCantidadHsSemanales(jTextFieldBusquedaStudents.getText()));
 
-        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("SUELDO")) {
+        } else if (jComboBoxBusquedaStudents.getSelectedItem().equals("MESADA")) {
 
-            new Table().cargar(jTableListaStudents, studentRepository.getLikeSueldo(jTextFieldBusquedaStudents.getText()));
+            new Table().cargar(jTableListaStudents, studentRepository.getLikeMesada(jTextFieldBusquedaStudents.getText()));
 
         }
 
@@ -325,7 +325,7 @@ public class JFrameVerStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRefrescarListaActionPerformed
 
     private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
-        new JFrameAnalytics().setVisible(true);
+      //  new JFrameAnalytics().setVisible(true);
 
 
     }//GEN-LAST:event_jButtonAnalyticsActionPerformed

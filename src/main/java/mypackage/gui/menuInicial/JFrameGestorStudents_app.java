@@ -76,7 +76,7 @@ public class JFrameGestorStudents_app extends javax.swing.JFrame {
                 jButtonStudentsActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jButtonStudents, new AbsoluteConstraints(190, 160, 162, 57));
+        jDesktopPaneFondo.add(jButtonStudents, new AbsoluteConstraints(175, 160, 200, 57));
 
         jButtonDesarrolladores.setBackground(new Color(0, 24, 82));
         jButtonDesarrolladores.setFont(new Font("Arial", 3, 18)); // NOI18N
@@ -93,7 +93,7 @@ public class JFrameGestorStudents_app extends javax.swing.JFrame {
                 jButtonSoporteTecnicoActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jButtonSoporteTecnico, new AbsoluteConstraints(170, 240, 210, 57));
+        jDesktopPaneFondo.add(jButtonSoporteTecnico, new AbsoluteConstraints(155, 240, 250, 57));
 
         jButtonAdministracion.setBackground(new Color(0, 30, 101));
         jButtonAdministracion.setFont(new Font("Arial", 3, 18)); // NOI18N
@@ -109,7 +109,7 @@ public class JFrameGestorStudents_app extends javax.swing.JFrame {
         jLabelTitulo.setFont(new Font("Arial", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new Color(255, 255, 255));
         jLabelTitulo.setText("MENÚ PRINCIPAL");
-        jDesktopPaneFondo.add(jLabelTitulo, new AbsoluteConstraints(120, 50, 330, -1));
+        jDesktopPaneFondo.add(jLabelTitulo, new AbsoluteConstraints(120, 50, 400, -1));
 
         jButtonAnalytics.setBackground(new Color(0, 16, 56));
         jButtonAnalytics.setFont(new Font("Arial", 1, 20)); // NOI18N
@@ -126,7 +126,7 @@ public class JFrameGestorStudents_app extends javax.swing.JFrame {
                 jToggleButtonAyudaActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jToggleButtonAyuda, new AbsoluteConstraints(400, 0, 70, -1));
+        jDesktopPaneFondo.add(jToggleButtonAyuda, new AbsoluteConstraints(10, 0, 110, -1));
 
         jToggleButtonAcerca.setBackground(new Color(0, 79, 237));
         jToggleButtonAcerca.setFont(new Font("Arial Narrow", 1, 14)); // NOI18N
@@ -137,7 +137,7 @@ public class JFrameGestorStudents_app extends javax.swing.JFrame {
                 jToggleButtonAcercaActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jToggleButtonAcerca, new AbsoluteConstraints(470, 0, 90, -1));
+        jDesktopPaneFondo.add(jToggleButtonAcerca, new AbsoluteConstraints(440, 0, 110, -1));
 
         getContentPane().add(jDesktopPaneFondo, new AbsoluteConstraints(0, 0, 560, 680));
 

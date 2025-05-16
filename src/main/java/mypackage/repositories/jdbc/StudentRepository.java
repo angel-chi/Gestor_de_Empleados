@@ -26,8 +26,8 @@ public class StudentRepository implements I_StudentRepository {
 
         String sql = "INSERT INTO " + TABLE_NAME +
                 "(id, nombre, apellido, edad, genero, grado, " +
-                "numero_documento, correo_electronico, numero_telefono, " +
-                "fecha_inicio, cantidad_hs_semanales, sueldo) " +
+                "matricula, correo_electronico, numero_telefono, " +
+                "semestre, cantidad_hs_escolares, mesada) " +
                 "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try (PreparedStatement ps = conexionDB.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -38,12 +38,12 @@ public class StudentRepository implements I_StudentRepository {
             ps.setInt(4, student.getEdad());
             ps.setString(5, student.getGenero());
             ps.setString(6, student.getGrado());
-            ps.setString(7, student.getNumero_documento());
+            ps.setString(7, student.getMatricula());
             ps.setString(8, student.getCorreo_electronico());
             ps.setString(9, student.getNumero_telefono());
-            ps.setString(10, student.getFecha_inicio());
-            ps.setInt(11, student.getCantidad_hs_semanales());
-            ps.setFloat(12, student.getSueldo());
+            ps.setString(10, student.getSemestre());
+            ps.setInt(11, student.getCantidad_hs_escolares());
+            ps.setFloat(12, student.getMesada());
 
             ps.executeUpdate();
 
@@ -81,8 +81,8 @@ public class StudentRepository implements I_StudentRepository {
 
         String sql = "UPDATE " + TABLE_NAME + " SET " +
                 "nombre=?, apellido=?, edad=?, genero=?, grado=?, " +
-                "numero_documento=?, correo_electronico=?, numero_telefono=?, " +
-                "fecha_inicio=?, cantidad_hs_semanales=?, sueldo=? " +
+                "matricula=?, correo_electronico=?, numero_telefono=?, " +
+                "semestre=?, cantidad_hs_escolares=?, mesada=? " +
                 "WHERE id=?";
 
         try (PreparedStatement ps = conexionDB.prepareStatement(sql)) {
@@ -92,12 +92,12 @@ public class StudentRepository implements I_StudentRepository {
             ps.setInt(3, student.getEdad());
             ps.setString(4, student.getGenero());
             ps.setString(5, student.getGrado());
-            ps.setString(6, student.getNumero_documento());
+            ps.setString(6, student.getMatricula());
             ps.setString(7, student.getCorreo_electronico());
             ps.setString(8, student.getNumero_telefono());
-            ps.setString(9, student.getFecha_inicio());
-            ps.setInt(10, student.getCantidad_hs_semanales());
-            ps.setFloat(11, student.getSueldo());
+            ps.setString(9, student.getSemestre());
+            ps.setInt(10, student.getCantidad_hs_escolares());
+            ps.setFloat(11, student.getMesada());
             ps.setInt(12, student.getId());
 
             ps.executeUpdate();
@@ -122,12 +122,12 @@ public class StudentRepository implements I_StudentRepository {
                         rs.getInt("edad"),
                         rs.getString("genero"),
                         rs.getString("grado"),
-                        rs.getString("numero_documento"),
+                        rs.getString("matricula"),
                         rs.getString("correo_electronico"),
                         rs.getString("numero_telefono"),
-                        rs.getString("fecha_inicio"),
-                        rs.getInt("cantidad_hs_semanales"),
-                        rs.getFloat("sueldo")
+                        rs.getString("semestre"),
+                        rs.getInt("cantidad_hs_escolares"),
+                        rs.getFloat("mesada")
                 ));
             }
         } catch (SQLException ex) {

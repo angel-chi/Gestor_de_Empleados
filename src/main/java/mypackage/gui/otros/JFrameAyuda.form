@@ -94,7 +94,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Esta es una app para la gesti&#xf3;n de &#xa;Empleados, en la c&#xfa;al se encuentra &#xa;dividida a trav&#xe9;s de un men&#xfa; principal&#xa;y esta a su vez dividido por los diversos&#xa;sectores que se pueden gestionar, en &#xa;cada uno de los sectores se podr&#xe1; &#xa;agregar, eliminar, actualizar y listar&#xa;seg&#xfa;n cada uno de los mismos.&#xa;&#xa;Para poder ingresar a cada uno de los &#xa;sectores se deber&#xe1; poseer los permisos &#xa;correspondientes.&#xa;&#xa;Para m&#xe1;s INFORMACI&#xd3;N comuniquese&#xa;con el sector de soporte t&#xe9;cnico.&#xa;"/>
+                <Property name="text" type="java.lang.String" value="Esta es una app para la gesti&#xf3;n de &#xa;estudiantes, en la c&#xfa;al se encuentra &#xa;dividida a trav&#xe9;s de un men&#xfa; principal&#xa;y esta a su vez dividido por los diversos&#xa;sectores que se pueden gestionar, en &#xa;cada uno de los sectores se podr&#xe1; &#xa;agregar, eliminar, actualizar y listar&#xa;seg&#xfa;n cada uno de los mismos.&#xa;&#xa;Para poder ingresar a cada uno de los &#xa;sectores se deber&#xe1; poseer los permisos &#xa;correspondientes.&#xa;&#xa;Para m&#xe1;s INFORMACI&#xd3;N comuniquese&#xa;con el sector de soporte t&#xe9;cnico.&#xa;"/>
               </Properties>
             </Component>
           </SubComponents>

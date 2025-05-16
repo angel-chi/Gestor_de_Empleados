@@ -6,8 +6,8 @@
 package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
-import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
+//import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
+import mypackage.gui.estudiante.JFrameIngresoEstudiante;
 
 /**
  *
@@ -15,7 +15,7 @@ import mypackage.gui.empleados.JFrameIngresoEmpleado;
  */
 public class JFrameValidacionIngreso extends javax.swing.JFrame {
 
-    /** Creates new form JFrameValidacion */
+    /** Creates new form JFrame Validacion */
     public JFrameValidacionIngreso() {
         initComponents();
     }
@@ -103,15 +103,15 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
            
 
         
-        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
+        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("estudiantes"))){
 
-             new  JFrameIngresoEmpleado().setVisible(true);
+             new  JFrameIngresoEstudiante().setVisible(true);
 
             dispose();
 
         }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("soporte"))){
             
-             new  JFrameIngresoSoporteTecnico().setVisible(true);
+            // new  JFrameIngresoSoporteTecnico().setVisible(true);
 
             dispose();
             
@@ -130,7 +130,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         
         
         
-//        boolean flagValidacionEntradaEmpleado = true;
+//        boolean flagValidacionEntradaestudiante = true;
 //        boolean flagValidacionEntradaSoporteTecnico = true;
 //        String flagSector="Ninguno";
 //        
@@ -138,7 +138,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 //        while( (!(jTextFieldUsuario.getText().equals("admin"))
 //                && !(jPasswordContraseña.getPassword().equals("1")) ) ){
 //           
-//            flagValidacionEntradaEmpleado = false;
+//            flagValidacionEntradaestudiante = false;
 //          
 //           
 //            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
@@ -158,7 +158,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 //
 //        if ( jTextFieldUsuario.getText().equals("admin") ) {
 //            
-//            new  JFrameIngresoEmpleado().setVisible(true);
+//            new  JFrameIngresoestudiante().setVisible(true);
 //
 //            dispose();
 //        }

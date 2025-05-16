@@ -30,9 +30,9 @@ public interface I_SoporteTecnicoRepository {
                 .orElse(new SoporteTecnico());
     }
 
-    default SoporteTecnico getByIdEmpleados(int id_empleados) {
+    default SoporteTecnico getByIdestudiantes(int id_estudiantes) {
         return getStream()
-                .filter(objeto -> objeto.getId_empleados() == id_empleados)
+                .filter(objeto -> objeto.getId_estudiantes() == id_estudiantes)
                 .findAny()
                 .orElse(new SoporteTecnico());
     }

@@ -5,7 +5,7 @@ package mypackage.entities;
 public class SoporteTecnico {
     
     private int id;
-    private int id_empleados;
+    private int id_students;
     private String puesto;
     private String formacion;
     private String certificaciones;
@@ -13,16 +13,16 @@ public class SoporteTecnico {
     public SoporteTecnico() {
     }
     
-    public SoporteTecnico(int id_empleados, String puesto, String formacion, String certificaciones) {
-        this.id_empleados = id_empleados;
+    public SoporteTecnico(int id_students, String puesto, String formacion, String certificaciones) {
+        this.id_students = id_students;
         this.puesto = puesto;
         this.formacion = formacion;
         this.certificaciones = certificaciones;
     }
     
-    public SoporteTecnico(int id, int id_empleados, String puesto, String formacion, String certificaciones) {
+    public SoporteTecnico(int id, int id_students, String puesto, String formacion, String certificaciones) {
         this.id = id;
-        this.id_empleados = id_empleados;
+        this.id_students = id_students;
         this.puesto = puesto;
         this.formacion = formacion;
         this.certificaciones = certificaciones;
@@ -42,11 +42,11 @@ public class SoporteTecnico {
     public void setId(int id) {
         this.id = id;
     }
-    public int getId_empleados() {
-        return id_empleados;
+    public int getId_students() {
+        return id_students;
     }
-    public void setId_empleados(int id_empleados) {
-        this.id_empleados = id_empleados;
+    public void setId_students(int id_students) {
+        this.id_students = id_students;
     }
     public String getPuesto() {
         return puesto;
@@ -64,7 +64,7 @@ public class SoporteTecnico {
 
     @Override
     public String toString() {
-        return "SoporteTecnico{" + "id=" + id + ", id_empleados=" + id_empleados + ", puesto=" + puesto + ", formacion=" + formacion + ", certificaciones=" + certificaciones + '}';
+        return "SoporteTecnico{" + "id=" + id + ", id_students=" + id_students + ", puesto=" + puesto + ", formacion=" + formacion + ", certificaciones=" + certificaciones + '}';
     }
     
     

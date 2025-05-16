@@ -5,7 +5,7 @@ package mypackage.entities;
 public class Desarrollador {
     
     private int id;
-    private int id_empleados;
+    private int id_students;
     private String puesto;
     private String certificaciones;
     private String habilidades;
@@ -15,9 +15,8 @@ public class Desarrollador {
     public Desarrollador() {
     }
     
-    
-    public Desarrollador(int id_empleados, String puesto, String certificaciones, String habilidades, int proyectos_en_produccion) {
-        this.id_empleados = id_empleados;
+    public Desarrollador(int id_students, String puesto, String certificaciones, String habilidades, int proyectos_en_produccion) {
+        this.id_students = id_students;
         this.puesto = puesto;
         this.certificaciones = certificaciones;
         this.habilidades = habilidades;
@@ -25,9 +24,9 @@ public class Desarrollador {
     }
     
     
-    public Desarrollador(int id, int id_empleados, String puesto, String certificaciones, String habilidades, int proyectos_en_produccion) {
+    public Desarrollador(int id, int id_students, String puesto, String certificaciones, String habilidades, int proyectos_en_produccion) {
         this.id = id;
-        this.id_empleados = id_empleados;
+        this.id_students = id_students;
         this.puesto = puesto;
         this.certificaciones = certificaciones;
         this.habilidades = habilidades;
@@ -50,11 +49,11 @@ public class Desarrollador {
     public void setId(int id) {
         this.id = id;
     }
-    public int getId_empleados() {
-        return id_empleados;
+    public int getId_students() {
+        return id_students;
     }
-    public void setId_empleados(int id_empleados) {
-        this.id_empleados = id_empleados;
+    public void setId_students(int id_students) {
+        this.id_students = id_students;
     }
     public String getPuesto() {
         return puesto;
@@ -78,7 +77,7 @@ public class Desarrollador {
     
     @Override
     public String toString() {
-        return "Desarrollador{" + "id=" + id + ", id_empleados=" + id_empleados + ", puesto=" + puesto + ", certificaciones=" + certificaciones + ", habilidades=" + habilidades + ", proyectos_en_produccion=" + proyectos_en_produccion + '}';
+        return "Desarrollador{" + "id=" + id + ", id_students=" + id_students + ", puesto=" + puesto + ", certificaciones=" + certificaciones + ", habilidades=" + habilidades + ", proyectos_en_produccion=" + proyectos_en_produccion + '}';
     }
     
     

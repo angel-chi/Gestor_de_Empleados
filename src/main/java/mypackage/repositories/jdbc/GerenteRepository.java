@@ -24,12 +24,12 @@ public class GerenteRepository implements I_GerenteRepository {
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement(
-                        "INSERT INTO gerentes(id,id_empleados,sector,formacion,antiguedad)"
+                        "INSERT INTO gerentes(id,id_students,sector,formacion,antiguedad)"
                         + "values(?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
                     consultaPreparada.setInt(1, gerente.getId());
-                    consultaPreparada.setInt(2, gerente.getId_empleados());
+                    consultaPreparada.setInt(2, gerente.getId_students());
                     consultaPreparada.setString(3, gerente.getSector());
                     consultaPreparada.setString(4, gerente.getFormacion());
                     consultaPreparada.setInt(5, gerente.getAntiguedad());
@@ -68,10 +68,10 @@ public class GerenteRepository implements I_GerenteRepository {
         }
         try ( PreparedStatement consultaPreparada = conexionDB
                 .prepareStatement(
-                        "UPDATE gerentes SET id_empleados=?,sector=?,formacion=?,antiguedad=? "
+                        "UPDATE gerentes SET id_students=?,sector=?,formacion=?,antiguedad=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setInt(1, gerente.getId_empleados());
+            consultaPreparada.setInt(1, gerente.getId_students());
             consultaPreparada.setString(2, gerente.getSector());
             consultaPreparada.setString(3, gerente.getFormacion());
             consultaPreparada.setInt(4, gerente.getAntiguedad());
@@ -96,7 +96,7 @@ public class GerenteRepository implements I_GerenteRepository {
 
                         listaGerentes.add(new Gerente(
                                 resultSetGerente.getInt("id"),
-                                resultSetGerente.getInt("id_empleados"),
+                                resultSetGerente.getInt("id_students"),
                                 resultSetGerente.getString("sector"),
                                 resultSetGerente.getString("formacion"),
                                 resultSetGerente.getInt("antiguedad")

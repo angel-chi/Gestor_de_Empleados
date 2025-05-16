@@ -5,7 +5,7 @@ package mypackage.entities;
 public class Gerente {
     
     private int id;
-    private int id_empleados;
+    private int id_students;
     private String sector;
     private String formacion;
     private int antiguedad;
@@ -13,16 +13,16 @@ public class Gerente {
     public Gerente() {
     }
     
-    public Gerente(int id_empleados, String sector, String formacion, int antiguedad) {
-        this.id_empleados = id_empleados;
+    public Gerente(int id_students, String sector, String formacion, int antiguedad) {
+        this.id_students = id_students;
         this.sector = sector;
         this.formacion = formacion;
         this.antiguedad = antiguedad;
     }
     
-    public Gerente(int id, int id_empleados, String sector, String formacion, int antiguedad) {
+    public Gerente(int id, int id_students, String sector, String formacion, int antiguedad) {
         this.id = id;
-        this.id_empleados = id_empleados;
+        this.id_students = id_students;
         this.sector = sector;
         this.formacion = formacion;
         this.antiguedad = antiguedad;
@@ -36,11 +36,11 @@ public class Gerente {
     public void setId(int id) {
         this.id = id;
     }
-    public int getId_empleados() {
-        return id_empleados;
+    public int getId_students() {
+        return id_students;
     }
-    public void setId_empleados(int id_empleados) {
-        this.id_empleados = id_empleados;
+    public void setId_students(int id_students) {
+        this.id_students = id_students;
     }
     public String getSector() {
         return sector;
@@ -63,7 +63,7 @@ public class Gerente {
     
         @Override
     public String toString() {
-        return "Gerente{" + "id=" + id + ", id_empleados=" + id_empleados + ", sector=" + sector + ", formacion=" + formacion + ", antiguedad=" + antiguedad + '}';
+        return "Gerente{" + "id=" + id + ", id_students=" + id_students + ", sector=" + sector + ", formacion=" + formacion + ", antiguedad=" + antiguedad + '}';
     }
     
     

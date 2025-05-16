@@ -24,12 +24,12 @@ public class AdministracionRepository implements I_AdministracionRepository {
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement(
-                        "INSERT INTO administracion(id,id_empleados,puesto,habilidades)"
+                        "INSERT INTO administracion(id,id_students,puesto,habilidades)"
                         + "values(?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
                     consultaPreparada.setInt(1, administracion.getId());
-                    consultaPreparada.setInt(2, administracion.getId_empleados());
+                    consultaPreparada.setInt(2, administracion.getId_students());
                     consultaPreparada.setString(3, administracion.getPuesto());
                     consultaPreparada.setString(4, administracion.getHabilidades());
                     
@@ -67,10 +67,10 @@ public class AdministracionRepository implements I_AdministracionRepository {
         }
         try ( PreparedStatement consultaPreparada = conexionDB
                 .prepareStatement(
-                        "UPDATE administracion SET id_empleados=?,puesto=?,habilidades=? "
+                        "UPDATE administracion SET id_students=?,puesto=?,habilidades=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setInt(1, administracion.getId_empleados());
+            consultaPreparada.setInt(1, administracion.getId_students());
             consultaPreparada.setString(2, administracion.getPuesto());
             consultaPreparada.setString(3, administracion.getHabilidades());
             consultaPreparada.setInt(4, administracion.getId());
@@ -94,7 +94,7 @@ public class AdministracionRepository implements I_AdministracionRepository {
 
                         listaAdministracion.add(new Administracion(
                                 resultSetAdministracion.getInt("id"),
-                                resultSetAdministracion.getInt("id_empleados"),
+                                resultSetAdministracion.getInt("id_students"),
                                 resultSetAdministracion.getString("puesto"),
                                 resultSetAdministracion.getString("habilidades")
                         ));

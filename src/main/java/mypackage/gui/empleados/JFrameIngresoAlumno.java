@@ -134,7 +134,7 @@ public class JFrameIngresoAlumno extends javax.swing.JFrame {
         jLabelTipoDoc3.setText("");
         jDesktopPane1.add(jLabelTipoDoc3);
         jLabelTipoDoc3.setBounds(180, 270, 80, 30);
-
+//
         jLabelTipoDoc4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc4.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTipoDoc4.setText("Semestre:");

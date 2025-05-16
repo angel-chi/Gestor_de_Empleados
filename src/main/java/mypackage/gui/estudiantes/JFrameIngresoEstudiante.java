@@ -22,6 +22,9 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     private Connection conexionDB;
     private EstudianteRepository estudianteRepo;
     //PENDIENTE
+    I_EstudianteRepository EstudianteRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
+
+
     /** Creates new form JFrameEstudiantes */
     public JFrameIngresoEstudiante(Connection conexionDB) {
         initComponents();

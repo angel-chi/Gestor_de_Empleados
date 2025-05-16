@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f293c29c-670f-4398-ae6a-fd55806398c4" name="Changes" comment="Refactored Empleados to Estudiantes">
-      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_estudiantes_DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_empleados/sql/db_estudiantes_DDL.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_estudiantes_DML.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_empleados/sql/db_estudiantes_DML.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Estudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameIngresoEstudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameIngresoEstudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameActualizarEstudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameActualizarEstudiante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameVerEstudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameVerEstudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_EstudianteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_EstudianteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/EstudianteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/EstudianteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAdministracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAdministracion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestEmpleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestGerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestGerente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestSoporteTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestSoporteTecnico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameActualizarEstudiante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mypackage/gui/empleados/JFrameVerEstudiante.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +189,7 @@
       <workItem from="1747340230744" duration="1214000" />
       <workItem from="1747355148947" duration="4270000" />
       <workItem from="1747359829116" duration="6000" />
-      <workItem from="1747360763476" duration="3418000" />
+      <workItem from="1747360763476" duration="4017000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored code and commented an import not used">
       <option name="closed" value="true" />

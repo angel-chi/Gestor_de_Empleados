@@ -75,18 +75,21 @@ public class EstudianteRepository implements I_EstudianteRepository {
         }
         try (PreparedStatement consultaPreparada = conexionDB
                 .prepareStatement(
-                        "UPDATE empleados SET nombre=?,apellido=?,edad=?,genero=?,tipo_documento=?,"
-                                + " numero_documento=?,correo_electronico=?,numero_telefono=?,fecha_inicio=?,cantidad_hs_semanales=?,sueldo=? "
+                        "UPDATE estudiantes SET matricula=?,nombre=?,apellido_primero=?,apellido_segundo=?,edad=?,genero=?,"
+                                + "correo_electronico=?,numero_telefono=?,horas_semanales=?,fecha_inicio=?,num_clases=? "
                                 + "WHERE id=?")) {
 
-            consultaPreparada.setString(1, estudiante.getNombre());
-            consultaPreparada.setString(2, estudiante.getApellido_primero());
-            consultaPreparada.setInt(3, estudiante.getEdad());
-            consultaPreparada.setString(4, estudiante.getGenero());
+            consultaPreparada.setString(1, estudiante.getMatricula());
+            consultaPreparada.setString(2, estudiante.getNombre());
+            consultaPreparada.setString(3, estudiante.getApellido_primero());
+            consultaPreparada.setString(4, estudiante.getApellido_segundo());
+            consultaPreparada.setInt(5, estudiante.getEdad());
+            consultaPreparada.setString(6, estudiante.getGenero());
             consultaPreparada.setString(7, estudiante.getCorreo_electronico());
             consultaPreparada.setString(8, estudiante.getNumero_telefono());
-            consultaPreparada.setString(9, estudiante.getFecha_inicio());
-            consultaPreparada.setInt(10, estudiante.getHoras_semanales());
+            consultaPreparada.setInt(9, estudiante.getHoras_semanales());
+            consultaPreparada.setString(10, estudiante.getFecha_inicio());
+            consultaPreparada.setInt(11, estudiante.getNum_clsases());
             consultaPreparada.setInt(12, estudiante.getId());
 
             consultaPreparada.execute();

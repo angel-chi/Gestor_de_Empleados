@@ -246,9 +246,10 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonLimpiarActionPerformed
-
+        jTextFieldMatricula.setText("");
         jTextFieldNombre.setText("");
         jTextFieldApellido1.setText("");
+        jTextFieldApellido2.setText("");
         jTextFieldHorasSemanales.setText("");
         jTextFieldCorreoElectronico.setText("");
         jTextFieldEdad.setText("");

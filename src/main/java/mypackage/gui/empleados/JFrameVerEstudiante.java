@@ -56,7 +56,7 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                 jButtonRefrescarLista = new javax.swing.JButton();
                 jButtonAnalytics = new javax.swing.JButton();
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 
                 jLabelTitulo.setFont(new java.awt.Font("Arial Black", 1, 28)); // NOI18N
                 jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -304,7 +304,7 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                                                 .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(jDesktopPane1)
                                                                 .addContainerGap()));
-
+                // jComboBoxBusquedaEmpleados.
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
@@ -335,7 +335,46 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         }// GEN-LAST:event_jButtonEliminarActionPerformed
 
         private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonActualizarActionPerformed
-                new JFrameActualizarEstudiante().setVisible(true);
+
+                int filaTablaEmpleado = jTableListaEstudiantes.getSelectedRow();
+
+                if (filaTablaEmpleado == -1) {
+
+                        JOptionPane.showMessageDialog(this,
+                                        "SELECCIONE ALGUN EMPLEADO QUE DESEE ACTUALIZAR DE LA LISTA!");
+                        return;
+                }
+
+                int idEstudiante = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 0);
+                String matricula = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 1);
+                String nombre = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 2);
+                String apellido_primero = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 3);
+                String apellido_segundo = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 4);
+                int edad = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 5);
+                String genero = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 6);
+                String correo_electronico = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 7);
+                String numero_telefono = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 8);
+                int horas_semanales = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 9);
+                String fecha_inicio = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 10);
+                int num_clases = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 11);
+
+                JFrameActualizarEstudiante actualizarFrame = new JFrameActualizarEstudiante(
+                                idEstudiante,
+                                matricula,
+                                nombre,
+                                apellido_primero,
+                                apellido_segundo,
+                                edad,
+                                genero,
+                                correo_electronico,
+                                numero_telefono,
+                                horas_semanales,
+                                fecha_inicio,
+                                num_clases);
+
+                actualizarFrame.setVisible(true);
+                listarEmpleados();
+
         }// GEN-LAST:event_jButtonActualizarActionPerformed
 
         private void jTextFieldBusquedaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldBusquedaEmpleadosActionPerformed

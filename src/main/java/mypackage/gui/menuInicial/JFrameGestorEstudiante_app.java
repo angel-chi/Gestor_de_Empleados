@@ -22,7 +22,7 @@ public class JFrameGestorEstudiante_app extends javax.swing.JFrame {
       I_EstudianteRepository empleadoRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
 
 
-    /** Creates new form JFrameGestorEmpleados_app */
+    /** Creates new form JFrameGestorEstudiantes_app */
     public JFrameGestorEstudiante_app() {
         initComponents();
     }

@@ -6,7 +6,6 @@
 package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
-//import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
 import mypackage.gui.estudiantes.JFrameIngresoEstudiante;
 
 /**

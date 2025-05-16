@@ -6,8 +6,8 @@
 package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
-//import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
-import mypackage.gui.estudiantes.JFrameIngresoEstudiante;
+import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
+import mypackage.gui.empleados.JFrameIngresoEmpleado;
 
 /**
  *
@@ -88,6 +88,11 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         });
         jDesktopPane1.add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 397, 162, 50));
 
+        jLabelTitulo1.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
+        jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTitulo1.setText("(Usuario-Contraseña por sector)");
+        jDesktopPane1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 510));
 
         pack();
@@ -98,17 +103,72 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
            
 
         
-        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("estudiantes"))){
+        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
 
-             new JFrameIngresoEstudiante().setVisible(true);
+             new  JFrameIngresoEmpleado().setVisible(true);
+
+            dispose();
+
+        }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("soporte"))){
+            
+             new  JFrameIngresoSoporteTecnico().setVisible(true);
 
             dispose();
             
         }else{
                  JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
-
+                 
+           
+           
                 }
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        boolean flagValidacionEntradaEmpleado = true;
+//        boolean flagValidacionEntradaSoporteTecnico = true;
+//        String flagSector="Ninguno";
+//        
+//        
+//        while( (!(jTextFieldUsuario.getText().equals("admin"))
+//                && !(jPasswordContraseña.getPassword().equals("1")) ) ){
+//           
+//            flagValidacionEntradaEmpleado = false;
+//          
+//           
+//            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
+//          
+//            return;
+//        }
+//             while( (!(jTextFieldUsuario.getText().equals("admin"))
+//                && !(jPasswordContraseña.getPassword().equals("2")) ) ){
+//           
+//            flagValidacionEntradaSoporteTecnico= false;
+//          
+//           
+//            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
+//          
+//            return;
+//        }
+//
+//        if ( jTextFieldUsuario.getText().equals("admin") ) {
+//            
+//            new  JFrameIngresoEmpleado().setVisible(true);
+//
+//            dispose();
+//        }
+//        else if(flagValidacionEntradaSoporteTecnico){
+//           
+//            new JFrameIngresoSoporteTecnico().setVisible(true);
+//            
+//            dispose();
+//        }
+//         
     }//GEN-LAST:event_jButtonValidarActionPerformed
 
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed

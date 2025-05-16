@@ -16,7 +16,7 @@ public class LocalConnector {
            
       private static String port="3306";
       
-      private static String db="db_estudiantes";
+      private static String db="db_empleados";
       
       private static String params="?serverTimezone=UTC";
       
@@ -46,5 +46,8 @@ public class LocalConnector {
           }
       return conexionDB;
      }
+      
+      
+      
 
 }

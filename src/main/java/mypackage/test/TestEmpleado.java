@@ -2,25 +2,25 @@ package mypackage.test;
 
 import java.time.LocalDate;
 import mypackage.connector.LocalConnector;
-import mypackage.entities.Estudiante;
-import mypackage.repositories.interfaces.I_EstudianteRepository;
-import mypackage.repositories.jdbc.EstudianteRepository;
+import mypackage.entities.Empleado;
+import mypackage.repositories.interfaces.I_EmpleadoRepository;
+import mypackage.repositories.jdbc.EmpleadoRepository;
 
 public class TestEmpleado {
 
     public static void main(String[] args) {
 
         
-        I_EstudianteRepository empleadoRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
+        I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
 
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Empleado ===============\n");
-        Estudiante nuevoEstudiante
-                = new Estudiante("Antonio", "Ibramovich", 34, "Masculino", "DNI", "21762989",
+        Empleado nuevoEmpleado
+                = new Empleado("Antonio", "Ibramovich", 34, "Masculino", "DNI", "21762989",
                         "liuoyuko@gmail.com", "1567896578", String.valueOf(LocalDate.now()), 48, 45000f);
 
-        empleadoRepository.save(nuevoEstudiante);
-        System.out.println(nuevoEstudiante);
+        empleadoRepository.save(nuevoEmpleado);
+        System.out.println(nuevoEmpleado);
 
         System.out.println("\n=================Lista de Empleados===============\n");
         empleadoRepository.getAll().forEach(System.out::println);
@@ -28,19 +28,19 @@ public class TestEmpleado {
 
         //REMOVE
         System.out.println("\n=================Eliminamos el ultimo empleado ingresado===============\n");
-        empleadoRepository.remove(nuevoEstudiante);
-        System.out.println(nuevoEstudiante);
+        empleadoRepository.remove(nuevoEmpleado);
+        System.out.println(nuevoEmpleado);
         System.out.println("\n=================Lista de Empleados actualizada===============\n");
         empleadoRepository.getAll().forEach(System.out::println);
 
         //FIN REMOVE
         //UPDATE
         System.out.println("\n=================Actualizamos el apellido del Empleado con el id 2 ===============\n");
-        nuevoEstudiante = empleadoRepository.getByMatricula(2);
+        nuevoEmpleado = empleadoRepository.getById(2);
 
-        if (nuevoEstudiante != null && nuevoEstudiante.getMatricula() != 0) {
-            nuevoEstudiante.setApellido("Fernandez");
-            empleadoRepository.update(nuevoEstudiante);
+        if (nuevoEmpleado != null && nuevoEmpleado.getId() != 0) {
+            nuevoEmpleado.setApellido("Fernandez");
+            empleadoRepository.update(nuevoEmpleado);
         }
 
         System.out.println("\n=================Lista de Empleados actualizada===============\n");
@@ -61,10 +61,10 @@ public class TestEmpleado {
         empleadoRepository.getLikeGenero("Masculino").forEach(System.out::println);
 
         System.out.println("\n=================Empleado/s  cuyo tipo  de documento sea DNI===============\n");
-        empleadoRepository.getLikeModalidad("DNI").forEach(System.out::println);
+        empleadoRepository.getLikeTipoDocumento("DNI").forEach(System.out::println);
 
         System.out.println("\n=================Empleado/s  cuyo numero de documento sea 37087123===============\n");
-        empleadoRepository.getLikeTipoEstudiante("37087123").forEach(System.out::println);
+        empleadoRepository.getLikeNumeroDocumento("37087123").forEach(System.out::println);
 
         System.out.println("\n=================Empleado/s  cuyo correo electronico sea romi2@gmail.com===============\n");
         empleadoRepository.getLikeCorreoElectronico("romi2@gmail.com").forEach(System.out::println);
@@ -75,15 +75,15 @@ public class TestEmpleado {
 
         
         System.out.println("\n=================Empleado/s  cuya fecha de inicio sea el 2020-09-12 ===============\n");
-        empleadoRepository.getLikeDomicilio("2020-09-12").forEach(System.out::println);
+        empleadoRepository.getLikeFechaInicio("2020-09-12").forEach(System.out::println);
 
         
         System.out.println("\n=================Empleado/s  cuya cantidad de horas semanales sean 48h ===============\n");
-        empleadoRepository.getByAnioIngreso(48).forEach(System.out::println);
+        empleadoRepository.getByCantidadHsSemanales(48).forEach(System.out::println);
 
         
         System.out.println("\n=================Empleado/s  cuyo sueldo sea de $33000 ===============\n");
-        empleadoRepository.getByPromedioIngreso(33000f).forEach(System.out::println);
+        empleadoRepository.getBySueldo(33000f).forEach(System.out::println);
 
         //FIN FILTER
     }

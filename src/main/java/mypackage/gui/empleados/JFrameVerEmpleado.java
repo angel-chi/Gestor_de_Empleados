@@ -7,8 +7,8 @@ package mypackage.gui.empleados;
 
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.interfaces.I_EstudiantesRepository;
+import mypackage.repositories.jdbc.EstudiantesRepository;
 import mypackage.utils.swing.Table;
 
 /**
@@ -17,16 +17,16 @@ import mypackage.utils.swing.Table;
  */
 public class JFrameVerEmpleado extends javax.swing.JFrame {
 
-    private I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+    private I_EstudiantesRepository empleadoRepository = new EstudiantesRepository(LocalConnector.getLocalConnection());
 
     /** Creates new form JFrameVerEmpleados */
     public JFrameVerEmpleado() {
         initComponents();
-        listarEmpleados();
+        listarEstudiantes();
         
     }
 
-    public void listarEmpleados() {
+    public void listarEstudiantes() {
 
         new Table().cargar(jTableListaEmpleados, empleadoRepository.getAll());
     }
@@ -60,7 +60,7 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Arial Black", 1, 28)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("LISTA DE EMPLEADOS");
+        jLabelTitulo.setText("LISTA DE ESTUDIANTES");
 
         jTableListaEmpleados.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
         jTableListaEmpleados.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -108,7 +108,7 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         });
 
         jComboBoxBusquedaEmpleados.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jComboBoxBusquedaEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "TIPO DE DOCUMENTO", "NÚMERO DE DOCUMENTO", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO", "CANTIDAD DE HS SEMANALES", "SUELDO" }));
+        jComboBoxBusquedaEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "TIPO DE DOCUMENTO", "NÚMERO DE DOCUMENTO", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO", "SEMESTRE EQUIVALENTE", "PROMEDIO" }));
 
         jButtonRefrescarLista.setBackground(new java.awt.Color(0, 34, 103));
         jButtonRefrescarLista.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -254,11 +254,11 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
         empleadoRepository.remove(empleadoRepository.getById(idEmpleado));
 
-        listarEmpleados();
+        listarEstudiantes();
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        new JFrameActualizarEmpleado().setVisible(true);
+        new JFrameActualizarEstudiante().setVisible(true);
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jTextFieldBusquedaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaEmpleadosActionPerformed
@@ -307,11 +307,11 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
             new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeFechaInicio(jTextFieldBusquedaEmpleados.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("CANTIDAD DE HS SEMANALES")) {
+        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("SEMESTRE EQUIVALENTE")) {
 
             new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeCantidadHsSemanales(jTextFieldBusquedaEmpleados.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("SUELDO")) {
+        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("PROMEDIO")) {
 
             new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeSueldo(jTextFieldBusquedaEmpleados.getText()));
 
@@ -325,7 +325,6 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRefrescarListaActionPerformed
 
     private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
-        new JFrameAnalytics().setVisible(true);
 
 
     }//GEN-LAST:event_jButtonAnalyticsActionPerformed

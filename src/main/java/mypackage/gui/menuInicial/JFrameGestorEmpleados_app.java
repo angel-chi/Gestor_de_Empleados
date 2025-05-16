@@ -6,12 +6,11 @@
 package mypackage.gui.menuInicial;
 
 import mypackage.connector.LocalConnector;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
 import mypackage.gui.utils.JFrameValidacionIngreso;
 import mypackage.gui.otros.JFrameAcercaDe;
 import mypackage.gui.otros.JFrameAyuda;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.interfaces.I_EstudiantesRepository;
+import mypackage.repositories.jdbc.EstudiantesRepository;
 
 /**
  *
@@ -20,7 +19,7 @@ import mypackage.repositories.jdbc.EmpleadoRepository;
 public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     
     
-      I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+      I_EstudiantesRepository empleadoRepository = new EstudiantesRepository(LocalConnector.getLocalConnection());
 
 
     /** Creates new form JFrameGestorEmpleados_app */
@@ -56,7 +55,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         jButtonEmpleados.setBackground(new java.awt.Color(1, 45, 151));
         jButtonEmpleados.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonEmpleados.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEmpleados.setText("EMPLEADOS");
+        jButtonEmpleados.setText("ESTUDIANTES");
         jButtonEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEmpleadosActionPerformed(evt);

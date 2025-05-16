@@ -8,7 +8,9 @@ import mypackage.entities.Estudiante;
 import mypackage.repositories.interfaces.I_EstudianteRepository;
 import mypackage.repositories.jdbc.EstudianteRepository;
 import mypackage.connector.LocalConnector;
-import javax.swing.JOptionPane;
+
+import javax.swing.*;
+
 /**
  *
  * @author andre
@@ -44,9 +46,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jLabelNumDoc2 = new javax.swing.JLabel();
         jLabelCorreo1 = new javax.swing.JLabel();
         jTextFieldTipoDoc = new javax.swing.JTextField();
-        jLabelTipoDoc3 = new javax.swing.JLabel();
         jLabelTipoDoc4 = new javax.swing.JLabel();
-        jLabelNumDoc3 = new javax.swing.JLabel();
         jLabelSueldo = new javax.swing.JLabel();
         jTextFieldNumDoc = new javax.swing.JTextField();
         jLabelCorreo3 = new javax.swing.JLabel();
@@ -56,10 +56,10 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jLabelFecha2 = new javax.swing.JLabel();
         jTextFieldNumeroTelefono = new javax.swing.JTextField();
         jLabelFecha3 = new javax.swing.JLabel();
-        jLabelCantidadHs1 = new javax.swing.JLabel();
         jTextFieldFechaDeInicio = new javax.swing.JTextField();
         jLabelCantidadHs3 = new javax.swing.JLabel();
-        jTextFieldCantidadHsSemanales = new javax.swing.JTextField();
+        jTextFieldFacultad = new javax.swing.JTextField();
+        jTextFieldhrsclases = new javax.swing.JTextField();
         jButtonLimpiar = new javax.swing.JButton();
         jButtonAgregar = new javax.swing.JButton();
         jButtonAgregar1 = new javax.swing.JButton();
@@ -120,9 +120,9 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
 
         jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc2.setText("documento:");
+        jLabelNumDoc2.setText("Semestre:");
         jDesktopPane1.add(jLabelNumDoc2);
-        jLabelNumDoc2.setBounds(160, 360, 120, 40);
+        jLabelNumDoc2.setBounds(160, 350, 120, 40);
 
         jLabelCorreo1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCorreo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,29 +134,17 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jDesktopPane1.add(jTextFieldTipoDoc);
         jTextFieldTipoDoc.setBounds(270, 300, 191, 30);
 
-        jLabelTipoDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelTipoDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc3.setText("Tipo de");
-        jDesktopPane1.add(jLabelTipoDoc3);
-        jLabelTipoDoc3.setBounds(180, 270, 80, 30);
-
         jLabelTipoDoc4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc4.setText("documento:");
+        jLabelTipoDoc4.setText("Matricula:");
         jDesktopPane1.add(jLabelTipoDoc4);
-        jLabelTipoDoc4.setBounds(150, 290, 120, 40);
-
-        jLabelNumDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelNumDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc3.setText("Numero de");
-        jDesktopPane1.add(jLabelNumDoc3);
-        jLabelNumDoc3.setBounds(160, 340, 110, 30);
+        jLabelTipoDoc4.setBounds(170, 290, 120, 40);
 
         jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSueldo.setText("Sueldo:");
+        jLabelSueldo.setText("Gastada:");
         jDesktopPane1.add(jLabelSueldo);
-        jLabelSueldo.setBounds(200, 660, 80, 40);
+        jLabelSueldo.setBounds(160, 650, 120, 40);
 
         jTextFieldNumDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumDoc);
@@ -200,25 +188,19 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelFecha3);
         jLabelFecha3.setBounds(180, 520, 90, 40);
 
-        jLabelCantidadHs1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelCantidadHs1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCantidadHs1.setText("Cantidad hs");
-        jDesktopPane1.add(jLabelCantidadHs1);
-        jLabelCantidadHs1.setBounds(150, 580, 120, 40);
-
         jTextFieldFechaDeInicio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldFechaDeInicio);
         jTextFieldFechaDeInicio.setBounds(270, 540, 191, 32);
 
         jLabelCantidadHs3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCantidadHs3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCantidadHs3.setText("semanales:");
+        jLabelCantidadHs3.setText("Facultad:");
         jDesktopPane1.add(jLabelCantidadHs3);
-        jLabelCantidadHs3.setBounds(160, 600, 110, 40);
+        jLabelCantidadHs3.setBounds(170, 600, 110, 40);
 
-        jTextFieldCantidadHsSemanales.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldCantidadHsSemanales);
-        jTextFieldCantidadHsSemanales.setBounds(270, 600, 191, 32);
+        jTextFieldFacultad.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldFacultad);
+        jTextFieldFacultad.setBounds(270, 600, 191, 32);
 
         jButtonLimpiar.setBackground(new java.awt.Color(0, 32, 108));
         jButtonLimpiar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -265,7 +247,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
 
         jTextFieldNombre.setText("");
         jTextFieldApellido.setText("");
-        jTextFieldCantidadHsSemanales.setText("");
+        jTextFieldFacultad.setText("");
         jTextFieldCorreoElectronico.setText("");
         jTextFieldEdad.setText("");
         jTextFieldFechaDeInicio.setText("");
@@ -273,6 +255,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jTextFieldNumDoc.setText("");
         jTextFieldNumeroTelefono.setText("");
         jTextFieldSueldo.setText("");
+        jTextFieldhrsclases.setText("");
         jTextFieldTipoDoc.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
@@ -283,17 +266,18 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
             String apellido= jTextFieldApellido.getText().trim();
             int edad       = Integer.parseInt(jTextFieldEdad.getText().trim());
             String genero  = jTextFieldGenero.getText().trim();
-            String tipoDoc = jTextFieldTipoDoc.getText().trim();
-            String numDoc  = jTextFieldNumDoc.getText().trim();
+            String matricula = jTextFieldTipoDoc.getText().trim();
+            String semestre  = jTextFieldNumDoc.getText().trim();
             String correo  = jTextFieldCorreoElectronico.getText().trim();
             String tel     = jTextFieldNumeroTelefono.getText().trim();
             String fecha   = jTextFieldFechaDeInicio.getText().trim(); // asume formato YYYY-MM-DD
-            int hrs        = Integer.parseInt(jTextFieldCantidadHsSemanales.getText().trim());
-            float sueldo   = Float.parseFloat(jTextFieldSueldo.getText().trim());
+            String facultad        = jTextFieldFacultad.getText().trim();
+            int hrsclases = Integer.parseInt(jTextFieldhrsclases.getText().trim());
+            float gastada   = Float.parseFloat(jTextFieldSueldo.getText().trim());
 
             // Crea y guarda el estudiante
             Estudiante est = new Estudiante(0, nombre, apellido, edad, genero,
-                    tipoDoc, numDoc, correo, tel, fecha, hrs, sueldo);
+                    matricula, semestre, correo, tel, fecha, facultad,hrsclases, gastada);
             estudianteRepository.save(est);
 
             JOptionPane.showMessageDialog(this, "Estudiante guardado con ID: " + est.getId());
@@ -375,7 +359,6 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabelApellido;
-    private javax.swing.JLabel jLabelCantidadHs1;
     private javax.swing.JLabel jLabelCantidadHs3;
     private javax.swing.JLabel jLabelCorreo1;
     private javax.swing.JLabel jLabelCorreo3;
@@ -385,15 +368,14 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelGenero;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelNumDoc2;
-    private javax.swing.JLabel jLabelNumDoc3;
     private javax.swing.JLabel jLabelNumero2;
     private javax.swing.JLabel jLabelNumero3;
     private javax.swing.JLabel jLabelSueldo;
-    private javax.swing.JLabel jLabelTipoDoc3;
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JTextField jTextFieldApellido;
-    private javax.swing.JTextField jTextFieldCantidadHsSemanales;
+    private javax.swing.JTextField jTextFieldFacultad;
+    private javax.swing.JTextField jTextFieldhrsclases;
     private javax.swing.JTextField jTextFieldCorreoElectronico;
     private javax.swing.JTextField jTextFieldEdad;
     private javax.swing.JTextField jTextFieldFechaDeInicio;

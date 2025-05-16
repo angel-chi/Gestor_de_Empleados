@@ -109,7 +109,7 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         });
 
         jComboBoxBusquedaEstudiantes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jComboBoxBusquedaEstudiantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "TIPO DE DOCUMENTO", "NÚMERO DE DOCUMENTO", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO", "CANTIDAD DE HS SEMANALES", "SUELDO" }));
+        jComboBoxBusquedaEstudiantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "Matricula", "Semestre", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO", "  facultado ", "Gastada" }));
         jComboBoxBusquedaEstudiantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxBusquedaEstudiantesActionPerformed(evt);

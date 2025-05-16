@@ -64,6 +64,7 @@ public class JFrameGestorEstudiantes_app extends javax.swing.JFrame {
         });
         jDesktopPaneFondo.add(jButtonEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 162, 57));
 
+
         jButtonDesarrolladores.setBackground(new java.awt.Color(0, 24, 82));
         jButtonDesarrolladores.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonDesarrolladores.setForeground(new java.awt.Color(255, 255, 255));

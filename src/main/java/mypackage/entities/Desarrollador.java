@@ -11,7 +11,7 @@ public class Desarrollador {
     private String habilidades;
     private int proyectos_en_produccion;
    
-    
+    // Tipo de polimorfismo
     public Desarrollador() {
     }
     

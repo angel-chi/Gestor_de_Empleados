@@ -12,6 +12,7 @@ public class EstudianteRepository implements I_EstudianteRepository {
 
     private Connection conexionDB;
 
+    //explicación de esto
     public EstudianteRepository(Connection conexionDB) {
         this.conexionDB = conexionDB;
     }
@@ -22,9 +23,9 @@ public class EstudianteRepository implements I_EstudianteRepository {
             return;
         }
         try (PreparedStatement consultaPreparada = conexionDB.prepareStatement(
-                "INSERT INTO estudiantes(id, nombre, apellido, edad, genero, tipo_documento, "
-                        + "numero_documento, correo_electronico, numero_telefono, fecha_inicio, "
-                        + "cantidad_hs_semanales, sueldo) "
+                "INSERT INTO estudiantes(id, nombre, apellido, edad, genero, matricula, "
+                        + "semestre, correo_electronico, numero_telefono, fecha_inicio, "
+                        + "facultad,hrsclases, gastada) "
                         + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             consultaPreparada.setInt(1, estudiante.getId());
@@ -32,13 +33,13 @@ public class EstudianteRepository implements I_EstudianteRepository {
             consultaPreparada.setString(3, estudiante.getApellido());
             consultaPreparada.setInt(4, estudiante.getEdad());
             consultaPreparada.setString(5, estudiante.getGenero());
-            consultaPreparada.setString(6, estudiante.getTipo_documento());
-            consultaPreparada.setString(7, estudiante.getNumero_documento());
+            consultaPreparada.setString(6, estudiante.getMatricula());
+            consultaPreparada.setString(7, estudiante.getSemestre());
             consultaPreparada.setString(8, estudiante.getCorreo_electronico());
             consultaPreparada.setString(9, estudiante.getNumero_telefono());
             consultaPreparada.setString(10, estudiante.getFecha_inicio());
-            consultaPreparada.setInt(11, estudiante.getCantidad_hs_semanales());
-            consultaPreparada.setFloat(12, estudiante.getSueldo());
+            consultaPreparada.setString(11, estudiante.getFacultad());
+            consultaPreparada.setFloat(12, estudiante.getGastada());
 
             consultaPreparada.execute();
 
@@ -70,21 +71,21 @@ public class EstudianteRepository implements I_EstudianteRepository {
             return;
         }
         try (PreparedStatement consultaPreparada = conexionDB.prepareStatement(
-                "UPDATE estudiantes SET nombre=?, apellido=?, edad=?, genero=?, tipo_documento=?, "
-                        + "numero_documento=?, correo_electronico=?, numero_telefono=?, fecha_inicio=?, "
-                        + "cantidad_hs_semanales=?, sueldo=? WHERE id=?")) {
+                "UPDATE estudiantes SET nombre=?, apellido=?, edad=?, genero=?, matricula=?, "
+                        + "semestre=?, correo_electronico=?, numero_telefono=?, fecha_inicio=?, "
+                        + "facultad=?,hrsclases=?, gastada=? WHERE id=?")) {
 
             consultaPreparada.setString(1, estudiante.getNombre());
             consultaPreparada.setString(2, estudiante.getApellido());
             consultaPreparada.setInt(3, estudiante.getEdad());
             consultaPreparada.setString(4, estudiante.getGenero());
-            consultaPreparada.setString(5, estudiante.getTipo_documento());
-            consultaPreparada.setString(6, estudiante.getNumero_documento());
+            consultaPreparada.setString(5, estudiante.getMatricula());
+            consultaPreparada.setString(6, estudiante.getSemestre());
             consultaPreparada.setString(7, estudiante.getCorreo_electronico());
             consultaPreparada.setString(8, estudiante.getNumero_telefono());
             consultaPreparada.setString(9, estudiante.getFecha_inicio());
-            consultaPreparada.setInt(10, estudiante.getCantidad_hs_semanales());
-            consultaPreparada.setFloat(11, estudiante.getSueldo());
+            consultaPreparada.setString(10, estudiante.getFacultad());
+            consultaPreparada.setFloat(11, estudiante.getGastada());
             consultaPreparada.setInt(12, estudiante.getId());
 
             consultaPreparada.execute();
@@ -105,13 +106,14 @@ public class EstudianteRepository implements I_EstudianteRepository {
                         resultSetEstudiantes.getString("apellido"),
                         resultSetEstudiantes.getInt("edad"),
                         resultSetEstudiantes.getString("genero"),
-                        resultSetEstudiantes.getString("tipo_documento"),
-                        resultSetEstudiantes.getString("numero_documento"),
+                        resultSetEstudiantes.getString("matricula"),
+                        resultSetEstudiantes.getString("semestre"),
                         resultSetEstudiantes.getString("correo_electronico"),
                         resultSetEstudiantes.getString("numero_telefono"),
                         resultSetEstudiantes.getString("fecha_inicio"),
-                        resultSetEstudiantes.getInt("cantidad_hs_semanales"),
-                        resultSetEstudiantes.getFloat("sueldo")
+                        resultSetEstudiantes.getString("facultad"),
+                        resultSetEstudiantes.getInt("hrsclases"),
+                        resultSetEstudiantes.getFloat("gastada")
                 ));
             }
         } catch (Exception e) {

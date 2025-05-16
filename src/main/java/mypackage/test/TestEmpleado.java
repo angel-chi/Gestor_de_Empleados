@@ -17,7 +17,7 @@ public class TestEmpleado {
         System.out.println("\n=================Agregamos un nuevo Empleado ===============\n");
         Estudiante nuevoEstudiante
                 = new Estudiante("Antonio", "Ibramovich", 34, "Masculino", "DNI", "21762989",
-                        "liuoyuko@gmail.com", "1567896578", String.valueOf(LocalDate.now()), 48, 45000f);
+                        "liuoyuko@gmail.com", "1567896578", String.valueOf(LocalDate.now()), "math", 1,45000f);
 
         empleadoRepository.save(nuevoEstudiante);
         System.out.println(nuevoEstudiante);
@@ -79,11 +79,11 @@ public class TestEmpleado {
 
         
         System.out.println("\n=================Empleado/s  cuya cantidad de horas semanales sean 48h ===============\n");
-        empleadoRepository.getByCantidadHsSemanales(48).forEach(System.out::println);
+        empleadoRepository.getByFacultad("math").forEach(System.out::println);
 
         
-        System.out.println("\n=================Empleado/s  cuyo sueldo sea de $33000 ===============\n");
-        empleadoRepository.getBySueldo(33000f).forEach(System.out::println);
+        System.out.println("\n=================Empleado/s  cuyo promedio sea de $33000 ===============\n");
+        empleadoRepository.getByGastada(33000f).forEach(System.out::println);
 
         //FIN FILTER
     }

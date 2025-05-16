@@ -71,7 +71,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         //MINIMO
         jTextFieldEdadMinima.setText(String.valueOf(minimaValores(3)));
 
-        //PROMEDIO-MEDIA
+        //GASTADA-MEDIA
         jTextFieldEdadPromedio.setText(String.valueOf(promedioValores(3)));
 
         //MODA-MEDIANA
@@ -96,29 +96,29 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         //---------------------------------------------------------------------------------------------
                 //CANTIDAD
         //jTextFieldHsSemanalesCantidad.setText(String.valueOf(cantidadValores(10)));
-        jTextFieldHsSemanalesCantidad.setText(String.valueOf(cantidadValores(10)));
+        jTextFieldHsSemanalesCantidad.setText(String.valueOf(cantidadValores(11)));
         //MAXIMO
-        jTextFieldHsSemanalesMaxima.setText(String.valueOf(maximaValores(10)));
+        jTextFieldHsSemanalesMaxima.setText(String.valueOf(maximaValores(11)));
 
         //MINIMO
-        jTextFieldHsSemanalesMinima.setText(String.valueOf(minimaValores(10)));
+        jTextFieldHsSemanalesMinima.setText(String.valueOf(minimaValores(11)));
 
         //PROMEDIO-MEDIA
-        jTextFieldHsSemanalesPromedio.setText(String.valueOf(promedioValores(10)));
+        jTextFieldHsSemanalesPromedio.setText(String.valueOf(promedioValores(11)));
 
         //MODA-MEDIANA
-        jTextFieldHsSemanalesQueMasSeRepite.setText(String.valueOf(modaFrecuenciaValores(10).get(0)));
+        jTextFieldHsSemanalesQueMasSeRepite.setText(String.valueOf(modaFrecuenciaValores(11).get(0)));
 
         //FRECUENCIA DE VECES MODA-MEDIANA
-        jTextFieldFrecuenciaHsSemanalesQueMasSeRepite.setText(String.valueOf(modaFrecuenciaValores(10).get(1)));
+        jTextFieldFrecuenciaHsSemanalesQueMasSeRepite.setText(String.valueOf(modaFrecuenciaValores(11).get(1)));
 
         //DISPERSION RESPECTO AL PROMEDIO-MEDIA (VARIANZA)
         //HAY QUE EFIENTIZAR ESTOS METODOS, COLOCANDO ESTOS PARAMETROS NOS OLVIDAMOS DE CREAR MILES DE METODOS
-        jTextFieldVarianzaHsSemanales.setText(String.valueOf(varianzaValores(10, 10)));
+        jTextFieldVarianzaHsSemanales.setText(String.valueOf(varianzaValores(11, 11)));
 
         //GRADO DE DISPERSION (DESVIO ESTANDAR)
         //HAY QUE EFIENTIZAR ESTOS METODOS, COLOCANDO ESTOS PARAMETROS NOS OLVIDAMOS DE CREAR MILES DE METODOS
-        jTextFieldDesvioEstandarHsSemanales.setText(String.valueOf(desvioEstandarValores(10, 10, 10)));
+        jTextFieldDesvioEstandarHsSemanales.setText(String.valueOf(desvioEstandarValores(11, 11, 11)));
 
         //-------------------------------------------------------------------------------------------------
         //-----------FIN CANTIDAD DE HORAS SEMANALES(columna 10)---------------
@@ -129,29 +129,29 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         //----------------------------------------------------------
    //CANTIDAD
         //jTextFieldSueldoCantidad.setText(String.valueOf(cantidadValores(11)));
-        jTextFieldSueldoCantidad.setText(String.valueOf(cantidadValores(11)));
+        jTextFieldSueldoCantidad.setText(String.valueOf(cantidadValores(12)));
         //MAXIMO
-        jTextFieldSueldoMaximo.setText(String.valueOf(maximaValoresSueldoDecimal(11)));
+        jTextFieldSueldoMaximo.setText(String.valueOf(maximaValoresSueldoDecimal(12)));
 
         //MINIMO
-        jTextFieldSueldoMinimo.setText(String.valueOf(minimaValoresSueldoDecimal(11)));
+        jTextFieldSueldoMinimo.setText(String.valueOf(minimaValoresSueldoDecimal(12)));
 
         //PROMEDIO-MEDIA
-        jTextFieldSueldoPromedio.setText(String.valueOf(promedioValoresSueldoDecimal(11)));
+        jTextFieldSueldoPromedio.setText(String.valueOf(promedioValoresSueldoDecimal(12)));
 
         //MODA-MEDIANA
-        jTextFieldSueldoQueMasSeRepite.setText(modaFrecuenciaValoresSueldoDecimal(11).get(0));
+        jTextFieldSueldoQueMasSeRepite.setText(modaFrecuenciaValoresSueldoDecimal(12).get(0));
 
         //FRECUENCIA DE VECES MODA-MEDIANA
-        jTextFieldFrecuenciaSueldoQueMasSeRepite.setText(modaFrecuenciaValoresSueldoDecimal(11).get(1));
+        jTextFieldFrecuenciaSueldoQueMasSeRepite.setText(modaFrecuenciaValoresSueldoDecimal(12).get(1));
 
         //DISPERSION RESPECTO AL PROMEDIO-MEDIA (VARIANZA)
         //HAY QUE EFIENTIZAR ESTOS METODOS, COLOCANDO ESTOS PARAMETROS NOS OLVIDAMOS DE CREAR MILES DE METODOS
-        jTextFieldVarianzaSueldo.setText(String.valueOf(varianzaValoresSueldoDecimal(11, 11)));
+        jTextFieldVarianzaSueldo.setText(String.valueOf(varianzaValoresSueldoDecimal(12, 11)));
 
         //GRADO DE DISPERSION (DESVIO ESTANDAR)
         //HAY QUE EFIENTIZAR ESTOS METODOS, COLOCANDO ESTOS PARAMETROS NOS OLVIDAMOS DE CREAR MILES DE METODOS
-        jTextFieldDesvioEstandarSueldo.setText(String.valueOf(desvioEstandarValoresSueldoDecimal(11, 11, 11)));
+        jTextFieldDesvioEstandarSueldo.setText(String.valueOf(desvioEstandarValoresSueldoDecimal(12, 12, 12)));
 //        //--------------------------------------------------------------
 //        //-----------FIN SUELDO(columna 11)---------------
 //        //--------------------------------------------------------------
@@ -224,9 +224,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 
     public void graficarGraficoSueldo() {
         //DatosSueldo.addValue(cantidadValores(11), "SUELDO", "CANTIDAD");
-        DatosSueldo.addValue(cantidadValores(11), "SUELDO", "CANTIDAD");
-        DatosSueldo.addValue(promedioValoresSueldoDecimal(11), "SUELDO", "PROMEDIO");
-        DatosSueldo.addValue(maximaValoresSueldoDecimal(11), "SUELDO", "MÁXIMA");
+        DatosSueldo.addValue(cantidadValores(11), "Promedio", "CANTIDAD");
+        DatosSueldo.addValue(promedioValoresSueldoDecimal(11), "Promedio", "PROMEDIO");
+        DatosSueldo.addValue(maximaValoresSueldoDecimal(11), "Promedio", "MÁXIMA");
         DatosSueldo.addValue(minimaValoresSueldoDecimal(11), "SUELDO", "MÍNIMA");
         DatosSueldo.addValue(Float.valueOf(modaFrecuenciaValoresSueldoDecimal(11).get(0)), "SUELDO", "MODA");
         DatosSueldo.addValue(Float.valueOf(modaFrecuenciaValoresSueldoDecimal(11).get(1)), "SUELDO", "FRECUENCIA MODA");

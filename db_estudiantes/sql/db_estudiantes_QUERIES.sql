@@ -28,7 +28,7 @@ SELECT * FROM estudiantes ORDER BY edad;
 SELECT * FROM estudiantes ORDER BY fecha_inicio;
 
 -- estudiantes ordenados por sueldo
-SELECT * FROM estudiantes ORDER BY sueldo;
+SELECT * FROM estudiantes ORDER BY gastada;
 
 -- -----------FIN SELECT----------------
 

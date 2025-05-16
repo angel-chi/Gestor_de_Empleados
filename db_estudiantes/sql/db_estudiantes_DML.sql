@@ -5,15 +5,15 @@
 USE db_estudiantes;
 
 INSERT INTO estudiantes (id, nombre, apellido, edad, genero,
-                         tipo_documento, numero_documento, correo_electronico, numero_telefono,
-                         fecha_inicio, cantidad_hs_semanales, sueldo ) VALUES
+                         matricula, semestre, correo_electronico, numero_telefono,
+                         fecha_inicio, facultad,hrsclases, gastada ) VALUES
 
-                                                                           (1, 'Romina', 'Pereira', 25 , 'Femenino', 'DNI', '37087123' , 'romi2@gmail.com', '1123467895', '2020-09-12',  48 , 32000 ),-- Adm
-                                                                           (2, 'Javier', 'Gonzalez', 32 , 'Masculino', 'DNI', '26768765' , 'javiBoquita@gmail.com', '1163464891', '2019-10-02',  48 , 33000 ),-- Dev
-                                                                           (3, 'Hector', 'Gomez', 34 , 'Masculino', 'DNI', '21765827' , 'hectorGomez78@gmail.com', '1153467892', '2018-07-12',  46 , 46000 ),-- Dev
-                                                                           (4, 'Gabriela', 'Jimenez', 22 , 'Femenino', 'DNI', '41087123' , 'gabriela.consultas@hotmail.com', '1198765816', '2019-03-02',  48 , 35000 ),-- Soporte
-                                                                           (5, 'Gustavo', 'Gomez', 30 , 'Masculino', 'PASAPORTE', '748000221' , 'gustavo_andaluz@gmail.com', '116376189', '2020-07-07',  49 , 33000 ),-- Soporte
-                                                                           (6, 'Jose', 'Perez', 42 , 'Masculino', 'DNI', '22287680' , 'jose_consultasInternas@hotmail.com', '1167543490', '2018-02-01',  52 , 49000 );-- Gerente
+                                                                           (1, 'Romina', 'Pereira', 25 , 'Femenino', 'DNI', '37087123' , 'romi2@gmail.com', '1123467895', '2020-09-12',  48 , 1,32000 ),-- Adm
+                                                                           (2, 'Javier', 'Gonzalez', 32 , 'Masculino', 'DNI', '26768765' , 'javiBoquita@gmail.com', '1163464891', '2019-10-02',  48 , 1,33000 ),-- Dev
+                                                                           (3, 'Hector', 'Gomez', 34 , 'Masculino', 'DNI', '21765827' , 'hectorGomez78@gmail.com', '1153467892', '2018-07-12',  46 , 1,46000 ),-- Dev
+                                                                           (4, 'Gabriela', 'Jimenez', 22 , 'Femenino', 'DNI', '41087123' , 'gabriela.consultas@hotmail.com', '1198765816', '2019-03-02',  48 ,1, 35000 ),-- Soporte
+                                                                           (5, 'Gustavo', 'Gomez', 30 , 'Masculino', 'PASAPORTE', '748000221' , 'gustavo_andaluz@gmail.com', '116376189', '2020-07-07',  49 , 1,33000 ),-- Soporte
+                                                                           (6, 'Jose', 'Perez', 42 , 'Masculino', 'DNI', '22287680' , 'jose_consultasInternas@hotmail.com', '1167543490', '2018-02-01',  52 , 1,49000 );-- Gerente
 
 
 INSERT INTO desarrolladores (id, id_estudiantes, puesto, certificaciones, habilidades, proyectos_en_produccion) VALUES

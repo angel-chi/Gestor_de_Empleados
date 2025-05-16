@@ -42,7 +42,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         jLabelTipoDoc3 = new javax.swing.JLabel();
         jLabelTipoDoc4 = new javax.swing.JLabel();
         jLabelNumDoc3 = new javax.swing.JLabel();
-        jLabelSueldo = new javax.swing.JLabel();
+        jLabelGastada = new javax.swing.JLabel();
         jTextFieldNumDoc = new javax.swing.JTextField();
         jLabelCorreo3 = new javax.swing.JLabel();
         jLabelNumero2 = new javax.swing.JLabel();
@@ -145,11 +145,11 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelNumDoc3);
         jLabelNumDoc3.setBounds(140, 290, 110, 30);
 
-        jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSueldo.setText("Sueldo:");
-        jDesktopPane1.add(jLabelSueldo);
-        jLabelSueldo.setBounds(180, 590, 80, 40);
+        jLabelGastada.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabelGastada.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelGastada.setText("Sueldo:");
+        jDesktopPane1.add(jLabelGastada);
+        jLabelGastada.setBounds(180, 590, 80, 40);
 
         jTextFieldNumDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumDoc);
@@ -345,7 +345,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNumDoc3;
     private javax.swing.JLabel jLabelNumero2;
     private javax.swing.JLabel jLabelNumero3;
-    private javax.swing.JLabel jLabelSueldo;
+    private javax.swing.JLabel jLabelGastada;
     private javax.swing.JLabel jLabelTipoDoc3;
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;

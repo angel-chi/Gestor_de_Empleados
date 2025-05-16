@@ -20,7 +20,7 @@ public class TestGerente {
         System.out.println("\n=================Agregamos un nuevo Empleado ===============\n");
         Estudiante nuevoEstudiante
                 = new Estudiante("Yamila", "Raskovik", 42, "Femenina", "DNI", "25678614",
-                        "hjhasava@hotmail.com", "1556348791", String.valueOf(LocalDate.now()), 51, 54000f);
+                        "hjhasava@hotmail.com", "1556348791", String.valueOf(LocalDate.now()), "math",5, 54000f);
 
         empleadoRepository.save(nuevoEstudiante);
         System.out.println(nuevoEstudiante);

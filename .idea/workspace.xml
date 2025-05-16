@@ -5,10 +5,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3919284d-5eb8-4bdd-aad9-ded84ada539d" name="Changes" comment="Prueba">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/estudiantes/JFrameIngresoEstudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/estudiantes/JFrameIngresoEstudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_estudiantes_DML.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_estudiantes_DML.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_estudiantes_QUERIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_estudiantes_QUERIES.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5543eb94-3ce8-4607-8ef4-fd26086b9b6c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5543eb94-3ce8-4607-8ef4-fd26086b9b6c/storage_v2/_src_/schema/db_estudiantes.oGqC6g.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5543eb94-3ce8-4607-8ef4-fd26086b9b6c/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5543eb94-3ce8-4607-8ef4-fd26086b9b6c/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5543eb94-3ce8-4607-8ef4-fd26086b9b6c/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/GestorEstudiantes_app-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/GestorEstudiantes_app-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/connector/LocalConnector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/connector/RemoteConnector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/entities/Actuaria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/entities/Egresado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/entities/Estudiante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/entities/LicCienciasComputacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/entities/LicIngDesSoftware.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameActualizarEstudiante$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameActualizarEstudiante$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameActualizarEstudiante$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameActualizarEstudiante$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameActualizarEstudiante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameIngresoEstudiante$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameIngresoEstudiante$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameIngresoEstudiante$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameIngresoEstudiante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/estudiantes/JFrameVerEstudiante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/menuInicial/JFrameGestorEstudiantes_app$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/menuInicial/JFrameGestorEstudiantes_app$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/menuInicial/JFrameGestorEstudiantes_app$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/menuInicial/JFrameGestorEstudiantes_app$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/menuInicial/JFrameGestorEstudiantes_app$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/menuInicial/JFrameGestorEstudiantes_app$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/menuInicial/JFrameGestorEstudiantes_app$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/menuInicial/JFrameGestorEstudiantes_app.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/otros/JFrameAcercaDe$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/otros/JFrameAcercaDe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/otros/JFrameAyuda$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/otros/JFrameAyuda.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/utils/JFrameValidacionIngreso$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/utils/JFrameValidacionIngreso$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/gui/utils/JFrameValidacionIngreso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/interfaces/I_ActuariaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/interfaces/I_EgresadoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/interfaces/I_EstudianteRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/interfaces/I_LicCienciasComputacionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/interfaces/I_LicIngDesSoftwareRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/jdbc/ActuariaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/jdbc/EgresadoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/jdbc/EstudianteRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/jdbc/LicCienciasComputacionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/repositories/jdbc/LicIngDesSoftwareRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/test/TestActuaria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/test/TestConnector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/test/TestEgresado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/test/TestEstudiante.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/test/TestLicCienciasComputacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/test/TestLicIngDesSoftware$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/test/TestLicIngDesSoftware.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mypackage/utils/swing/Table.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +187,7 @@
       <workItem from="1747345715977" duration="5832000" />
       <workItem from="1747357037696" duration="21368000" />
       <workItem from="1747411551115" duration="104000" />
-      <workItem from="1747411675066" duration="1357000" />
+      <workItem from="1747411675066" duration="1956000" />
     </task>
     <task id="LOCAL-00001" summary="Cambio 1">
       <option name="closed" value="true" />

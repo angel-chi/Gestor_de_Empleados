@@ -18,12 +18,16 @@ insert into estudiantes (id,
                          num_clases
                          ) values
 
-(1, '12345678', 'Romina', 'Pereira', '', 25,'Femenino', 'romi2@gmail.com', '1123467895', 12, '2020-09-12', 48 ),-- Adm
-(2, '12345678', 'Javier', 'Gonzalez', '', 32 , 'Masculino', 'javiBoquita@gmail.com', '1163464891', 12, '2019-10-02', 48 ),-- Dev
-(3, '12345678', 'Hector', 'Gomez', '', 34 , 'Masculino', 'hectorGomez78@gmail.com', '1153467892', 12, '2018-07-12', 46 ),-- Dev
-(4, '12345678', 'Gustavo', 'Gomez', '', 30 , 'Masculino', 'gustavo_andaluz@gmail.com', '116376189', 12, '2020-07-07', 49 ),-- soporte
-(5, '12345678', 'Jose', 'Perez', '', 42 , 'Masculino', 'jose_consultasInternas@hotmail.com', '1167543490', 12, '2018-02-01', 52 );-- gerente
-
+(1, '20210001', 'Romina', 'Pereira', 'Lopez', 25, 'Femenino', 'romina.pereira@gmail.com', '1123456789', 20, '2021-03-15', 5),
+(2, '20210002', 'Javier', 'Gonzalez', 'Martinez', 32, 'Masculino', 'javier.gonzalez@gmail.com', '1167891234', 15, '2020-08-20', 6),
+(3, '20210003', 'Hector', 'Gomez', 'Ramirez', 34, 'Masculino', 'hector.gomez@gmail.com', '1156789123', 18, '2019-05-10', 4),
+(4, '20210004', 'Gustavo', 'Gomez', 'Fernandez', 30, 'Masculino', 'gustavo.gomez@gmail.com', '1167894561', 22, '2021-01-25', 7),
+(5, '20210005', 'Jose', 'Perez', 'Sanchez', 42, 'Masculino', 'jose.perez@gmail.com', '1161234567', 25, '2018-11-30', 8),
+(6, '20210006', 'Ana', 'Martinez', 'Hernandez', 28, 'Femenino', 'ana.martinez@gmail.com', '1134567890', 30, '2022-02-10', 6),
+(7, '20210007', 'Luis', 'Ramirez', 'Lopez', 35, 'Masculino', 'luis.ramirez@gmail.com', '1178901234', 25, '2020-09-15', 7),
+(8, '20210008', 'Carla', 'Fernandez', 'Gomez', 29, 'Femenino', 'carla.fernandez@gmail.com', '1145678901', 20, '2021-06-20', 4),
+(9, '20210009', 'Miguel', 'Sanchez', 'Perez', 40, 'Masculino', 'miguel.sanchez@gmail.com', '1189012345', 35, '2019-03-05', 8),
+(10, '20210010', 'Laura', 'Lopez', 'Martinez', 33, 'Femenino', 'laura.lopez@gmail.com', '1123456780', 28, '2021-11-12', 5);
 
 
 insert into desarrolladores (id, id_empleados, puesto, certificaciones, habilidades, proyectos_en_produccion) values

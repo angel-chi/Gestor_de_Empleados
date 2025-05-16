@@ -5,15 +5,38 @@
  */
 package mypackage.gui.empleados;
 
+import mypackage.connector.LocalConnector;
+import mypackage.entities.Student;
+import mypackage.repositories.interfaces.I_EstudiantesRepository;
+import mypackage.repositories.jdbc.EstudiantesRepository;
+import mypackage.utils.swing.Table;
+
+import javax.swing.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 /**
  *
  * @author andre
  */
 public class JFrameActualizarEstudiante extends javax.swing.JFrame {
 
+
+
+    private I_EstudiantesRepository empleadoRepository = new EstudiantesRepository(LocalConnector.getLocalConnection());
+
     /** Creates new form JFrameActualizarEmpleados */
     public JFrameActualizarEstudiante() {
         initComponents();
+    }
+
+    public JFrameActualizarEstudiante(int idEmpleado, JFrameVerEmpleado jFrameVerEmpleado) {
+
+    }
+
+    public void listarEstudiantes() {
+
+        new Table().cargar(jTableListaEmpleados, empleadoRepository.getAll());
     }
 
     /** This method is called from within the constructor to
@@ -282,12 +305,36 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         jTextFieldTipoDoc.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
+
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        // TODO add your handling code here:
+
+
+
+        Student idEmpleado = new Student();
+
+        idEmpleado.setNombre(jTextFieldNombre.getText());
+        idEmpleado.setApellido(jTextFieldApellido.getText());
+        idEmpleado.setEdad(Integer.parseInt(jTextFieldEdad.getText()));
+        idEmpleado.setGenero(jTextFieldGenero.getText());
+        idEmpleado.setTipo_documento(jTextFieldTipoDoc.getText());
+        idEmpleado.setNumero_de_matricula(jTextFieldNumDoc.getText());
+        idEmpleado.setCorreo_electronico(jTextFieldCorreoElectronico.getText());
+        idEmpleado.setFecha_inicio(jTextFieldFechaDeInicio.getText());
+        idEmpleado.setNumero_telefono(jTextFieldNumeroTelefono.getText());
+        idEmpleado.setSemestreEquivalente(Integer.parseInt(jTextFieldCantidadHsSemanales.getText()));
+        idEmpleado.setPromedio(Integer.parseInt(jTextFieldSueldo.getText()));
+
+        empleadoRepository.update(idEmpleado);
+
+        JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
+
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
-        // TODO add your handling code here:
+
+        new JFrameVerEmpleado().setVisible(true);
+
+
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
 
     /**
@@ -360,5 +407,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNumeroTelefono;
     private javax.swing.JTextField jTextFieldSueldo;
     private javax.swing.JTextField jTextFieldTipoDoc;
+    private javax.swing.JTable jTableListaEmpleados;
+
     // End of variables declaration//GEN-END:variables
 }

@@ -7,6 +7,7 @@ package mypackage.gui.empleados;
 
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
+import mypackage.entities.Student;
 import mypackage.repositories.interfaces.I_EstudiantesRepository;
 import mypackage.repositories.jdbc.EstudiantesRepository;
 import mypackage.utils.swing.Table;
@@ -63,7 +64,7 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         jLabelTitulo.setText("LISTA DE ESTUDIANTES");
 
         jTableListaEmpleados.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
-        jTableListaEmpleados.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jTableListaEmpleados.setFont(new java.awt.Font("Arial", 1, 14)); //FFFFFFFF NOI18N
         jTableListaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -258,7 +259,17 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        int filaSeleccionado = jTableListaEmpleados.getSelectedRow();
+        if (filaSeleccionado == -1) {
+            JOptionPane.showMessageDialog(this, "Seleccione un empleado que desea actualizar");
+            return;
+        }
+
+        int idEmpleado = (int) jTableListaEmpleados.getValueAt(filaSeleccionado, 0);
+        JFrameActualizarEstudiante ventanaEditar = new JFrameActualizarEstudiante(idEmpleado, this);
         new JFrameActualizarEstudiante().setVisible(true);
+
+
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jTextFieldBusquedaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaEmpleadosActionPerformed

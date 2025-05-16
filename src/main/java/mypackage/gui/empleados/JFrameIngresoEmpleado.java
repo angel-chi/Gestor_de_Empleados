@@ -10,6 +10,10 @@ import mypackage.entities.Student;
 import mypackage.repositories.interfaces.I_EstudiantesRepository;
 import mypackage.repositories.jdbc.EstudiantesRepository;
 
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author andre
@@ -122,9 +126,9 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
 
         jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc2.setText("documento:");
+        jLabelNumDoc2.setText("matricula:");
         jDesktopPane1.add(jLabelNumDoc2);
-        jLabelNumDoc2.setBounds(140, 360, 120, 40);
+        jLabelNumDoc2.setBounds(150, 360, 120, 40);
 
         jLabelCorreo1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCorreo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,9 +148,9 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
 
         jLabelTipoDoc4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc4.setText("matricula:");
+        jLabelTipoDoc4.setText("Documento:");
         jDesktopPane1.add(jLabelTipoDoc4);
-        jLabelTipoDoc4.setBounds(145, 290, 120, 40);
+        jLabelTipoDoc4.setBounds(140, 290, 140, 40);
 
         jLabelNumDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc3.setForeground(new java.awt.Color(255, 255, 255));
@@ -280,6 +284,21 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
 
+        Student nuevo = new Student();
+
+        nuevo.setNombre(jTextFieldNombre.getText());
+        nuevo.setApellido(jTextFieldApellido.getText());
+        nuevo.setEdad(Integer.parseInt(jTextFieldEdad.getText()));
+        nuevo.setGenero(jTextFieldGenero.getText());
+        nuevo.setTipo_documento(jTextFieldTipoDoc.getText());
+        nuevo.setNumero_de_matricula(jTextFieldNumDoc.getText());
+        nuevo.setCorreo_electronico(jTextFieldCorreoElectronico.getText());
+        nuevo.setFecha_inicio(jTextFieldFechaDeInicio.getText());
+        nuevo.setNumero_telefono(jTextFieldNumeroTelefono.getText());
+        nuevo.setSemestreEquivalente(Integer.parseInt(jTextFieldCantidadHsSemanales.getText()));
+        nuevo.setPromedio(Integer.parseInt(jTextFieldSueldo.getText()));
+
+        empleadoRepository.save(nuevo);
 
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
@@ -361,7 +380,7 @@ public class JFrameIngresoEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JTextField jTextFieldApellido;
-    private javax.swing.JTextField jTextFieldCantidadHsSemanales;
+    private JTextField jTextFieldCantidadHsSemanales;
     private javax.swing.JTextField jTextFieldCorreoElectronico;
     private javax.swing.JTextField jTextFieldEdad;
     private javax.swing.JTextField jTextFieldFechaDeInicio;

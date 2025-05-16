@@ -114,7 +114,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("INGRESAR ESTUDIANTE");
+        jLabelTitulo.setText("ACTUALIZAR ESTUDIANTE");
         jDesktopPane1.add(jLabelTitulo);
         jLabelTitulo.setBounds(120, 20, 430, 42);
 
@@ -280,7 +280,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         jButtonAgregar1.setBackground(new java.awt.Color(1, 26, 86));
         jButtonAgregar1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonAgregar1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregar1.setText("Ver Empleados");
+        jButtonAgregar1.setText("Ver ESTUDIANTES");
         jButtonAgregar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregar1ActionPerformed(evt);

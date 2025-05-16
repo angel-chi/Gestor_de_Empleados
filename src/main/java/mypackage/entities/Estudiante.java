@@ -21,22 +21,25 @@ public class Estudiante {
             String matricula,
             String nombre,
             String apellido_primero,
+            String apellido_segundo,
             int edad,
             String genero,
             String correo_electronico,
             String numero_telefono,
             int horas_semanales,
-            String fecha_inicio) {
+            String fecha_inicio,
+            int num_clsases) {
         this.matricula = matricula;
         this.nombre = nombre;
         this.apellido_primero = apellido_primero;
-        this.apellido_segundo = "";
+        this.apellido_segundo = (apellido_segundo == null) ? "" : apellido_segundo;
         this.edad = edad;
         this.genero = genero;
         this.correo_electronico = correo_electronico;
         this.numero_telefono = numero_telefono;
         this.horas_semanales = horas_semanales;
         this.fecha_inicio = fecha_inicio;
+        this.num_clsases = 0;
     }
 
     public Estudiante(int id,

@@ -23,11 +23,11 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         /** Creates new form JFrameVerEmpleados */
         public JFrameVerEstudiante() {
                 initComponents();
-                listarEmpleados();
+                listarEstudiantes();
 
         }
 
-        public void listarEmpleados() {
+        public void listarEstudiantes() {
 
                 new Table().cargar(jTableListaEstudiantes, estudianteRepository.getAll());
         }
@@ -51,8 +51,8 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                 jButtonEliminar = new javax.swing.JButton();
                 jButtonActualizar = new javax.swing.JButton();
                 jLabelBusqueda = new javax.swing.JLabel();
-                jTextFieldBusquedaEmpleados = new javax.swing.JTextField();
-                jComboBoxBusquedaEmpleados = new javax.swing.JComboBox<>();
+                jTextFieldBusquedaEstudiantes = new javax.swing.JTextField();
+                jComboBoxBusquedaEstudiantes = new javax.swing.JComboBox<>();
                 jButtonRefrescarLista = new javax.swing.JButton();
                 jButtonAnalytics = new javax.swing.JButton();
 
@@ -60,7 +60,7 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
 
                 jLabelTitulo.setFont(new java.awt.Font("Arial Black", 1, 28)); // NOI18N
                 jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-                jLabelTitulo.setText("LISTA DE EMPLEADOS");
+                jLabelTitulo.setText("LISTA DE ESTUDIANTES");
 
                 jTableListaEstudiantes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "",
                                 javax.swing.border.TitledBorder.CENTER,
@@ -96,20 +96,21 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                 jLabelBusqueda.setForeground(new java.awt.Color(255, 255, 255));
                 jLabelBusqueda.setText("Buscar por :");
 
-                jTextFieldBusquedaEmpleados.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-                jTextFieldBusquedaEmpleados.addActionListener(new java.awt.event.ActionListener() {
+                jTextFieldBusquedaEstudiantes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+                jTextFieldBusquedaEstudiantes.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jTextFieldBusquedaEmpleadosActionPerformed(evt);
+                                jTextFieldBusquedaEstudiantesActionPerformed(evt);
                         }
                 });
-                jTextFieldBusquedaEmpleados.addKeyListener(new java.awt.event.KeyAdapter() {
+                jTextFieldBusquedaEstudiantes.addKeyListener(new java.awt.event.KeyAdapter() {
                         public void keyReleased(java.awt.event.KeyEvent evt) {
-                                jTextFieldBusquedaEmpleadosKeyReleased(evt);
+                                jTextFieldBusquedaEstudiantesKeyReleased(evt);
                         }
                 });
 
-                jComboBoxBusquedaEmpleados.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-                jComboBoxBusquedaEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR",
+                jComboBoxBusquedaEstudiantes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+                jComboBoxBusquedaEstudiantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
+                                "SELECCIONAR",
                                 "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "TIPO DE DOCUMENTO",
                                 "NÚMERO DE DOCUMENTO", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO",
                                 "CANTIDAD DE HS SEMANALES", "SUELDO" }));
@@ -139,8 +140,8 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                 jDesktopPane2.setLayer(jButtonEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
                 jDesktopPane2.setLayer(jButtonActualizar, javax.swing.JLayeredPane.DEFAULT_LAYER);
                 jDesktopPane2.setLayer(jLabelBusqueda, javax.swing.JLayeredPane.DEFAULT_LAYER);
-                jDesktopPane2.setLayer(jTextFieldBusquedaEmpleados, javax.swing.JLayeredPane.DEFAULT_LAYER);
-                jDesktopPane2.setLayer(jComboBoxBusquedaEmpleados, javax.swing.JLayeredPane.DEFAULT_LAYER);
+                jDesktopPane2.setLayer(jTextFieldBusquedaEstudiantes, javax.swing.JLayeredPane.DEFAULT_LAYER);
+                jDesktopPane2.setLayer(jComboBoxBusquedaEstudiantes, javax.swing.JLayeredPane.DEFAULT_LAYER);
                 jDesktopPane2.setLayer(jButtonRefrescarLista, javax.swing.JLayeredPane.DEFAULT_LAYER);
                 jDesktopPane2.setLayer(jButtonAnalytics, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -180,12 +181,12 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                                                                                                                                 .addComponent(jLabelBusqueda)
                                                                                                                                 .addPreferredGap(
                                                                                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                .addComponent(jComboBoxBusquedaEmpleados,
+                                                                                                                                .addComponent(jComboBoxBusquedaEstudiantes,
                                                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                                                                 .addGap(8, 8, 8)
-                                                                                                                                .addComponent(jTextFieldBusquedaEmpleados,
+                                                                                                                                .addComponent(jTextFieldBusquedaEstudiantes,
                                                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                                                                 241,
                                                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -231,11 +232,11 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                                                                                 .addGroup(jDesktopPane2Layout
                                                                                                 .createParallelGroup(
                                                                                                                 javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                .addComponent(jComboBoxBusquedaEmpleados,
+                                                                                                .addComponent(jComboBoxBusquedaEstudiantes,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                                 40,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addComponent(jTextFieldBusquedaEmpleados,
+                                                                                                .addComponent(jTextFieldBusquedaEstudiantes,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -310,53 +311,53 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
 
         private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonEliminarActionPerformed
 
-                int filaTablaEmpleado = jTableListaEstudiantes.getSelectedRow();
+                int filaTablaEstudiante = jTableListaEstudiantes.getSelectedRow();
 
-                if (filaTablaEmpleado == -1) {
+                if (filaTablaEstudiante == -1) {
 
                         JOptionPane.showMessageDialog(this,
-                                        "SELECCIONE ALGUN EMPLEADO QUE DESEE ELIMINAR DE LA LISTA!");
+                                        "SELECCIONE ALGUN ESTUDIANTE QUE DESEE ELIMINAR DE LA LISTA!");
 
                         return;
                 }
 
-                int idEmpleado = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 0);
+                int idEstudiante = (int) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 0);
 
                 if (JOptionPane.showConfirmDialog(this,
-                                "ESTA POR ELIMINAR EL EMPLEADO CON EL ID " + idEmpleado + "!!") != 0) {
+                                "ESTA POR ELIMINAR EL ESTUDIANTE CON EL ID " + idEstudiante + "!!") != 0) {
 
                         return;
 
                 }
 
-                estudianteRepository.remove(estudianteRepository.getById(idEmpleado));
+                estudianteRepository.remove(estudianteRepository.getById(idEstudiante));
 
-                listarEmpleados();
+                listarEstudiantes();
         }// GEN-LAST:event_jButtonEliminarActionPerformed
 
         private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonActualizarActionPerformed
 
-                int filaTablaEmpleado = jTableListaEstudiantes.getSelectedRow();
+                int filaTablaEstudiante = jTableListaEstudiantes.getSelectedRow();
 
-                if (filaTablaEmpleado == -1) {
+                if (filaTablaEstudiante == -1) {
 
                         JOptionPane.showMessageDialog(this,
-                                        "SELECCIONE ALGUN EMPLEADO QUE DESEE ACTUALIZAR DE LA LISTA!");
+                                        "SELECCIONE ALGUN ESTUDIANTE QUE DESEE ACTUALIZAR DE LA LISTA!");
                         return;
                 }
 
-                int idEstudiante = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 0);
-                String matricula = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 1);
-                String nombre = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 2);
-                String apellido_primero = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 3);
-                String apellido_segundo = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 4);
-                int edad = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 5);
-                String genero = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 6);
-                String correo_electronico = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 7);
-                String numero_telefono = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 8);
-                int horas_semanales = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 9);
-                String fecha_inicio = (String) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 10);
-                int num_clases = (int) jTableListaEstudiantes.getValueAt(filaTablaEmpleado, 11);
+                int idEstudiante = (int) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 0);
+                String matricula = (String) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 1);
+                String nombre = (String) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 2);
+                String apellido_primero = (String) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 3);
+                String apellido_segundo = (String) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 4);
+                int edad = (int) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 5);
+                String genero = (String) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 6);
+                String correo_electronico = (String) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 7);
+                String numero_telefono = (String) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 8);
+                int horas_semanales = (int) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 9);
+                String fecha_inicio = (String) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 10);
+                int num_clases = (int) jTableListaEstudiantes.getValueAt(filaTablaEstudiante, 11);
 
                 JFrameActualizarEstudiante actualizarFrame = new JFrameActualizarEstudiante(
                                 idEstudiante,
@@ -373,60 +374,61 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
                                 num_clases);
 
                 actualizarFrame.setVisible(true);
-                listarEmpleados();
+                listarEstudiantes();
 
         }// GEN-LAST:event_jButtonActualizarActionPerformed
 
-        private void jTextFieldBusquedaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldBusquedaEmpleadosActionPerformed
+        private void jTextFieldBusquedaEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldBusquedaEmpleadosActionPerformed
                 // TODO add your handling code here:
         }// GEN-LAST:event_jTextFieldBusquedaEmpleadosActionPerformed
 
-        private void jTextFieldBusquedaEmpleadosKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_jTextFieldBusquedaEmpleadosKeyReleased
+        private void jTextFieldBusquedaEstudiantesKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_jTextFieldBusquedaEmpleadosKeyReleased
 
-                if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("ID")) {
-
-                        new Table().cargar(jTableListaEstudiantes,
-                                        estudianteRepository.getLikeId(jTextFieldBusquedaEmpleados.getText()));
-
-                } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("NOMBRE")) {
+                if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("ID")) {
 
                         new Table().cargar(jTableListaEstudiantes,
-                                        estudianteRepository.getLikeNombre(jTextFieldBusquedaEmpleados.getText()));
+                                        estudianteRepository.getLikeId(jTextFieldBusquedaEstudiantes.getText()));
 
-                } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("APELLIDO")) {
-
-                        new Table().cargar(jTableListaEstudiantes,
-                                        estudianteRepository.getLikeApellido(jTextFieldBusquedaEmpleados.getText()));
-
-                } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("EDAD")) {
+                } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("NOMBRE")) {
 
                         new Table().cargar(jTableListaEstudiantes,
-                                        estudianteRepository.getLikeEdad(jTextFieldBusquedaEmpleados.getText()));
+                                        estudianteRepository.getLikeNombre(jTextFieldBusquedaEstudiantes.getText()));
 
-                } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("GÉNERO")) {
+                } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("APELLIDO")) {
 
                         new Table().cargar(jTableListaEstudiantes,
-                                        estudianteRepository.getLikeGenero(jTextFieldBusquedaEmpleados.getText()));
+                                        estudianteRepository.getLikeApellido(jTextFieldBusquedaEstudiantes.getText()));
 
-                } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("CORREO ELECTRÓNICO")) {
+                } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("EDAD")) {
+
+                        new Table().cargar(jTableListaEstudiantes,
+                                        estudianteRepository.getLikeEdad(jTextFieldBusquedaEstudiantes.getText()));
+
+                } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("GÉNERO")) {
+
+                        new Table().cargar(jTableListaEstudiantes,
+                                        estudianteRepository.getLikeGenero(jTextFieldBusquedaEstudiantes.getText()));
+
+                } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("CORREO ELECTRÓNICO")) {
 
                         new Table().cargar(jTableListaEstudiantes, estudianteRepository
-                                        .getLikeCorreoElectronico(jTextFieldBusquedaEmpleados.getText()));
+                                        .getLikeCorreoElectronico(jTextFieldBusquedaEstudiantes.getText()));
 
-                } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("NÚMERO DE TELÉFONO")) {
+                } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("NÚMERO DE TELÉFONO")) {
 
                         new Table().cargar(jTableListaEstudiantes, estudianteRepository
-                                        .getLikeNumeroTelefono(jTextFieldBusquedaEmpleados.getText()));
+                                        .getLikeNumeroTelefono(jTextFieldBusquedaEstudiantes.getText()));
 
-                } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("FECHA DE INICIO")) {
+                } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("FECHA DE INICIO")) {
 
                         new Table().cargar(jTableListaEstudiantes,
-                                        estudianteRepository.getLikeFechaInicio(jTextFieldBusquedaEmpleados.getText()));
+                                        estudianteRepository
+                                                        .getLikeFechaInicio(jTextFieldBusquedaEstudiantes.getText()));
 
-                } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("CANTIDAD DE HS SEMANALES")) {
+                } else if (jComboBoxBusquedaEstudiantes.getSelectedItem().equals("CANTIDAD DE HS SEMANALES")) {
 
                         new Table().cargar(jTableListaEstudiantes, estudianteRepository
-                                        .getLikeCantidadHsSemanales(jTextFieldBusquedaEmpleados.getText()));
+                                        .getLikeCantidadHsSemanales(jTextFieldBusquedaEstudiantes.getText()));
 
                 }
 
@@ -493,13 +495,13 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         private javax.swing.JButton jButtonAnalytics;
         private javax.swing.JButton jButtonEliminar;
         private javax.swing.JButton jButtonRefrescarLista;
-        private javax.swing.JComboBox<String> jComboBoxBusquedaEmpleados;
+        private javax.swing.JComboBox<String> jComboBoxBusquedaEstudiantes;
         private javax.swing.JDesktopPane jDesktopPane1;
         private javax.swing.JDesktopPane jDesktopPane2;
         private javax.swing.JLabel jLabelBusqueda;
         private javax.swing.JLabel jLabelTitulo;
         private javax.swing.JScrollPane jScrollPane1;
         private javax.swing.JTable jTableListaEstudiantes;
-        private javax.swing.JTextField jTextFieldBusquedaEmpleados;
+        private javax.swing.JTextField jTextFieldBusquedaEstudiantes;
         // End of variables declaration//GEN-END:variables
 }

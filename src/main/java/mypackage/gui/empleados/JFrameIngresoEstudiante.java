@@ -5,6 +5,10 @@
  */
 package mypackage.gui.empleados;
 
+import mypackage.connector.LocalConnector;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
+import mypackage.repositories.jdbc.EstudianteRepository;
+
 /**
  *
  * @author andre
@@ -15,6 +19,8 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     public JFrameIngresoEstudiante() {
         initComponents();
     }
+
+    private I_EstudianteRepository estudianteRepository = new EstudianteRepository(LocalConnector.getLocalConnection());
 
     /**
      * This method is called from within the constructor to
@@ -231,7 +237,7 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
         jButtonAgregar1.setBackground(new java.awt.Color(1, 26, 86));
         jButtonAgregar1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonAgregar1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregar1.setText("LISTA DE EMPLEADOS");
+        jButtonAgregar1.setText("LISTA DE ESTUDIANTES");
         jButtonAgregar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregar1ActionPerformed(evt);
@@ -260,6 +266,18 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     }// GEN-LAST:event_jButtonLimpiarActionPerformed
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonAgregarActionPerformed
+        estudianteRepository.save(new mypackage.entities.Estudiante(
+                jTextFieldMatricula.getText(),
+                jTextFieldNombre.getText(),
+                jTextFieldApellido1.getText(),
+                jTextFieldApellido2.getText(),
+                Integer.parseInt(jTextFieldEdad.getText()),
+                jTextFieldGenero.getText(),
+                jTextFieldCorreoElectronico.getText(),
+                jTextFieldNumeroTelefono.getText(),
+                Integer.parseInt(jTextFieldHorasSemanales.getText()),
+                jTextFieldFechaDeInicio.getText(),
+                Integer.parseInt(jTextFieldNumClases.getText())));
         // TODO add your handling code here:
     }// GEN-LAST:event_jButtonAgregarActionPerformed
 

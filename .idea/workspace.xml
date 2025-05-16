@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="512ec87b-be3b-4844-b884-3487e9cf8527" name="Changes" comment="Prueba de copilación">
+      <change afterPath="$PROJECT_DIR$/db_alumnos/sql/db_alumnos_DML.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_empleados/documentacion/db_empleados_DER.png" beforeDir="false" afterPath="$PROJECT_DIR$/db_alumnos/documentacion/db_empleados_DER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_alumnos_DDL.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_DML.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_alumnos_DML.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_QUERIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_alumnos_QUERIES.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/connector/LocalConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/connector/LocalConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/connector/RemoteConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/connector/RemoteConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Administracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Administracion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Desarrollador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Desarrollador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Alumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Gerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/SoporteTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/SoporteTecnico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameActualizarEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameActualizarAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameIngresoEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameIngresoAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameVerEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameVerAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/menuInicial/JFrameGestorEmpleados_app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/menuInicial/JFrameGestorAlumnos_app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/utils/JFrameValidacionIngreso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/utils/JFrameValidacionIngreso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_AdministracionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_AdministracionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_DesarrolladorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_DesarrolladorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_EmpleadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_AlumnoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_GerenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_GerenteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_SoporteTecnicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_SoporteTecnicoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/AdministracionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/AdministracionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/DesarrolladorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/DesarrolladorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/EmpleadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/AlumnoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/GerenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/GerenteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/SoporteTecnicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/SoporteTecnicoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_alumnos/sql/db_alumnos_DDL.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_DML.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_QUERIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_alumnos/sql/db_alumnos_QUERIES.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAdministracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAdministracion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestDesarrollador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestDesarrollador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestGerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestGerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestSoporteTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestSoporteTecnico.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2wXsQz92UV6Fz6VNDDj2G8UrXW8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JFrameActualizarAlumno.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JFrameActualizarEmpleado.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JFrameGestorAlumnos_app.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JFrameGestorEmpleados_app.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JFrameIngresoAlumno.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JFrameIngresoEmpleado.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JFrameValidacionIngreso.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JFrameVerAlumno.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JFrameVerEmpleado.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/collí/Gestor__de__alumnos&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Giorn/OneDrive/Documentos/Mis proyectos/Gestor_de_Empleados/db_alumnos/sql&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Giorn\OneDrive\Documentos\Mis proyectos\Gestor_de_Empleados\db_alumnos\sql" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Gestor_de_Empleados" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Gestor_de_Empleados" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="512ec87b-be3b-4844-b884-3487e9cf8527" name="Changes" comment="" />
+      <created>1746199243064</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746199243064</updated>
+      <workItem from="1746199245580" duration="530000" />
+      <workItem from="1746199895599" duration="159000" />
+      <workItem from="1746221714882" duration="78000" />
+      <workItem from="1746229792249" duration="30000" />
+      <workItem from="1746394755535" duration="116000" />
+      <workItem from="1746481105298" duration="6269000" />
+      <workItem from="1746659005765" duration="3582000" />
+      <workItem from="1746665524017" duration="11038000" />
+      <workItem from="1746711762097" duration="6315000" />
+      <workItem from="1746751256957" duration="1621000" />
+      <workItem from="1746797291290" duration="347000" />
+      <workItem from="1746798628479" duration="3873000" />
+      <workItem from="1746804844454" duration="3506000" />
+      <workItem from="1747064055893" duration="7751000" />
+      <workItem from="1747088290613" duration="1824000" />
+      <workItem from="1747090711846" duration="794000" />
+      <workItem from="1747093598089" duration="5192000" />
+      <workItem from="1747143392183" duration="36000" />
+      <workItem from="1747182463031" duration="4311000" />
+      <workItem from="1747272843929" duration="5496000" />
+      <workItem from="1747330186023" duration="5626000" />
+      <workItem from="1747351365550" duration="9349000" />
+      <workItem from="1747362629692" duration="2961000" />
+      <workItem from="1747403066718" duration="2745000" />
+      <workItem from="1747406464623" duration="645000" />
+    </task>
+    <task id="LOCAL-00001" summary="Prueba de copilación">
+      <option name="closed" value="true" />
+      <created>1746481121181</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746481121181</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/collí/Gestor_de_alumnos" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Prueba de copilación" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prueba de copilación" />
+  </component>
+</project>

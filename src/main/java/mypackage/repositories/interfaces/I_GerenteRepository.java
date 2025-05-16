@@ -27,9 +27,9 @@ public interface I_GerenteRepository {
                 .orElse(new Gerente());
     }
 
-    default Gerente getByIdEmpleados(int id_empleados) {
+    default Gerente getByIdAlumnos(int id_alumnos) {
         return getStream()
-                .filter(objeto -> objeto.getId_empleados() == id_empleados)
+                .filter(objeto -> objeto.getId_alumnos() == id_alumnos)
                 .findAny()
                 .orElse(new Gerente());
     }

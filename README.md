@@ -1,6 +1,6 @@
 # Gestor de Estudiantes
 
-**Para la Gestión de Estudiantes de Diversos carrera_estudiadaes se desarrolló una aplicación tipo GUI-CRUD empleando Analytics y Gráficos en JAVA SE Swing con Maven aplicando JDBC con Mysql.**
+**Para la Gestión de Estudiantes de Diversos carreras estudiadas se desarrolló una aplicación tipo GUI-CRUD empleando Analytics y Gráficos en JAVA SE Swing con Maven aplicando JDBC con Mysql.**
 
 </br>
 

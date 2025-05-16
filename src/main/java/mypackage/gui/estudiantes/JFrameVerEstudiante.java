@@ -258,7 +258,14 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        JFrameActualizarEstudiante formActualizar = new JFrameActualizarEstudiante();
         new JFrameActualizarEstudiante().setVisible(true);
+        formActualizar.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent e) {
+                listarEstudiantes(); // recarga la tabla cuando la ventana de actualizar se cierra
+            }
+        });
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jTextFieldBusquedaEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaEstudiantesActionPerformed
@@ -320,7 +327,6 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldBusquedaEstudiantesKeyReleased
 
     private void jButtonRefrescarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRefrescarListaActionPerformed
-
         new Table().cargar(jTableListaEstudiantes, EstudianteRepository.getAll());
     }//GEN-LAST:event_jButtonRefrescarListaActionPerformed
 

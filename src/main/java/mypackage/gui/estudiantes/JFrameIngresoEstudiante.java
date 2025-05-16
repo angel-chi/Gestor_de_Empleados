@@ -5,15 +5,29 @@
  */
 package mypackage.gui.estudiantes;
 
+import mypackage.connector.LocalConnector;
+import mypackage.entities.Estudiante;
+import mypackage.repositories.jdbc.EstudianteRepository;
+import mypackage.utils.swing.Table;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 /**
  *
  * @author andre
  */
 public class JFrameIngresoEstudiante extends javax.swing.JFrame {
-
+    private Connection conexionDB;
+    private EstudianteRepository estudianteRepo;
+    //PENDIENTE
     /** Creates new form JFrameEstudiantes */
-    public JFrameIngresoEstudiante() {
+    public JFrameIngresoEstudiante(Connection conexionDB) {
         initComponents();
+        this.conexionDB = conexionDB;
+        this.estudianteRepo = new EstudianteRepository(conexionDB);
+
     }
 
     /** This method is called from within the constructor to
@@ -273,61 +287,43 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
+        String nombre = jTextFieldNombre.getText();
+        String apellido = jTextFieldApellido.getText();
+        int edad = Integer.parseInt(jTextFieldEdad.getText());
+        String genero = jTextFieldGenero.getText();
+        int calificacion = Integer.parseInt(jTextFieldcalificacion.getText());
+        String tipo_documento = jTextFieldTipoDoc.getText();
+        String numero_telefono= jTextFieldNumeroTelefono.getText();
+        String numero_documento=jTextFieldNumDoc.getText();
+        int hs_de_clase= Integer.parseInt(jTextFieldCantidadHsSemanales.getText());
+        String fecha_inicio=jTextFieldFechaDeInicio.getText();
+        String correo_electronico=jTextFieldCorreoElectronico.getText();
+        Estudiante nuevoEstudiante= new Estudiante(nombre,apellido,edad,genero,tipo_documento,numero_documento,correo_electronico,numero_telefono,fecha_inicio,hs_de_clase,calificacion);
+        estudianteRepo.save(nuevoEstudiante);
+        new JFrameVerEstudiante().setVisible(true);
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
        new JFrameVerEstudiante().setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameIngresoEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameIngresoEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameIngresoEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameIngresoEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    public static void main(String[] args) {
+        Connection conexion = LocalConnector.getLocalConnection();
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrameIngresoEstudiante().setVisible(true);
-            }
+        if (conexion == null) {
+            System.err.println("No se pudo conectar a la base de datos.");
+            return;
+        }
+
+        java.awt.EventQueue.invokeLater(() -> {
+            new JFrameIngresoEstudiante(conexion).setVisible(true);
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAgregar;

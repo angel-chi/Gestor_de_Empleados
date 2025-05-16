@@ -68,6 +68,11 @@ public class JFrameGestorEstudiantes_app extends javax.swing.JFrame {
         jButtonactuarios.setForeground(new java.awt.Color(255, 255, 255));
         jButtonactuarios.setText("Actuarios");
         jDesktopPaneFondo.add(jButtonactuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 260, 57));
+        jButtonactuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActuariosActionPerformed(evt);
+            }
+        });
 
         jButtonLicCienciasComputacion.setBackground(new java.awt.Color(0, 37, 126));
         jButtonLicCienciasComputacion.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -99,8 +104,8 @@ public class JFrameGestorEstudiantes_app extends javax.swing.JFrame {
         jButtonAnalytics.setBackground(new java.awt.Color(0, 16, 56));
         jButtonAnalytics.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButtonAnalytics.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAnalytics.setText("ANALYTICS");
-        jDesktopPaneFondo.add(jButtonAnalytics, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, 320, 80));
+        //jButtonAnalytics.setText("ANALYTICS");
+        //jDesktopPaneFondo.add(jButtonAnalytics, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, 320, 80));
 
         jToggleButtonAyuda.setBackground(new java.awt.Color(0, 79, 237));
         jToggleButtonAyuda.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -132,6 +137,7 @@ public class JFrameGestorEstudiantes_app extends javax.swing.JFrame {
 
     private void jButtonlicIngDesSoftwareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonlicIngDesSoftwareActionPerformed
         // TODO add your handling code here:
+        new JFrameValidacionIngreso().setVisible(true);
     }//GEN-LAST:event_jButtonlicIngDesSoftwareActionPerformed
 
     private void jButtonEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstudiantesActionPerformed
@@ -149,7 +155,9 @@ public class JFrameGestorEstudiantes_app extends javax.swing.JFrame {
     private void jButtonLicCienciasComputacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLicCienciasComputacionActionPerformed
          new JFrameValidacionIngreso().setVisible(true);
     }//GEN-LAST:event_jButtonLicCienciasComputacionActionPerformed
-
+    private void jButtonActuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLicCienciasComputacionActionPerformed
+        new JFrameValidacionIngreso().setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */

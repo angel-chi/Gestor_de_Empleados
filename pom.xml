@@ -10,9 +10,9 @@
         <maven.compiler.source>12</maven.compiler.source>
         <maven.compiler.target>12</maven.compiler.target>
     </properties>
-    
+
     <dependencies>
-           
+
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
@@ -24,14 +24,14 @@
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE120</version>
         </dependency>
-                
+
         <!-- https://mvnrepository.com/artifact/jfree/jcommon -->
         <dependency>
             <groupId>jfree</groupId>
             <artifactId>jcommon</artifactId>
             <version>1.0.16</version>
         </dependency>
-        
+
         <!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
 <dependency>
     <groupId>jfree</groupId>

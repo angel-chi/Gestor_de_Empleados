@@ -58,7 +58,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>mypackage.gui.menuInicial.JFrameGestorEmpleados_app</mainClass>
+                            <mainClass>mypackage.gui.menuInicial.JFrameGestorStudent_app</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

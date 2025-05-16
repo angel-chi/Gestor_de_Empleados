@@ -7,7 +7,7 @@ package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
 //import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
+import mypackage.gui.empleados.JFrameIngresoStudent;
 
 /**
  *
@@ -66,7 +66,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         jPasswordContraseña.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jDesktopPane1.add(jPasswordContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 191, 36));
 
-        jButtonValidar.setBackground(new java.awt.Color(0, 32, 108));
+        jButtonValidar.setBackground(new java.awt.Color(29, 122, 92));
         jButtonValidar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonValidar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonValidar.setText("Validar");
@@ -77,7 +77,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         });
         jDesktopPane1.add(jButtonValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 397, 162, 50));
 
-        jButtonLimpiar.setBackground(new java.awt.Color(0, 32, 108));
+        jButtonLimpiar.setBackground(new java.awt.Color(29, 122, 92));
         jButtonLimpiar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonLimpiar.setText("Limpiar ");
@@ -103,9 +103,9 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
            
 
         
-        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
+        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("students"))){
 
-             new  JFrameIngresoEmpleado().setVisible(true);
+             new JFrameIngresoStudent().setVisible(true);
 
             dispose();
 

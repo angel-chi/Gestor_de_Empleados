@@ -7,6 +7,7 @@ package mypackage.gui.estudiantes;
 
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
+import mypackage.entities.Estudiante;
 import mypackage.repositories.interfaces.I_EstudianteRepository;
 import mypackage.repositories.jdbc.EstudianteRepository;
 import mypackage.utils.swing.Table;
@@ -244,8 +245,34 @@ public class JFrameVerEstudiante extends javax.swing.JFrame {
         listarEstudiantes();
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
+
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        new JFrameActualizarEstudiante().setVisible(true);
+        int filaSeleccionada = jTableListaEstudiantes.getSelectedRow();
+
+        if (filaSeleccionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor selecciona un estudiante para actualizar.");
+            return;
+        }
+
+        int matricula = (int) jTableListaEstudiantes.getValueAt(filaSeleccionada, 0); // Columna 0 = matrícula
+
+        // Buscar estudiante en la base de datos usando I_EstudianteRepository
+        Estudiante estudianteSeleccionado = null;
+        for (Estudiante e : estudianteRepository.getAll()) {
+            if (e.getMatricula() == matricula) {
+                estudianteSeleccionado = e;
+                break;
+            }
+        }
+
+        if (estudianteSeleccionado == null) {
+            JOptionPane.showMessageDialog(this, "No se encontró el estudiante en la base de datos.");
+            return;
+        }
+
+        // Abrir la ventana de actualización y pasarle el estudiante
+        JFrameActualizarEstudiante ventanaActualizar = new JFrameActualizarEstudiante(estudianteSeleccionado, estudianteRepository);
+        ventanaActualizar.setVisible(true);
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jTextFieldBusquedaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaEmpleadosActionPerformed

@@ -5,13 +5,31 @@
  */
 package mypackage.gui.estudiantes;
 
+import mypackage.entities.Estudiante;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
+import mypackage.repositories.jdbc.EstudianteRepository;
+
+import javax.swing.*;
+
 /**
  *
  * @author andre
  */
 public class JFrameActualizarEstudiante extends javax.swing.JFrame {
 
+    private Estudiante estudiante;
+    private I_EstudianteRepository estudianteRepository;
+
     /** Creates new form JFrameActualizarEmpleados */
+
+    //Nuevo constructor con parametros
+    public JFrameActualizarEstudiante(Estudiante estudiante, I_EstudianteRepository estudianteRepository) {
+        initComponents();
+        this.estudiante = estudiante;
+        this.estudianteRepository = estudianteRepository;
+        cargarDatosEnCampos();
+    }
+
     public JFrameActualizarEstudiante() {
         initComponents();
     }
@@ -259,6 +277,7 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+//Methodo Limpiar campos
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
 
         jTextFieldMatricula.setText("");
@@ -275,9 +294,48 @@ public class JFrameActualizarEstudiante extends javax.swing.JFrame {
         jTextFieldModalidad.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
+
+
+//Metodo Actualizar
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        // TODO add your handling code here:
+            // Recoger los datos desde los campos
+            estudiante.setNombre(jTextFieldNombre.getText());
+            estudiante.setApellido(jTextFieldApellido.getText());
+            estudiante.setEdad(Integer.parseInt(jTextFieldEdad.getText()));
+            estudiante.setGenero(jTextFieldGenero.getText());
+            estudiante.setModalidad(jTextFieldModalidad.getText());
+            estudiante.setTipo_estudiante(jLabelTipoEstudiante.getText());
+            estudiante.setCorreo_electronico(jTextFieldCorreoElectronico.getText());
+            estudiante.setNumero_telefono(jTextFieldNumeroTelefono.getText());
+            estudiante.setDomicilio(jTextFieldDomicilio.getText());
+            estudiante.setAnio_ingreso(Integer.parseInt(jTextFieldAnioIngreso.getText()));
+            estudiante.setPromedio_ingreso(Float.parseFloat(jTextFieldPromedioIngreso.getText()));
+
+            // Actualizar en la base de datos
+            estudianteRepository.update(estudiante);
+
+            JOptionPane.showMessageDialog(this, "Estudiante actualizado exitosamente.");
+            this.dispose(); // Cierra la ventana después de actualizar
+
+
     }//GEN-LAST:event_jButtonActualizarActionPerformed
+    private void cargarDatosEnCampos() {
+        jTextFieldMatricula.setText(String.valueOf(estudiante.getMatricula()));
+        jTextFieldMatricula.setEnabled(false); // para evitar que modifiquen la matrícula
+
+        jTextFieldNombre.setText(estudiante.getNombre());
+        jTextFieldApellido.setText(estudiante.getApellido());
+        jTextFieldEdad.setText(String.valueOf(estudiante.getEdad()));
+        jTextFieldGenero.setText(estudiante.getGenero());
+        jTextFieldModalidad.setText(estudiante.getModalidad());
+        jTextFieldTipoEstudiante.setText(estudiante.getTipo_estudiante());
+        jTextFieldCorreoElectronico.setText(estudiante.getCorreo_electronico());
+        jTextFieldNumeroTelefono.setText(estudiante.getNumero_telefono());
+        jTextFieldDomicilio.setText(estudiante.getDomicilio());
+        jTextFieldAnioIngreso.setText(String.valueOf(estudiante.getAnio_ingreso()));
+        jTextFieldPromedioIngreso.setText(String.valueOf(estudiante.getPromedio_ingreso()));
+    }
+
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
         // TODO add your handling code here:

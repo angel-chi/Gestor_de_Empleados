@@ -64,9 +64,9 @@ public class Quimica {
 
     @Override
     public String toString() {
-        return "SoporteTecnico{" + "id=" + id + ", matricula_estudiante=" + matricula_estudiante + ", nivel=" + nivel + ", programa=" + programa + ", estatus=" + estatus + '}';
+        return "Quimica{" + "id=" + id + ", matricula_estudiante=" + matricula_estudiante + ", nivel=" + nivel + ", programa=" + programa + ", estatus=" + estatus + '}';
     }
-    
+
     
     
 

@@ -7,7 +7,7 @@ package mypackage.gui.estudiantes;
 import mypackage.entities.Estudiante;
 import mypackage.repositories.interfaces.I_EstudianteRepository;
 import mypackage.repositories.jdbc.EstudianteRepository;
-
+import mypackage.connector.LocalConnector;
 import javax.swing.*;
 import java.sql.Connection;
 
@@ -22,8 +22,6 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
     /** Creates new form JFrameEmpleados */
     public JFrameIngresoEstudiante() {
         initComponents();
-      //  estudiantes = new EstudianteRepository(new Connection().getConnection());
-
     }
 
     /** This method is called from within the constructor to
@@ -273,6 +271,8 @@ public class JFrameIngresoEstudiante extends javax.swing.JFrame {
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
             try {
+                //
+                estudiantes = new EstudianteRepository(LocalConnector.getLocalConnection());
                 int matricula = Integer.parseInt(jTextFieldMatricula.getText());
                 String nombre = jTextFieldNombre.getText();
                 String apellido = jTextFieldApellido.getText();

@@ -23,7 +23,7 @@ public class AlumnoRepository implements I_AlumnoRepository {
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement(
-                        "INSERT INTO alumnos(id,nombre,apellido,edad,genero,semestre,"
+                        "INSERT INTO alumno(id,nombre,apellido,edad,genero,semestre,"
                         + "correo_electronico,numero_telefono,matricula,promedio)"
                         + "values(?,?,?,?,?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
@@ -75,7 +75,7 @@ public class AlumnoRepository implements I_AlumnoRepository {
         }
         try ( PreparedStatement consultaPreparada = conexionDB
                 .prepareStatement(
-                        "UPDATE alumnos SET nombre=?,apellido=?,edad=?,genero=?,semestre=?,"
+                        "UPDATE alumno SET nombre=?,apellido=?,edad=?,genero=?,semestre=?,"
                         + "correo_electronico=?,numero_telefono=?,matricula=?,promedio=? "
                        + "WHERE id=?")) {
 

@@ -248,14 +248,14 @@ public class JFrameVerAlumno extends javax.swing.JFrame {
 
         if (filaTablaAlumno == -1) {
 
-            JOptionPane.showMessageDialog(this, "SELECCIONE ALGUN EMPLEADO QUE DESEE ELIMINAR DE LA LISTA!");
+            JOptionPane.showMessageDialog(this, "SELECCIONE ALGUN ALUMNO QUE DESEE ELIMINAR DE LA LISTA!");
 
             return;
         }
 
         int idAlumno = (int) jTableListaAlumnos.getValueAt(filaTablaAlumno, 0);
 
-        if (JOptionPane.showConfirmDialog(this, "ESTA POR ELIMINAR EL EMPLEADO CON EL ID " + idAlumno + "!!") != 0) {
+        if (JOptionPane.showConfirmDialog(this, "ESTA POR ELIMINAR EL ALUMNO CON EL ID " + idAlumno + "!!") != 0) {
 
             return;
 
@@ -267,7 +267,16 @@ public class JFrameVerAlumno extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        new JFrameActualizarAlumno().setVisible(true);
+        int filaTablaAlumno = jTableListaAlumnos.getSelectedRow();
+        if (filaTablaAlumno == -1) {
+            JOptionPane.showMessageDialog(this, "SELECCIONE ALGUN ALUMNO QUE DESEE ACTUALIZAR DE LA LISTA!");
+            return;
+        }
+        int idAlumno = (int) jTableListaAlumnos.getValueAt(filaTablaAlumno, 0);
+        if (JOptionPane.showConfirmDialog(this, "ESTA POR ACTUALIZAR EL ALUMNO CON EL ID " + idAlumno + "!!") != 0) {
+            return;
+        }
+        new JFrameActualizarAlumno(idAlumno).setVisible(true);
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jTextFieldBusquedaAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaAlumnosActionPerformed

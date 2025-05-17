@@ -22,7 +22,7 @@ public class LocalConnector {
       
       private static String user="root";
       
-      private static String pass="";
+      private static String pass="admin";
      
       private static String url="jdbc:"+vendor+"://"+server+":"+port+"/"+db+params;
     

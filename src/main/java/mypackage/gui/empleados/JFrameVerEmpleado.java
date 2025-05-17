@@ -287,29 +287,21 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
             new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeGenero(jTextFieldBusquedaEmpleados.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("TIPO DE DOCUMENTO")) {
-
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeTipoDocumento(jTextFieldBusquedaEmpleados.getText()));
-
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("NÚMERO DE DOCUMENTO")) {
-
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeNumeroDocumento(jTextFieldBusquedaEmpleados.getText()));
-
         } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("CORREO ELECTRÓNICO")) {
 
             new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeCorreoElectronico(jTextFieldBusquedaEmpleados.getText()));
 
         } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("NÚMERO DE TELÉFONO")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeNumeroTelefono(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeNumeroTelefono(Long.valueOf(jTextFieldBusquedaEmpleados.getText())));
 
         } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("FECHA DE INICIO")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeFechaInicio(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeFechaInicio(Integer.parseInt(jTextFieldBusquedaEmpleados.getText())));
 
         } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("CANTIDAD DE HS SEMANALES")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeCantidadHsSemanales(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeCantidadHsSemanales(Long.valueOf(jTextFieldBusquedaEmpleados.getText())));
 
         } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("SUELDO")) {
 
@@ -325,7 +317,7 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRefrescarListaActionPerformed
 
     private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
-        new JFrameAnalytics().setVisible(true);
+       // new JFrameAnalytics().setVisible(true);//
 
 
     }//GEN-LAST:event_jButtonAnalyticsActionPerformed

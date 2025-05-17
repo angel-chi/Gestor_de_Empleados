@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import mypackage.entities.Administracion;
+import mypackage.entities.Administracion_CE;
 import mypackage.repositories.interfaces.I_AdministracionRepository;
 
 
@@ -18,8 +18,8 @@ public class AdministracionRepository implements I_AdministracionRepository {
         this.conexionDB = conexionDB;
     }
      @Override
-    public void save(Administracion administracion) {
-        if (administracion == null) {
+    public void save(Administracion_CE administracionCE) {
+        if (administracionCE == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada
@@ -28,31 +28,31 @@ public class AdministracionRepository implements I_AdministracionRepository {
                         + "values(?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
-                    consultaPreparada.setInt(1, administracion.getId());
-                    consultaPreparada.setInt(2, administracion.getId_empleados());
-                    consultaPreparada.setString(3, administracion.getPuesto());
-                    consultaPreparada.setString(4, administracion.getHabilidades());
+                    consultaPreparada.setInt(1, administracionCE.getId());
+                    consultaPreparada.setInt(2, administracionCE.getId_empleados());
+                    consultaPreparada.setString(3, administracionCE.getPuesto());
+                    consultaPreparada.setString(4, administracionCE.getConocimientos());
                     
                     consultaPreparada.execute();
 
                     ResultSet resultadoQuery = consultaPreparada.getGeneratedKeys();
 
                     if (resultadoQuery.next()) {
-                        administracion.setId(resultadoQuery.getInt(1));
+                        administracionCE.setId(resultadoQuery.getInt(1));
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
     }
     @Override
-    public void remove(Administracion administracion) {
-        if (administracion == null) {
+    public void remove(Administracion_CE administracionCE) {
+        if (administracionCE == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement("DELETE FROM administracion WHERE id=?")) {
 
-            consultaPreparada.setInt(1, administracion.getId());
+            consultaPreparada.setInt(1, administracionCE.getId());
 
             consultaPreparada.execute();
 
@@ -61,8 +61,8 @@ public class AdministracionRepository implements I_AdministracionRepository {
         }
     }
     @Override
-    public void update(Administracion administracion) {
-        if (administracion == null) {
+    public void update(Administracion_CE administracionCE) {
+        if (administracionCE == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada = conexionDB
@@ -70,10 +70,10 @@ public class AdministracionRepository implements I_AdministracionRepository {
                         "UPDATE administracion SET id_empleados=?,puesto=?,habilidades=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setInt(1, administracion.getId_empleados());
-            consultaPreparada.setString(2, administracion.getPuesto());
-            consultaPreparada.setString(3, administracion.getHabilidades());
-            consultaPreparada.setInt(4, administracion.getId());
+            consultaPreparada.setInt(1, administracionCE.getId_empleados());
+            consultaPreparada.setString(2, administracionCE.getPuesto());
+            consultaPreparada.setString(3, administracionCE.getConocimientos());
+            consultaPreparada.setInt(4, administracionCE.getId());
             
             consultaPreparada.execute();
 
@@ -82,9 +82,9 @@ public class AdministracionRepository implements I_AdministracionRepository {
         }
     }
     
-    public List<Administracion> getAll() {
+    public List<Administracion_CE> getAll() {
 
-        List<Administracion> listaAdministracion = new ArrayList();
+        List<Administracion_CE> listaAdministracionCE = new ArrayList();
 
         try ( ResultSet resultSetAdministracion
                 = conexionDB
@@ -92,7 +92,7 @@ public class AdministracionRepository implements I_AdministracionRepository {
                         .executeQuery("SELECT * FROM administracion")) {
                     while (resultSetAdministracion.next()) {
 
-                        listaAdministracion.add(new Administracion(
+                        listaAdministracionCE.add(new Administracion_CE(
                                 resultSetAdministracion.getInt("id"),
                                 resultSetAdministracion.getInt("id_empleados"),
                                 resultSetAdministracion.getString("puesto"),
@@ -104,7 +104,7 @@ public class AdministracionRepository implements I_AdministracionRepository {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                return listaAdministracion;
+                return listaAdministracionCE;
     }
 
 

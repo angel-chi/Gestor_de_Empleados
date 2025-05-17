@@ -2,29 +2,29 @@
 package mypackage.entities;
 
 
-public class Gerente {
+public class Profesores {
     
     private int id;
     private int id_empleados;
-    private String sector;
-    private String formacion;
+    private String puesto;
+    private String titulo;
     private int antiguedad;
     
-    public Gerente() {
+    public Profesores() {
     }
     
-    public Gerente(int id_empleados, String sector, String formacion, int antiguedad) {
+    public Profesores(int id_empleados, String puesto, String titulo, int antiguedad) {
         this.id_empleados = id_empleados;
-        this.sector = sector;
-        this.formacion = formacion;
+        this.puesto = puesto;
+        this.titulo = titulo;
         this.antiguedad = antiguedad;
     }
     
-    public Gerente(int id, int id_empleados, String sector, String formacion, int antiguedad) {
+    public Profesores(int id, int id_empleados, String puesto, String titulo, int antiguedad) {
         this.id = id;
         this.id_empleados = id_empleados;
-        this.sector = sector;
-        this.formacion = formacion;
+        this.puesto = puesto;
+        this.titulo = titulo;
         this.antiguedad = antiguedad;
     }
     
@@ -42,17 +42,17 @@ public class Gerente {
     public void setId_empleados(int id_empleados) {
         this.id_empleados = id_empleados;
     }
-    public String getSector() {
-        return sector;
+    public String getPuesto() {
+        return puesto;
     }
-    public void setSector(String sector) {
-        this.sector = sector;
+    public void setPuesto(String puesto) {
+        this.puesto = puesto;
     }
-    public String getFormacion() {
-        return formacion;
+    public String getTitulo() {
+        return titulo;
     }
-    public void setFormacion(String formacion) {
-        this.formacion = formacion;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
     public int getAntiguedad() {
         return antiguedad;
@@ -63,7 +63,7 @@ public class Gerente {
     
         @Override
     public String toString() {
-        return "Gerente{" + "id=" + id + ", id_empleados=" + id_empleados + ", sector=" + sector + ", formacion=" + formacion + ", antiguedad=" + antiguedad + '}';
+        return "Profesores{" + "id=" + id + ", id_empleados=" + id_empleados + ", puesto=" + puesto + ", titulo=" + titulo + ", antiguedad=" + antiguedad + '}';
     }
     
     

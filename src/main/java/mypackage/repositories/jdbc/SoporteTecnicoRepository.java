@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import mypackage.entities.Desarrollador;
+
 import mypackage.entities.SoporteTecnico;
 import mypackage.repositories.interfaces.I_SoporteTecnicoRepository;
 

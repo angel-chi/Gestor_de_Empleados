@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import mypackage.entities.Gerente;
+import mypackage.entities.Profesores;
 import mypackage.repositories.interfaces.I_GerenteRepository;
 
 
@@ -18,8 +18,8 @@ public class GerenteRepository implements I_GerenteRepository {
         this.conexionDB = conexionDB;
     }
      @Override
-    public void save(Gerente gerente) {
-        if (gerente == null) {
+    public void save(Profesores profesores) {
+        if (profesores == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada
@@ -28,32 +28,32 @@ public class GerenteRepository implements I_GerenteRepository {
                         + "values(?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
-                    consultaPreparada.setInt(1, gerente.getId());
-                    consultaPreparada.setInt(2, gerente.getId_empleados());
-                    consultaPreparada.setString(3, gerente.getSector());
-                    consultaPreparada.setString(4, gerente.getFormacion());
-                    consultaPreparada.setInt(5, gerente.getAntiguedad());
+                    consultaPreparada.setInt(1, profesores.getId());
+                    consultaPreparada.setInt(2, profesores.getId_empleados());
+                    consultaPreparada.setString(3, profesores.getPuesto());
+                    consultaPreparada.setString(4, profesores.getTitulo());
+                    consultaPreparada.setInt(5, profesores.getAntiguedad());
                     
                     consultaPreparada.execute();
 
                     ResultSet resultadoQuery = consultaPreparada.getGeneratedKeys();
 
                     if (resultadoQuery.next()) {
-                        gerente.setId(resultadoQuery.getInt(1));
+                        profesores.setId(resultadoQuery.getInt(1));
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
     }
     @Override
-    public void remove(Gerente gerente) {
-        if (gerente == null) {
+    public void remove(Profesores profesores) {
+        if (profesores == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement("DELETE FROM gerentes WHERE id=?")) {
 
-            consultaPreparada.setInt(1, gerente.getId());
+            consultaPreparada.setInt(1, profesores.getId());
 
             consultaPreparada.execute();
 
@@ -62,8 +62,8 @@ public class GerenteRepository implements I_GerenteRepository {
         }
     }
     @Override
-    public void update(Gerente gerente) {
-        if (gerente == null) {
+    public void update(Profesores profesores) {
+        if (profesores == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada = conexionDB
@@ -71,11 +71,11 @@ public class GerenteRepository implements I_GerenteRepository {
                         "UPDATE gerentes SET id_empleados=?,sector=?,formacion=?,antiguedad=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setInt(1, gerente.getId_empleados());
-            consultaPreparada.setString(2, gerente.getSector());
-            consultaPreparada.setString(3, gerente.getFormacion());
-            consultaPreparada.setInt(4, gerente.getAntiguedad());
-            consultaPreparada.setInt(5, gerente.getId());
+            consultaPreparada.setInt(1, profesores.getId_empleados());
+            consultaPreparada.setString(2, profesores.getPuesto());
+            consultaPreparada.setString(3, profesores.getTitulo());
+            consultaPreparada.setInt(4, profesores.getAntiguedad());
+            consultaPreparada.setInt(5, profesores.getId());
             
             consultaPreparada.execute();
 
@@ -84,9 +84,9 @@ public class GerenteRepository implements I_GerenteRepository {
         }
     }
     
-    public List<Gerente> getAll() {
+    public List<Profesores> getAll() {
 
-        List<Gerente> listaGerentes = new ArrayList();
+        List<Profesores> listaProfesores = new ArrayList();
 
         try ( ResultSet resultSetGerente
                 = conexionDB
@@ -94,7 +94,7 @@ public class GerenteRepository implements I_GerenteRepository {
                         .executeQuery("SELECT * FROM gerentes")) {
                     while (resultSetGerente.next()) {
 
-                        listaGerentes.add(new Gerente(
+                        listaProfesores.add(new Profesores(
                                 resultSetGerente.getInt("id"),
                                 resultSetGerente.getInt("id_empleados"),
                                 resultSetGerente.getString("sector"),
@@ -107,7 +107,7 @@ public class GerenteRepository implements I_GerenteRepository {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                return listaGerentes;
+                return listaProfesores;
     }
 
 

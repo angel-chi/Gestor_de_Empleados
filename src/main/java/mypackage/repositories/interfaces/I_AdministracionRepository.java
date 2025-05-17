@@ -5,41 +5,41 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import mypackage.entities.Administracion;
+import mypackage.entities.Administracion_CE;
 
 
 public interface I_AdministracionRepository {
     
     
-        void save(Administracion administracion);
+        void save(Administracion_CE administracionCE);
 
-    void remove(Administracion administracion);
+    void remove(Administracion_CE administracionCE);
 
-    void update(Administracion administracion);
+    void update(Administracion_CE administracionCE);
 
-    List<Administracion> getAll();
+    List<Administracion_CE> getAll();
 
-    default Stream<Administracion> getStream() {
+    default Stream<Administracion_CE> getStream() {
         return getAll().stream();
     }
 
-    default Administracion getById(int id) {
+    default Administracion_CE getById(int id) {
         return getStream()
                 .filter(objeto -> objeto.getId() == id)
                 .findAny()
-                .orElse(new Administracion());
+                .orElse(new Administracion_CE());
     }
     
-    default Administracion getByIdEmpleados(int id_empleados) {
+    default Administracion_CE getByIdAlumnos(int id_alumnos) {
         return getStream()
-                .filter(objeto -> objeto.getId_empleados() == id_empleados)
+                .filter(objeto -> objeto.getId_empleados() == id_alumnos)
                 .findAny()
-                .orElse(new Administracion());
+                .orElse(new Administracion_CE());
     }
     
-    default List<Administracion> getLikePuesto(String puesto) {
+    default List<Administracion_CE> getLikePuesto(String puesto) {
         if (puesto == null) {
-            return new ArrayList<Administracion>();
+            return new ArrayList<Administracion_CE>();
         }
         return getStream()
                 .filter(objeto -> objeto.getPuesto().toLowerCase()
@@ -47,12 +47,12 @@ public interface I_AdministracionRepository {
                 .collect(Collectors.toList());
     }
     
-       default List<Administracion> getLikeHabilidades(String habilidades) {
+       default List<Administracion_CE> getLikeHabilidades(String habilidades) {
         if (habilidades == null) {
-            return new ArrayList<Administracion>();
+            return new ArrayList<Administracion_CE>();
         }
         return getStream()
-                .filter(objeto -> objeto.getHabilidades().toLowerCase()
+                .filter(objeto -> objeto.getConocimientos().toLowerCase()
                 .contains(habilidades.toLowerCase()))
                 .collect(Collectors.toList());
     }

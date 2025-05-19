@@ -9,13 +9,13 @@ use db_Estudiantes;
 select * from Estudiantes;
 select * from licIngDesSoftware;
 select * from actuarios;
-select * from licCienciasComputacion;
+select * from lic_ciencias_computacion;
 select * from egresados;
 
 -- Estudiantes por area
 select * from Estudiantes empl , licIngDesSoftware adm where empl.id = adm.id_Estudiantes;
 select * from Estudiantes empl, actuarios dev where empl.id= dev.id_Estudiantes;
-select * from Estudiantes empl, licCienciasComputacion sop where empl.id= sop.id_Estudiantes;
+select * from Estudiantes empl, lic_ciencias_computacion sop where empl.id= sop.id_Estudiantes;
 select * from Estudiantes empl, egresados ger where empl.id= ger.id_Estudiantes;
 
 -- Estudiantes ordenados por nombre

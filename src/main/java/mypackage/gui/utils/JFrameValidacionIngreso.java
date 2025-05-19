@@ -6,16 +6,26 @@
 package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
-import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
+//import mypackage.gui.LicCienciasComputacion.JFrameIngresoLicCienciasComputacion;
+import mypackage.gui.estudiantes.JFrameIngresoEstudiante;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
  * @author andre
  */
-public class JFrameValidacionIngreso extends javax.swing.JFrame {
 
+public class JFrameValidacionIngreso extends javax.swing.JFrame {
+    private Connection conexion;
     /** Creates new form JFrameValidacion */
+    public JFrameValidacionIngreso(Connection conexion) {
+        this.conexion = conexion;
+        initComponents();
+    }
+
     public JFrameValidacionIngreso() {
         initComponents();
     }
@@ -90,7 +100,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 
         jLabelTitulo1.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo1.setText("(Usuario-Contraseña por sector)");
+        jLabelTitulo1.setText("(Usuario-Contraseña)");
         jDesktopPane1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 510));
@@ -100,18 +110,16 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValidarActionPerformed
-           
 
-        
-        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
+        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("Estudiantes"))){
 
-             new  JFrameIngresoEmpleado().setVisible(true);
+             new  JFrameIngresoEstudiante(conexion).setVisible(true);
 
             dispose();
 
         }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("soporte"))){
             
-             new  JFrameIngresoSoporteTecnico().setVisible(true);
+             //new  JFrameIngresoLicCienciasComputacion().setVisible(true);
 
             dispose();
             
@@ -130,15 +138,15 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         
         
         
-//        boolean flagValidacionEntradaEmpleado = true;
-//        boolean flagValidacionEntradaSoporteTecnico = true;
-//        String flagSector="Ninguno";
+//        boolean flagValidacionEntradaEstudiante = true;
+//        boolean flagValidacionEntradaLicCienciasComputacion = true;
+//        String flagcarrera_estudiada="Ninguno";
 //        
 //        
 //        while( (!(jTextFieldUsuario.getText().equals("admin"))
 //                && !(jPasswordContraseña.getPassword().equals("1")) ) ){
 //           
-//            flagValidacionEntradaEmpleado = false;
+//            flagValidacionEntradaEstudiante = false;
 //          
 //           
 //            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
@@ -148,7 +156,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 //             while( (!(jTextFieldUsuario.getText().equals("admin"))
 //                && !(jPasswordContraseña.getPassword().equals("2")) ) ){
 //           
-//            flagValidacionEntradaSoporteTecnico= false;
+//            flagValidacionEntradaLicCienciasComputacion= false;
 //          
 //           
 //            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
@@ -158,13 +166,13 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 //
 //        if ( jTextFieldUsuario.getText().equals("admin") ) {
 //            
-//            new  JFrameIngresoEmpleado().setVisible(true);
+//            new  JFrameIngresoEstudiante().setVisible(true);
 //
 //            dispose();
 //        }
-//        else if(flagValidacionEntradaSoporteTecnico){
+//        else if(flagValidacionEntradaLicCienciasComputacion){
 //           
-//            new JFrameIngresoSoporteTecnico().setVisible(true);
+//            new JFrameIngresoLicCienciasComputacion().setVisible(true);
 //            
 //            dispose();
 //        }
@@ -181,43 +189,18 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameValidacionIngreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameValidacionIngreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameValidacionIngreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameValidacionIngreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Connection conexion = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/db_estudiantes", "root", "root");
+            java.awt.EventQueue.invokeLater(() -> {
+                new JFrameValidacionIngreso(conexion).setVisible(true);
+            });
+        } catch (SQLException e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(null, "No se pudo conectar con la base de datos.");
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrameValidacionIngreso().setVisible(true);
-            }
-        });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonLimpiar;

@@ -5,7 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="198c0132-125d-4358-b095-0b55a6837bdb" name="Changes" comment="Se refactorizaron las clases y metodos para adaptarlas a una estructura de estudiantes. Se realizaron modificaciones en los archivos DDL, DML y QUERIES para generar las tablas correspondientes a las nuevas entidades y su estructura.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Matematicas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_IngenieriaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_MatematicasRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_PresidenteEstudiantilRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_QuimicaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/PresidenteEstudiantilRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_empleados/documentacion/db_empleados_DER.png" beforeDir="false" afterPath="$PROJECT_DIR$/db_estudiantes/documentacion/db_empleados_DER.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_estudiantes/sql/db_empleados_DDL.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_DML.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_estudiantes/sql/db_empleados_DML.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_empleados/sql/db_empleados_QUERIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_estudiantes/sql/db_empleados_QUERIES.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/connector/LocalConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/connector/LocalConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Administracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Ingenieria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Desarrollador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Estudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/PresidenteEstudiantil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/entities/SoporteTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/entities/Quimica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameActualizarEmpleado.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/estudiantes/JFrameActualizarEstudiante.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameActualizarEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/estudiantes/JFrameActualizarEstudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameAnalyticsEmpleado.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameAnalyticsEmpleado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameIngresoEmpleado.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/estudiantes/JFrameIngresoEmpleado.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameIngresoEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/estudiantes/JFrameIngresoEstudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameVerEmpleado.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/estudiantes/JFrameVerEmpleado.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/empleados/JFrameVerEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/estudiantes/JFrameVerEstudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/menuInicial/JFrameGestorEmpleados_app.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/menuInicial/JFrameGestorEstudiante_app.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/menuInicial/JFrameGestorEmpleados_app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/menuInicial/JFrameGestorEstudiante_app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/gui/utils/JFrameValidacionIngreso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/gui/utils/JFrameValidacionIngreso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_AdministracionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_DesarrolladorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_EmpleadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_EstudianteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_GerenteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/interfaces/I_SoporteTecnicoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/AdministracionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/IngenieriaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/DesarrolladorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/MatematicasRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/EmpleadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/EstudianteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/GerenteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/SoporteTecnicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/repositories/jdbc/QuimicaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_estudiantes_DDL.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_DML.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_estudiantes_DML.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_empleados_QUERIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/sql/db_estudiantes_QUERIES.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAdministracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestAdministracion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestDesarrollador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestDesarrollador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestEmpleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestGerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestGerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mypackage/test/TestSoporteTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mypackage/test/TestSoporteTecnico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +60,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/beatrizEuan/proyectoFinal" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -127,35 +172,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744379919926</updated>
     </task>
-    <task id="LOCAL-00001" summary="Se refactorizaron las clases y metodos para adaptarlas a una estructura de estudiantes. Se realizaron modificaciones en los archivos DDL, DML y QUERIES para generar las tablas correspondientes a las nuevas entidades y su estructura.">
-      <option name="closed" value="true" />
-      <created>1747389670601</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1747389670601</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Se refactorizaron las clases y metodos para adaptarlas a una estructura de estudiantes. Se realizaron modificaciones en los archivos DDL, DML y QUERIES para generar las tablas correspondientes a las nuevas entidades y su estructura.">
-      <option name="closed" value="true" />
-      <created>1747389711730</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1747389711730</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se refactorizaron las clases y metodos para adaptarlas a una estructura de estudiantes. Se realizaron modificaciones en los archivos DDL, DML y QUERIES para generar las tablas correspondientes a las nuevas entidades y su estructura." />

@@ -2,7 +2,7 @@
 -- //////Base de datos de Empleados, dividido por sectores(administración, soporte técnico, desarrolladores y gerentes)///////////
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-drop database if exists db_empleados;
+drop database if exists db_students;
 
 create database db_empleados;
 
@@ -13,6 +13,7 @@ drop table if exists desarrolladores;
 drop table if exists soporte_tecnico;
 drop table if exists administracion;
 drop table if exists gerentes;
+drop table if exists students;
 
 create table empleados(
 
@@ -28,6 +29,22 @@ numero_telefono		varchar(25),
 fecha_inicio		date		not null,
 cantidad_hs_semanales	int 		not null,
 sueldo				float			not null
+
+);
+
+create table students(
+
+id					varchar 	    not null,
+nombre				varchar(40)		not null,
+apellido		    varchar(40)		not null,
+edad			    int(3)			not null,
+genero				varchar(10)		not null,
+facultad    		varchar(17)		not null,
+carrera         	varchar(15)			not null,
+correo_institucional varchar(30)		not null,
+numero_telefono		varchar(25),
+semestre    		int		        not null,
+promedio        	int 		not null,
 
 );
 

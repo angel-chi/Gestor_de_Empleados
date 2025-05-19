@@ -6,8 +6,10 @@
 package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
-import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
+//import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
+import mypackage.gui.student.JFrameActualizarStudents;
+import mypackage.gui.student.JFrameIngresoStudents;
+import mypackage.gui.student.JFrameVerStudent;
 
 /**
  *
@@ -16,8 +18,9 @@ import mypackage.gui.empleados.JFrameIngresoEmpleado;
 public class JFrameValidacionIngreso extends javax.swing.JFrame {
 
     /** Creates new form JFrameValidacion */
-    public JFrameValidacionIngreso() {
-        initComponents();
+    public JFrameValidacionIngreso(boolean botonNuevoEstudiante) {
+        initComponents(botonNuevoEstudiante);
+
     }
 
     /** This method is called from within the constructor to
@@ -27,7 +30,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents(boolean nuevoEstudiante) {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabelTitulo = new javax.swing.JLabel();
@@ -72,7 +75,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         jButtonValidar.setText("Validar");
         jButtonValidar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonValidarActionPerformed(evt);
+                jButtonValidarActionPerformed(evt,nuevoEstudiante);
             }
         });
         jDesktopPane1.add(jButtonValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 397, 162, 50));
@@ -90,7 +93,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 
         jLabelTitulo1.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo1.setText("(Usuario-Contraseña por sector)");
+        jLabelTitulo1.setText("(Usuario-Contraseña)");
         jDesktopPane1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 510));
@@ -99,77 +102,32 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValidarActionPerformed
-           
+    private void jButtonValidarActionPerformed(java.awt.event.ActionEvent evt,boolean botonNuevoEstudiante) {//GEN-FIRST:event_jButtonValidarActionPerformed
 
-        
-        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
+       // 05/05/2025
 
-             new  JFrameIngresoEmpleado().setVisible(true);
 
-            dispose();
+        if((jTextFieldUsuario.getText().equals("root")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("root")) && botonNuevoEstudiante==true){
 
-        }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("soporte"))){
-            
-             new  JFrameIngresoSoporteTecnico().setVisible(true);
+             new JFrameIngresoStudents().setVisible(true);
 
-            dispose();
+            this.dispose();
+
+        } else if ((jTextFieldUsuario.getText().equals("root")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("root"))) {
+            new JFrameVerStudent(true).setVisible(true);
+
+        } else if((jTextFieldUsuario.getText().equals("estudiante")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("estudiante"))){
+            if (botonNuevoEstudiante==true){JOptionPane.showMessageDialog(null, "NO CUENTA CON LOS PERMISOS PARA MODIFICAR LOS DATOS!");}
+            new JFrameVerStudent(false).setVisible(true);
+            this.dispose();
             
         }else{
                  JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
-                 
-           
-           
-                }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        boolean flagValidacionEntradaEmpleado = true;
-//        boolean flagValidacionEntradaSoporteTecnico = true;
-//        String flagSector="Ninguno";
-//        
-//        
-//        while( (!(jTextFieldUsuario.getText().equals("admin"))
-//                && !(jPasswordContraseña.getPassword().equals("1")) ) ){
-//           
-//            flagValidacionEntradaEmpleado = false;
-//          
-//           
-//            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
-//          
-//            return;
-//        }
-//             while( (!(jTextFieldUsuario.getText().equals("admin"))
-//                && !(jPasswordContraseña.getPassword().equals("2")) ) ){
-//           
-//            flagValidacionEntradaSoporteTecnico= false;
-//          
-//           
-//            JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
-//          
-//            return;
-//        }
-//
-//        if ( jTextFieldUsuario.getText().equals("admin") ) {
-//            
-//            new  JFrameIngresoEmpleado().setVisible(true);
-//
-//            dispose();
-//        }
-//        else if(flagValidacionEntradaSoporteTecnico){
-//           
-//            new JFrameIngresoSoporteTecnico().setVisible(true);
-//            
-//            dispose();
-//        }
-//         
-    }//GEN-LAST:event_jButtonValidarActionPerformed
+
+        }
+
+
+}//GEN-LAST:event_jButtonValidarActionPerformed
 
     private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
         
@@ -180,7 +138,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[],boolean root) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -214,7 +172,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameValidacionIngreso().setVisible(true);
+                new JFrameValidacionIngreso(root).setVisible(true);
             }
         });
     }

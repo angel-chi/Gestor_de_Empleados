@@ -1,34 +1,30 @@
 package mypackage.test;
 
-import java.time.LocalDate;
 import mypackage.connector.LocalConnector;
 import mypackage.entities.Administracion;
-import mypackage.entities.Empleado;
-import mypackage.entities.SoporteTecnico;
+import mypackage.entities.Student;
 import mypackage.repositories.interfaces.I_AdministracionRepository;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.interfaces.I_SoporteTecnicoRepository;
+import mypackage.repositories.interfaces.I_StudentRepository;
 import mypackage.repositories.jdbc.AdministracionRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
-import mypackage.repositories.jdbc.SoporteTecnicoRepository;
+import mypackage.repositories.jdbc.StudentRepository;
 
 public class TestAdministracion {
 
     public static void main(String[] args) {
 
-        I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+        I_StudentRepository empleadoRepository = new StudentRepository(LocalConnector.getLocalConnection());
         I_AdministracionRepository administracionRepository = new AdministracionRepository(LocalConnector.getLocalConnection());
 
         //INSERT
-        System.out.println("\n=================Agregamos un nuevo Empleado ===============\n");
-        Empleado nuevoEmpleado
-                = new Empleado("Oscar", "Mastruli", 25, "Masculino", "DNI", "45128789",
-                        "Oscarmastruli@gmail.com", "1576859045", String.valueOf(LocalDate.now()), 48, 44000f);
+        System.out.println("\n=================Agregamos un nuevo Student ===============\n");
+        Student nuevoStudent
+                = new Student("4","Oscar", "Mastruli", 25, "Masculino", "DNI", "45128789",
+                        "Oscarmastruli@gmail.com", "1576859045", 48, 44000);
 
-        empleadoRepository.save(nuevoEmpleado);
-        System.out.println(nuevoEmpleado);
+        empleadoRepository.save(nuevoStudent);
+        System.out.println(nuevoStudent);
 
-        System.out.println("\n=================Agregamos datos del nuevo Empleado del Area de administracion ===============\n");
+        System.out.println("\n=================Agregamos datos del nuevo Student del Area de administracion ===============\n");
         Administracion nuevoAdministrador = new Administracion(3, "Ayudante de Administrador", "Organizcion, Conocimientos en PC");
 
         administracionRepository.save(nuevoAdministrador);
@@ -53,8 +49,8 @@ public class TestAdministracion {
         //FIN UPDATE
 //DELETE
         System.out.println("\n=================Eliminamos el ultimo empleado ingresado===============\n");
-        empleadoRepository.remove(nuevoEmpleado);
-        System.out.println(nuevoEmpleado);
+        empleadoRepository.remove(nuevoStudent);
+        System.out.println(nuevoStudent);
         System.out.println("\n=================Eliminamos los  datos del ultimo empleado de administracion ingresado===============\n");
         administracionRepository.remove(nuevoAdministrador);
         System.out.println(nuevoAdministrador);
@@ -63,16 +59,16 @@ public class TestAdministracion {
 
 //FIN DELETE
 //SELECT
-        System.out.println("\n=================Empleado de  Administracion con el id 1===============\n");
+        System.out.println("\n=================Student de  Administracion con el id 1===============\n");
         System.out.println(administracionRepository.getById(1));
 
-        System.out.println("\n=================Empleado de  Administracion  con el id de empleados 1 ===============\n");
+        System.out.println("\n=================Student de  Administracion  con el id de empleados 1 ===============\n");
         System.out.println(administracionRepository.getByIdEmpleados(1));
 
-        System.out.println("\n=================Empleado/s de  Administracion  con el puesto de Administradora General ===============\n");
+        System.out.println("\n=================Student/s de  Administracion  con el puesto de Administradora General ===============\n");
         administracionRepository.getLikePuesto("Administradora General").forEach(System.out::println);
 
-        System.out.println("\n=================Empleado/s de  Administracion  con la habilidad de predisposicion===============\n");
+        System.out.println("\n=================Student/s de  Administracion  con la habilidad de predisposicion===============\n");
         administracionRepository.getLikeHabilidades("predisposicion").forEach(System.out::println);
 
 //FIN SELECT

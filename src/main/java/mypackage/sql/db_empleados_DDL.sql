@@ -31,6 +31,23 @@ sueldo				float			not null
 
 );
 
+create table students(
+
+id					int(8) 			not null,
+nombre				varchar(40)		not null,
+apellido		    varchar(40)		not null,
+edad			    int(3)			not null,
+genero				varchar(10)		not null,
+facultad     		varchar(17)		not null,
+carrera         	varchar(15)		not null,
+correo_institucional	varchar(30)		not null,
+numero_telefono		varchar(25),
+semestre           	int 		    not null,
+pormedio           	int 		    not null,
+progreso			varchar(8)		not null
+
+);
+
 
 
 

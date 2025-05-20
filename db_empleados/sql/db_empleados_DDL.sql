@@ -21,13 +21,11 @@ nombre				varchar(40)		not null,
 apellido		    varchar(40)		not null,
 edad			    int(3)			not null,
 genero				varchar(10)		not null,
-tipo_documento 		varchar(17)		not null,
-numero_documento	varchar(15)			not null,
 correo_electronico	varchar(30)		not null,
 numero_telefono		varchar(25),
-fecha_inicio		date		not null,
-cantidad_hs_semanales	int 		not null,
-sueldo				float			not null
+num_materias		int		not null,
+matricula	long 		not null,
+semestre				Int			not null
 
 );
 

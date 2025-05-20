@@ -56,7 +56,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         jButtonEmpleados.setBackground(new java.awt.Color(1, 45, 151));
         jButtonEmpleados.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonEmpleados.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEmpleados.setText("EMPLEADOS");
+        jButtonEmpleados.setText("ESTUDIANTES");
         jButtonEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEmpleadosActionPerformed(evt);

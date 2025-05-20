@@ -37,12 +37,12 @@ public class JFrameAcercaDe extends javax.swing.JFrame {
         jLabelMenuAcercaDe.setForeground(new java.awt.Color(255, 255, 255));
         jLabelMenuAcercaDe.setText("MENÚ ACERCA DE ");
 
-        jTextAreaMenuAcercaDe.setBackground(new java.awt.Color(0, 16, 56));
+        jTextAreaMenuAcercaDe.setBackground(new java.awt.Color(29, 122, 92));
         jTextAreaMenuAcercaDe.setColumns(20);
         jTextAreaMenuAcercaDe.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jTextAreaMenuAcercaDe.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaMenuAcercaDe.setRows(5);
-        jTextAreaMenuAcercaDe.setText("\n-Aplicación 1.0 para la gestión de Empleados.\n\n\n-Listado, Agregación, Eliminación y Modificación \n         de Empleados de diversas áreas.\n\n\n-Interfaz Gráfica de Usuario para un mejor manejo.\n\n\n-Almacenamiento de datos en una Base de Datos\n\tRelacional.\n\n-Apartado especifico sobre Analytics.");
+        jTextAreaMenuAcercaDe.setText("\n-Aplicación 1.0 para la gestión de Alumnos.\n\n\n-Listado, Agregación, Eliminación y Modificación \n         de Alumnos de diversas áreas.\n\n\n-Interfaz Gráfica de Usuario para un mejor manejo.\n\n\n-Almacenamiento de datos en una Base de Datos\n\tRelacional.\n\n-Apartado especifico sobre Analytics.");
         jScrollPane1.setViewportView(jTextAreaMenuAcercaDe);
 
         jDesktopPane1.setLayer(jLabelMenuAcercaDe, javax.swing.JLayeredPane.DEFAULT_LAYER);

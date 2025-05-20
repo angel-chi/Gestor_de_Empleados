@@ -13,7 +13,7 @@ insert into empleados (id, nombre, apellido, edad, genero,
 (3, 'Hector', 'Gomez', 34 , 'Masculino', 'DNI', '21765827' , 'hectorGomez78@gmail.com', '1153467892', '2018-07-12',  46 , 46000 ),-- Dev
 (4, 'Gabriela', 'Jimenez', 22 , 'Femenino', 'DNI', '41087123' , 'gabriela.consultas@hotmail.com', '1198765816', '2019-03-02',  48 , 35000 ),-- soporte
 (5, 'Gustavo', 'Gomez', 30 , 'Masculino', 'PASAPORTE', '748000221' , 'gustavo_andaluz@gmail.com', '116376189', '2020-07-07',  49 , 33000 ),-- soporte
-(6, 'Jose', 'Perez', 42 , 'Masculino', 'DNI', '22287680' , 'jose_consultasInternas@hotmail.com', '1167543490', '2018-02-01',  52 , 49000 );-- gerente
+(6, 'Jose', 'Perez', 42 , 'Masculino', 'DNI', '22287680' , 'jose_consultas@hotmail.com', '1167543490', '2018-02-01',  52 , 49000 );-- gerente
 
 
 

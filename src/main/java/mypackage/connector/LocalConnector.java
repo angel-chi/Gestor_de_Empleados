@@ -20,9 +20,9 @@ public class LocalConnector {
       
       private static String params="?serverTimezone=UTC";
       
-      private static String user="root";
+      private static String user="appuser";
       
-      private static String pass="";
+      private static String pass="Admin123!";
      
       private static String url="jdbc:"+vendor+"://"+server+":"+port+"/"+db+params;
     
@@ -42,6 +42,7 @@ public class LocalConnector {
               }
           } catch (Exception ex) {
               ex.printStackTrace();
+              System.out.println(ex.getMessage());
               
           }
       return conexionDB;

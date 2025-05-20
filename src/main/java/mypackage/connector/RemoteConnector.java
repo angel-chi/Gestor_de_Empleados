@@ -19,9 +19,9 @@ public class RemoteConnector {
       
       private static String params="?serverTimezone=UTC";
       
-      private static String user="admin";
+      private static String user="appuser";
       
-      private static String pass="admin";
+      private static String pass="Admin123!";
 
       private static String url="jdbc:"+vendor+"://"+server+":"+port+"/"+db+params;
 

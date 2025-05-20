@@ -30,9 +30,9 @@ public interface I_AdministracionRepository {
                 .orElse(new Administracion());
     }
     
-    default Administracion getByIdEmpleados(int id_empleados) {
+    default Administracion getByIdEstudiantes(int id_estudiantes) {
         return getStream()
-                .filter(objeto -> objeto.getId_empleados() == id_empleados)
+                .filter(objeto -> objeto.getId_estudiantes() == id_estudiantes)
                 .findAny()
                 .orElse(new Administracion());
     }

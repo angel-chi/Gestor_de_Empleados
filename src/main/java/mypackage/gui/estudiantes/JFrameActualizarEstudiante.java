@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mypackage.gui.empleados;
+package mypackage.gui.estudiantes;
 
 /**
  *
  * @author andre
  */
-public class JFrameActualizarEmpleado extends javax.swing.JFrame {
+public class JFrameActualizarEstudiante extends javax.swing.JFrame {
 
     /** Creates new form JFrameActualizarEmpleados */
-    public JFrameActualizarEmpleado() {
+    public JFrameActualizarEstudiante() {
         initComponents();
     }
 
@@ -42,7 +42,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jLabelTipoDoc3 = new javax.swing.JLabel();
         jLabelTipoDoc4 = new javax.swing.JLabel();
         jLabelNumDoc3 = new javax.swing.JLabel();
-        jLabelSueldo = new javax.swing.JLabel();
+        jLabelGastada = new javax.swing.JLabel();
         jTextFieldNumDoc = new javax.swing.JTextField();
         jLabelCorreo3 = new javax.swing.JLabel();
         jLabelNumero2 = new javax.swing.JLabel();
@@ -63,9 +63,9 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("ACTUALIZACIÓN DE EMPLEADOS");
+        jLabelTitulo.setText("ACTUALIZACIÓN DE ESTUDIANTES");
         jDesktopPane1.add(jLabelTitulo);
-        jLabelTitulo.setBounds(30, 20, 610, 42);
+        jLabelTitulo.setBounds(40, 20, 610, 50);
 
         jLabelNombre.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,7 +75,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jTextFieldNombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(260, 80, 191, 34);
+        jTextFieldNombre.setBounds(260, 80, 191, 32);
 
         jLabelApellido.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelApellido.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,31 +85,31 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jTextFieldApellido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldApellido);
-        jTextFieldApellido.setBounds(260, 120, 191, 34);
+        jTextFieldApellido.setBounds(260, 120, 191, 32);
 
         jLabelEdad.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelEdad.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEdad.setText("Edad:");
         jDesktopPane1.add(jLabelEdad);
-        jLabelEdad.setBounds(200, 160, 55, 24);
+        jLabelEdad.setBounds(200, 160, 54, 28);
 
         jTextFieldEdad.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldEdad);
-        jTextFieldEdad.setBounds(260, 160, 191, 34);
+        jTextFieldEdad.setBounds(260, 160, 191, 32);
 
         jLabelGenero.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelGenero.setForeground(new java.awt.Color(255, 255, 255));
         jLabelGenero.setText("Genero:");
         jDesktopPane1.add(jLabelGenero);
-        jLabelGenero.setBounds(180, 200, 77, 24);
+        jLabelGenero.setBounds(180, 200, 78, 28);
 
         jTextFieldGenero.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldGenero);
-        jTextFieldGenero.setBounds(260, 200, 191, 34);
+        jTextFieldGenero.setBounds(260, 200, 191, 32);
 
         jTextFieldSueldo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldSueldo);
-        jTextFieldSueldo.setBounds(260, 600, 191, 34);
+        jTextFieldSueldo.setBounds(260, 600, 191, 32);
 
         jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,15 +145,15 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelNumDoc3);
         jLabelNumDoc3.setBounds(140, 290, 110, 30);
 
-        jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSueldo.setText("Sueldo:");
-        jDesktopPane1.add(jLabelSueldo);
-        jLabelSueldo.setBounds(180, 590, 80, 40);
+        jLabelGastada.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabelGastada.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelGastada.setText("Sueldo:");
+        jDesktopPane1.add(jLabelGastada);
+        jLabelGastada.setBounds(180, 590, 80, 40);
 
         jTextFieldNumDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumDoc);
-        jTextFieldNumDoc.setBounds(260, 310, 191, 34);
+        jTextFieldNumDoc.setBounds(260, 310, 191, 32);
 
         jLabelCorreo3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCorreo3.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,7 +169,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jTextFieldCorreoElectronico.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldCorreoElectronico);
-        jTextFieldCorreoElectronico.setBounds(260, 370, 191, 34);
+        jTextFieldCorreoElectronico.setBounds(260, 370, 191, 32);
 
         jLabelNumero3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumero3.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,7 +185,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jTextFieldNumeroTelefono.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumeroTelefono);
-        jTextFieldNumeroTelefono.setBounds(260, 430, 191, 34);
+        jTextFieldNumeroTelefono.setBounds(260, 430, 191, 32);
 
         jLabelFecha3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelFecha3.setForeground(new java.awt.Color(255, 255, 255));
@@ -201,7 +201,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jTextFieldFechaDeInicio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldFechaDeInicio);
-        jTextFieldFechaDeInicio.setBounds(260, 490, 191, 34);
+        jTextFieldFechaDeInicio.setBounds(260, 490, 191, 32);
 
         jLabelCantidadHs3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCantidadHs3.setForeground(new java.awt.Color(255, 255, 255));
@@ -211,7 +211,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jTextFieldCantidadHsSemanales.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldCantidadHsSemanales);
-        jTextFieldCantidadHsSemanales.setBounds(260, 550, 191, 34);
+        jTextFieldCantidadHsSemanales.setBounds(260, 550, 191, 32);
 
         jButtonLimpiar.setBackground(new java.awt.Color(0, 32, 108));
         jButtonLimpiar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -240,7 +240,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jButtonAgregar1.setBackground(new java.awt.Color(1, 26, 86));
         jButtonAgregar1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonAgregar1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregar1.setText("Ver Empleados");
+        jButtonAgregar1.setText("Ver Estudiantes");
         jButtonAgregar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregar1ActionPerformed(evt);
@@ -307,13 +307,13 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -321,7 +321,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameActualizarEmpleado().setVisible(true);
+                new JFrameActualizarEstudiante().setVisible(true);
             }
         });
     }
@@ -345,7 +345,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNumDoc3;
     private javax.swing.JLabel jLabelNumero2;
     private javax.swing.JLabel jLabelNumero3;
-    private javax.swing.JLabel jLabelSueldo;
+    private javax.swing.JLabel jLabelGastada;
     private javax.swing.JLabel jLabelTipoDoc3;
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;

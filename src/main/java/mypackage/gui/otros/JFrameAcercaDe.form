@@ -95,7 +95,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="&#xa;-Aplicaci&#xf3;n 1.0 para la gesti&#xf3;n de Empleados.&#xa;&#xa;&#xa;-Listado, Agregaci&#xf3;n, Eliminaci&#xf3;n y Modificaci&#xf3;n &#xa;         de Empleados de diversas &#xe1;reas.&#xa;&#xa;&#xa;-Interfaz Gr&#xe1;fica de Usuario para un mejor manejo.&#xa;&#xa;&#xa;-Almacenamiento de datos en una Base de Datos&#xa;&#x9;Relacional.&#xa;&#xa;-Apartado especifico sobre Analytics."/>
+                <Property name="text" type="java.lang.String" value="&#xa;-Aplicaci&#xf3;n 1.0 para la gesti&#xf3;n de estudiantes.&#xa;&#xa;&#xa;-Listado, Agregaci&#xf3;n, Eliminaci&#xf3;n y Modificaci&#xf3;n &#xa;         de Empleados de diversas &#xe1;reas.&#xa;&#xa;&#xa;-Interfaz Gr&#xe1;fica de Usuario para un mejor manejo.&#xa;&#xa;&#xa;-Almacenamiento de datos en una Base de Datos&#xa;&#x9;Relacional.&#xa;&#xa;-Apartado especifico sobre Analytics."/>
               </Properties>
             </Component>
           </SubComponents>

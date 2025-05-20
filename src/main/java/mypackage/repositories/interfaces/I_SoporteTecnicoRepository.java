@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import mypackage.entities.Desarrollador;
+
 import mypackage.entities.SoporteTecnico;
 
 
@@ -30,9 +30,9 @@ public interface I_SoporteTecnicoRepository {
                 .orElse(new SoporteTecnico());
     }
 
-    default SoporteTecnico getByIdEmpleados(int id_empleados) {
+    default SoporteTecnico getByIdEstudiantes(int id_estudiantes) {
         return getStream()
-                .filter(objeto -> objeto.getId_empleados() == id_empleados)
+                .filter(objeto -> objeto.getId_estudiantes() == id_estudiantes)
                 .findAny()
                 .orElse(new SoporteTecnico());
     }

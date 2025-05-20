@@ -4,32 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import mypackage.entities.Empleado;
+import mypackage.entities.Student;
 
-public interface I_EmpleadoRepository {
+public interface I_StudentRepository {
 
-    void save(Empleado empleado);
+    void save(Student student);
 
-    void remove(Empleado empleado);
+    void remove(Student student);
 
-    void update(Empleado empleado);
+    void update(Student student);
 
-    List<Empleado> getAll();
+    List<Student> getAll();
 
-    default Stream<Empleado> getStream() {
+    default Stream<Student> getStream() {
         return getAll().stream();
     }
 
-    default Empleado getById(int id) {
+    default Student getById(int id) {
         return getStream()
                 .filter(objeto -> objeto.getId() == id)
                 .findAny()
-                .orElse(new Empleado());
+                .orElse(new Student());
     }
     
-        default List<Empleado> getLikeId(String id) {
+        default List<Student> getLikeId(String id) {
         if (id == null) {
-            return new ArrayList<Empleado>();
+            return new ArrayList<Student>();
         }
         return getStream()
                 .filter(objeto -> String.valueOf(objeto.getId())
@@ -38,9 +38,9 @@ public interface I_EmpleadoRepository {
     }
     
 
-    default List<Empleado> getLikeNombre(String nombre) {
+    default List<Student> getLikeNombre(String nombre) {
         if (nombre == null) {
-            return new ArrayList<Empleado>();
+            return new ArrayList<Student>();
         }
         return getStream()
                 .filter(objeto -> objeto.getNombre().toLowerCase()
@@ -48,9 +48,9 @@ public interface I_EmpleadoRepository {
                 .collect(Collectors.toList());
     }
 
-    default List<Empleado> getLikeApellido(String apellido) {
+    default List<Student> getLikeApellido(String apellido) {
         if (apellido == null) {
-            return new ArrayList<Empleado>();
+            return new ArrayList<Student>();
         }
         return getStream()
                 .filter(objeto -> objeto.getApellido().toLowerCase()
@@ -58,16 +58,16 @@ public interface I_EmpleadoRepository {
                 .collect(Collectors.toList());
     }
 
-    default List<Empleado> getByEdad(int edad) {
+    default List<Student> getByEdad(int edad) {
 
         return getStream()
                 .filter(objeto -> objeto.getEdad() == edad)
                 .collect(Collectors.toList());
     }
     
-         default List<Empleado> getLikeEdad(String edad) {
+         default List<Student> getLikeEdad(String edad) {
         if (edad == null) {
-            return new ArrayList<Empleado>();
+            return new ArrayList<Student>();
         }
         return getStream()
                 .filter(objeto -> String.valueOf(objeto.getEdad())
@@ -75,23 +75,23 @@ public interface I_EmpleadoRepository {
                 .collect(Collectors.toList());
     }
 
-    default List<Empleado> getLikeEdadMayorIgualQue(int edad) {
+    default List<Student> getLikeEdadMayorIgualQue(int edad) {
 
         return getStream()
                 .filter(objeto -> objeto.getEdad() >= edad)
                 .collect(Collectors.toList());
     }
 
-    default List<Empleado> getLikeEdadMenorIgualQue(int edad) {
+    default List<Student> getLikeEdadMenorIgualQue(int edad) {
 
         return getStream()
                 .filter(objeto -> objeto.getEdad() <= edad)
                 .collect(Collectors.toList());
     }
 
-    default List<Empleado> getLikeGenero(String genero) {
+    default List<Student> getLikeGenero(String genero) {
         if (genero == null) {
-            return new ArrayList<Empleado>();
+            return new ArrayList<Student>();
         }
         return getStream()
                 .filter(objeto -> objeto.getGenero().toLowerCase()
@@ -99,31 +99,31 @@ public interface I_EmpleadoRepository {
                 .collect(Collectors.toList());
     }
 
-        default List<Empleado> getLikeTipoDocumento(String tipo_documento) {
-        if (tipo_documento == null) {
-            return new ArrayList<Empleado>();
+        default List<Student> getLikeTipoDocumento(String grado) {
+        if (grado == null) {
+            return new ArrayList<Student>();
         }
         return getStream()
-                .filter(objeto -> objeto.getTipo_documento().toLowerCase()
-                .contains(tipo_documento.toLowerCase()))
+                .filter(objeto -> objeto.getGrado().toLowerCase()
+                .contains(grado.toLowerCase()))
                 .collect(Collectors.toList());
     }
         
         
-    default List<Empleado> getLikeNumeroDocumento(String numero_documento) {
-        if (numero_documento == null) {
-            return new ArrayList<Empleado>();
+    default List<Student> getLikeNumeroDocumento(String matricula) {
+        if (matricula == null) {
+            return new ArrayList<Student>();
         }
          return getStream()
-                .filter(objeto -> objeto.getNumero_documento().toLowerCase()
-                .contains(numero_documento.toLowerCase()))
+                .filter(objeto -> objeto.getMatricula().toLowerCase()
+                .contains(matricula.toLowerCase()))
                 .collect(Collectors.toList());
     }
     
         
-    default List<Empleado> getLikeCorreoElectronico(String correo_electronico) {
+    default List<Student> getLikeCorreoElectronico(String correo_electronico) {
         if (correo_electronico == null) {
-            return new ArrayList<Empleado>();
+            return new ArrayList<Student>();
         }
          return getStream()
                 .filter(objeto -> objeto.getCorreo_electronico().toLowerCase()
@@ -132,9 +132,9 @@ public interface I_EmpleadoRepository {
     }
     
        
-    default List<Empleado> getLikeNumeroTelefono(String numero_telefono) {
+    default List<Student> getLikeNumeroTelefono(String numero_telefono) {
         if (numero_telefono == null) {
-            return new ArrayList<Empleado>();
+            return new ArrayList<Student>();
         }
            return getStream()
                 .filter(objeto -> objeto.getNumero_telefono().toLowerCase()
@@ -143,49 +143,49 @@ public interface I_EmpleadoRepository {
     }
     
 
-    default List<Empleado> getLikeFechaInicio(String fecha_inicio) {
-        if (fecha_inicio == null) {
-            return new ArrayList<Empleado>();
+    default List<Student> getLikeFechaInicio(String semestre) {
+        if (semestre == null) {
+            return new ArrayList<Student>();
         }
         return getStream()
-                .filter(objeto -> objeto.getFecha_inicio().toLowerCase()
-                .contains(fecha_inicio.toLowerCase()))
+                .filter(objeto -> objeto.getSemestre().toLowerCase()
+                .contains(semestre.toLowerCase()))
                 .collect(Collectors.toList());
     }
     
      
     
-    default List<Empleado> getByCantidadHsSemanales(int cantidad_hs_semanales) {
+    default List<Student> getByCantidadHsSemanales(int cantidad_hs_escolares) {
 
         return getStream()
-                .filter(objeto -> objeto.getCantidad_hs_semanales() == cantidad_hs_semanales)
+                .filter(objeto -> objeto.getCantidad_hs_escolares() == cantidad_hs_escolares)
                 .collect(Collectors.toList());
     }
     
-     default List<Empleado> getLikeCantidadHsSemanales(String cantidad_hs_semanales) {
-        if (cantidad_hs_semanales == null) {
-            return new ArrayList<Empleado>();
+     default List<Student> getLikeCantidadHsSemanales(String cantidad_hs_escolares) {
+        if (cantidad_hs_escolares == null) {
+            return new ArrayList<Student>();
         }
         return getStream()
-                .filter(objeto -> String.valueOf(objeto.getCantidad_hs_semanales())
-                .contains(cantidad_hs_semanales))
+                .filter(objeto -> String.valueOf(objeto.getCantidad_hs_escolares())
+                .contains(cantidad_hs_escolares))
                 .collect(Collectors.toList());
     }
  
-    default List<Empleado> getBySueldo(float sueldo) {
+    default List<Student> getByMesada(float mesada) {
 
         return getStream()
-                .filter(objeto -> objeto.getSueldo() == sueldo)
+                .filter(objeto -> objeto.getMesada() == mesada)
                 .collect(Collectors.toList());
     }
     
-            default List<Empleado> getLikeSueldo(String sueldo) {
-        if (sueldo == null) {
-            return new ArrayList<Empleado>();
+            default List<Student> getLikeMesada(String mesada) {
+        if (mesada == null) {
+            return new ArrayList<Student>();
         }
         return getStream()
-                .filter(objeto -> String.valueOf(objeto.getSueldo())
-                .contains(sueldo))
+                .filter(objeto -> String.valueOf(objeto.getMesada())
+                .contains(mesada))
                 .collect(Collectors.toList());
     }
     

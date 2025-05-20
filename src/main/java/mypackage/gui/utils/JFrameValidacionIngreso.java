@@ -6,8 +6,8 @@
 package mypackage.gui.utils;
 
 import javax.swing.JOptionPane;
-import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
+//import mypackage.gui.SoporteTecnico.JFrameIngresoSoporteTecnico;
+import mypackage.gui.students.JFrameIngresoStudent;
 
 /**
  *
@@ -48,12 +48,12 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setText("VALIDACIÓN DE INGRESO");
-        jDesktopPane1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        jDesktopPane1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         jLabelUsuario.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabelUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jLabelUsuario.setText("Usuario:");
-        jDesktopPane1.add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
+        jDesktopPane1.add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
         jTextFieldUsuario.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jDesktopPane1.add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 191, 36));
@@ -61,7 +61,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
         jLabelContraseña.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabelContraseña.setForeground(new java.awt.Color(255, 255, 255));
         jLabelContraseña.setText("Contraseña:");
-        jDesktopPane1.add(jLabelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+        jDesktopPane1.add(jLabelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         jPasswordContraseña.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jDesktopPane1.add(jPasswordContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 191, 36));
@@ -75,7 +75,7 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
                 jButtonValidarActionPerformed(evt);
             }
         });
-        jDesktopPane1.add(jButtonValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 397, 162, 50));
+        jDesktopPane1.add(jButtonValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 307, 162, 50));
 
         jButtonLimpiar.setBackground(new java.awt.Color(0, 32, 108));
         jButtonLimpiar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -86,12 +86,12 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
                 jButtonLimpiarActionPerformed(evt);
             }
         });
-        jDesktopPane1.add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 397, 162, 50));
+        jDesktopPane1.add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 307, 162, 50));
 
         jLabelTitulo1.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo1.setText("(Usuario-Contraseña por sector)");
-        jDesktopPane1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+        jDesktopPane1.add(jLabelTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 510));
 
@@ -103,15 +103,15 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
            
 
         
-        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("empleados"))){
+        if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("estudiantes"))){
 
-             new  JFrameIngresoEmpleado().setVisible(true);
+             new JFrameIngresoStudent().setVisible(true);
 
             dispose();
 
         }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("soporte"))){
             
-             new  JFrameIngresoSoporteTecnico().setVisible(true);
+          //   new  JFrameIngresoSoporteTecnico().setVisible(true);
 
             dispose();
             

@@ -5,7 +5,7 @@ package mypackage.entities;
 public class Administracion {
     
     private int id;
-    private int id_empleados;
+    private int id_students;
     private String puesto;
     private String habilidades;
    
@@ -14,15 +14,15 @@ public class Administracion {
     }
     
     
-    public Administracion(int id_empleados, String puesto, String habilidades) {
-        this.id_empleados = id_empleados;
+    public Administracion(int id_students, String puesto, String habilidades) {
+        this.id_students = id_students;
         this.puesto = puesto;
         this.habilidades = habilidades;
     }
     
-    public Administracion(int id, int id_empleados, String puesto, String habilidades) {
+    public Administracion(int id, int id_students, String puesto, String habilidades) {
         this.id = id;
-        this.id_empleados = id_empleados;
+        this.id_students = id_students;
         this.puesto = puesto;
         this.habilidades = habilidades;
     }
@@ -42,12 +42,8 @@ public class Administracion {
     public void setId(int id) {
         this.id = id;
     }
-    public int getId_empleados() {
-        return id_empleados;
-    }
-    public void setId_empleados(int id_empleados) {
-        this.id_empleados = id_empleados;
-    }
+    public int getId_students() {return id_students;}
+    public void setId_students(int id_students) {this.id_students = id_students;}
     public String getPuesto() {
         return puesto;
     }
@@ -58,7 +54,7 @@ public class Administracion {
     
     @Override
     public String toString() {
-        return "Administracion{" + "id=" + id + ", id_empleados=" + id_empleados + ", puesto=" + puesto + ", habilidades=" + habilidades + '}';
+        return "Administracion{" + "id=" + id + ", id_students=" + id_students + ", puesto=" + puesto + ", habilidades=" + habilidades + '}';
     }
     
     

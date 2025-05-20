@@ -1,5 +1,5 @@
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
--- //////Base de datos de Empleados, dividido por sectores(administración, soporte técnico, desarrolladores y gerentes)///////////
+-- //////Base de datos de Estudiantes, dividido por sectores(administración, soporte técnico, desarrolladores y gerentes)///////////
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 use db_students;
@@ -18,16 +18,16 @@ select * from students empl, desarrolladores dev where empl.id= dev.id_students;
 select * from students empl, soporte_tecnico sop where empl.id= sop.id_students;
 select * from students empl, gerentes ger where empl.id= ger.id_students;
 
--- empleados ordenados por nombre
+-- estudiantes ordenados por nombre
 select * from students order by nombre;
 
--- empleados ordenados por edad
+-- estudiantes ordenados por edad
 select * from students order by edad;
 
--- empleados ordenados por fecha de inicio
+-- estudiantes ordenados por semestre
 select * from students order by semestre;
 
--- empleados ordenados por mesada
+-- estudiantes ordenados por mesada
 select * from students order by mesada;
 
 -- -----------FIN SELECT----------------

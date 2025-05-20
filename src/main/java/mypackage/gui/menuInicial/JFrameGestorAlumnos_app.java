@@ -6,25 +6,29 @@
 package mypackage.gui.menuInicial;
 
 import mypackage.connector.LocalConnector;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
+import mypackage.gui.empleados.JFrameIngresoAlumno;
 import mypackage.gui.utils.JFrameValidacionIngreso;
 import mypackage.gui.otros.JFrameAcercaDe;
 import mypackage.gui.otros.JFrameAyuda;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.interfaces.I_AlumnoRepository;
+import mypackage.repositories.jdbc.AlumnoRepository;
+
+import javax.swing.*;
+import java.awt.*;
+
 
 /**
  *
  * @author andre
  */
-public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
+public class JFrameGestorAlumnos_app extends javax.swing.JFrame {
     
     
-      I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+      I_AlumnoRepository alumnoRepository = new AlumnoRepository(LocalConnector.getLocalConnection());
 
 
     /** Creates new form JFrameGestorEmpleados_app */
-    public JFrameGestorEmpleados_app() {
+    public JFrameGestorAlumnos_app() {
         initComponents();
     }
 
@@ -52,6 +56,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDesktopPaneFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        UIManager.put("nimbusBase", new Color(150, 47, 58));
 
         jButtonEmpleados.setBackground(new java.awt.Color(1, 45, 151));
         jButtonEmpleados.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -168,20 +173,20 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameGestorEmpleados_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameGestorAlumnos_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameGestorEmpleados_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameGestorAlumnos_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameGestorEmpleados_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameGestorAlumnos_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameGestorEmpleados_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameGestorAlumnos_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameGestorEmpleados_app().setVisible(true);
+                new JFrameGestorAlumnos_app().setVisible(true);
             }
         });
     }

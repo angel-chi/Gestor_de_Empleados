@@ -11,9 +11,10 @@ public class TestConnector {
 
     public static void main(String[] args) throws SQLException {
 
-        try(        ResultSet resultSetProductos
-                = LocalConnector
-                        .getLocalConnection().createStatement().getResultSet();
+        try(
+                Connection connection = LocalConnector.getLocalConnection();
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM alumnos LIMIT 1;");
         ) {
             
         System.out.println("\n==============================================");   

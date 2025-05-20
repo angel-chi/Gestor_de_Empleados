@@ -9,10 +9,10 @@ package mypackage.gui.empleados;
  *
  * @author andre
  */
-public class JFrameActualizarEmpleado extends javax.swing.JFrame {
+public class JFrameActualizarAlumno extends javax.swing.JFrame {
 
     /** Creates new form JFrameActualizarEmpleados */
-    public JFrameActualizarEmpleado() {
+    public JFrameActualizarAlumno() {
         initComponents();
     }
 
@@ -63,13 +63,13 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("ACTUALIZACIÓN DE EMPLEADOS");
+        jLabelTitulo.setText("ACTUALIZACIÓN DE ALUMNOS");
         jDesktopPane1.add(jLabelTitulo);
         jLabelTitulo.setBounds(30, 20, 610, 42);
 
         jLabelNombre.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNombre.setText("Nombre:");
+        jLabelNombre.setText("NOMBRE:");
         jDesktopPane1.add(jLabelNombre);
         jLabelNombre.setBounds(170, 80, 98, 28);
 
@@ -107,19 +107,19 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jDesktopPane1.add(jTextFieldGenero);
         jTextFieldGenero.setBounds(260, 200, 191, 34);
 
-        jTextFieldSueldo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldSueldo);
-        jTextFieldSueldo.setBounds(260, 600, 191, 34);
+//        jTextFieldSueldo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+//        jDesktopPane1.add(jTextFieldSueldo);
+//        jTextFieldSueldo.setBounds(260, 600, 191, 34);
 
-        jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc2.setText("documento:");
-        jDesktopPane1.add(jLabelNumDoc2);
-        jLabelNumDoc2.setBounds(140, 310, 120, 40);
+//        jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+//        jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
+//        jLabelNumDoc2.setText("documento:");
+//        jDesktopPane1.add(jLabelNumDoc2);
+//        jLabelNumDoc2.setBounds(140, 310, 120, 40);
 
         jLabelCorreo1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCorreo1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCorreo1.setText("electrónico:");
+        jLabelCorreo1.setText("Matrícula:");
         jDesktopPane1.add(jLabelCorreo1);
         jLabelCorreo1.setBounds(140, 370, 120, 40);
 
@@ -129,41 +129,41 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jLabelTipoDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc3.setText("Tipo de");
+        jLabelTipoDoc3.setText("Curso:");
         jDesktopPane1.add(jLabelTipoDoc3);
-        jLabelTipoDoc3.setBounds(160, 230, 80, 30);
+        jLabelTipoDoc3.setBounds(190, 240, 70, 30);
 
         jLabelTipoDoc4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc4.setText("documento:");
+        jLabelTipoDoc4.setText("Email:");
         jDesktopPane1.add(jLabelTipoDoc4);
-        jLabelTipoDoc4.setBounds(140, 250, 120, 40);
+        jLabelTipoDoc4.setBounds(160, 300, 120, 40);
 
-        jLabelNumDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelNumDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc3.setText("Numero de");
-        jDesktopPane1.add(jLabelNumDoc3);
-        jLabelNumDoc3.setBounds(140, 290, 110, 30);
+//        jLabelNumDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+//        jLabelNumDoc3.setForeground(new java.awt.Color(255, 255, 255));
+//        jLabelNumDoc3.setText("Numero de");
+//        jDesktopPane1.add(jLabelNumDoc3);
+//        jLabelNumDoc3.setBounds(140, 290, 110, 30);
 
-        jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSueldo.setText("Sueldo:");
-        jDesktopPane1.add(jLabelSueldo);
-        jLabelSueldo.setBounds(180, 590, 80, 40);
+//        jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+//        jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
+//        jLabelSueldo.setText("Id:");
+//        jDesktopPane1.add(jLabelSueldo);
+//        jLabelSueldo.setBounds(180, 590, 80, 40);
 
         jTextFieldNumDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNumDoc);
         jTextFieldNumDoc.setBounds(260, 310, 191, 34);
 
-        jLabelCorreo3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelCorreo3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCorreo3.setText("Correo");
-        jDesktopPane1.add(jLabelCorreo3);
-        jLabelCorreo3.setBounds(170, 350, 70, 40);
+//        jLabelCorreo3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+//        jLabelCorreo3.setForeground(new java.awt.Color(255, 255, 255));
+//        jLabelCorreo3.setText("Correo");
+//        jDesktopPane1.add(jLabelCorreo3);
+//        jLabelCorreo3.setBounds(170, 350, 70, 40);
 
         jLabelNumero2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumero2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumero2.setText("de telefono:");
+        jLabelNumero2.setText("Promedio:");
         jDesktopPane1.add(jLabelNumero2);
         jLabelNumero2.setBounds(140, 430, 130, 40);
 
@@ -171,15 +171,15 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jDesktopPane1.add(jTextFieldCorreoElectronico);
         jTextFieldCorreoElectronico.setBounds(260, 370, 191, 34);
 
-        jLabelNumero3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelNumero3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumero3.setText("Numero ");
-        jDesktopPane1.add(jLabelNumero3);
-        jLabelNumero3.setBounds(160, 410, 110, 40);
+//        jLabelNumero3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+//        jLabelNumero3.setForeground(new java.awt.Color(255, 255, 255));
+//        jLabelNumero3.setText("Numero ");
+//        jDesktopPane1.add(jLabelNumero3);
+//        jLabelNumero3.setBounds(160, 410, 110, 40);
 
         jLabelFecha2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelFecha2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelFecha2.setText("inicio:");
+        jLabelFecha2.setText("ingreso:");
         jDesktopPane1.add(jLabelFecha2);
         jLabelFecha2.setBounds(200, 490, 60, 40);
 
@@ -193,11 +193,11 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jDesktopPane1.add(jLabelFecha3);
         jLabelFecha3.setBounds(150, 470, 90, 40);
 
-        jLabelCantidadHs1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelCantidadHs1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCantidadHs1.setText("Cantidad hs");
-        jDesktopPane1.add(jLabelCantidadHs1);
-        jLabelCantidadHs1.setBounds(130, 530, 120, 40);
+//        jLabelCantidadHs1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+//        jLabelCantidadHs1.setForeground(new java.awt.Color(255, 255, 255));
+//        jLabelCantidadHs1.setText("Cantidad hs");
+//        jDesktopPane1.add(jLabelCantidadHs1);
+//        jLabelCantidadHs1.setBounds(130, 530, 120, 40);
 
         jTextFieldFechaDeInicio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldFechaDeInicio);
@@ -205,7 +205,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jLabelCantidadHs3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCantidadHs3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCantidadHs3.setText("semanales:");
+        jLabelCantidadHs3.setText("Id:");
         jDesktopPane1.add(jLabelCantidadHs3);
         jLabelCantidadHs3.setBounds(150, 550, 110, 40);
 
@@ -238,16 +238,16 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jButtonActualizar.setBounds(340, 680, 140, 50);
 
         jButtonAgregar1.setBackground(new java.awt.Color(1, 26, 86));
-        jButtonAgregar1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jButtonAgregar1.setFont(new java.awt.Font("Arial", 7, 18)); // NOI18N
         jButtonAgregar1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregar1.setText("Ver Empleados");
-        jButtonAgregar1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAgregar1.setText("Ver Alumnos");
+        jButtonAgregar1.addActionListener(new java.awt.event.ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregar1ActionPerformed(evt);
             }
         });
         jDesktopPane1.add(jButtonAgregar1);
-        jButtonAgregar1.setBounds(240, 760, 180, 50);
+        jButtonAgregar1.setBounds(440, 76, 180, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -288,6 +288,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
 
     /**
@@ -307,13 +308,13 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -321,7 +322,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameActualizarEmpleado().setVisible(true);
+                new JFrameActualizarAlumno().setVisible(true);
             }
         });
     }

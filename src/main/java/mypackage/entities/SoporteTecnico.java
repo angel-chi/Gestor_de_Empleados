@@ -42,7 +42,7 @@ public class SoporteTecnico {
     public void setId(int id) {
         this.id = id;
     }
-    public int getId_empleados() {
+    public int getId_alumnos() {
         return id_empleados;
     }
     public void setId_empleados(int id_empleados) {

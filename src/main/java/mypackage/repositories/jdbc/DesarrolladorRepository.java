@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import mypackage.entities.Desarrollador;
-import mypackage.entities.Empleado;
 import mypackage.repositories.interfaces.I_DesarrolladorRepository;
 
 
@@ -26,12 +25,12 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement(
-                        "INSERT INTO desarrolladores(id,id_empleados,puesto,certificaciones,habilidades,proyectos_en_produccion)"
+                        "INSERT INTO desarrolladores(id,id_estudiantes,puesto,certificaciones,habilidades,proyectos_en_produccion)"
                         + "values(?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
                     consultaPreparada.setInt(1, desarrollador.getId());
-                    consultaPreparada.setInt(2, desarrollador.getId_empleados());
+                    consultaPreparada.setInt(2, desarrollador.getId_alumnos());
                     consultaPreparada.setString(3, desarrollador.getPuesto());
                     consultaPreparada.setString(4, desarrollador.getCertificaciones());
                     consultaPreparada.setString(5, desarrollador.getHabilidades());
@@ -73,10 +72,10 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
         }
         try ( PreparedStatement consultaPreparada = conexionDB
                 .prepareStatement(
-                        "UPDATE desarrolladores SET id_empleados=?,puesto=?,certificaciones=?,habilidades=?,proyectos_en_produccion=? "
+                        "UPDATE desarrolladores SET id_alumnos=?,puesto=?,certificaciones=?,habilidades=?,proyectos_en_produccion=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setInt(1, desarrollador.getId_empleados());
+            consultaPreparada.setInt(1, desarrollador.getId_alumnos());
             consultaPreparada.setString(2, desarrollador.getPuesto());
             consultaPreparada.setString(3, desarrollador.getCertificaciones());
             consultaPreparada.setString(4, desarrollador.getHabilidades());

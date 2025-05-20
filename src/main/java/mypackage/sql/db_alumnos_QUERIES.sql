@@ -2,33 +2,33 @@
 -- //////Base de datos de Empleados, dividido por sectores(administración, soporte técnico, desarrolladores y gerentes)///////////
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-use db_empleados;
+use db_alumnos;
 
 -- -----------SELECT----------------
 -- todos los campos
-select * from empleados;
+select * from alumnos;
 select * from administracion;
 select * from desarrolladores;
 select * from soporte_tecnico;
 select * from gerentes;
 
--- empleados por area
-select * from empleados empl , administracion adm where empl.id = adm.id_empleados;
-select * from empleados empl, desarrolladores dev where empl.id= dev.id_empleados;
-select * from empleados empl, soporte_tecnico sop where empl.id= sop.id_empleados;
-select * from empleados empl, gerentes ger where empl.id= ger.id_empleados;
+-- alumnos por area
+select * from alumnos empl , administracion adm where empl.id = adm.id_alumnos;
+select *from alumnos empl,desarrolladores dev where empl.id= dev.id_alumnos;
+select *from alumnos empl,soporte_tecnico sop where empl.id= sop.id_alumnos;
+select *from alumnos empl,gerentes ger where empl.id= ger.id_alumnos;
 
--- empleados ordenados por nombre
-select * from empleados order by nombre;
+-- alumnos ordenados por nombre
+select * from alumnos order by nombre;
 
--- empleados ordenados por edad
-select * from empleados order by edad;
+-- alumnos ordenados por edad
+select * from alumnos order by edad;
 
--- empleados ordenados por fecha de inicio
-select * from empleados order by fecha_inicio;
+-- alumnos ordenados por fecha de inicio
+select * from alumnos order by fecha_inicio;
 
--- empleados ordenados por sueldo
-select * from empleados order by sueldo;
+-- alumnos ordenados por curso
+select * from alumnos order by curso;
 
 -- -----------FIN SELECT----------------
 
@@ -39,7 +39,7 @@ select * from empleados order by sueldo;
 
 
 -- -----------UPDATE----------------
-update empleados set edad=33 where id=2;
+update alumnos set edad=33 where id=2;
 update soporte_tecnico set certificaciones='Protocolos Locales, Fibra Optica' where id=4;
 update desarrolladores set habilidades='Autodidacta, metodologias agiles' where id=3; 
 -- -----------FIN UPDATE----------------

@@ -2,33 +2,31 @@
 -- //////Base de datos de Empleados, dividido por sectores(administración, soporte técnico, desarrolladores y gerentes)///////////
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-use db_empleados;
+use db_alumnos;
 
 -- -----------SELECT----------------
 -- todos los campos
-select * from empleados;
-select * from administracion;
-select * from desarrolladores;
-select * from soporte_tecnico;
-select * from gerentes;
+select * from alumnos;
+select * from administradores;
+select * from coordinadores;
+select * from profesores;
 
 -- empleados por area
-select * from empleados empl , administracion adm where empl.id = adm.id_empleados;
-select * from empleados empl, desarrolladores dev where empl.id= dev.id_empleados;
-select * from empleados empl, soporte_tecnico sop where empl.id= sop.id_empleados;
-select * from empleados empl, gerentes ger where empl.id= ger.id_empleados;
+select * from alumnos empl , administradores adm where empl.id = adm.id_alumno;
+select * from alumnos empl, coordinadores dev where empl.id= dev.id_alumno;
+select * from alumnos empl, profesores sop where empl.id= sop.id_alumno;
 
--- empleados ordenados por nombre
-select * from empleados order by nombre;
+-- alumnos ordenados por nombre
+select * from alumnos order by nombre;
 
--- empleados ordenados por edad
-select * from empleados order by edad;
+-- alumnos ordenados por edad
+select * from alumnos order by edad;
 
--- empleados ordenados por fecha de inicio
-select * from empleados order by fecha_inicio;
+-- alumnos ordenados por fecha de inicio
+select * from alumnos order by inicio_semestre;
 
--- empleados ordenados por sueldo
-select * from empleados order by sueldo;
+-- alumnos ordenados por sueldo
+select * from alumnos order by promedio;
 
 -- -----------FIN SELECT----------------
 

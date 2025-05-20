@@ -6,22 +6,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import mypackage.entities.Desarrollador;
-import mypackage.entities.Empleado;
-import mypackage.repositories.interfaces.I_DesarrolladorRepository;
+import mypackage.entities.Coordinadores;
+import mypackage.repositories.interfaces.I_CoordinadorRepository;
 
 
-public class DesarrolladorRepository implements I_DesarrolladorRepository {
+public class CoordinadorRepository implements I_CoordinadorRepository {
 
     
     private Connection conexionDB;
 
-    public DesarrolladorRepository(Connection conexionDB) {
+    public CoordinadorRepository(Connection conexionDB) {
         this.conexionDB = conexionDB;
     }
      @Override
-    public void save(Desarrollador desarrollador) {
-        if (desarrollador == null) {
+    public void save(Coordinadores coordinadores) {
+        if (coordinadores == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada
@@ -30,19 +29,19 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
                         + "values(?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
-                    consultaPreparada.setInt(1, desarrollador.getId());
-                    consultaPreparada.setInt(2, desarrollador.getId_empleados());
-                    consultaPreparada.setString(3, desarrollador.getPuesto());
-                    consultaPreparada.setString(4, desarrollador.getCertificaciones());
-                    consultaPreparada.setString(5, desarrollador.getHabilidades());
-                    consultaPreparada.setInt(6, desarrollador.getProyectos_en_produccion());
+                    consultaPreparada.setInt(1, coordinadores.getId());
+                    consultaPreparada.setInt(2, coordinadores.getId_alumnos());
+                    consultaPreparada.setString(3, coordinadores.getPuesto());
+                    consultaPreparada.setString(4, coordinadores.getTitulo());
+                    consultaPreparada.setString(5, coordinadores.getHabilidades());
+                    consultaPreparada.setInt(6, coordinadores.getSupervisa_a());
                     
                     consultaPreparada.execute();
 
                     ResultSet resultadoQuery = consultaPreparada.getGeneratedKeys();
 
                     if (resultadoQuery.next()) {
-                        desarrollador.setId(resultadoQuery.getInt(1));
+                        coordinadores.setId(resultadoQuery.getInt(1));
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -50,14 +49,14 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
     }
    
       @Override
-    public void remove(Desarrollador desarrollador) {
-        if (desarrollador == null) {
+    public void remove(Coordinadores coordinadores) {
+        if (coordinadores == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement("DELETE FROM desarrolladores WHERE id=?")) {
 
-            consultaPreparada.setInt(1, desarrollador.getId());
+            consultaPreparada.setInt(1, coordinadores.getId());
 
             consultaPreparada.execute();
 
@@ -67,8 +66,8 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
     }
     
     @Override
-    public void update(Desarrollador desarrollador) {
-        if (desarrollador == null) {
+    public void update(Coordinadores coordinadores) {
+        if (coordinadores == null) {
             return;
         }
         try ( PreparedStatement consultaPreparada = conexionDB
@@ -76,12 +75,12 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
                         "UPDATE desarrolladores SET id_empleados=?,puesto=?,certificaciones=?,habilidades=?,proyectos_en_produccion=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setInt(1, desarrollador.getId_empleados());
-            consultaPreparada.setString(2, desarrollador.getPuesto());
-            consultaPreparada.setString(3, desarrollador.getCertificaciones());
-            consultaPreparada.setString(4, desarrollador.getHabilidades());
-            consultaPreparada.setInt(5, desarrollador.getProyectos_en_produccion());
-            consultaPreparada.setInt(6, desarrollador.getId());
+            consultaPreparada.setInt(1, coordinadores.getId_alumnos());
+            consultaPreparada.setString(2, coordinadores.getPuesto());
+            consultaPreparada.setString(3, coordinadores.getTitulo());
+            consultaPreparada.setString(4, coordinadores.getHabilidades());
+            consultaPreparada.setInt(5, coordinadores.getSupervisa_a());
+            consultaPreparada.setInt(6, coordinadores.getId());
             
             consultaPreparada.execute();
 
@@ -91,9 +90,9 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
     }
     
     @Override
-    public List<Desarrollador> getAll() {
+    public List<Coordinadores> getAll() {
 
-        List<Desarrollador> listaDesarrolladores = new ArrayList();
+        List<Coordinadores> listaDesarrolladores = new ArrayList();
 
         try ( ResultSet resultSetDesarrolladores
                 = conexionDB
@@ -101,7 +100,7 @@ public class DesarrolladorRepository implements I_DesarrolladorRepository {
                         .executeQuery("SELECT * FROM desarrolladores")) {
                     while (resultSetDesarrolladores.next()) {
 
-                        listaDesarrolladores.add(new Desarrollador(
+                        listaDesarrolladores.add(new Coordinadores(
                                 resultSetDesarrolladores.getInt("id"),
                                 resultSetDesarrolladores.getInt("id_empleados"),
                                 resultSetDesarrolladores.getString("puesto"),

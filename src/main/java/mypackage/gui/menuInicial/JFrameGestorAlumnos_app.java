@@ -6,25 +6,24 @@
 package mypackage.gui.menuInicial;
 
 import mypackage.connector.LocalConnector;
-import mypackage.gui.empleados.JFrameIngresoEmpleado;
 import mypackage.gui.utils.JFrameValidacionIngreso;
 import mypackage.gui.otros.JFrameAcercaDe;
 import mypackage.gui.otros.JFrameAyuda;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.interfaces.I_AlumnosRepository;
+import mypackage.repositories.jdbc.AlumnosRepository;
 
 /**
  *
  * @author andre
  */
-public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
+public class JFrameGestorAlumnos_app extends javax.swing.JFrame {
     
     
-      I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+      I_AlumnosRepository empleadoRepository = new AlumnosRepository(LocalConnector.getLocalConnection());
 
 
     /** Creates new form JFrameGestorEmpleados_app */
-    public JFrameGestorEmpleados_app() {
+    public JFrameGestorAlumnos_app() {
         initComponents();
     }
 
@@ -38,10 +37,10 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPaneFondo = new javax.swing.JDesktopPane();
-        jButtonEmpleados = new javax.swing.JButton();
-        jButtonDesarrolladores = new javax.swing.JButton();
-        jButtonSoporteTecnico = new javax.swing.JButton();
-        jButtonAdministracion = new javax.swing.JButton();
+        jButtonAlumnos = new javax.swing.JButton();
+        jButtonAdministrativos = new javax.swing.JButton();
+        jButtonProfesores = new javax.swing.JButton();
+        jButtonCoordinadores = new javax.swing.JButton();
         jLabelTitulo = new javax.swing.JLabel();
         jButtonAnalytics = new javax.swing.JButton();
         jToggleButtonAyuda = new javax.swing.JToggleButton();
@@ -53,55 +52,61 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
 
         jDesktopPaneFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonEmpleados.setBackground(new java.awt.Color(1, 45, 151));
-        jButtonEmpleados.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jButtonEmpleados.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonEmpleados.setText("EMPLEADOS");
-        jButtonEmpleados.addActionListener(new java.awt.event.ActionListener() {
+        jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTitulo.setText("MENÚ PRINCIPAL");
+        jDesktopPaneFondo.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 330, -1));
+
+
+        jButtonAlumnos.setBackground(new java.awt.Color(1, 45, 151));
+        jButtonAlumnos.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jButtonAlumnos.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAlumnos.setText("ALUMNOS");
+        jButtonAlumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEmpleadosActionPerformed(evt);
+                jButtonAlumnosActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jButtonEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 162, 57));
+        jDesktopPaneFondo.add(jButtonAlumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 155, 170, 65));
 
-        jButtonDesarrolladores.setBackground(new java.awt.Color(0, 24, 82));
-        jButtonDesarrolladores.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jButtonDesarrolladores.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonDesarrolladores.setText("DESARROLLADORES");
-        jDesktopPaneFondo.add(jButtonDesarrolladores, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 260, 57));
 
-        jButtonSoporteTecnico.setBackground(new java.awt.Color(0, 37, 126));
-        jButtonSoporteTecnico.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jButtonSoporteTecnico.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSoporteTecnico.setText("SOPORTE TECNICO");
-        jButtonSoporteTecnico.addActionListener(new java.awt.event.ActionListener() {
+        jButtonProfesores.setBackground(new java.awt.Color(0, 37, 126));
+        jButtonProfesores.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jButtonProfesores.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonProfesores.setText("PROFESORES");
+        jButtonProfesores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSoporteTecnicoActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jButtonSoporteTecnico, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 210, 57));
+        jDesktopPaneFondo.add(jButtonProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 235, 210, 65));
 
-        jButtonAdministracion.setBackground(new java.awt.Color(0, 30, 101));
-        jButtonAdministracion.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jButtonAdministracion.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAdministracion.setText("ADMINISTRACION");
-        jButtonAdministracion.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCoordinadores.setBackground(new java.awt.Color(0, 30, 101));
+        jButtonCoordinadores.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jButtonCoordinadores.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonCoordinadores.setText("COORDINADORES");
+        jButtonCoordinadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAdministracionActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jButtonAdministracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 240, 57));
+        jDesktopPaneFondo.add(jButtonCoordinadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 325, 240, 65));
 
-        jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("MENÚ PRINCIPAL");
-        jDesktopPaneFondo.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 330, -1));
+        jButtonAdministrativos.setBackground(new java.awt.Color(0, 24, 82));
+        jButtonAdministrativos.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jButtonAdministrativos.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAdministrativos.setText("ADMINISTRATIVOS");
 
-        jButtonAnalytics.setBackground(new java.awt.Color(0, 16, 56));
+        jDesktopPaneFondo.add(jButtonAdministrativos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 415, 260, 65));
+
+
+        /*jButtonAnalytics.setBackground(new java.awt.Color(0, 16, 56));
         jButtonAnalytics.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButtonAnalytics.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAnalytics.setText("ANALYTICS");
         jDesktopPaneFondo.add(jButtonAnalytics, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, 320, 80));
+*/
+
 
         jToggleButtonAyuda.setBackground(new java.awt.Color(0, 79, 237));
         jToggleButtonAyuda.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -112,7 +117,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
                 jToggleButtonAyudaActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jToggleButtonAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 70, -1));
+        jDesktopPaneFondo.add(jToggleButtonAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 5, 90, -1));
 
         jToggleButtonAcerca.setBackground(new java.awt.Color(0, 79, 237));
         jToggleButtonAcerca.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -123,7 +128,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
                 jToggleButtonAcercaActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jToggleButtonAcerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 90, -1));
+        jDesktopPaneFondo.add(jToggleButtonAcerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 45, 110, -1));
 
         getContentPane().add(jDesktopPaneFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 680));
 
@@ -135,7 +140,7 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAdministracionActionPerformed
 
-    private void jButtonEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmpleadosActionPerformed
+    private void jButtonAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmpleadosActionPerformed
        new JFrameValidacionIngreso().setVisible(true);
     }//GEN-LAST:event_jButtonEmpleadosActionPerformed
 
@@ -168,30 +173,30 @@ public class JFrameGestorEmpleados_app extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameGestorEmpleados_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameGestorAlumnos_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameGestorEmpleados_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameGestorAlumnos_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameGestorEmpleados_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameGestorAlumnos_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameGestorEmpleados_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameGestorAlumnos_app.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameGestorEmpleados_app().setVisible(true);
+                new JFrameGestorAlumnos_app().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAdministracion;
+    private javax.swing.JButton jButtonCoordinadores;
     private javax.swing.JButton jButtonAnalytics;
-    private javax.swing.JButton jButtonDesarrolladores;
-    private javax.swing.JButton jButtonEmpleados;
-    private javax.swing.JButton jButtonSoporteTecnico;
+    private javax.swing.JButton jButtonAdministrativos;
+    private javax.swing.JButton jButtonAlumnos;
+    private javax.swing.JButton jButtonProfesores;
     private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JToggleButton jToggleButtonAcerca;

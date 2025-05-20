@@ -3,32 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mypackage.gui.empleados;
+package mypackage.gui.Estudiantes;
 
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
-import mypackage.repositories.interfaces.I_EmpleadoRepository;
-import mypackage.repositories.jdbc.EmpleadoRepository;
+import mypackage.repositories.interfaces.I_AlumnosRepository;
+import mypackage.repositories.jdbc.AlumnosRepository;
 import mypackage.utils.swing.Table;
+
+import java.awt.event.KeyEvent;
 
 /**
  *
  * @author andre
  */
-public class JFrameVerEmpleado extends javax.swing.JFrame {
+public class JFrameVerAlumno extends javax.swing.JFrame {
 
-    private I_EmpleadoRepository empleadoRepository = new EmpleadoRepository(LocalConnector.getLocalConnection());
+    private I_AlumnosRepository alumnoRepository = new AlumnosRepository(LocalConnector.getLocalConnection());
 
-    /** Creates new form JFrameVerEmpleados */
-    public JFrameVerEmpleado() {
+    /** Creates new form JFrameVerAlumnos */
+    public JFrameVerAlumno() {
         initComponents();
-        listarEmpleados();
+        listarAlumnos();
         
     }
 
-    public void listarEmpleados() {
+    public void listarAlumnos() {
 
-        new Table().cargar(jTableListaEmpleados, empleadoRepository.getAll());
+        new Table().cargar(jTableListaAlumnos, alumnoRepository.getAll());
     }
     
     
@@ -47,12 +49,12 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         jDesktopPane2 = new javax.swing.JDesktopPane();
         jLabelTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableListaEmpleados = new javax.swing.JTable();
+        jTableListaAlumnos = new javax.swing.JTable();
         jButtonEliminar = new javax.swing.JButton();
         jButtonActualizar = new javax.swing.JButton();
         jLabelBusqueda = new javax.swing.JLabel();
-        jTextFieldBusquedaEmpleados = new javax.swing.JTextField();
-        jComboBoxBusquedaEmpleados = new javax.swing.JComboBox<>();
+        jTextFieldBusquedaAlumnos = new javax.swing.JTextField();
+        jComboBoxBusquedaAlumnos = new javax.swing.JComboBox<>();
         jButtonRefrescarLista = new javax.swing.JButton();
         jButtonAnalytics = new javax.swing.JButton();
 
@@ -60,11 +62,11 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Arial Black", 1, 28)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("LISTA DE EMPLEADOS");
+        jLabelTitulo.setText("LISTA DE ALUMNOS");
 
-        jTableListaEmpleados.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
-        jTableListaEmpleados.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jTableListaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
+        jTableListaAlumnos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
+        jTableListaAlumnos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jTableListaAlumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -72,8 +74,8 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
             }
         ));
-        jTableListaEmpleados.setToolTipText("");
-        jScrollPane1.setViewportView(jTableListaEmpleados);
+        jTableListaAlumnos.setToolTipText("");
+        jScrollPane1.setViewportView(jTableListaAlumnos);
 
         jButtonEliminar.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jButtonEliminar.setText("ELIMINAR");
@@ -95,20 +97,20 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         jLabelBusqueda.setForeground(new java.awt.Color(255, 255, 255));
         jLabelBusqueda.setText("Buscar por :");
 
-        jTextFieldBusquedaEmpleados.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jTextFieldBusquedaEmpleados.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldBusquedaAlumnos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jTextFieldBusquedaAlumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBusquedaEmpleadosActionPerformed(evt);
+                jTextFieldBusquedaAlumnosActionPerformed(evt);
             }
         });
-        jTextFieldBusquedaEmpleados.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldBusquedaAlumnos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextFieldBusquedaEmpleadosKeyReleased(evt);
+                jTextFieldBusquedaAlumnosKeyReleased(evt);
             }
         });
 
-        jComboBoxBusquedaEmpleados.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jComboBoxBusquedaEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "TIPO DE DOCUMENTO", "NÚMERO DE DOCUMENTO", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "FECHA DE INICIO", "CANTIDAD DE HS SEMANALES", "SUELDO" }));
+        jComboBoxBusquedaAlumnos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jComboBoxBusquedaAlumnos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "ID", "NOMBRE", "APELLIDO", "EDAD", "GÉNERO", "SEMESTRE", "MATRICULA", "CORREO ELECTRÓNICO", "NÚMERO DE TELÉFONO", "INICIO DEL SEMESTRE", "FIN DEL SEMESTRE", "CALIFICACION" }));
 
         jButtonRefrescarLista.setBackground(new java.awt.Color(0, 34, 103));
         jButtonRefrescarLista.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -124,19 +126,20 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         jButtonAnalytics.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButtonAnalytics.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAnalytics.setText("ANALYTICS");
-        jButtonAnalytics.addActionListener(new java.awt.event.ActionListener() {
+         //Borramos una pate del cidigo y ya no nos sirve
+       /* jButtonAnalytics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAnalyticsActionPerformed(evt);
             }
-        });
+        });*/
 
         jDesktopPane2.setLayer(jLabelTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jButtonEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jButtonActualizar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jLabelBusqueda, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jTextFieldBusquedaEmpleados, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jComboBoxBusquedaEmpleados, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(jTextFieldBusquedaAlumnos, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(jComboBoxBusquedaAlumnos, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jButtonRefrescarLista, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jButtonAnalytics, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -160,9 +163,9 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
                         .addComponent(jLabelBusqueda)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBoxBusquedaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
-                        .addComponent(jTextFieldBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldBusquedaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(282, 282, 282))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
                         .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,8 +186,8 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelBusqueda, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBoxBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldBusquedaEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jComboBoxBusquedaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldBusquedaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,7 +238,7 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
 
-        int filaTablaEmpleado = jTableListaEmpleados.getSelectedRow();
+        int filaTablaEmpleado = jTableListaAlumnos.getSelectedRow();
 
         if (filaTablaEmpleado == -1) {
 
@@ -244,7 +247,7 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
             return;
         }
 
-        int idEmpleado = (int) jTableListaEmpleados.getValueAt(filaTablaEmpleado, 0);
+        int idEmpleado = (int) jTableListaAlumnos.getValueAt(filaTablaEmpleado, 0);
 
         if (JOptionPane.showConfirmDialog(this, "ESTA POR ELIMINAR EL EMPLEADO CON EL ID " + idEmpleado + "!!") != 0) {
 
@@ -252,68 +255,74 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
         }
 
-        empleadoRepository.remove(empleadoRepository.getById(idEmpleado));
+        alumnoRepository.remove(alumnoRepository.getById(idEmpleado));
 
-        listarEmpleados();
+        listarAlumnos();
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        new JFrameActualizarEmpleado().setVisible(true);
+        new JFrameActualizarEstudiante().setVisible(true);
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
-    private void jTextFieldBusquedaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaEmpleadosActionPerformed
+    private void jTextFieldBusquedaAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaEmpleadosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBusquedaEmpleadosActionPerformed
+    }//GEN-LAST:event_jTextFieldBusquedaAlumnosActionPerformed
 
-    private void jTextFieldBusquedaEmpleadosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaEmpleadosKeyReleased
+    private void jTextFieldBusquedaAlumnosKeyReleased(KeyEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaEmpleadosKeyReleased
 
-        if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("ID")) {
+        if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("ID")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeId(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeId(jTextFieldBusquedaAlumnos.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("NOMBRE")) {
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("NOMBRE")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeNombre(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeNombre(jTextFieldBusquedaAlumnos.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("APELLIDO")) {
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("APELLIDO")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeApellido(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeApellido(jTextFieldBusquedaAlumnos.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("EDAD")) {
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("EDAD")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeEdad(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeEdad(jTextFieldBusquedaAlumnos.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("GÉNERO")) {
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("GÉNERO")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeGenero(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeGenero(jTextFieldBusquedaAlumnos.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("TIPO DE DOCUMENTO")) {
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("SEMESTRE")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeTipoDocumento(jTextFieldBusquedaEmpleados.getText()));
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeSemestre(jTextFieldBusquedaAlumnos.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("NÚMERO DE DOCUMENTO")) {
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("MATRICULA")) {
+try {
+    int matricula = Integer.parseInt(jTextFieldBusquedaAlumnos.getText());
+    new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeMatricula(matricula));
+} catch (NumberFormatException e){
+    JOptionPane.showMessageDialog(this, "ingresa una matricula valida");
+}
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeNumeroDocumento(jTextFieldBusquedaEmpleados.getText()));
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("CORREO ELECTRÓNICO")) {
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeCorreoElectronico(jTextFieldBusquedaEmpleados.getText()));
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("CORREO ELECTRÓNICO")) {
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("NÚMERO DE TELÉFONO")) {
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeCorreo(jTextFieldBusquedaAlumnos.getText()));
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeNumeroTelefono(jTextFieldBusquedaEmpleados.getText()));
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("NÚMERO DE TELÉFONO")) {
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("FECHA DE INICIO")) {
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeTelefono(jTextFieldBusquedaAlumnos.getText()));
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeFechaInicio(jTextFieldBusquedaEmpleados.getText()));
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("INICIO DE SEMESTRE")) {
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("CANTIDAD DE HS SEMANALES")) {
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikeInicio_semestre(jTextFieldBusquedaAlumnos.getText()));
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeCantidadHsSemanales(jTextFieldBusquedaEmpleados.getText()));
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("FIN DE SEMESTRE")) {
 
-        } else if (jComboBoxBusquedaEmpleados.getSelectedItem().equals("SUELDO")) {
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikefin_semestre(jTextFieldBusquedaAlumnos.getText()));
 
-            new Table().cargar(jTableListaEmpleados, empleadoRepository.getLikeSueldo(jTextFieldBusquedaEmpleados.getText()));
+        } else if (jComboBoxBusquedaAlumnos.getSelectedItem().equals("Promedio")) {
+
+            new Table().cargar(jTableListaAlumnos, alumnoRepository.getLikePromedio(jTextFieldBusquedaAlumnos.getText()));
 
         }
 
@@ -321,14 +330,15 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
 
     private void jButtonRefrescarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRefrescarListaActionPerformed
 
-        new Table().cargar(jTableListaEmpleados, empleadoRepository.getAll());
+        new Table().cargar(jTableListaAlumnos, alumnoRepository.getAll());
     }//GEN-LAST:event_jButtonRefrescarListaActionPerformed
 
+    /*se omite
     private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
         new JFrameAnalytics().setVisible(true);
 
 
-    }//GEN-LAST:event_jButtonAnalyticsActionPerformed
+    }//GEN-LAST:event_jButtonAnalyticsActionPerformed*/
 
     /**
      * @param args the command line arguments
@@ -348,16 +358,16 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class
+            java.util.logging.Logger.getLogger(JFrameVerAlumno.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class
+            java.util.logging.Logger.getLogger(JFrameVerAlumno.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class
+            java.util.logging.Logger.getLogger(JFrameVerAlumno.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameVerEmpleado.class
+            java.util.logging.Logger.getLogger(JFrameVerAlumno.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -366,7 +376,7 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameVerEmpleado().setVisible(true);
+                new JFrameVerAlumno().setVisible(true);
             }
         });
     }
@@ -376,13 +386,13 @@ public class JFrameVerEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAnalytics;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonRefrescarLista;
-    private javax.swing.JComboBox<String> jComboBoxBusquedaEmpleados;
+    private javax.swing.JComboBox<String> jComboBoxBusquedaAlumnos;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabelBusqueda;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableListaEmpleados;
-    private javax.swing.JTextField jTextFieldBusquedaEmpleados;
+    private javax.swing.JTable jTableListaAlumnos;
+    private javax.swing.JTextField jTextFieldBusquedaAlumnos;
     // End of variables declaration//GEN-END:variables
 }

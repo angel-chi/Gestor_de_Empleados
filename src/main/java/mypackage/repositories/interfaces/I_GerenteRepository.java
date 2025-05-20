@@ -4,57 +4,57 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import mypackage.entities.Gerente;
+import mypackage.entities.Profesores;
 
 public interface I_GerenteRepository {
 
-    void save(Gerente administracion);
+    void save(Profesores administracion);
 
-    void remove(Gerente administracion);
+    void remove(Profesores administracion);
 
-    void update(Gerente administracion);
+    void update(Profesores administracion);
 
-    List<Gerente> getAll();
+    List<Profesores> getAll();
 
-    default Stream<Gerente> getStream() {
+    default Stream<Profesores> getStream() {
         return getAll().stream();
     }
 
-    default Gerente getById(int id) {
+    default Profesores getById(int id) {
         return getStream()
                 .filter(objeto -> objeto.getId() == id)
                 .findAny()
-                .orElse(new Gerente());
+                .orElse(new Profesores());
     }
 
-    default Gerente getByIdEmpleados(int id_empleados) {
+    default Profesores getByIdEmpleados(int id_empleados) {
         return getStream()
                 .filter(objeto -> objeto.getId_empleados() == id_empleados)
                 .findAny()
-                .orElse(new Gerente());
+                .orElse(new Profesores());
     }
     
-        default List<Gerente> getLikeSector(String sector) {
+        default List<Profesores> getLikeSector(String sector) {
         if (sector == null) {
-            return new ArrayList<Gerente>();
+            return new ArrayList<Profesores>();
         }
         return getStream()
-                .filter(objeto -> objeto.getSector().toLowerCase()
+                .filter(objeto -> objeto.getPuesto().toLowerCase()
                 .contains(sector.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
-    default List<Gerente> getLikeFormacion(String formacion) {
+    default List<Profesores> getLikeFormacion(String formacion) {
         if (formacion == null) {
-            return new ArrayList<Gerente>();
+            return new ArrayList<Profesores>();
         }
         return getStream()
-                .filter(objeto -> objeto.getFormacion().toLowerCase()
+                .filter(objeto -> objeto.getTitulo().toLowerCase()
                 .contains(formacion.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
-    default List<Gerente> getByAntiguedad(int antiguedad) {
+    default List<Profesores> getByAntiguedad(int antiguedad) {
         return getStream()
                 .filter(objeto -> objeto.getAntiguedad()== antiguedad)
                 .collect(Collectors.toList());

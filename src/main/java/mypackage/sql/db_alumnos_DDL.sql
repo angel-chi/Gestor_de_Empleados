@@ -2,32 +2,32 @@
 -- //////Base de datos de Empleados, dividido por sectores(administración, soporte técnico, desarrolladores y gerentes)///////////
 -- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-drop database if exists db_empleados;
+drop database if exists db_alumnos;
 
-create database db_empleados;
+create database db_alumnos;
 
-use db_empleados;
+use db_alumnos;
 
-drop table if exists empleados;
-drop table if exists desarrolladores;
-drop table if exists soporte_tecnico;
+drop table if exists alumnos;
 drop table if exists administracion;
+drop table if exists coordinadores;
+drop table if exists profesores;
 drop table if exists gerentes;
 
-create table empleados(
+create table alumnos(
 
 id					int 			auto_increment 			primary key,
 nombre				varchar(40)		not null,
 apellido		    varchar(40)		not null,
 edad			    int(3)			not null,
 genero				varchar(10)		not null,
-tipo_documento 		varchar(17)		not null,
-numero_documento	varchar(15)			not null,
+semestre 	     	int(17)		not null,
+matricula	        int(15)			not null,
 correo_electronico	varchar(30)		not null,
 numero_telefono		varchar(25),
-fecha_inicio		date		not null,
-cantidad_hs_semanales	int 		not null,
-sueldo				float			not null
+inicio_semestre		date		not null,
+fin_semestre	    int 		not null,
+calificacion				float			not null
 
 );
 

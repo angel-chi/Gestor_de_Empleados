@@ -39,7 +39,7 @@ public interface I_DesarrolladorRepository {
     
     default List<Desarrollador> getLikePuesto(String puesto) {
         if (puesto == null) {
-            return new ArrayList<Desarrollador>();
+            return new ArrayList<>();
         }
         return getStream()
                 .filter(objeto -> objeto.getPuesto().toLowerCase()
@@ -49,7 +49,7 @@ public interface I_DesarrolladorRepository {
 
         default List<Desarrollador> getLikeCertificaciones(String certificaciones) {
         if (certificaciones == null) {
-            return new ArrayList<Desarrollador>();
+            return new ArrayList<>();
         }
         return getStream()
                 .filter(objeto -> objeto.getCertificaciones().toLowerCase()
@@ -59,7 +59,7 @@ public interface I_DesarrolladorRepository {
         
     default List<Desarrollador> getLikeHabilidades(String habilidades) {
         if (habilidades == null) {
-            return new ArrayList<Desarrollador>();
+            return new ArrayList<>();
         }
         return getStream()
                 .filter(objeto -> objeto.getHabilidades().toLowerCase()

@@ -5,15 +5,19 @@
  */
 package mypackage.gui.empleados;
 
+import mypackage.connector.LocalConnector;
+import mypackage.entities.Alumno;
+import mypackage.repositories.jdbc.AlumnoRepository;
+
 /**
  *
  * @author andre
  */
-public class JFrameActualizarEmpleado extends javax.swing.JFrame {
+public class JFrameActualizarAlumno extends javax.swing.JFrame {
 
     /** Creates new form JFrameActualizarEmpleados */
-    public JFrameActualizarEmpleado() {
-        initComponents();
+    public JFrameActualizarAlumno(int idAlumno) {
+        initComponents(idAlumno);
     }
 
     /** This method is called from within the constructor to
@@ -23,7 +27,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents(int idAlumno) {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabelTitulo = new javax.swing.JLabel();
@@ -35,26 +39,21 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jTextFieldEdad = new javax.swing.JTextField();
         jLabelGenero = new javax.swing.JLabel();
         jTextFieldGenero = new javax.swing.JTextField();
-        jTextFieldSueldo = new javax.swing.JTextField();
         jLabelNumDoc2 = new javax.swing.JLabel();
         jLabelCorreo1 = new javax.swing.JLabel();
-        jTextFieldTipoDoc = new javax.swing.JTextField();
+        jTextFieldSemestre = new javax.swing.JTextField();
         jLabelTipoDoc3 = new javax.swing.JLabel();
         jLabelTipoDoc4 = new javax.swing.JLabel();
         jLabelNumDoc3 = new javax.swing.JLabel();
-        jLabelSueldo = new javax.swing.JLabel();
-        jTextFieldNumDoc = new javax.swing.JTextField();
+        jTextFieldCorreo = new javax.swing.JTextField();
         jLabelCorreo3 = new javax.swing.JLabel();
         jLabelNumero2 = new javax.swing.JLabel();
-        jTextFieldCorreoElectronico = new javax.swing.JTextField();
+        jTextFieldNumeroDeTelefono = new javax.swing.JTextField();
         jLabelNumero3 = new javax.swing.JLabel();
         jLabelFecha2 = new javax.swing.JLabel();
-        jTextFieldNumeroTelefono = new javax.swing.JTextField();
+        jTextFieldMatricula = new javax.swing.JTextField();
         jLabelFecha3 = new javax.swing.JLabel();
-        jLabelCantidadHs1 = new javax.swing.JLabel();
-        jTextFieldFechaDeInicio = new javax.swing.JTextField();
-        jLabelCantidadHs3 = new javax.swing.JLabel();
-        jTextFieldCantidadHsSemanales = new javax.swing.JTextField();
+        jTextFieldPromedio = new javax.swing.JTextField();
         jButtonLimpiar = new javax.swing.JButton();
         jButtonActualizar = new javax.swing.JButton();
         jButtonAgregar1 = new javax.swing.JButton();
@@ -63,7 +62,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("ACTUALIZACIÓN DE EMPLEADOS");
+        jLabelTitulo.setText("ACTUALIZACIÓN DE ALUMNOS");
         jDesktopPane1.add(jLabelTitulo);
         jLabelTitulo.setBounds(30, 20, 610, 42);
 
@@ -71,147 +70,121 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNombre.setText("Nombre:");
         jDesktopPane1.add(jLabelNombre);
-        jLabelNombre.setBounds(170, 80, 98, 28);
+        jLabelNombre.setBounds(180, 80, 98, 28);
 
         jTextFieldNombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(260, 80, 191, 34);
+        jTextFieldNombre.setBounds(270, 80, 191, 34);
 
         jLabelApellido.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelApellido.setForeground(new java.awt.Color(255, 255, 255));
         jLabelApellido.setText("Apellido:");
         jDesktopPane1.add(jLabelApellido);
-        jLabelApellido.setBounds(170, 120, 104, 28);
+        jLabelApellido.setBounds(180, 130, 104, 28);
 
         jTextFieldApellido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldApellido);
-        jTextFieldApellido.setBounds(260, 120, 191, 34);
+        jTextFieldApellido.setBounds(270, 130, 191, 34);
 
         jLabelEdad.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelEdad.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEdad.setText("Edad:");
         jDesktopPane1.add(jLabelEdad);
-        jLabelEdad.setBounds(200, 160, 55, 24);
+        jLabelEdad.setBounds(210, 190, 55, 24);
 
         jTextFieldEdad.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldEdad);
-        jTextFieldEdad.setBounds(260, 160, 191, 34);
+        jTextFieldEdad.setBounds(270, 180, 191, 34);
 
         jLabelGenero.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelGenero.setForeground(new java.awt.Color(255, 255, 255));
         jLabelGenero.setText("Genero:");
         jDesktopPane1.add(jLabelGenero);
-        jLabelGenero.setBounds(180, 200, 77, 24);
+        jLabelGenero.setBounds(190, 240, 77, 24);
 
         jTextFieldGenero.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jDesktopPane1.add(jTextFieldGenero);
-        jTextFieldGenero.setBounds(260, 200, 191, 34);
-
-        jTextFieldSueldo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldSueldo);
-        jTextFieldSueldo.setBounds(260, 600, 191, 34);
+        jTextFieldGenero.setBounds(270, 240, 191, 34);
 
         jLabelNumDoc2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc2.setText("documento:");
+        jLabelNumDoc2.setText("electronico:");
         jDesktopPane1.add(jLabelNumDoc2);
-        jLabelNumDoc2.setBounds(140, 310, 120, 40);
+        jLabelNumDoc2.setBounds(145, 360, 120, 40);
 
         jLabelCorreo1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCorreo1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCorreo1.setText("electrónico:");
+        jLabelCorreo1.setText("teléfonico:");
         jDesktopPane1.add(jLabelCorreo1);
-        jLabelCorreo1.setBounds(140, 370, 120, 40);
+        jLabelCorreo1.setBounds(150, 420, 120, 40);
 
-        jTextFieldTipoDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldTipoDoc);
-        jTextFieldTipoDoc.setBounds(260, 250, 191, 30);
+        jTextFieldSemestre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldSemestre);
+        jTextFieldSemestre.setBounds(270, 300, 191, 30);
 
         jLabelTipoDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc3.setText("Tipo de");
+        jLabelTipoDoc3.setText("");
         jDesktopPane1.add(jLabelTipoDoc3);
-        jLabelTipoDoc3.setBounds(160, 230, 80, 30);
+        jLabelTipoDoc3.setBounds(180, 270, 80, 30);
 
         jLabelTipoDoc4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelTipoDoc4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTipoDoc4.setText("documento:");
+        jLabelTipoDoc4.setText("Semestre:");
         jDesktopPane1.add(jLabelTipoDoc4);
-        jLabelTipoDoc4.setBounds(140, 250, 120, 40);
+        jLabelTipoDoc4.setBounds(170, 290, 100, 40);
 
         jLabelNumDoc3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumDoc3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumDoc3.setText("Numero de");
+        jLabelNumDoc3.setText("Correo");
         jDesktopPane1.add(jLabelNumDoc3);
-        jLabelNumDoc3.setBounds(140, 290, 110, 30);
+        jLabelNumDoc3.setBounds(160, 340, 110, 30);
 
-        jLabelSueldo.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelSueldo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSueldo.setText("Sueldo:");
-        jDesktopPane1.add(jLabelSueldo);
-        jLabelSueldo.setBounds(180, 590, 80, 40);
-
-        jTextFieldNumDoc.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldNumDoc);
-        jTextFieldNumDoc.setBounds(260, 310, 191, 34);
+        jTextFieldCorreo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldCorreo);
+        jTextFieldCorreo.setBounds(270, 360, 191, 34);
 
         jLabelCorreo3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelCorreo3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCorreo3.setText("Correo");
+        jLabelCorreo3.setText("Número");
         jDesktopPane1.add(jLabelCorreo3);
-        jLabelCorreo3.setBounds(170, 350, 70, 40);
+        jLabelCorreo3.setBounds(170, 400, 100, 40);
 
         jLabelNumero2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumero2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumero2.setText("de telefono:");
+        jLabelNumero2.setText("de matricula:");
         jDesktopPane1.add(jLabelNumero2);
-        jLabelNumero2.setBounds(140, 430, 130, 40);
+        jLabelNumero2.setBounds(130, 480, 130, 40);
 
-        jTextFieldCorreoElectronico.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldCorreoElectronico);
-        jTextFieldCorreoElectronico.setBounds(260, 370, 191, 34);
+        jTextFieldNumeroDeTelefono.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldNumeroDeTelefono);
+        jTextFieldNumeroDeTelefono.setBounds(270, 420, 191, 34);
 
         jLabelNumero3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelNumero3.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNumero3.setText("Numero ");
         jDesktopPane1.add(jLabelNumero3);
-        jLabelNumero3.setBounds(160, 410, 110, 40);
+        jLabelNumero3.setBounds(170, 460, 110, 40);
 
         jLabelFecha2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelFecha2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelFecha2.setText("inicio:");
+        jLabelFecha2.setText("Promedio:");
         jDesktopPane1.add(jLabelFecha2);
-        jLabelFecha2.setBounds(200, 490, 60, 40);
+        jLabelFecha2.setBounds(170, 533, 100, 40);
 
-        jTextFieldNumeroTelefono.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldNumeroTelefono);
-        jTextFieldNumeroTelefono.setBounds(260, 430, 191, 34);
+        jTextFieldMatricula.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldMatricula);
+        jTextFieldMatricula.setBounds(270, 480, 191, 34);
 
         jLabelFecha3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabelFecha3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelFecha3.setText("Fecha de");
+        jLabelFecha3.setText("");
         jDesktopPane1.add(jLabelFecha3);
-        jLabelFecha3.setBounds(150, 470, 90, 40);
+        jLabelFecha3.setBounds(180, 520, 90, 40);
 
-        jLabelCantidadHs1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelCantidadHs1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCantidadHs1.setText("Cantidad hs");
-        jDesktopPane1.add(jLabelCantidadHs1);
-        jLabelCantidadHs1.setBounds(130, 530, 120, 40);
-
-        jTextFieldFechaDeInicio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldFechaDeInicio);
-        jTextFieldFechaDeInicio.setBounds(260, 490, 191, 34);
-
-        jLabelCantidadHs3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabelCantidadHs3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelCantidadHs3.setText("semanales:");
-        jDesktopPane1.add(jLabelCantidadHs3);
-        jLabelCantidadHs3.setBounds(150, 550, 110, 40);
-
-        jTextFieldCantidadHsSemanales.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jDesktopPane1.add(jTextFieldCantidadHsSemanales);
-        jTextFieldCantidadHsSemanales.setBounds(260, 550, 191, 34);
+        jTextFieldPromedio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jDesktopPane1.add(jTextFieldPromedio);
+        jTextFieldPromedio.setBounds(270, 540, 191, 34);
 
         jButtonLimpiar.setBackground(new java.awt.Color(0, 32, 108));
         jButtonLimpiar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -223,7 +196,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(jButtonLimpiar);
-        jButtonLimpiar.setBounds(160, 680, 142, 50);
+        jButtonLimpiar.setBounds(170, 600, 142, 50);
 
         jButtonActualizar.setBackground(new java.awt.Color(0, 32, 108));
         jButtonActualizar.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -231,23 +204,23 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         jButtonActualizar.setText("Actualizar");
         jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonActualizarActionPerformed(evt);
+                jButtonActualizarActionPerformed(evt, idAlumno);
             }
         });
         jDesktopPane1.add(jButtonActualizar);
-        jButtonActualizar.setBounds(340, 680, 140, 50);
+        jButtonActualizar.setBounds(340, 600, 140, 50);
 
         jButtonAgregar1.setBackground(new java.awt.Color(1, 26, 86));
         jButtonAgregar1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButtonAgregar1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAgregar1.setText("Ver Empleados");
+        jButtonAgregar1.setText("Ver Alumnos");
         jButtonAgregar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregar1ActionPerformed(evt);
             }
         });
         jDesktopPane1.add(jButtonAgregar1);
-        jButtonAgregar1.setBounds(240, 760, 180, 50);
+        jButtonAgregar1.setBounds(240, 660, 180, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -271,23 +244,32 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
 
         jTextFieldNombre.setText("");
         jTextFieldApellido.setText("");
-        jTextFieldCantidadHsSemanales.setText("");
-        jTextFieldCorreoElectronico.setText("");
         jTextFieldEdad.setText("");
-        jTextFieldFechaDeInicio.setText("");
         jTextFieldGenero.setText("");
-        jTextFieldNumDoc.setText("");
-        jTextFieldNumeroTelefono.setText("");
-        jTextFieldSueldo.setText("");
-        jTextFieldTipoDoc.setText("");
+        jTextFieldNumeroDeTelefono.setText("");
+        jTextFieldCorreo.setText("");
+        jTextFieldMatricula.setText("");
+        jTextFieldSemestre.setText("");
+        jTextFieldPromedio.setText("");
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
-    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        // TODO add your handling code here:
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt, int idAlumno) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        AlumnoRepository Estudiante = new AlumnoRepository(LocalConnector.getLocalConnection());
+        Alumno Estudiante2 = Estudiante.getById(idAlumno);
+        Estudiante2.setNombre(jTextFieldNombre.getText());
+        Estudiante2.setApellido(jTextFieldApellido.getText());
+        Estudiante2.setEdad(Integer.parseInt(jTextFieldEdad.getText()));
+        Estudiante2.setGenero(jTextFieldGenero.getText());
+        Estudiante2.setSemestre(jTextFieldSemestre.getText());
+        Estudiante2.setCorreo_electronico(jTextFieldCorreo.getText());
+        Estudiante2.setNumero_telefono(jTextFieldNumeroDeTelefono.getText());
+        Estudiante2.setMatricula(Integer.parseInt(jTextFieldMatricula.getText()));
+        Estudiante2.setPromedio(Float.parseFloat(jTextFieldPromedio.getText()));
+        Estudiante.update(Estudiante2);
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
 
     /**
@@ -307,13 +289,13 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameActualizarEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -321,7 +303,7 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameActualizarEmpleado().setVisible(true);
+                new JFrameActualizarAlumno(0).setVisible(true);
             }
         });
     }
@@ -332,8 +314,6 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabelApellido;
-    private javax.swing.JLabel jLabelCantidadHs1;
-    private javax.swing.JLabel jLabelCantidadHs3;
     private javax.swing.JLabel jLabelCorreo1;
     private javax.swing.JLabel jLabelCorreo3;
     private javax.swing.JLabel jLabelEdad;
@@ -345,20 +325,17 @@ public class JFrameActualizarEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNumDoc3;
     private javax.swing.JLabel jLabelNumero2;
     private javax.swing.JLabel jLabelNumero3;
-    private javax.swing.JLabel jLabelSueldo;
     private javax.swing.JLabel jLabelTipoDoc3;
     private javax.swing.JLabel jLabelTipoDoc4;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JTextField jTextFieldApellido;
-    private javax.swing.JTextField jTextFieldCantidadHsSemanales;
-    private javax.swing.JTextField jTextFieldCorreoElectronico;
+    private javax.swing.JTextField jTextFieldNumeroDeTelefono;
     private javax.swing.JTextField jTextFieldEdad;
-    private javax.swing.JTextField jTextFieldFechaDeInicio;
+    private javax.swing.JTextField jTextFieldPromedio;
     private javax.swing.JTextField jTextFieldGenero;
     private javax.swing.JTextField jTextFieldNombre;
-    private javax.swing.JTextField jTextFieldNumDoc;
-    private javax.swing.JTextField jTextFieldNumeroTelefono;
-    private javax.swing.JTextField jTextFieldSueldo;
-    private javax.swing.JTextField jTextFieldTipoDoc;
+    private javax.swing.JTextField jTextFieldCorreo;
+    private javax.swing.JTextField jTextFieldMatricula;
+    private javax.swing.JTextField jTextFieldSemestre;
     // End of variables declaration//GEN-END:variables
 }

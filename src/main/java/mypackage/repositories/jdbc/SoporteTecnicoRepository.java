@@ -25,12 +25,12 @@ public class SoporteTecnicoRepository implements I_SoporteTecnicoRepository{
         }
         try ( PreparedStatement consultaPreparada
                 = conexionDB.prepareStatement(
-                        "INSERT INTO soporte_tecnico(id,id_empleados,puesto,formacion,certificaciones)"
+                        "INSERT INTO soporte_tecnico(id,id_estudiantes,puesto,formacion,certificaciones)"
                         + "values(?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
                 )) {
 
                     consultaPreparada.setInt(1, soporteTecnico.getId());
-                    consultaPreparada.setInt(2, soporteTecnico.getId_empleados());
+                    consultaPreparada.setInt(2, soporteTecnico.getId_estudiantes());
                     consultaPreparada.setString(3, soporteTecnico.getPuesto());
                     consultaPreparada.setString(4, soporteTecnico.getFormacion());
                     consultaPreparada.setString(5, soporteTecnico.getCertificaciones());
@@ -69,10 +69,10 @@ public class SoporteTecnicoRepository implements I_SoporteTecnicoRepository{
         }
         try ( PreparedStatement consultaPreparada = conexionDB
                 .prepareStatement(
-                        "UPDATE soporte_tecnico SET id_empleados=?,puesto=?,formacion=?,certificaciones=? "
+                        "UPDATE soporte_tecnico SET id_estudiantes=?,puesto=?,formacion=?,certificaciones=? "
                        + "WHERE id=?")) {
 
-            consultaPreparada.setInt(1, soporteTecnico.getId_empleados());
+            consultaPreparada.setInt(1, soporteTecnico.getId_estudiantes());
             consultaPreparada.setString(2, soporteTecnico.getPuesto());
             consultaPreparada.setString(3, soporteTecnico.getFormacion());
             consultaPreparada.setString(4, soporteTecnico.getCertificaciones());
@@ -97,7 +97,7 @@ public class SoporteTecnicoRepository implements I_SoporteTecnicoRepository{
 
                         listaSoporteTecnico.add(new SoporteTecnico(
                                 resultSetSoporteTecnico.getInt("id"),
-                                resultSetSoporteTecnico.getInt("id_empleados"),
+                                resultSetSoporteTecnico.getInt("id_estudiantes"),
                                 resultSetSoporteTecnico.getString("puesto"),
                                 resultSetSoporteTecnico.getString("formacion"),
                                 resultSetSoporteTecnico.getString("certificaciones")

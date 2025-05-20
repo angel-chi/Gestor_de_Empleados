@@ -41,7 +41,7 @@ public class JFrameAyuda extends javax.swing.JFrame {
         jTextAreaMenuAyuda.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jTextAreaMenuAyuda.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaMenuAyuda.setRows(5);
-        jTextAreaMenuAyuda.setText("Esta es una app para la gestión de \nEmpleados, en la cúal se encuentra \ndividida a través de un menú principal\ny esta a su vez dividido por los diversos\nsectores que se pueden gestionar, en \ncada uno de los sectores se podrá \nagregar, eliminar, actualizar y listar\nsegún cada uno de los mismos.\n\nPara poder ingresar a cada uno de los \nsectores se deberá poseer los permisos \ncorrespondientes.\n\nPara más INFORMACIÓN comuniquese\ncon el sector de soporte técnico.\n");
+        jTextAreaMenuAyuda.setText("Esta es una app para la gestión de \nestudiantes, en la cúal se encuentra \ndividida a través de un menú principal\ny esta a su vez dividido por los diversos\nsectores que se pueden gestionar, en \ncada uno de los sectores se podrá \nagregar, eliminar, actualizar y listar\nsegún cada uno de los mismos.\n\nPara poder ingresar a cada uno de los \nsectores se deberá poseer los permisos \ncorrespondientes.\n\nPara más INFORMACIÓN comuniquese\ncon el sector de soporte técnico.\n");
         jScrollPane1.setViewportView(jTextAreaMenuAyuda);
 
         jDesktopPane1.setLayer(jLabelMenuAyuda, javax.swing.JLayeredPane.DEFAULT_LAYER);

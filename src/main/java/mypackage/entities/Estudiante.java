@@ -1,7 +1,7 @@
 package mypackage.entities;
 
 
-public class Empleado{
+public class Estudiante {
     private int id;
     private String nombre;
     private String apellido;
@@ -13,12 +13,15 @@ public class Empleado{
     private String numero_telefono;
     private String fecha_inicio;
     private int cantidad_hs_semanales;
-    private float sueldo;
+    private float matricula;
+    private float calificacion;
+    private int semestre;
 
-    public Empleado() {
+
+    public Estudiante() {
     }
 
-    public Empleado(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Estudiante(String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float matricula) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -29,10 +32,13 @@ public class Empleado{
         this.numero_telefono = numero_telefono;
         this.fecha_inicio = fecha_inicio;
         this.cantidad_hs_semanales = cantidad_hs_semanales;
-        this.sueldo = sueldo;
+        this.matricula = matricula;
+        this.calificacion = calificacion;
+        this.semestre = semestre;
+
     }
 
-    public Empleado(int id, String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float sueldo) {
+    public Estudiante(int id, String nombre, String apellido, int edad, String genero, String tipo_documento, String numero_documento, String correo_electronico, String numero_telefono, String fecha_inicio, int cantidad_hs_semanales, float matricula) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -44,17 +50,19 @@ public class Empleado{
         this.numero_telefono = numero_telefono;
         this.fecha_inicio = fecha_inicio;
         this.cantidad_hs_semanales = cantidad_hs_semanales;
-        this.sueldo = sueldo;
+        this.matricula = matricula;
+        this.calificacion = calificacion;
+        this.semestre = semestre;
     }
 
 
 
 
-    public float getSueldo() {
-        return sueldo;
+    public float getMatricula() {
+        return matricula;
     }
-    public void setSueldo(float sueldo) {
-        this.sueldo = sueldo;
+    public void setMatricula(float matricula) {
+        this.matricula = matricula;
     }
     public String getNombre() {
         return nombre;
@@ -68,6 +76,9 @@ public class Empleado{
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+    public float getCalificacion() { return calificacion; }
+    public void setCalificacion(float calificacion) { this.calificacion = calificacion; }
+
     public int getEdad() {
         return edad;
     }
@@ -122,12 +133,17 @@ public class Empleado{
     public void setId(int id) {
         this.id = id;
     }
-   
-    
-    
+
+    public int getSemestre() {
+        return semestre;
+    }
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+
     @Override
     public String toString() {
-        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", genero=" + genero + ", tipo_documento=" + tipo_documento + ", numero_documento=" + numero_documento + ", correo_electronico=" + correo_electronico + ", numero_telefono=" + numero_telefono + ", fecha_inicio=" + fecha_inicio + ", cantidad_hs_semanales=" + cantidad_hs_semanales + ", sueldo=" + sueldo + '}';
+        return "Estudiante{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", genero=" + genero + ", tipo_documento=" + tipo_documento + ", numero_documento=" + numero_documento + ", correo_electronico=" + correo_electronico + ", numero_telefono=" + numero_telefono + ", fecha_inicio=" + fecha_inicio + ", cantidad_hs_semanales=" + cantidad_hs_semanales + ", matricula=" + matricula + ", calificacion=" + calificacion + ", semestre=" + semestre + '}';
     }
 
     

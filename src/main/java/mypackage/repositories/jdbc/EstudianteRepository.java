@@ -1,0 +1,138 @@
+package mypackage.repositories.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import mypackage.entities.Estudiante;
+import mypackage.repositories.interfaces.I_EstudianteRepository;
+
+public class EstudianteRepository implements I_EstudianteRepository {
+
+    private Connection conexionDB;
+
+    public EstudianteRepository(Connection conexionDB) {
+        this.conexionDB = conexionDB;
+    }
+
+    @Override
+    public void save(Estudiante estudiante) {
+        if (estudiante == null) {
+            return;
+        }
+        try ( PreparedStatement consultaPreparada
+                = conexionDB.prepareStatement(
+                        "INSERT INTO estudiantes(id,nombre,apellido,edad,genero,tipo_documento,"
+                        + " numero_documento,correo_electronico,numero_telefono,fecha_inicio,cantidad_hs_semanales,matricula)"
+                        + "values(?,?,?,?,?,?,?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS
+                )) {
+
+                    consultaPreparada.setInt(1, estudiante.getId());
+                    consultaPreparada.setString(2, estudiante.getNombre());
+                    consultaPreparada.setString(3, estudiante.getApellido());
+                    consultaPreparada.setInt(4, estudiante.getEdad());
+                    consultaPreparada.setString(5, estudiante.getGenero());
+                    consultaPreparada.setString(6, estudiante.getTipo_documento());
+                    consultaPreparada.setString(7, estudiante.getNumero_documento());
+                    consultaPreparada.setString(8, estudiante.getCorreo_electronico());
+                    consultaPreparada.setString(9, estudiante.getNumero_telefono());
+                    consultaPreparada.setString(10, estudiante.getFecha_inicio());
+                    consultaPreparada.setInt(11, estudiante.getCantidad_hs_semanales());
+                    consultaPreparada.setFloat(12, estudiante.getMatricula());
+
+                    consultaPreparada.execute();
+
+                    ResultSet resultadoQuery = consultaPreparada.getGeneratedKeys();
+
+                    if (resultadoQuery.next()) {
+                        estudiante.setId(resultadoQuery.getInt(1));
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+    }
+
+    @Override
+    public void remove(Estudiante estudiante) {
+        if (estudiante == null) {
+            return;
+        }
+        try ( PreparedStatement consultaPreparada
+                = conexionDB.prepareStatement("DELETE FROM estudiantes WHERE id=?")) {
+
+            consultaPreparada.setInt(1, estudiante.getId());
+
+            consultaPreparada.execute();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public void update(Estudiante estudiante) {
+        if (estudiante == null) {
+            return;
+        }
+        try ( PreparedStatement consultaPreparada = conexionDB
+                .prepareStatement(
+                        "UPDATE estudiantes SET nombre=?,apellido=?,edad=?,genero=?,tipo_documento=?,"
+                        + " numero_documento=?,correo_electronico=?,numero_telefono=?,fecha_inicio=?,cantidad_hs_semanales=?,matricula=? "
+                       + "WHERE id=?")) {
+
+            consultaPreparada.setString(1, estudiante.getNombre());
+            consultaPreparada.setString(2, estudiante.getApellido());
+            consultaPreparada.setInt(3, estudiante.getEdad());
+            consultaPreparada.setString(4, estudiante.getGenero());
+            consultaPreparada.setString(5, estudiante.getTipo_documento());
+            consultaPreparada.setString(6, estudiante.getNumero_documento());
+            consultaPreparada.setString(7, estudiante.getCorreo_electronico());
+            consultaPreparada.setString(8, estudiante.getNumero_telefono());
+            consultaPreparada.setString(9, estudiante.getFecha_inicio());
+            consultaPreparada.setInt(10, estudiante.getCantidad_hs_semanales());
+            consultaPreparada.setFloat(11, estudiante.getMatricula());
+            consultaPreparada.setInt(12, estudiante.getId());
+
+            consultaPreparada.execute();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<Estudiante> getAll() {
+
+        List<Estudiante> listaestudiantes = new ArrayList();
+
+        try ( ResultSet resultSetestudiantes
+                = conexionDB
+                        .createStatement()
+                        .executeQuery("SELECT * FROM estudiantes")) {
+                    while (resultSetestudiantes.next()) {
+
+                        listaestudiantes.add(new Estudiante(
+                                resultSetestudiantes.getInt("id"),
+                                resultSetestudiantes.getString("nombre"),
+                                resultSetestudiantes.getString("apellido"),
+                                resultSetestudiantes.getInt("edad"),
+                                resultSetestudiantes.getString("genero"),
+                                resultSetestudiantes.getString("tipo_documento"),
+                                resultSetestudiantes.getString("numero_documento"),
+                                resultSetestudiantes.getString("correo_electronico"),
+                                resultSetestudiantes.getString("numero_telefono"),
+                                resultSetestudiantes.getString("fecha_inicio"),
+                                resultSetestudiantes.getInt("cantidad_hs_semanales"),
+                                resultSetestudiantes.getFloat("matricula")
+                        ));
+
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return listaestudiantes;
+    }
+
+}

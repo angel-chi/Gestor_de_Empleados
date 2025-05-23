@@ -56,7 +56,7 @@ public class JFrameVerAlumno extends javax.swing.JFrame {
         jTextFieldBusquedaAlumnos = new javax.swing.JTextField();
         jComboBoxBusquedaAlumnos = new javax.swing.JComboBox<>();
         jButtonRefrescarLista = new javax.swing.JButton();
-        jButtonAnalytics = new javax.swing.JButton();
+     //   jButtonAnalytics = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,12 +122,12 @@ public class JFrameVerAlumno extends javax.swing.JFrame {
             }
         });
 
-        jButtonAnalytics.setBackground(new java.awt.Color(0, 34, 103));
+       /* jButtonAnalytics.setBackground(new java.awt.Color(0, 34, 103));
         jButtonAnalytics.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButtonAnalytics.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAnalytics.setText("ANALYTICS");
          //Borramos una pate del cidigo y ya no nos sirve
-       /* jButtonAnalytics.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAnalytics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAnalyticsActionPerformed(evt);
             }
@@ -141,7 +141,7 @@ public class JFrameVerAlumno extends javax.swing.JFrame {
         jDesktopPane2.setLayer(jTextFieldBusquedaAlumnos, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jComboBoxBusquedaAlumnos, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(jButtonRefrescarLista, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane2.setLayer(jButtonAnalytics, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        //jDesktopPane2.setLayer(jButtonAnalytics, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
         jDesktopPane2.setLayout(jDesktopPane2Layout);
@@ -168,7 +168,7 @@ public class JFrameVerAlumno extends javax.swing.JFrame {
                         .addComponent(jTextFieldBusquedaAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(282, 282, 282))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
-                        .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                       // .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(204, 204, 204)
                         .addComponent(jButtonActualizar)
                         .addGap(93, 93, 93)
@@ -198,8 +198,7 @@ public class JFrameVerAlumno extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(13, 13, 13))))
         );
 
@@ -238,16 +237,16 @@ public class JFrameVerAlumno extends javax.swing.JFrame {
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
 
-        int filaTablaEmpleado = jTableListaAlumnos.getSelectedRow();
+        int filaTablaAlumno = jTableListaAlumnos.getSelectedRow();
 
-        if (filaTablaEmpleado == -1) {
+        if (filaTablaAlumno == -1) {
 
             JOptionPane.showMessageDialog(this, "SELECCIONE ALGUN EMPLEADO QUE DESEE ELIMINAR DE LA LISTA!");
 
             return;
         }
 
-        int idEmpleado = (int) jTableListaAlumnos.getValueAt(filaTablaEmpleado, 0);
+        int idEmpleado = (int) jTableListaAlumnos.getValueAt(filaTablaAlumno, 0);
 
         if (JOptionPane.showConfirmDialog(this, "ESTA POR ELIMINAR EL EMPLEADO CON EL ID " + idEmpleado + "!!") != 0) {
 

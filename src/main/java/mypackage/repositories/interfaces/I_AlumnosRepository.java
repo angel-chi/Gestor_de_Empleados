@@ -115,7 +115,7 @@ public interface I_AlumnosRepository {
             return new ArrayList<Alumnos>();
         }
          return getStream()
-                .filter(objeto -> objeto.getfin_semestre().toLowerCase()
+                .filter(objeto -> objeto.getFin_semestre().toLowerCase()
                 .contains(fin_semestre .toLowerCase()))
                 .collect(Collectors.toList());
     }
@@ -126,7 +126,7 @@ public interface I_AlumnosRepository {
             return new ArrayList<Alumnos>();
         }
          return getStream()
-                .filter(objeto -> objeto.getcorreo().toLowerCase()
+                .filter(objeto -> objeto.getCorreo().toLowerCase()
                 .startsWith(correo.toLowerCase()))
                 .collect(Collectors.toList());
     }
@@ -137,7 +137,7 @@ public interface I_AlumnosRepository {
             return new ArrayList<Alumnos>();
         }
            return getStream()
-                .filter(objeto -> objeto.gettelefono().toLowerCase()
+                .filter(objeto -> objeto.getTelefono().toLowerCase()
                 .contains(telefono.toLowerCase()))
                 .collect(Collectors.toList());
     }
@@ -148,7 +148,7 @@ public interface I_AlumnosRepository {
             return new ArrayList<Alumnos>();
         }
         return getStream()
-                .filter(objeto -> objeto.getinicio_semestre().toLowerCase()
+                .filter(objeto -> objeto.getInicio_semestre().toLowerCase()
                 .contains(inicio_semestre.toLowerCase()))
                 .collect(Collectors.toList());
     }
@@ -173,7 +173,7 @@ public interface I_AlumnosRepository {
     default List<Alumnos> getBypromedio(float promedio) {
 
         return getStream()
-                .filter(objeto -> objeto.getpromedio() ==promedio)
+                .filter(objeto -> objeto.getPromedio() ==promedio)
                 .collect(Collectors.toList());
     }
     
@@ -182,11 +182,12 @@ public interface I_AlumnosRepository {
             return new ArrayList<Alumnos>();
         }
         return getStream()
-                .filter(objeto -> String.valueOf(objeto.getpromedio())
+                .filter(objeto -> String.valueOf(objeto.getPromedio())
                 .contains(promedio))
                 .collect(Collectors.toList());
     }
 
     
     
+
 }

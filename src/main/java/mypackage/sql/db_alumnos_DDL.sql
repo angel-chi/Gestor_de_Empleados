@@ -12,7 +12,6 @@ drop table if exists alumnos;
 drop table if exists administracion;
 drop table if exists coordinadores;
 drop table if exists profesores;
-drop table if exists gerentes;
 
 create table alumnos(
 
@@ -23,33 +22,33 @@ edad			    int(3)			not null,
 genero				varchar(10)		not null,
 semestre 	     	int(17)		not null,
 matricula	        int(15)			not null,
-correo_electronico	varchar(30)		not null,
-numero_telefono		varchar(25),
+correo          	varchar(30)		not null,
+telefono	 	varchar(25),
 inicio_semestre		date		not null,
 fin_semestre	    int 		not null,
-calificacion				float			not null
+promedio				float			not null
 
 );
 
 
 
 
-create table desarrolladores(
+create table administradores(
 
 id							int 									auto_increment 	primary key,
-id_empleados				int										not null unique,
+id_alumnos				int										not null unique,
 constraint					fk_id_empleados_desarrolladores			foreign key(id_empleados) references empleados(id),
 puesto						varchar(30)								not null,
-certificaciones				varchar(80),
-habilidades					varchar(60)								not null,
-proyectos_en_produccion		int 									
+formacion				varchar(80),
+conocimientos					varchar(60)								not null,
+area		int
 
 );
 
-create table soporte_tecnico(
+create table coordinadores(
 
 id					int 									auto_increment 	primary key,
-id_empleados		int										not null unique,
+id_alumno		int										not null unique,
 constraint			fk_id_empleados_soporte_tecnico			foreign key(id_empleados) references empleados(id),
 puesto				varchar(30)								not null,
 formacion			varchar(50),-- titulo universitario, etc
@@ -58,7 +57,7 @@ certificaciones		varchar(80)
 );
 
 
-create table administracion(
+create table profesores(
 
 id					int 									auto_increment 	primary key,
 id_empleados		int										not null unique,
@@ -68,16 +67,6 @@ habilidades			varchar(50)								not null
 
 );
 
-create table gerentes(
-
-id					int 									auto_increment 			primary key,
-id_empleados		int										not null unique,
-constraint			fk_id_empleados_gerentes				foreign key(id_empleados) references empleados(id),
-sector				varchar(30)								not null,
-formacion			varchar(60), -- titulo, etc
-antiguedad			int										not  null
-
-);
 
 
 

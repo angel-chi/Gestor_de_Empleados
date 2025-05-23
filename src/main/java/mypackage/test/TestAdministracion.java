@@ -2,7 +2,7 @@ package mypackage.test;
 
 import java.time.LocalDate;
 
-import jdk.internal.jimage.ImageStream;
+//import jdk.internal.jimage.ImageStream;
 import mypackage.connector.LocalConnector;
 import mypackage.entities.Administracion_CE;
 import mypackage.entities.Alumnos;
@@ -20,7 +20,7 @@ public class TestAdministracion {
 
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Alumno ===============\n");
-        ImageStream resultSetAlumnos = null;
+      //  ImageStream resultSetAlumnos = null;
         Alumnos nuevoAlumnos = new Alumnos(0, "Oscar", "Mastruli", 25, "Masculino", "tercero", "01/05",
                         "Oscarmastruli@gmail.com", "1576859045", String.valueOf(LocalDate.now()), 48, 44000f);
 

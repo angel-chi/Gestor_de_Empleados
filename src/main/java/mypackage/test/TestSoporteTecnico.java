@@ -2,7 +2,7 @@ package mypackage.test;
 
 import java.time.LocalDate;
 
-import jdk.internal.jimage.ImageStream;
+//import jdk.internal.jimage.ImageStream;
 import mypackage.connector.LocalConnector;
 import mypackage.entities.Alumnos;
 import mypackage.entities.SoporteTecnico;
@@ -20,9 +20,9 @@ public class TestSoporteTecnico {
 
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Empleado ===============\n");
-        ImageStream resultSetAlumnos = null;
+       // ImageStream resultSetAlumnos = null;
         Alumnos nuevoAlumnos
-                = new Alumnos(resultSetAlumnos.getInt(), "Rafaela", "Cisneros", 36, "Femenina", "DNI", "20123989",
+                = new Alumnos(0, "Rafaela", "Cisneros", 36, "Femenina", "DNI", "20123989",
                         "RafaelaSoppurt@gmail.com", "1537994575", String.valueOf(LocalDate.now()), 49, 43000f);
 
         empleadoRepository.save(nuevoAlumnos);

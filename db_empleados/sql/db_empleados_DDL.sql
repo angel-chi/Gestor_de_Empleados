@@ -25,7 +25,7 @@ matricula       	int(50)			not null,
 correo	            varchar(30)		not null,
 telefono		     varchar(50),
 inicio_semestre		date		not null,
-fin_semestre     	date 		not null,
+fin_semestre     	int 		not null,
 promedio				float			not null
 
 );
@@ -39,7 +39,7 @@ constraint			fk_admin_id	 foreign key(id_alumno) references alumnos(id),
 puesto				varchar(30)								not null,
 formacion			varchar(80),
 conocimientos		varchar(60)								not null,
-area		        varchar(40) 									not null
+area		        int
 
 );
 create table coordinadores(

@@ -109,12 +109,17 @@ public class JFrameValidacionIngreso extends javax.swing.JFrame {
 
             dispose();
 
-        }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("soporte"))){
+        }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("profesor"))){
             
            //  new  JFrameIngresoSoporteTecnico().setVisible(true);
 
             dispose();
-            
+
+        }else if((jTextFieldUsuario.getText().equals("admin")) && (String.valueOf(jPasswordContraseña.getPassword()).equals("coordinador"))){
+
+            //  new  JFrameIngresoSoporteTecnico().setVisible(true);
+
+            dispose();
         }else{
                  JOptionPane.showMessageDialog(null, "EL USUARIO/CONTRASEÑA ES INVALIDO!");
                  

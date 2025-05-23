@@ -15,8 +15,8 @@ public class TestAlumno {
 
         //INSERT
         System.out.println("\n=================Agregamos un nuevo Alumno ===============\n");
-        Alumnos nuevoAlumnos = new Alumnos( 0/*resultSetAlumnos.getInt("id")*/, "Antonio", "Ibramovich", 34, "Masculino", "segundo", "01/04",
-                        "liuoyuko@gmail.com", "1567896578", String.valueOf(LocalDate.now()), 48, 45000f);
+        Alumnos nuevoAlumnos = new Alumnos( 0/*resultSetAlumnos.getInt("id")*/, "Antonio", "Ibramovich", 34, "Masculino", "segundo", "liuoyuko@gmail.com",
+                        "123456", "cuarto", String.valueOf(LocalDate.now()), 45);
 
         alumnoRepository.save(nuevoAlumnos);
         System.out.println(nuevoAlumnos);

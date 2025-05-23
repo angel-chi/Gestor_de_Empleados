@@ -7,16 +7,14 @@ use db_alumnos;
 -- -----------SELECT----------------
 -- todos los campos
 select * from alumnos;
-select * from administracion;
-select * from desarrolladores;
-select * from soporte_tecnico;
-select * from gerentes;
+select * from administradores;
+select * from coordinadores;
+select * from profesores;
 
 -- empleados por area
-select * from alumnos empl , administracion adm where empl.id = adm.id_alumnos;
-select * from alumnos empl, desarrolladores dev where empl.id= dev.id_alumnos;
-select * from alumnos empl, soporte_tecnico sop where empl.id= sop.id_alumnos;
-select * from alumnos empl, gerentes ger where empl.id= ger.id_alumnos;
+select * from alumnos empl , administradores adm where empl.id = adm.id_alumno;
+select * from alumnos empl, coordinadores dev where empl.id= dev.id_alumno;
+select * from alumnos empl, profesores sop where empl.id= sop.id_alumno;
 
 -- empleados ordenados por nombre
 select * from alumnos order by nombre;
@@ -28,7 +26,7 @@ select * from alumnos order by edad;
 select * from alumnos order by fecha_inicio;
 
 -- empleados ordenados por sueldo
-select * from alumnos order by sueldo;
+select * from alumnos order by promedio;
 
 -- -----------FIN SELECT----------------
 

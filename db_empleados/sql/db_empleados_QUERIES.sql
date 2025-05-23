@@ -23,7 +23,7 @@ select * from alumnos order by nombre;
 select * from alumnos order by edad;
 
 -- alumnos ordenados por fecha de inicio
-select * from alumnos order by inicio_semestre;
+select * from alumnos order by fecha_inicio;
 
 -- alumnos ordenados por sueldo
 select * from alumnos order by promedio;
